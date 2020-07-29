@@ -1,0 +1,243 @@
+\documentclass[12pt,titlepage,twoside]{article}
+\usepackage{titlesec}
+
+\usepackage{blindtext}
+
+\usepackage{german}				% deutsche Überschriften etc.
+\usepackage[utf8]{inputenc}		% direkte Einbgabe von Umlauten
+
+% Layout-Einstellungen
+\frenchspacing					% no extra space after periods
+\usepackage{parskip}			% paragraph gaps instead of indentation
+\usepackage{mathptmx}			% supposed to replace \usepackage{times}
+\usepackage[scaled=0.9]{helvet}	% supposed to replace \usepackage{times}
+\usepackage{courier}			% supposed to replace \usepackage{times}
+\tolerance=9000					% avoid words across right border
+
+% miscellaneous
+\usepackage{graphicx}			% save svg with dia -> use inkscape to save as pdf
+\usepackage{rotating}
+\usepackage{wrapfig}
+\usepackage{hhline}				% double lines in tables
+\usepackage{amsfonts}			% real numbers etc.
+\usepackage[rightcaption]{sidecap}	% figure captions on the right (optional)
+\usepackage{listings}			% for code samples
+\lstset{
+    escapeinside={(*@}{@*)}
+}
+\renewcommand{\lstlistlistingname}{Listingverzeichnis}	% header name for the list of listings
+
+\usepackage{fancyhdr}			% for header line
+\usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{diagbox}			% diagonal table cell lines
+
+\usepackage{geometry}
+
+\geometry{a4paper,left=25mm, right=25mm, top=3.0cm, bottom=2.5cm}
+\usepackage{tabularx}
+% Kopf- und Fußzeile
+\fancyhead{} % clear all header fields
+\fancyhead[OR,LE]{\leftmark}
+
+\usepackage{hyperref}			% for clickable references
+\hypersetup{
+	linktoc=all,
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black,
+	plainpages=false
+}
+
+\usepackage{cite}
+\renewcommand{\UrlBreaks}{\do\/\do\-\do\_}	% allows URL breaking on /, - and _
+\usepackage{breakurl}
+
+\usepackage[toc,page]{appendix}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{etoolbox}	% may already be loaded by bibtex
+\patchcmd{\thebibliography}{\clubpenalty4000}{\clubpenalty10000}{}{}	% avoid breaking bib entrys
+\patchcmd{\thebibliography}{\widowpenalty4000}{\clubpenalty10000}{}{}	% avoid breaking bib entrys
+
+\newlength\tdima
+\newcommand\tabfill[1]{
+      \setlength\tdima{\linewidth}
+      \addtolength\tdima{\@totalleftmargin}
+      \addtolength\tdima{-\dimen\@curtab}
+      \parbox[t]{\tdima}{#1\ifhmode\strut\fi}}
+
+\newcommand*{\reflabel}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}}
+\newcommand*{\reftype}[1]{\hyperref[{#1}]{\autoref*{#1}}}
+\newcommand*{\refcomplete}[1]{\hyperref[{#1}]{\autoref*{#1} \nameref*{#1}}}
+
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand\appendixtocname{Anhang}
+\renewcommand\appendixpagename{Anhang}
+
+\def\postbreak{
+  \raisebox{0ex}[2.0ex][0.5ex]{\ensuremath{\color{red}\hookrightarrow\space}}}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\title{Titel: Design und Implementierung einer Serverless Infrastructure Anwendung beim Cloud Anbieter Amazon Web Services}
+\newcommand{\titleEnglish}{English title}
+
+\author{Oktavius Wiesner}
+\newcommand{\Matrikelnummer}{1082104}
+\date{\today{}, Duisburg}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\bibliographystyle{amsalpha}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\pagenumbering{roman}	% Start roman numbering - 'Roman' for uppercase
+
+
+%-------------------------------------------------------------
+\input{10-Praeambel/Titlepage}
+%-------------------------------------------------------------
+
+
+%-------------------------------------------------------------
+\input{10-Praeambel/Synopsis}
+%-------------------------------------------------------------
+
+
+%-------------------------------------------------------------
+\input{10-Praeambel/Jurat}
+%-------------------------------------------------------------
+
+
+%-------------------------------------------------------------
+\input{10-Praeambel/Gender}
+\cleardoublepage
+%-------------------------------------------------------------
+
+
+%-------------------------------------------------------------
+\input{10-Praeambel/Thx}
+\clearpage
+%-------------------------------------------------------------
+
+\pagestyle{fancy}
+\tableofcontents
+
+\clearpage
+\pagestyle{empty}
+
+\clearpage
+
+
+%-------------------------------------------------------------
+% default a), b), c) numbering
+\renewcommand{\labelenumi}{\alph{enumi})}
+\pagenumbering{arabic} % Switch to regular numbers
+%=============================================================
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+
+\fancyhead[OR]{Einleitung}
+\fancyhead[ER]{Einleitung}
+
+
+\section{Einleitung}
+
+\input{20-Einleitung/Aufgabe}
+
+\input{20-Einleitung/Motivation}
+
+\input{20-Einleitung/CBC}
+\clearpage
+\section{Theorie}
+
+\input{30-Serverless-Theorie/Definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\fancyhead[OR]{Fazit}
+\fancyhead[ER]{Fazit}
+\fancyfoot[C]{\thepage} %Seitennummer
+
+\section{Fazit}
+
+\input{80-Ende/Zusammenfassung}
+
+\newpage
+\input{80-Ende/Ausblick}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\addtocontents{toc}{\protect\newpage}	% new ToC page
+
+\newpage
+\interlinepenalty=10000	% try to avoid page-breaking entries
+\fancyhead[OR]{Literatur}
+\fancyhead[ER]{Literatur}
+
+\bibliography{cite}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\fancyhead[OR]{Anhang}
+\fancyhead[ER]{Anhang}
+
+
+\clearpage
+\setcounter{page}{0}
+
+\renewcommand{\thepage}{A-\arabic{page}}
+
+\begin{appendices}
+
+\section{Anhang Teil 1}
+\input{90-Anhang/Teil1}
+\section{Anhang Teil 2}
+\input{90-Anhang/Teil2}
+
+\section{Anhang Lambda}
+\input{90-Anhang/Lambda}
+
+\end{appendices}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatother

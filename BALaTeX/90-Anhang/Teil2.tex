@@ -1,0 +1,59 @@
+
+\input{99-Format/Perl/PerlStyle}
+\begin{lstlisting}[caption={Formularmanipulation},
+label=lst:Beispielcode 2 Perl] Report Skript {
+
+#!/usr/bin/perl                                                                                                                                                                          
+##                                                                                                                                                                                       
+#  generate PDF from Latex Template LK.tex --> lk.tex --> lk.pdf                                                                                                                         
+#  wird von machform formular aufgerufen.                                                                                                                                                
+##                                                                                                                                                                                       
+
+use CGI qw/:standard/;
+use DBI;
+
+my $debug = 0;
+
+
+
+my $template;
+my $german  = "LK/LK-D.tex";
+my $english = "LK/LK-E.tex";
+my $arabic  = "LK/LK-A.tex";
+my $lk      = "LK/lk.tex";
+
+
+
+my $message = "<pre>\n";
+my $dbm = DBI->connect ( "dbi:mysql:$database:$server",$userid,$passwd ) || die "Could not connect to $database";
+
+
+$stm = $dbm->prepare ( qq{ select id,element_1, element_2, element_5, element_6, element_7, element_8, element_10_1,element_12 from $table  ORDER by id DESC LIMIT 1 });
+$stm->execute;
+$stm->bind_columns(\$id,\$e1,\$e2,\$e5,\$e6,\$e7,\$e8,\$e10,\$e12);
+if ($stm->fetch) {
+
+    if ($e5 =~ /-/) {
+        $e5 = substr ($e5,8,2) . "." . substr ($e5,5,2) . "." . substr ($e5,0,4);
+    }
+    $message .= " ID     = $e1\n";
+    $message .= " Name   = $e2\n";
+    $message .= " Datum  = $e5\n";
+    $message .= " Adresse= $e6\n";
+    $message .= " E      = $e7\n";
+    $message .= " K      = $e8\n";
+    $message .= " data   = $e10\n";
+    $message .= " lang   = $e12\n";
+
+}
+else {
+    $message .= " nicht gefunden\n";
+}
+
+printf "$message\n" if ($debug);
+
+undef $stm;
+undef $dbm;
+
+    
+\end{lstlisting}

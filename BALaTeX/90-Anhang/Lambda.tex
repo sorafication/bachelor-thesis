@@ -1,0 +1,97 @@
+
+\input{99-Format/JavaScript/JSStyle}
+\begin{lstlisting}[caption={Lambda-Code},
+label=lst:Beispielcode 1] Lambda-Code {
+
+    /* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+Amplify Params - DO NOT EDIT */
+
+var AWS = require('aws-sdk')
+AWS.config.update({region: 'eu-central-1'});
+
+var docClient = new AWS.DynamoDB.DocumentClient
+
+// Create S3 service object
+const s3 = new AWS.S3({apiVersion: '2006-03-01'});
+
+
+const s3listfunction = new Promise((resolve, reject) => {
+  let s3buckets_data = s3.listBuckets().promise();
+  if(s3buckets_data ) {
+    resolve("Works" + s3buckets_data);
+  }
+  else {
+    reject("NOPE")
+  }
+  //return s3.listBuckets().promise()
+});
+
+const s3listfunction_1 = () => {
+
+  return s3.listBuckets().promise()
+};
+
+var params = {
+    TableName: 'Comments-ifdtxan4k5fglip5ynnopk6bky-dev',
+ //   Key: {'id': '4de8a026-4599-465a-ac76-9259b4adf1fc'}
+   };
+
+
+   async function getAllDynamoDBItems(){
+       console.log("Starting Function")
+    try {
+        var result = await docClient.scan(params).promise()
+        console.log(JSON.stringify(result))
+        console.log("Success")
+    } catch (error) {
+        console.log("FAILED")
+        console.error(error);
+    }
+}
+
+
+
+exports.handler = async (event) => {
+
+    //getAllDynamoDBItems()
+    //console.log( "S3 Ausgabe: " + s3.listBuckets().promise() )
+
+    //const msg = await getAllDynamoDBItems()
+    //const msg1 = await s3listfunction_1()
+    //console.log(msg1)
+
+    s3listfunction_1.then((res) => console.log(res), (err) => alert(err));
+
+    // TODO implement
+    const response = {
+        statusCode: 200,
+        body: JSON.stringify('Hello from Lambda!'),
+    };
+    //return s3.listBuckets().promise();
+    return response
+};
+
+
+
+
+
+
+function getCoins(callback) {
+    console.log("Function starts")
+  docClient.scan(params, function(err, data) {
+    if (err) {
+      callback(err)
+      console.log("IFFFF")
+      console.log(err)
+    } else {
+        console.log("ELLSEE")
+        console.log(data.Items)
+      callback(null, data.Items)
+    }
+  });
+}
+
+
+\end{lstlisting}

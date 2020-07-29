@@ -1,0 +1,33 @@
+---
+documentclass: article
+title: 'Titel'
+subtitle: 'Untertitel'
+author: 'Autor' 
+email: 'autor@fqdn.tld'
+matnr: 123456
+tags: [bachelor-thesis, network-management, monitoring]
+proctora: 'Erstprüfer'
+proctorb: 'Zweitprüfer' 
+institute: 'Institut'
+department: 'Abteilung'
+course: 'Studiengang'
+abstractd:
+  Zusammenfassung Deutsch  Zusammenfassung Deutsch  Zusammenfassung Deutsch 
+  Zusammenfassung Deutsch  
+abstracte:
+  Zusammenfassung Englisch Zusammenfassung Englisch Zusammenfassung Englisch 
+  Zusammenfassung Englisch 
+date: '05.02.2018'
+
+geometry: [top=3.5cm, bottom=25mm, left=30mm, right=30mm]
+fontsize: 11pt
+linestretch: 1.5
+
+titlepage: true
+
+lot: yes
+lof: yes
+
+erklaerung: no
+sperrvermerk: yes
+...

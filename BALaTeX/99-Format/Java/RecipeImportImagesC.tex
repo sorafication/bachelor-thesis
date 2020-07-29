@@ -1,0 +1,52 @@
+\input{Java/JavaStyle}
+
+\begin{lstlisting}[caption={Verarbeitung der Rezeptbilder},
+label=lst:recipeImportImages ]
+String[] imgUrls; // array to contain all image urls
+BufferedImage[] images;
+String previewImage = "img\\ImgNaSml.png";
+if (Imgs.size() == 0) {	// No image - set to Image-Not-Available
+	imgUrls = new String[]{"img\\ImgNa.png"};
+} else {
+	imgUrls = new String[Imgs.size()];
+	// Extracting the image urls
+	for (int i = 0, size = Imgs.size(); i < size; i++) {
+		imgUrls[i] = Imgs.first().attributes().get("data-src");
+		Imgs.remove(0);
+	}
+
+	// Load and store the images
+	images = new BufferedImage[imgUrls.length];
+	for (int i = 0; i < imgUrls.length; i++) {
+		try {
+			URL url = new URL(imgUrls[i]);
+			images[i] = ImageIO.read(url);
+			// Switch URL to local
+			imgUrls[i] = "img/recipe/" + ID + "-" + i + imgUrls[i].substring(imgUrls[i].lastIndexOf("."), imgUrls[i].length());
+			// Safe the image to the disk
+			File f = new File(imgUrls[i]);
+			f.getParentFile().mkdirs();
+			f.createNewFile();
+			ImageIO.write(images[i], "jpg", f);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	BufferedImage previewImageT;
+	// downscale
+	previewImageT = Server.scale((BufferedImage)images[0], 64);
+	// setting the previewImage URL and saving it to the disk
+	previewImage = "img/recipe/" + ID + "-" + "preview" + imgUrls[0].substring(imgUrls[0].lastIndexOf("."), imgUrls[0].length());
+	File f = new File(previewImage);
+	f.getParentFile().mkdirs();
+	f.createNewFile();
+	ImageIO.write(previewImageT, "jpg", f);
+}
+\end{lstlisting}
+
+
+
+
+
+
