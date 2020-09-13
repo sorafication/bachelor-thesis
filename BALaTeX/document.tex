@@ -96,8 +96,8 @@
   morestring=[b]"
 }
 
-\title{Titel: Design und Implementierung einer Serverless Infrastructure Anwendung beim Cloud Anbieter Amazon Web Services}
-\newcommand{\titleEnglish}{English title}
+\title{Design und Implementierung einer Serverless Infrastructure Anwendung beim Cloud Anbieter Amazon Web Services}
+\newcommand{\titleEnglish}{Design and implementation of a serverless architecture using the example of the cloud provider Amazon Web Services}
 
 \author{Oktavius Wiesner}
 \newcommand{\Matrikelnummer}{1082104}
@@ -136,7 +136,7 @@
 
 %-------------------------------------------------------------
 \input{10-Praeambel/Gender}
-\cleardoublepage
+\clearpage
 %-------------------------------------------------------------
 
 
@@ -167,6 +167,7 @@
 
 \fancyhead[OR]{Einleitung}
 \fancyhead[ER]{Einleitung}
+\fancyfoot[C]{\thepage}
 
 
 \section{Einleitung}
@@ -176,11 +177,34 @@
 \input{20-Einleitung/Motivation}
 
 \input{20-Einleitung/CBC}
+
+\input{20-Einleitung/Gliederung}
 \clearpage
-\section{Theorie}
 
-\input{30-Serverless-Theorie/Definition}
+\fancyhead[OR]{Cloud Computing und Serverless}
+\fancyhead[ER]{Cloud Computing und Serverless}
+\fancyfoot[C]{\thepage}
+\section{Cloud Computing und Serverless}
 
+\input{30-Serverless-Theorie/CloudComputing}
+
+\input{30-Serverless-Theorie/Serverless}
+
+\clearpage
+\fancyhead[OR]{AWS Serverless Dienste und Designentscheidung}
+\fancyhead[ER]{AWS Serverless Dienste und Designentscheidung}
+\fancyfoot[C]{\thepage}
+\section{AWS Serverless Dienste und Designentscheidung}
+\input{40-AWS/Allgemein.tex}
+
+\input{40-AWS/Dienste.tex}
+
+\clearpage
+\fancyhead[OR]{Implementierung}
+\fancyhead[ER]{Implementierung}
+\fancyfoot[C]{\thepage}
+\section{Implementierung}
+\input{50-Implementierung/Imp-Allgemein.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

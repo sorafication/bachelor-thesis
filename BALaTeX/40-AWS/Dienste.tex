@@ -1,0 +1,253 @@
+
+\subsection{AWS Amplify}
+
+Amplify ist ein zentraler Dienst rund um das Thema Serverless Webanwendungen, die Veröffentlich war im November 2017.
+
+Amazon bezeichnet Amplify selbst als {}\glqq ein Set aus Tools und Services, das Entwicklern erlaubt, skalierbare vollständige
+mobile und Front-End-Anwendungen zu entwickeln, powered by AWS.\grqq{}\cite[]{AWSAmplify}
+
+Amplify lässt sich sowohl über die Amazon Web Console konfigurieren, als auch über eine eigene Amplify CLI.
+Das Amplify Framework ist Open Source und vereint native AWS Dienste zur Authentifizierung, Analyse, CI/CD, Hosting, Datnespeicherung für Desktop und Mobile
+Endgeräte. Dabei werden viele moderne Javascript Frameworks zum Aufbau des Frontends unterstützt, wie zum Beispiel React, React Native, Vue und weitere.
+Alle verfügbaren Dienste sind in der Amplify Bibliothek vereint und können in das Frontend eingebaut werden.
+
+Amplify erleichtert es einem Projekte als Full Stack Developer\footnote{Als Full Stack Developer wird jemand bezeichnet, der sowohl Client als auch Server
+erstellen und betreuen kann. Er ist allein Verantwortlich für das Frontend, Backend und eventuell damit verbundene Datenbanken.} zu realisieren.
+Dies ermöglicht einem ein voll umfängliches Verständis über die gesamte Applikation und Änderungen können leichter durchgeführt werden.
+Ein Prototyp kann ebenfalls schnell erstellt werden.
+
+Das Amplify Framework lässt sich in drei Komponenten unterteilen: Bibliotheken, UI-Komponenten und einer CLI Toolchain, wobei jede Komponente einzeln oder gemeinsam genutzt werden kann.
+
+Die Bibliotheken sind Open Source und nutzen bereits vorhandene AWS Dienste um eine native Webanwendung für die Cloud bereitzustellen.
+Folgende Module stehen zur Verfügung:
+
+- Voll verwaltete Authentifizierung mit Unterstützung für Social Media Logins, wie Facebook, Google Sign-In. Multifaktorauthentifizerung, Authorisierung und Passwortwiederherstellung sind
+bereits inkludiert. Zugrundeliegender Dienst ist Amazon Cognito.
+
+- DataStore zur Offline-Synchronisation zwischen mehreren Plattformen. (iOS/Android/React Native/ Webbrowser). Zugrundeliegender Dienst ist AWS AppSync.
+
+- Echtzeitanylsen erstellen und auswerten sowie integriertes Tracking von Sessions. Zugrundeliegender Dienst Amazon Pinpoint und Amazon Kinesis.
+
+- API Zugriffe auf Endpunkte mithilfe von GraphQL oder REST erstellen, sowie manipulieren und kombinieren von Daten unterschiedlicher Quellen. Zugrundeliegender Dienst ist Amazon AppSync und Amazon API Gateway.
+
+- Simple Speicherverwaltung in öffentlichen oder privaten Storage Buckets. Kann auch benutzt werden um Useruploads zu verwalten. Zugrundeliegender Dienst ist Amazon S3.
+
+- Zudem gibt es noch weitere Funktionen, wie Publish/Subcribe, Chatbots, Push Benachrichtungen, AR/VR sowie Künstliche Intelligenz.
+--> Erklärung der einzelnen Dienste mit Fußnote??
+
+
+Auch die UI-Komponenten sind Open Source und sollen eine einfache Verzahnung zwischen dem User Interface und den Workflows der Dienste anbieten.
+So gibt es zum Beispiel fertige Interace Elemente für das Hochladen von Bildern und Datein in S3.
+
+Die Amplify CLI Toolchain dient dazu, ein Serverless Backend zu erstellen und verwalten. Dazu gehört die Erstellung aller zuvor genannten Dienste und Funktionen. Zudem
+ist es möglich ein Statisches Hosting einzurichten. \cite[]{AWSAmplifyKomponenten}
+
+
+Um alle unterschiedlichen AWS Dienste verwalten zu können nutzt Amplify einen weiteren AWS Dienst, AWS CloudFormation.
+Mit AWS CloudFormation ist möglich Templates zur Modellierung und Bereitstellung jedlicher AWS Ressourcen zu erstellen. Die Templates unterstützen
+JSON und YAML. Amplify übersetzt alle Befehle in ein Cloudformation Template und startet dieses. Dadurch ist es einfach alle, von Amplify durchgeführten Schritte,
+nachzuvollziehen und eventuell für andere Projekte zu übernehmen.
+
+Im folgenden Schritt werden die einzelnen Dienste erläutert die für diese Bachelorarbeit und Implementierung notwendig sind.
+Zudem folgt eine Bewertung zur Eignung des jeweiligen Dienstes.
+
+
+
+
+\subsection{API}
+API steht für Application Programming Interface und bezeichnet eine Programmierschnittstelle für die Kommunikation von Diensten.
+Zur einfacheren Handhabung und höherer Flexibilität sollen Daten über einen standardisierten Weg ausgetauscht werden. Die API definiert
+dabei die Art und Weise der Kommunikation, also wie Daten angenommen, verarbeitet und wieder zurückgesendet werden.
+
+
+Amazon bietet zwei Möglichkeiten an eine solche API zu erstellen welche im folgenden Schritt gegenüber gestellt werden und
+einer der beiden Dienste auch für die Implementierung der Anwendung genutzt wird.
+
+
+\subsubsection{REST API: AWS API Gateway}
+Die REST (REpresentational State Transfer) API Architektur wird bereits seit einem längeren Zeitraum für Webanwendungen genutzt.
+Mittels den zustandslosen HTTP-Methoden GET, POST, PUT und DELETE kann mit Servern im Internet agiert werden. Ein wichtiger Punkt ist, dass
+Client und Server unabhängig voneinander funktionieren und getrennt bearbeitet werden können.
+Das Grundprinzip von REST lautet eine strukturierte Kombination aus Ressourcen, hier URL Pfade, und Methoden zu erhalten.
+Die gewünschten Daten sind immer über eine spezifische URL identifzierbar ist.
+
+Beispiel für Abfragen könnten folgendermaßen aussehen:
+\begin{lstlisting}
+ GET /Accounts/1
+ POST /Accounts/1
+\end{lstlisting}
+
+Mithilfe des GET Requests kann eine Liste von Accounts abgerufen werden und der POST Request erlaubt es einen neuen Account anzulegen.
+
+REST bietet eine hohe Flexibilität und leichte Skalierung durch das Client-Server Modell. Auch ist eine Cache Implementierung mithilfe von REST leicht
+umsetzbar. Wächst eine Applikation immer weiter entstehen auch immer neue API Endpunkte. Möchte man nun alle Daten sammeln wären mehrere seperate
+Anfragen notwendig. Es ist zudem nicht möglich die angeforderten Daten genauer zu spezifizieren. Mittels GET Request erhält man immer alle Daten die
+die API zurückgibt, egal wie viel man tatsächlich davon benötigt. Dieses Phänomen nennt sich Over-fetching bzw. Under-fetching.
+Beim Over-fetching werden mehr Daten bezogen als die Anwendung eigentlich benötigt und beim Under-fetching müssen mehrere Anfragen an den Server
+gesendet werden um die benötigte Menge an Daten zu erhalten.\cite[]{API}
+
+AWS API Gateway ist ein vollständig verwalteter Service um solche API Endpunkte zu erzeugen.
+Mithilfe des Dienstes lässt sich beispielhaft die zuvor angeführte GET Anfrage an eine Datenbank weiterleiten und die POST Anfrage an eine Lambda Funktion.
+API Gateway arbeitet dabei vollkommen Serverless und skaliert automatisch mit den Anforderungen. Neben Zugriff auf den Lambda Dienst, ist es auch möglich
+mit anderen Diensten wie EC2, S3 oder auch DynanoDB zu kommunizieren.
+
+Zusätzlich bietet der Dienst viele weitere Funktionalitäten. Dazu gehören CORS-Support\footnote{CORS steht für Cross-Origin Resource Sharing und
+beschreibt einen Mechanismus der mittels zusätzlicher HTTP Header Berechtigungen für Resourcen vergibt, falls sich diese Resourcen auf einer anderen
+Domain befinden als auf der eigenen.}, Zugriffskontrolle, Einschränkung oder auch Verwaltung unterschiedlicher
+API-Versionen.
+
+Die Abrechnung erfolgt anhand von API-Aufrufen und Datenübertragungen die in Richtung Internet verlaufen. Eine Pauschale gibt es nicht.\cite[]{APIGateway}
+
+
+\subsubsection{GraphQL API: AWS Appsync}
+
+GraphQL APIs arbeiten nicht mit Ressourcen oder HTTP Methoden.
+Stattdessen ist es wichtig zu Beginn ein Schema mit der GraphQL Schema Definition Language zu erstellen, welches die Regeln festlegt, wie der Client auf Daten zugreifen kann.
+Datentypen müssen im vorraus definiert sein und festgelegt werden, ob es sich
+um eine Mutation oder eine Query handelt. Vorteil der stark definierten Typen ist
+eine geringere Fehlkommunikation zwischen Server und Client.
+
+Eine Query ist eine einfache Abfrage der Daten, eine Mutation ermöglicht eine Veränderung der Daten.
+GraphQL erlaubt, anders als REST, nur bestimmte Daten in einer Abfrage abzurufen. Ein Over- bzw. Under-fetching gibt es hier nicht
+Im Vergleich zu REST ist GraphQL flexibler und benötigt weniger Änderungen im Backend. Der Client hat hier viel mehr Möglichkeiten
+mit der API zu kommunizieren.
+
+Ein Schema würde man mit GraphQL wie folgt darstellen:
+\begin{lstlisting}
+type Account {
+  id: ID!
+  accountid: String!
+  name: String!
+  email: String!
+  num: Int!
+  status: String!
+}
+\end{lstlisting}
+
+Den einzelnen Felder wird zugewiesen ob es sich um ein String, Int oder etwas anderes handelt. Mit dem Ausrufezeichen wird ein Feld als zwingend benötigt markiert.
+Es darf also nicht leer sein. Die einzigartige ID wird vom Server beim erzeugen von neuen Einträgen automatisch erstellt.
+
+In GraphQL würde eine Query folgendermaßen aussehen:
+\begin{lstlisting}
+query listAllAccounts {
+  listAccounts {
+      id
+      accountid
+      num
+      name
+      email
+  }
+}
+\end{lstlisting}
+
+Wird zum Beispiel die Email nicht benötigt, so lässt man das Feld weg und die Daten werden nicht abgerufen.
+Zum Hinzufügen eines neuen Eintrags wäre folgende Mutation notwendig:
+\begin{lstlisting}
+mutation {
+  createAccount(name: "AWS-XXX", num: 145, email: "oktavius@cbc.de",
+  accountid: "123456789", status: "ACTIVE) {
+   id
+  }
+}
+\end{lstlisting}
+
+Es ist außerdem möglich in einer Mutation auch direkt Daten abzufragen. Beim erstellen eines neuen Accounts kann man gleichzeitig auch die
+vom Server angelegte ID abfragen und überprüfen.
+
+2015 wurde GraphQL von Facebook veröffentlicht und 2018 ausgegliedert in die Linux Foundation\footnote{Die Linux Foundation ist eine Gemeinnützige Organisation mit Sitz in der USA.
+Das Ziel ist es Linux zu fördern und den Wachstum zu unterstützen.}.
+
+Neben den bisher genannten Funktion bietet GraphQL noch Subscriptions, welche es dem Client ermöglichen Echtzeitbenachrichtigungen vom Server zu erhalten sobald
+Daten hinzugefügt worden sind.
+
+Dadurch dass GraphQL, anders als REST, nur einen einzelnen Endpunkt anbietet, ist eine Cache Implementierung problematischer. Hierfür müss
+zusätzliche Code im Client implementiert werden. Außerdem dauert es etwas länger bis man erste Abfragen durchführen kann, da die Definierung des
+Schemas mehr Zeit in Anspruch nimmt. \cite[]{GraphQL} \cite[]{GraphQL1}
+
+Mithilfe von AWS Appsync ist es möglich APIs bereitzustellen die auf GraphQL basieren. Dabei ist AppSync in viele weitere AWS Dienste integriert.
+So kann man direkt über AppSync eine NoSQL Datenbank mit AWS DynamoDB (Siehe XXX) und allen benötigten Berechtigungen aufsetzen. Auch mit AWS Lambda
+und AWS Cognito( siehe XXX) ist der Dienst verbunden. Die Authorisierung von Clients ist mit API Keys\footnote{Der API Key wird nur für Entwicklungsumgebungen empfohlen,
+da er leicht komprimitierbar ist und keine Aufteilung von Berechtigungen ermöglicht.}
+, IAM Credentials \footnote{
+    IAM steht für Identity Access Management und beschreibt Amazons Dienst zur Identität- und Benutzerverwaltung. Der Dienst erlaubt es Nutzer anzulegen und
+    Ihnen Berechtigungen zu verteilen.}, OIDC Tokens \footnote{OIDC steht für OpenID Connect und basiert auf dem OAuth 2.0 Protokoll zur Authentifierung.
+    Die Tokens zur Authentifierung (JWT Tokens) einer Identität werden verschlüsselt im JSON Format versendet, und ermöglichen einen standardisierten Weg zum Anmelden.
+          } oder einem AWS
+Cognito User Pool möglich. \cite[]{AppSyncAuth}
+
+Auf Wunsch kann AppSync auch die Erstellung des Schemas und der einzelnen Datenpunkte übernehmen.
+Die AppSync SDK unterstützt iOS, Android und viele Javascript Varianten wie React, React Native oder Angular.
+Auch Echtzeitanwendungen können mit AppSync realisiert werden.
+Zusätzlich bietet Amazon ein serverseitiges Caching von Daten an um direkten Zugriff zu reduzieren und die Geschwindigkeit zu erhöhen.
+\cite[]{AppSync}
+
+
+
+\subsubsection{Entscheidung}
+Für das in dieser Arbeit gewünschte Projekt wäre eine Implementierung sowohl mit einer REST API als auch mit GraphQL möglich.
+Die von AWS angebotenen Dienste für die API sind zudem direkt in Amplify integriert und benötigen keine zusätzliche Konfiguration.
+
+Mit AWS APIGateway müsste man mehrere unterschiedliche Endpunkte konfigurieren und im Frontend einbauen. Durch eine GET Abfrage könnte man
+etwa eine Liste aller AWS Accounts abfragen.
+
+GraphQL bietet sich an, wenn man mehrere Microservices nutzt und alle in einem Schema konsolidieren möchte. Umso größer und komplexer die Anwendung wird, desto
+mehr spielt GraphQL seine Vorteile aus. Trotz des Wachstums der Daten bleiben die benötigten Änderungen im Vergleich zu REST geringer und übersichtlicher.
+
+Da die in dieser Bachelorarbeit gewünschte Webanwendung Daten mehrerer Cloud Provider sammeln und aufbereiten wird eine Implementierung zunehmend komplexer und größer.
+Je nachdem welche Person die Anwendung nutzt könnte sie einen unterschiedlichen Detailgrad der Daten benötigen. Für einen groben Überblick reichen etwa
+die Gesamtkosten aller Cloud Provider. Will man jedoch die einzelnen Kosten analysieren und ggfs. optimieren sind deutlich mehr Daten notwendig.
+Da bisher nur bekannt ist welche Daten benötigt werden, jedoch nicht in welchem Detailgrad, ist eine Umsetzung mit AWS Appsync von Vorteil.
+Auf Wunsch muss nur in der jeweiligen Query das gewünschte Felder angepasst werden.
+Außerdem bietet AppSync direkt die Erstellung der Datenbank und der benötigten Berechtigungen an.
+Das erstellen aller Queries, Mutationen und Subscriptions nimmt einem der Dienst ebenfalls zum großen Teil ab. Sobald ein Schema mit Datenstrukturen definiert wurde
+generiert AppSync automatisch alle möglichen Operationen. Diese Operationen können dann im Anschluss sofort verwendet werden.
+
+Aufgrund der überzeugenderen Integration und höheren Flexibilität wird die Anwendung mit AWS AppSync realisiert.
+
+
+
+\subsection{Datenspeicherung}
+AWS bietet viele Möglichkeiten zur Datenspeicherung an...
+S3
+\subsubsection{AWS RDS}
+Nope
+
+\subsubsection{AWS DynanoDB}
+Yes
+
+\subsubsection{Entscheidung}
+Serverless DynanoDB
+
+
+
+
+\subsection{Authentifierung}
+Authentifizierung ist wichtig !
+
+\subsubsection{Alternative}
+Gibt es welche? Selbst implementieren?
+
+\subsubsection{AWS Cognito}
+Easy zu implementieren mit dem Framework.
+
+\subsubsection{Entscheidung}
+Cognito.
+
+
+\subsection{Function as a Service Dienst}
+Was Faas ist wurd ein ... geklärt.
+
+\subsubsection{AWS Lambda}
+Einer der beliebtesten Dienste..
+
+\subsubsection{Alternative}
+??
+
+\subsubsection{Entscheidung}
+Lambda.
+
+\subsection{Frontend Framework}
+Amplify bietet viele Frameworks an..
+
+\subsubsection{React}
+Es wurde React.

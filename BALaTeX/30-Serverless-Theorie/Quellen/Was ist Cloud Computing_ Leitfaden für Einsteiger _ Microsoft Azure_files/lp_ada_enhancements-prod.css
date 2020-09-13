@@ -1,0 +1,250 @@
+body #lpChat .lp_dialog_container .lp_buttons_area .lp_confirm_button {
+	color: #000 !important;
+}
+
+#lpChat .lp_minimized .lp_notification_number {
+	margin-top: 2px !important;
+}
+
+.lp-json-pollock-layout.lp-json-pollock-layout-vertical {
+	border-radius: 15px;
+}
+
+#lpChat .lp_csat_rater_star {
+	color: #fff !important;
+}
+
+.lp_mobile #lpChat>.lp_maximized, .lp_tablet #lpChat>.lp_maximized {
+	opacity: 1 !important;
+	width: 100vw !important;
+}
+
+.lp_desktop #lpChat > .lp_minimized {
+	width: 400px !important;
+}
+
+.lp_desktop #lpChat > .lp_maximized {
+	height: 600px !important;
+	width: 400px !important;
+	max-height: 95%;
+}
+
+[data-lp-point="lp_line_state"] {
+	left: -90px !important;
+}
+
+.lp_sender {
+	display: none !important;
+}
+
+.lp_chat_line_wrapper {
+	overflow: visible !important;
+	margin-bottom: 12px !important;
+	padding: 0px 10px 4px 24px !important;
+}
+
+[data-lp-point="headerText"] {
+	color: #fff !important;
+}
+
+.lp-json-pollock-element-text {
+	padding: 0 !important;
+}
+
+.lp-json-pollock-element-text {
+	padding: 12px !important;
+	border: none !important;
+	max-width: 80% !important;
+	background-color: #fff !important;
+	border-radius: 3px !important;
+	border-top: 3px solid #50e6ff !important;
+	box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.25) !important;
+}
+
+div.lp-json-pollock-element-text span {
+	color: #000 !important;
+}
+
+#lpChat .lp_main .lp_main_area .lp_location_bottom .lp_bottom_area {
+	padding-left: 24px !important;
+}
+
+[data-lp-point="chattingWithIcon"] {
+	display: none !important;
+}
+
+[data-lp-cust-id="transcript_bubble_visitor"] {
+	padding: 12px !important;
+	border: none !important;
+	max-width: 80% !important;
+	background-color: #D2D2D2 !important;
+	box-shadow: 0 3px 5px -3px rgba(0, 0, 0, 0.25) !important;
+	min-width: 60px;
+	margin: 0 auto !important;
+}
+
+[data-lp-cust-id="transcript_bubble_agent_text"],[data-lp-cust-id="transcript_bubble_visitor_text"] {
+	color: #000 !important;
+	line-height: 1.45em !important;
+}
+
+.lp_chat_arrow_border,.lp_chat_arrow {
+	display: none !important;
+}
+
+.lp_time {
+	color: #6e6e6e !important;
+}
+
+.lp_chat_line {
+	border-radius: 3px !important;
+}
+
+textarea.lpview_form_textarea.lp_expandable_textarea.lp_ltr {
+	color: #6e6e6e !important;
+}
+
+.lp_system {
+	background-color: #fff !important;
+	padding: 18px !important;
+}
+
+#lpChat img {
+	vertical-align: top !important;
+}
+
+.lp_desktop #lpChat>.lp_maximized>.lp_main {
+	top: 40px !important;
+}
+
+.lp-json-pollock-layout.lp-json-pollock-layout-vertical {
+	border: none !important;
+	background-color: transparent !important;
+}
+
+.lp-json-pollock-element-button button, .lp_cb_offer button {
+	color: #000 !important;
+	cursor: pointer;
+}
+
+.lp-json-pollock-element-button:hover,button.chips-item:hover, .lp_cb_offerhover {
+	transform: translateY(-2px) !important;
+	transition: all 0.15s ease !important;
+	box-shadow: 0 4px 10px -3px rgba(0, 0, 0, 0.5) !important;
+}
+
+button.chips-item:first-of-type {
+	margin-left: 14px !important;
+}
+
+.lp_confirm_button {
+	color: #000 !important;
+}
+
+.lp_cancel_button {
+	background-color: #e2e2e2 !important;
+	border: none !important;
+	border-radius: 3px !important;
+	box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.25) !important;
+	min-width: 100px !important;
+	text-align: center !important;
+}
+
+[data-lp-point="header"] {
+	min-height: 40px !important;
+	padding: 0px 15px !important;
+	background-color: #243a5e !important;
+	border: none !important;
+}
+
+[data-lp-cust-id="transcript_bubble_agent"] {
+	padding: 12px !important;
+	border: none !important;
+	max-width: 80% !important;
+	background-color: #fff !important;
+	border-radius: 3px !important;
+	border-top: 3px solid #50e6ff !important;
+	box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.25) !important;
+}
+
+button.chips-item {
+	background-color: #50e6ff !important;
+	border: none !important;
+	border-radius: 3px !important;
+	box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.25) !important;
+	min-width: 100px !important;
+	text-align: center !important;
+}
+
+.stars button.chips-item {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	min-width: auto !important
+}
+
+.stars button.chips-item:hover {
+	transform: none !important;
+	box-shadow: none !important;
+}
+
+div.stars {
+	justify-content: left;
+}
+
+.lp-json-pollock-element-button {
+	border: none !important;
+	background-color: #50e6ff !important;
+	margin: 12px auto !important;
+	box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.25) !important;
+	border-radius: 3px !important
+}
+
+.lp_confirm_button {
+	color: #fff !important;
+}
+
+.lp-json-pollock-element-text, .lp-json-pollock-element-text span {
+	background-color: transparent !important;
+}
+
+.lp-json-pollock-element-button button, .lp_cb_offer button {
+	background-color: transparent !important;
+}
+
+.lp_confirm_button {
+	background-color: #50e6ff !important;
+	border: none !important;
+	border-radius: 3px !important;
+	box-shadow: 0 3px 5px -2px rgba(0, 0, 0, 0.25) !important;
+	min-width: 100px !important;
+	text-align: center !important;
+}
+
+.lp_maximized.lpmx {
+	right: 0px !important;
+}
+
+div.lp-json-pollock-layout div.lp-json-pollock-element-text {
+	background-color: #fff !important;
+}
+
+#lpChatDynamics .LPMcontainer, #lpChatButton .LPMcontainer, #lpChatOffice .LPMcontainer, #lpPowerPlatform .LPMcontainer, #lpChatDynamics2 .LPMcontainer, #lpChatDynamics3 .LPMcontainer {
+	display: block !important;
+}
+
+.lp-window-root .lp_chat_line_wrapper .lp_rich_content_line .lp_title_text .lp-json-pollock .lp-json-pollock-layout-carousel-wrapper>.lp-json-pollock-layout-carousel-arrow {
+	opacity: 1 !important;
+}
+
+.lp-window-root .lp_cobrowse_invitation_widget .lp_cb_button {
+    color: #000 !important;
+    background-color: #50e6ff !important;
+    cursor: pointer;
+    font-size: 14px !important;
+    box-shadow: 0 3px 5px -2px rgba(0,0,0,.25) !important;
+}
+.lp-window-root .lp_cobrowse_invitation_widget .lp_cb_button:hover, .lp-window-root .lp_cobrowse_invitation_widget .lp_cb_button:focus {
+    transform: translateY(-2px) !important;
+    transition: all .15s ease !important;
+    box-shadow: 0 4px 10px -3px rgba(0,0,0,.5) !important;
+}

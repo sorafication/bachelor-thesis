@@ -5,6 +5,109 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{}
+\begin{thebibliography}{{Ama}20d}
+
+\bibitem[{Ama}20a]{APIGateway}
+{Amazon Web Services}, \emph{Amazon api gateway},
+  \url{https://aws.amazon.com/de/api-gateway/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Ama}20b]{AWSAmplify}
+\bysame, \emph{Aws amplify}, \url{https://aws.amazon.com/de/amplify/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20c]{AWSAmplifyKomponenten}
+\bysame, \emph{Aws amplify features},
+  \url{https://aws.amazon.com/de/amplify/features/?nc1=h_ls}, 2020, [Abgerufen
+  am 07.09.2020].
+
+\bibitem[{Ama}20d]{AppSync}
+\bysame, \emph{Aws appsync}, \url{https://aws.amazon.com/de/appsync/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20e]{AWSWhitepaper}
+\bysame, \emph{Serverless architectures with aws lambda},
+  \url{https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20f]{AWSECS}
+\bysame, \emph{Was ist amazon elastic container service?},
+  \url{https://docs.aws.amazon.com/de_de/AmazonECS/latest/developerguide/Welcome.html},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20g]{AWSAllgemein}
+\bysame, \emph{Was ist aws?},
+  \url{https://aws.amazon.com/de/what-is-aws/?nc1=f_cc}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Bac}20a]{API}
+{Back4App}, \emph{Graphql vs rest},
+  \url{https://medium.com/@back4apps/graphql-vs-rest-62a3d6c2021d}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Bac}20b]{Backendless}
+{Backendless Corp.}, \emph{App making made simple.},
+  \url{https://backendless.com/}, 2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Cha}19]{Security}
+{Chandan Kumar}, \emph{5 best serverless security platform for your
+  applications}, \url{https://geekflare.com/serverless-application-security/},
+  2019, [Abgerufen am 07.09.2020].
+
+\bibitem[{Mic}19]{Checkpoint}
+{Michael Novinson}, \emph{Check point to buy serverless security firm protego
+  to protect cloud},
+  \url{https://www.crn.com/news/security/check-point-to-buy-serverless-security-firm-protego-to-protect-cloud},
+  2019, [Abgerufen am 07.09.2020].
+
+\bibitem[{Mic}20a]{CloudComputingDef}
+{Microsoft Azure}, \emph{Was ist cloud computing?},
+  \url{https://azure.microsoft.com/de-de/overview/what-is-cloud-computing/#cloud-deployment-types},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Mic}20b]{DevOps}
+\bysame, \emph{Was ist devops?},
+  \url{https://azure.microsoft.com/de-de/overview/what-is-devops/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Mic}20c]{CaaS}
+\bysame, \emph{Was ist ein container?},
+  \url{https://azure.microsoft.com/de-de/overview/what-is-a-container/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Mic}20d]{SaaS}
+\bysame, \emph{Was ist saas? saas (software-as-a-service)},
+  \url{https://azure.microsoft.com/de-de/overview/what-is-saas/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Mor}20]{GitHub}
+{Moritz Stückler}, \emph{Was ist eigentlich github?},
+  \url{https://t3n.de/news/eigentlich-github-472886/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Red}20]{Zustandslos}
+{Red Hat, Inc.}, \emph{Zustandsbehaftet oder zustandslos?},
+  \url{https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ste}19]{AppSyncAuth}
+{Steve Johnson}, \emph{Things to consider when you build a graphql api with aws
+  appsync},
+  \url{https://aws.amazon.com/de/blogs/architecture/things-to-consider-when-you-build-a-graphql-api-with-aws-appsync/},
+  2019, [Abgerufen am 07.09.2020].
+
+\bibitem[{The}20a]{GraphQL}
+{The GraphQL Foundation}, \emph{Queries and mutations},
+  \url{https://graphql.org/learn/queries/}, 2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{The}20b]{GraphQL1}
+\bysame, \emph{Schemas and types}, \url{https://graphql.org/learn/schema/},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Til}19]{AWSPolizei}
+{Tilman Wittenhorst}, \emph{Bundespolizei speichert bodycam-aufnahmen in
+  amazons aws-cloud},
+  \url{https://www.heise.de/newsticker/meldung/Bundespolizei-speichert-Bodycam-Aufnahmen-in-Amazons-AWS-Cloud-4324689.html},
+  2019, [Abgerufen am 07.09.2020].
 
 \end{thebibliography}

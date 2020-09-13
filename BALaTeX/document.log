@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.2)  7 JUL 2020 08:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.2)  13 SEP 2020 20:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.tex
-(/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.tex
+**/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.tex
+(/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
@@ -432,7 +432,10 @@ Package tocbibind Note: Using section or other style headings.
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count297
 \l__pdf_internal_box=\box58
-) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.aux
+) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.aux
+
+LaTeX Warning: Label `fig:meine-grafik' multiply defined.
+
 
 LaTeX Warning: Label `lst:Beispielcode 1' multiply defined.
 
@@ -563,51 +566,218 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 108.
 LaTeX Info: Redefining \pageref on input line 108.
 LaTeX Info: Redefining \nameref on input line 108.
- (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.out) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.out)
+ (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.out) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.out)
 \@outlinefile=\write3
 \openout3 = `document.out'.
 
- (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/10-Praeambel/Titlepage.tex [1
+ (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Titlepage.tex [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Synopsis.tex [2
 
-]) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/10-Praeambel/Synopsis.tex [3] [4
+]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Jurat.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omlztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omsztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxztmcm.fd) [3
 
-]) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/10-Praeambel/Jurat.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omlztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omsztmcm.fd) (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omxztmcm.fd) [5] [6
+]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Gender.tex) [4
 
-]) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/10-Praeambel/Gender.tex) [7] [8
+] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Thx.tex) [5
 
-] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/10-Praeambel/Thx.tex) [9] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.toc)
-\tf@toc=\write4
-\openout4 = `document.toc'.
-
-
+] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.toc
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
 Make it at least 14.49998pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[10
+[6
 
-] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/20-Einleitung/Aufgabe.tex) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/20-Einleitung/Motivation.tex) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/20-Einleitung/CBC.tex) [1
+])
+\tf@toc=\write4
+\openout4 = `document.toc'.
+
+ [7] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/Aufgabe.tex) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/Motivation.tex) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/CBC.tex
+Underfull \vbox (badness 7540) has occurred while \output is active []
+
+ [1
 
 
-] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/30-Serverless-Theorie/Definition.tex) [2
+]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/Gliederung.tex) [2] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/30-Serverless-Theorie/CloudComputing.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+ [3
 
-] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/80-Ende/Zusammenfassung.tex) [3
+]
+<30-Serverless-Theorie/ServiceModelle.png, id=358, 1335.99126pt x 934.49126pt>
+File: 30-Serverless-Theorie/ServiceModelle.png Graphic file (type png)
+<use 30-Serverless-Theorie/ServiceModelle.png>
+Package pdftex.def Info: 30-Serverless-Theorie/ServiceModelle.png  used on input line 38.
+(pdftex.def)             Requested size: 455.24411pt x 318.43578pt.
+ [4
 
-] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/80-Ende/Ausblick.tex) [4] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.bbl
+ </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/30-Serverless-Theorie/ServiceModelle.png>] [5] [6]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/30-Serverless-Theorie/Serverless.tex [7] [8] [9]) [10] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/40-AWS/Allgemein.tex) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/40-AWS/Dienste.tex [11
 
-LaTeX Warning: Empty `thebibliography' environment on input line 10.
+] [12]
+Underfull \vbox (badness 1052) has occurred while \output is active []
 
-) [5] (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/90-Anhang/Teil1.tex (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/99-Format/Java/JavaStyle.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-))
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 4.
+ [13]
+LaTeX Font Info:    Trying to load font information for OMS+ptm on input line 117.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 147.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (34.36087pt too wide) in paragraph at lines 147--148
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[14] [15] [16]) [17] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Imp-Allgemein.tex
+<50-Implementierung/Architektur.png, id=516, 884.30376pt x 692.5875pt>
+File: 50-Implementierung/Architektur.png Graphic file (type png)
+<use 50-Implementierung/Architektur.png>
+Package pdftex.def Info: 50-Implementierung/Architektur.png  used on input line 5.
+(pdftex.def)             Requested size: 455.24411pt x 356.55444pt.
+) [18
+
+ </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Architektur.png>] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Zusammenfassung.tex) [19
+
+] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Ausblick.tex) [20] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.bbl
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 12.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Underfull \hbox (badness 2717) in paragraph at lines 16--18
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Aws am-plify\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / amplify/$[][]\OT1/ptm/m/n/12 , 2020,
+ []
+
+
+Underfull \hbox (badness 1648) in paragraph at lines 25--27
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Aws ap-psync\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / appsync/$[][]\OT1/ptm/m/n/12 , 2020,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Ser-ver-less ar-chi-tec-tu-res with aws lamb-da\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--32
+\OT1/pcr/m/n/12 d1\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 awsstatic\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / whitepapers / serverless -[] architectures -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--37
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist ama-zon ela-stic con-tai-ner ser-vice?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--37
+\OT1/pcr/m/n/12 / / docs\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de _ de / AmazonECS / latest /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--42
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist aws?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / what -[] is -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+[]\OT1/ptm/m/n/12 Back4App, \OT1/ptm/m/it/12 Gra-ph-ql vs rest\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / medium\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / @back4apps /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+\OT1/ptm/m/it/12 cloud\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 crn\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / news / security / check -[] point -[] to -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--62
+\OT1/pcr/m/n/12 buy -[] serverless -[] security -[] firm -[] protego -[] to -[] protect -[] cloud$[][]\OT1/ptm/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+[]\OT1/ptm/m/n/12 Microsoft Azu-re, \OT1/ptm/m/it/12 Was ist cloud com-pu-ting?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+\OT1/pcr/m/n/12 azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de / overview / what -[] is -[] cloud -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--67
+\OT1/pcr/m/n/12 computing / #cloud -[] deployment -[] types$[][]\OT1/ptm/m/n/12 , 2020, [Ab-ge-ru-fen am
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--72
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist de-vops?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist saas? saas (software-as-a-service)\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
+\OT1/pcr/m/n/12 azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de / overview / what -[] is -[] saas/$[][]\OT1/ptm/m/n/12 , 2020,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--87
+[]\OT1/ptm/m/n/12 Moritz St[]uck-ler, \OT1/ptm/m/it/12 Was ist ei-gent-lich github?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / t3n\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 de / news /
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+[]\OT1/ptm/m/n/12 Red Hat, Inc., \OT1/ptm/m/it/12 Zu-stands-be-haf-tet oder zu-stands-los?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+\OT1/pcr/m/n/12 www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 redhat\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / topics / cloud -[] native -[] apps / stateful -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
+[][]$\OT1/pcr/m/n/12 https : / / aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / blogs / architecture / things -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--98
+\OT1/pcr/m/n/12 to -[] consider -[] when -[] you -[] build -[] a -[] graphql -[] api -[] with -[] aws -[]
+ []
+
+
+Underfull \hbox (badness 3189) in paragraph at lines 104--106
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Sche-mas and ty-pes\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / graphql\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / learn / schema/$[][]\OT1/ptm/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 6236) in paragraph at lines 108--112
+[]\OT1/ptm/m/n/12 Tilman Wit-ten-horst, \OT1/ptm/m/it/12 Bun-des-po-li-zei spei-chert bodycam-aufnahmen in ama-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
+\OT1/ptm/m/it/12 z-ons aws-cloud\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 heise\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 de / newsticker / meldung /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
+\OT1/pcr/m/n/12 Bundespolizei -[] speichert -[] Bodycam -[] Aufnahmen -[] in -[] Amazons -[]
+ []
+
+) [22] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/Teil1.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/Java/JavaStyle.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+))
 
 Package Listings Warning: Text dropped after begin of listing on input line 4.
 
@@ -619,9 +789,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/90-Anhang/Teil2.tex (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/99-Format/Perl/PerlStyle.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/Teil2.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/Perl/PerlStyle.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ))
 
@@ -632,7 +800,7 @@ Package Listings Warning: Text dropped after begin of listing on input line 4.
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1]) (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/90-Anhang/Lambda.tex (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/99-Format/JavaScript/JSStyle.tex)
+ [1]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/Lambda.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
 
 Package Listings Warning: Text dropped after begin of listing on input line 4.
 
@@ -640,32 +808,32 @@ Package Listings Warning: Text dropped after begin of listing on input line 4.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 263.
  [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
- (/Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 263.
+ (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 263.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 263.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 9A02AD77DB4D3A4C2D1D1786293EA52F;769.
+(rerunfilecheck)             Checksum: E02DF6240A178394951906D25B2CD1A5;3485.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 10871 strings out of 480608
- 162242 string characters out of 5903631
- 678762 words of memory out of 5000000
- 26216 multiletter control sequences out of 15000+600000
- 567095 words of font info for 99 fonts, out of 8000000 for 9000
+ 11165 strings out of 480608
+ 167712 string characters out of 5903631
+ 683791 words of memory out of 5000000
+ 26356 multiletter control sequences out of 15000+600000
+ 581730 words of font info for 131 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,76p,1253b,2361s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,76p,1255b,2361s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/wieczorek/Documents/Bachelorarbeit/LaTeX/BALaTeX/document.pdf (20 pages, 104945 bytes).
+Output written on /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.pdf (34 pages, 274108 bytes).
 PDF statistics:
- 430 PDF objects out of 1000 (max. 8388607)
- 397 compressed objects within 4 object streams
- 213 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 887 PDF objects out of 1000 (max. 8388607)
+ 831 compressed objects within 9 object streams
+ 328 named destinations out of 1000 (max. 500000)
+ 411 words of extra memory for PDF output out of 10000 (max. 10000000)
 

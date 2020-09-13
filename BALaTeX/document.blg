@@ -2,47 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: document.aux
 The style file: amsalpha.bst
-I found no \citation commands---while reading file document.aux
 Database file #1: cite.bib
-You've used 0 entries,
+You've used 21 entries,
             2624 wiz_defined-function locations,
-            564 strings with 4454 characters,
-and the built_in function-call counts, 38 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 10
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 2
-int.to.chr$ -- 1
+            662 strings with 7116 characters,
+and the built_in function-call counts, 5589 in all, are:
+= -- 494
+> -- 138
+< -- 21
++ -- 43
+- -- 32
+* -- 338
+:= -- 792
+add.period$ -- 21
+call.type$ -- 21
+change.case$ -- 105
+chr.to.int$ -- 10
+cite$ -- 21
+duplicate$ -- 315
+empty$ -- 568
+format.name$ -- 74
+if$ -- 1200
+int.to.chr$ -- 12
 int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 10
-num.names$ -- 0
-pop$ -- 0
+missing$ -- 21
+newline$ -- 73
+num.names$ -- 53
+pop$ -- 231
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 126
 quote$ -- 0
-skip$ -- 2
+skip$ -- 204
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
-text.prefix$ -- 0
+substring$ -- 147
+swap$ -- 21
+text.length$ -- 21
+text.prefix$ -- 21
 top$ -- 0
-type$ -- 0
+type$ -- 168
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 9
-(There was 1 error message)
+while$ -- 32
+width$ -- 25
+write$ -- 240

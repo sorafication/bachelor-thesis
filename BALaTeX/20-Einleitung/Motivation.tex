@@ -1,11 +1,18 @@
 \subsection{Motivation}
-
+\label{Motivation}
 Die Abteilung Datacenter and Clouds innerhalb von CBC beschäftigt sich mittlerweile seit einigen Jahren mit Cloud Infrastruktur.
-Zu Beginn wurden größenteils dynamisch Linux Server mit einer SQL Datenbank und einem Loadbalancer realisert(Infrastructure as a Service).
-Mit der Zeit wurden auch Container basierte Varianten sowie Platform as a Service Lösungen umgesetzt. Mittlerweile gibt es den Wunsch sich auch
-mit Function as a Service zu beschäftigen um vorallem eine schnelle Bereitstellung von Diensten zu geringen Kosten zu ermöglichen.
+Zu Beginn wurden größenteils dynamisch Linux Server mit einer relationelen Datenbank und einem Loadbalancer realisert(Infrastructure as a Service).
+Mit der Zeit wurden auch containerbasierte Varianten mit Docker sowie Platform as a Service Lösungen umgesetzt.  Function as a Service wurde
+bisher nur mit Amazon Web Services Dienst Lambda realisiert. Mittlerweile gibt es den Wunsch sich intensiv
+mit Function as a Service zu beschäftigen um vor allem eine schnelle Bereitstellung von Diensten zu geringen Kosten zu ermöglichen.
+Webanwendungen sollen schneller bereitgestellt werden ohne dass Server konfiguriert und gewartet werden müssen.
 
-Da sehr viele Firmen innerhalb der Mediengruppe RTL mit AWS und anderen Cloud Providern intensiv arbeiten ist zum Beispiel die Kostenzuweisung unübersichtlich geworden.
-Deshalb besteht innerhalb der Abteilung Datacenter and Clouds der Wunsch nach einer modernen Web Applikation welche bestimmte Informationen der jeweiligen Cloud Provider
-zentral sammelt und zur Verfügung stellt. Im Rahmen der Bachelorarbeit soll dafür ein Prototyp entstehen der effizient und einfach in Zukunft um weitere Anforderungen erweitert
+Da sehr viele Firmen innerhalb der Mediengruppe RTL intensiv mit AWS und anderen Cloud Providern arbeiten ist die Kostenzuweisung unübersichtlich geworden.
+Jeder Cloud Provider stellt seine Abrechnungen auf unterschiedliche Weise dar und alle Daten müssen unterschiedlich aufbereitet werden.
+AWS exportiert die Abrechnungen monatlich in dem Cloud Speicher S3, wohingegen Google Cloud Plattform alle Daten in ein SQL ähnliches Data Warehouse speichert.
+Zudem ist es notwendig innerhalb die Kosten innerhalb der Mediengruppe RTL intern Abteilungen zuzuweisen und abzuschreiben.
+
+Deshalb besteht innerhalb der Abteilung Datacenter and Clouds der Wunsch nach einer modernen Web Applikation welche die
+Informationen der jeweiligen Cloud Provider zentral sammelt und zur Verfügung stellt. Zu den Informationen gehören Daten zu den Kosten, Abrechnungen, verwendete Ressourcen und nach Bedarf weitere.
+ Im Rahmen der Bachelorarbeit soll dafür ein Prototyp entstehen der effizient und einfach in Zukunft um weitere Anforderungen erweitert
 werden kann.
