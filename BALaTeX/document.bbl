@@ -5,40 +5,118 @@
   \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
 }
 \providecommand{\href}[2]{#2}
-\begin{thebibliography}{{Ama}20d}
+\begin{thebibliography}{{Ama}20m}
+
+\bibitem[{Ale}17]{Datenbankvergleich}
+{Alexander Lapp / Nico Litzel}, \emph{Big data, sql und nosql – eine kurze
+  Übersicht},
+  \url{https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/},
+  2017, [Abgerufen am 07.09.2020].
 
 \bibitem[{Ama}20a]{APIGateway}
 {Amazon Web Services}, \emph{Amazon api gateway},
   \url{https://aws.amazon.com/de/api-gateway/}, 2020, [Abgerufen am
   07.09.2020].
 
-\bibitem[{Ama}20b]{AWSAmplify}
+\bibitem[{Ama}20b]{APIGWPrice}
+\bysame, \emph{Amazon api gateway preise},
+  \url{https://aws.amazon.com/de/api-gateway/pricing/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Ama}20c]{CognitoUebersicht}
+\bysame, \emph{Amazon cognito}, \url{https://aws.amazon.com/de/cognito/}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20d]{CognitoPreise}
+\bysame, \emph{Amazon cognito-preise},
+  \url{https://aws.amazon.com/de/cognito/pricing/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Ama}20e]{DynamoDBPreise}
+\bysame, \emph{Amazon dynamodb}, \url{https://aws.amazon.com/de/dynamodb/},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20f]{RDS}
+\bysame, \emph{Amazon relational database service (rds)},
+  \url{https://aws.amazon.com/de/rds/}, 2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20g]{AWSAmplify}
 \bysame, \emph{Aws amplify}, \url{https://aws.amazon.com/de/amplify/}, 2020,
   [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20c]{AWSAmplifyKomponenten}
+\bibitem[{Ama}20h]{AWSAmplifyKomponenten}
 \bysame, \emph{Aws amplify features},
   \url{https://aws.amazon.com/de/amplify/features/?nc1=h_ls}, 2020, [Abgerufen
   am 07.09.2020].
 
-\bibitem[{Ama}20d]{AppSync}
+\bibitem[{Ama}20i]{AppSync}
 \bysame, \emph{Aws appsync}, \url{https://aws.amazon.com/de/appsync/}, 2020,
   [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20e]{AWSWhitepaper}
+\bibitem[{Ama}20j]{AppSyncPreise}
+\bysame, \emph{Aws appsync – preise},
+  \url{https://aws.amazon.com/de/appsync/pricing/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Ama}20k]{LambdaPreise}
+\bysame, \emph{Aws lambda – preise},
+  \url{https://aws.amazon.com/de/lambda/pricing/}, 2020, [Abgerufen am
+  07.09.2020].
+
+\bibitem[{Ama}20l]{SDKListAccounts}
+\bysame, \emph{Class: Aws.organizations},
+  \url{https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Organizations.html#listAccounts-property},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20m]{Cognito2}
+\bysame, \emph{Integration von amazon cognito in web- und mobile apps},
+  \url{https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/cognito-integrate-apps.html},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20n]{DynamoDB}
+\bysame, \emph{Preise für on-demand-kapazität},
+  \url{https://aws.amazon.com/de/dynamodb/pricing/on-demand/}, 2020, [Abgerufen
+  am 07.09.2020].
+
+\bibitem[{Ama}20o]{AWSWhitepaper}
 \bysame, \emph{Serverless architectures with aws lambda},
   \url{https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20f]{AWSECS}
+\bibitem[{Ama}20p]{LambdaDynamo}
+\bysame, \emph{Verwenden von aws lambda mit amazon dynamodb},
+  \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/with-ddb.html}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20q]{LambdaDienste}
+\bysame, \emph{Verwenden von aws lambda mit sonstigen services},
+  \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/lambda-services.html},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20r]{Cognito1}
+\bysame, \emph{Was ist amazon cognito?},
+  \url{https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/what-is-amazon-cognito.html},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20s]{AWSECS}
 \bysame, \emph{Was ist amazon elastic container service?},
   \url{https://docs.aws.amazon.com/de_de/AmazonECS/latest/developerguide/Welcome.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20g]{AWSAllgemein}
+\bibitem[{Ama}20t]{AWSAllgemein}
 \bysame, \emph{Was ist aws?},
   \url{https://aws.amazon.com/de/what-is-aws/?nc1=f_cc}, 2020, [Abgerufen am
   07.09.2020].
+
+\bibitem[{Ama}20u]{LambdaZitat}
+\bysame, \emph{Was ist aws lambda?},
+  \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/welcome.html}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Apo}20]{Apollo}
+{Apollo Graph Inc.}, \emph{Caching},
+  \url{https://www.apollographql.com/docs/apollo-server/performance/caching/},
+  2020, [Abgerufen am 07.09.2020].
 
 \bibitem[{Bac}20a]{API}
 {Back4App}, \emph{Graphql vs rest},

@@ -1,8 +1,6 @@
 \subsection{Allgemeines}
 
-Bevor man sich mit dem Design und der Implementierung von Serverless Architektur beschäftigen kann,
-ist es notwendig sowohl Begriffe wie Cloud Computing und Serverless zu erklären als auch alle wichtigen Cloud Computing-Modelle
-darzustellen und miteinander zu vergleichen.
+Bevor man sich mit dem Design und der Implementierung von Serverless Architektur beschäftigen kann, ist es notwendig sowohl Begriffe wie Cloud Computing und Serverless zu erklären als auch alle wichtigen Cloud Computing-Modelle darzustellen und miteinander zu vergleichen.
 
 Das Modell Function as a Service ist eine logische Fortführung der bisher existierenden Servicemodelle.
 Somit sind auch diese Grundvoraussetzung für das Thema Serverless
@@ -10,19 +8,19 @@ Im folgenden Abschnitt werden all diese erforderlichen Voraussetzungen geschaffe
 
 
 \subsection{Definition und Erläuterung}
-Der Begriff Cloud Computing beschreibt im wesentlichen die Bereitstellung von Rechnerressourcen über das Internet.
+Der Begriff Cloud Computing beschreibt im Wesentlichen die Bereitstellung von Rechnerressourcen über das Internet.
 Hierbei kann es sich um jede Art von Ressourcen handeln. Dazu zählt zum Beispiel die Netzwerkinfrastruktur, Server, Speicher, Datenbanken aber auch Software.
-Anwender zahlen nur die tatsächlich genutzte Leistung und können den Bedarf jederzeit flexibel anpassen. Lokal muss in der Regel nur ein
-geeigneter Client installiert sein, etwa ein Webbrowser.
+Anwender zahlen nur die tatsächlich genutzte Leistung und können den Bedarf jederzeit flexibel anpassen.
+Lokal muss in der Regel nur ein geeigneter Client installiert sein, etwa ein Webbrowser.
 
 Die wichtigsten Vorteile gegenüber einer On Premises-Landschaft sind die schnelle Verfügbarkeit und Skalierung von Diensten, sowie keine Kosten im Voraus.
 Durch den Einsatz von Cloudtechnologien verlagert sich das Kostenmodel von Capex\footnote{ Capex(Capital Expenditure) bezeichnet Investitionen und Ausgaben die einmalig getätigt werden
 um den Umsatz zu erhöhen. Dazu gehört zum Beispiel die Anschaffung von neuer Hardware. } zu Opex\footnote{Opex(Operational Expenditure) bezeichnet wiederkehrende Kosten wie Verwaltungs- und Betriebskosten.
 Auch fallen mittlerweile viele Softwarelizenzen regelmäßig an. }.
-Mit einem Knopfdruck ist es möglich beliebig\footnote{Das Wort beliebig ist nicht sinngemäß zu verstehen. Auch Cloud Provider haben nur eine endliche
-Anzahl von Kapazitäten und geben den Kunden diese nicht in vollem Ausmaß frei. Jede Umgebung eines Kunden hat bestimmte Limitierungen pro Service
-die jedoch bei Bedarf eventuell angepasst werden können. AWS erlaubt beispielsweise pro Region und Account 2880 vCPUs für Standardinstanzen }
-viele Ressourcen und Dienste hochzufahren und zu verwenden.
+Mit einem Knopfdruck ist es möglich beliebig\footnote{Das Wort beliebig ist nicht sinngemäß zu verstehen.
+Auch Cloud Provider haben nur eine endliche Anzahl von Kapazitäten und geben den Kunden diese nicht in vollem Ausmaß frei.
+Jede Umgebung eines Kunden hat bestimmte Limitierungen pro Service, die jedoch bei Bedarf eventuell angepasst werden können.
+AWS erlaubt beispielsweise pro Region und Account 2880 vCPUs für Standardinstanzen } viele Ressourcen und Dienste hochzufahren und zu verwenden.
 Je nach Servicemodell verschiebt sich der Verantwortlichkeitsbereich zwischen dem Cloud Provider und dem Anwender.
 \cite[]{CloudComputingDef}
 
@@ -42,18 +40,15 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
 
 
    \subsubsection{IaaS: Infrastructure as a Service}
-   Unter dem Begriff Infrastructure as a Service, kurz IaaS, versteht man Infrastruktur
-   bei der Administratoren bzw. Anwender sowohl die größte Kontrolle als auch die höchste Verantwortung tragen.
-   Der Cloud Provider kümmert sich nur um die nötige Infrastruktur um Computing-Ressourcen über das
-   Internet zur Verfügung stellen zu können. Dazu gehört der Erwerb und Betrieb von Servern, Switchen, Routern und Speichersystemen und der
-   Virtualisierung von Maschinen.(siehe Abbildung 1). Dieses Modell ist am ehesten mit einer On Premises Infrastruktur vergleichbar.
-   Der größter Vorteil jedoch sind die Initialkosten und das Investitionsrisiko. Ist man sich unsicher über die benötigte Rechenleistung
-   oder schwankt diese häufig kann man jederzeit Ressourcen terminieren und Geld sparen.
+   Unter dem Begriff Infrastructure as a Service, kurz IaaS, versteht man Infrastruktur bei der Administratoren bzw. Anwender sowohl die größte Kontrolle als auch die höchste Verantwortung tragen.
+   Der Cloud Provider kümmert sich nur um die nötige Infrastruktur um Computing-Ressourcen über das Internet zur Verfügung stellen zu können.
+   Dazu gehört der Erwerb und Betrieb von Servern, Switchen, Routern und Speichersystemen und der Virtualisierung von Maschinen.(siehe Abbildung 1).
+   Dieses Modell ist am ehesten mit einer On Premises Infrastruktur vergleichbar.
+   Der größter Vorteil jedoch sind die Initialkosten und das Investitionsrisiko.
+   Ist man sich unsicher über die benötigte Rechenleistung oder schwankt diese häufig kann man jederzeit Ressourcen terminieren und Geld sparen.
 
-   Das Betriebssystem inklusive aller damit verbunden Updates, die Regelung aller Zugriffe sowie die Installation
-   und Wartung von Software liegen im Verantwortungsbereich des Kunden.
-   Dieses Modell wird häufig verwendet wenn man eine Hybridlösung mit einer On Premises Landschaft aufbauen möchte oder die eigene Applikation
-   noch nicht für die Anwendung in der Cloud optimiert wurde, man diese aber trotzdem in die Cloud migrieren möchte.\cite[]{CloudComputingDef}
+   Das Betriebssystem inklusive aller damit verbunden Updates, die Regelung aller Zugriffe sowie die Installation und Wartung von Software liegen im Verantwortungsbereich des Kunden.
+   Dieses Modell wird häufig verwendet wenn man eine Hybridlösung mit einer On Premises Landschaft aufbauen möchte oder die eigene Applikation noch nicht für die Anwendung in der Cloud optimiert wurde, man diese aber trotzdem in die Cloud migrieren möchte.\cite[]{CloudComputingDef}
 
    \subsubsection{CaaS: Container as a Service}
    Container as a Service bezeichnet das Bereitstellen sämtlicher Ressourcen zur Verwaltung von Containern und der dort installierten Software.
@@ -64,7 +59,7 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Der bekannteste Dienst Docker unterstützt Windows und Linuxsysteme, sowohl OnPremises als auch in der Cloud.
 
    Das zugrunde liegende Betriebssystem und die Hardware werden für den Container abstrahiert. Dies führt zu einer kürzen Entwicklungszeit.
-   Auch können mehrere Container dasselbe Host Betriebssystem nutzen und sind dadurch schlanker und schneller einsatzbereit als klassiche Virtuelle Maschinen.
+   Auch können mehrere Container dasselbe Host Betriebssystem nutzen und sind dadurch schlanker und schneller einsatzbereit als klassische Virtuelle Maschinen.
    Außerdem erleichtert es das Management von Patches sowie die Sicherstellung der Hochverfügbarkeit.
    Die Skalierung der Container kann der Cloud Provider übernehmen. Auch die Images lassen sich dort hosten und automatisiert deployen.
    In der Regel kommt Docker Swarm oder das von Google entwickelte Kubernetes zum Einsatz.
@@ -79,13 +74,13 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Wie man bereits der Abbildung entnehmen kann, werden bei dem Servicemodell Plattform as a Service auch die Bereiche um die
    Containerbereitstellung sowie die Laufzeitumgebung von dem jeweiligen Cloud Provider übernommen. Für Kunden bzw. Anwender dieses Modells
    entfällt somit die gesamte Verwaltung der zugrunde liegenden Infrastruktur. Im Fokus liegt das Bereitstellen einer Plattform, die das
-   schnelle und kostengünstige entickeln von Anwendungen ermöglicht.
+   schnelle und kostengünstige entwickeln von Anwendungen ermöglicht.
 
 
    Anders als bei den vorherigen Modellen besteht hier keine Möglichkeit auf das Betriebssystem oder die Middleware zuzugreifen.
    Der Dienst muss mittels einer API oder einer Weboberfläche angesprochen werden. Dem Kunden werden zusätzliche Optionen
    zur Verfügung gestellt um leichter Testumgebungen erstellen zu können. Auch gibt es hier bereits vorinstallierte Dienste für Monitoring oder auch Alarme.
-   Als Beispiele lassen sich hier GitHub, Google App Engine oder AWS Elastic Beanstalk nennnen.
+   Als Beispiele lassen sich hier GitHub, Google App Engine oder AWS Elastic Beanstalk nennen.
 
 
    Elastic Beanstalk ist ein Service zum Bereitstellen von Webanwendungen. Da der Cloud Provider deutlich mehr Aufgaben übernimmt, kann der Kunde
@@ -121,12 +116,13 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
 
 
    \subsubsection{FaaS: Function as a Service}
+   \label{FaaS}
    Function as a Service überlässt dem Nutzer nur die Verantwortung über die Business Logik und das Frontend.
    Dieses Modell ist der Kern einer Serverless Anwendung und wird deshalb auch im weiteren Verlauf der Bachelorarbeit für die Implementierung
    verwendet.
    Wichtigstes Prinzip ist, dass der zuvor hochgeladene Code bei bestimmten festgelegten Events\footnote{Event, oder auch Ereignis, meint das reagieren auf eine Statusänderung einer bestimmten Ressource.} reagiert und ausgeführt wird.
    Diese eventbasierten Funktionen ermöglichen dem Entwickler den Code on the fly auszuführen und zu testen.
-   Zudem sind sie stateless bzw. zustandslos. Bei einem Zustandslosen Prozess gibt es keine Verweise oder Kentnisse über bisherige Ereignisse.
+   Zudem sind sie stateless bzw. zustandslos. Bei einem Zustandslosen Prozess gibt es keine Verweise oder Kenntnisse über bisherige Ereignisse.
    Dieser Prozess ist isoliert. Beispielhaft für zustandslose Kommunikation ist ein Web- oder Druckserver.
    Jede Anfrage ist erst einmal unabhängig von bisherigen oder zukünftigen Anfragen.
    Sobald jedoch Tracking-Cookies mit einem eindeutigen Identifikator abgespeichert verwendet werden ändert sich die Kommunikation zu einer zustandsorientierten ab.\cite[]{Zustandslos}
@@ -150,11 +146,11 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    ein Zugang zu einer bestimmten Software bereitgestellt wird und er keine mehr selbst entwickeln muss. Deshalb ist es auch die populärste und
    zugänglichste Form von Cloud Computing. Anders als bei Plattform as a Service wird hier häufig pro Benutzer und Zeitraum abgerechnet. Bei Plattform
    as a Service kann die Abrechnung auch pro Datenmenge und erforderliche Leistung erfolgen.
-   Vorallem Endanwender ohne tiefgreifende IT-Kentnisse können viele solcher Dienste nutzen und davon profitieren. \cite[]{SaaS}
+   Vorallem Endanwender ohne tiefgreifende IT-Kenntnisse können viele solcher Dienste nutzen und davon profitieren. \cite[]{SaaS}
 
    Bekannte Vertreter sind Microsoft 365, GSuite oder auch Slack. Über Microsoft 365 können Anwender die gesamte Microsoft Office Suite sowie Email-Lösungen des Unternehmens nutzen.
    Anwender haben bei diesem Modell das geringste Investitionsrisiko sowie den geringsten
-   Aufwand zur Administrierung. Auf der anderen Seite besteht die Gefahr eine stärkere Abhängigkeit zum jeweiligen Betrieber zu haben sowie weniger Anpassungsmöglichkeiten als bei den bisher vorgestellten
+   Aufwand zur Administration. Auf der anderen Seite besteht die Gefahr eine stärkere Abhängigkeit zum jeweiligen Betreiber zu haben sowie weniger Anpassungsmöglichkeiten als bei den bisher vorgestellten
    Modellen.
    Das Abhängigkeitsverhältnis wird auch als Vendor-Lock-In bezeichnet. Dort wird der Kunde so stark an das Produkt gebunden, dass es er nur schwer
    Produkt bzw. Anbieter wechseln kann.

@@ -19,9 +19,8 @@ Backend Diensten wie Datenbanken oder Authentifizierungsdiensten eine vollwertig
 
 \subsubsection{Richtlinien für Cloud Provider }
 
-Ab wann gilt etwas als Serverless
-
-Das Whitepaper von Amazon \flqq Amazon Web Services – Serverless Architectures with AWS Lambda\frqq
+Ab wann gilt etwas als Serverless?
+Das Whitepaper von Amazon \glqq Amazon Web Services – Serverless Architectures with AWS Lambda\grqq{} \cite[]{AWSWhitepaper}
 stellt hierzu vier Aspekte auf die zutreffen sollten. Diese lauten:
 
 1) Der Anwender muss keine Server hochfahren oder warten. Auch ist er nicht für die Laufzeitumgebung der Software
@@ -34,7 +33,7 @@ sondern durch festlegen von Parametern wie Speicherverbrauch.
 einen Serverless Dienst benutzt ist per Default auch Hochverfügbar.
 
 4) Es dürfen keine Kosten für im Idle Zustand entstehen. Wird der Code nicht ausgeführt kostet er auch nichts.
-\cite[]{AWSWhitepaper}
+
 
 
 \subsubsection{Richtlinien für Entwickler }
@@ -68,7 +67,7 @@ Dadurch, dass bereits viele technische Voraussetzungen vom Cloud Provider übern
 Weiter gibt es weniger Abhängigkeiten zu anderen Abteilungen mehr, da jeder einzelne die gesamte Anwendung selbst erstellen und verwalten kann.
 Die Realisierung von Projekten mithilfe von Serverless Architketur unterstützt dabei die DevOps-Philosophie
 \footnote{DevOps setzt sich aus den Begriffen Development und Operations zusammen. Der Begriff steht für
-das zu­sam­men­schmel­zen von Entwicklung, Betrieb und den operativen Aufgaben einer Anwendung. Das Ziel ist eine effektivere
+das Zu­sam­men­schmel­zen von Entwicklung, Betrieb und den operativen Aufgaben einer Anwendung. Das Ziel ist eine effektivere
 Zusammenarbeit aller Teilbereiche und eine erhöhte Qualität der Anwendung.} und sorgt für mehr Agilität.
 Neben der Realisierung ist auch eine Anpassung an den Markt erleichtert.
 Folglich reduziert sich die Dauer bis zur Veröffentlichung von Testumgebungen oder sogar des gesamten Projektes, auch
@@ -76,7 +75,7 @@ als Time-To-Market bekannt.\cite[]{DevOps}
 
 
 Da die Serverless Architektur noch nicht so lange im Einsatz ist wie die bewährten Alternativen,gibt es zum Beispiel noch nicht
-viele Security Tools oder Frameworks die diese Architektur voll unsterstützen. Das auf Security spezialisierte Unternehmen Checkpoint
+viele Security Tools oder Frameworks die diese Architektur voll unterstützen. Das auf Security spezialisierte Unternehmen Checkpoint
 hat erst im Jahr 2019, durch Zukauf des Firma Protego, ein Tool angeboten. Protego selbst wurde 2017 gegründet und spezialisiert
 sich auf Function as a Service Dienste wie AWS Lambda oder Azure Functions. \cite[]{Checkpoint}
 
@@ -94,7 +93,7 @@ Dadurch dass das Backend nur für einzelne Anforderungen genutzt wird, beinhalte
 in der Regel mehr Funktionen und Logik. Zum Beispiel kann direkt mit Drittanbieter APIs kommuniziert werden ohne das Backend nutzen zu müssen.
 Das führt zu einem schnelleren Feedback für den Anwender und somit zu einer verbesserten Benutzererfahrung.
 
-Insgesamt können Serverless Anwendungen erhebliche Vorteile im Vergleich zu klassichen Anwendungen haben, jedoch
+Insgesamt können Serverless Anwendungen erhebliche Vorteile im Vergleich zu klassischen Anwendungen haben, jedoch
 ist es nicht immer möglich oder profitabel auf diese zu setzen. Vor allem bei größeren, bereits bestehenden Anwendung lohnt es
 sich nicht immer die Architektur zu wechseln, bei neuen und webbasierten Anwendungen kann
 die Architektur ihre Vorteile voll und ganz ausspielen.

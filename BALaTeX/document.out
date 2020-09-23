@@ -25,26 +25,24 @@
 \BOOKMARK [3][-]{subsubsection.3.3.1}{REST API: AWS API Gateway}{subsection.3.3}% 25
 \BOOKMARK [3][-]{subsubsection.3.3.2}{GraphQL API: AWS Appsync}{subsection.3.3}% 26
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Entscheidung}{subsection.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.4}{Datenspeicherung}{section.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.4.1}{AWS RDS}{subsection.3.4}% 29
-\BOOKMARK [3][-]{subsubsection.3.4.2}{AWS DynanoDB}{subsection.3.4}% 30
+\BOOKMARK [2][-]{subsection.3.4}{Datenbanksystem}{section.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.4.1}{SQL: AWS RDS}{subsection.3.4}% 29
+\BOOKMARK [3][-]{subsubsection.3.4.2}{NoSQL: AWS DynamoDB}{subsection.3.4}% 30
 \BOOKMARK [3][-]{subsubsection.3.4.3}{Entscheidung}{subsection.3.4}% 31
-\BOOKMARK [2][-]{subsection.3.5}{Authentifierung}{section.3}% 32
-\BOOKMARK [3][-]{subsubsection.3.5.1}{Alternative}{subsection.3.5}% 33
-\BOOKMARK [3][-]{subsubsection.3.5.2}{AWS Cognito}{subsection.3.5}% 34
-\BOOKMARK [3][-]{subsubsection.3.5.3}{Entscheidung}{subsection.3.5}% 35
-\BOOKMARK [2][-]{subsection.3.6}{Function as a Service Dienst}{section.3}% 36
-\BOOKMARK [3][-]{subsubsection.3.6.1}{AWS Lambda}{subsection.3.6}% 37
-\BOOKMARK [3][-]{subsubsection.3.6.2}{Alternative}{subsection.3.6}% 38
-\BOOKMARK [3][-]{subsubsection.3.6.3}{Entscheidung}{subsection.3.6}% 39
-\BOOKMARK [2][-]{subsection.3.7}{Frontend Framework}{section.3}% 40
-\BOOKMARK [3][-]{subsubsection.3.7.1}{React}{subsection.3.7}% 41
-\BOOKMARK [1][-]{section.4}{Implementierung}{}% 42
-\BOOKMARK [1][-]{section.5}{Fazit}{}% 43
-\BOOKMARK [2][-]{subsection.5.1}{Zusammenfassung}{section.5}% 44
-\BOOKMARK [2][-]{subsection.5.2}{Ausblick}{section.5}% 45
-\BOOKMARK [1][-]{subsection.5.2}{Literaturverzeichnis}{}% 46
-\BOOKMARK [1][-]{section*.1}{Anhang}{}% 47
-\BOOKMARK [1][-]{appendix.1.A}{Anhang Teil 1}{}% 48
-\BOOKMARK [1][-]{appendix.1.B}{Anhang Teil 2}{}% 49
-\BOOKMARK [1][-]{appendix.1.C}{Anhang Lambda}{}% 50
+\BOOKMARK [2][-]{subsection.3.5}{Authentifizierung}{section.3}% 32
+\BOOKMARK [3][-]{subsubsection.3.5.1}{AWS Cognito}{subsection.3.5}% 33
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Alternative und Entscheidung}{subsection.3.5}% 34
+\BOOKMARK [2][-]{subsection.3.6}{Backend Logik}{section.3}% 35
+\BOOKMARK [3][-]{subsubsection.3.6.1}{AWS Lambda}{subsection.3.6}% 36
+\BOOKMARK [3][-]{subsubsection.3.6.2}{Entscheidung}{subsection.3.6}% 37
+\BOOKMARK [2][-]{subsection.3.7}{Frontend Framework}{section.3}% 38
+\BOOKMARK [3][-]{subsubsection.3.7.1}{React}{subsection.3.7}% 39
+\BOOKMARK [1][-]{section.4}{Implementierung}{}% 40
+\BOOKMARK [1][-]{section.5}{Fazit}{}% 41
+\BOOKMARK [2][-]{subsection.5.1}{Zusammenfassung}{section.5}% 42
+\BOOKMARK [2][-]{subsection.5.2}{Ausblick}{section.5}% 43
+\BOOKMARK [1][-]{subsection.5.2}{Literaturverzeichnis}{}% 44
+\BOOKMARK [1][-]{section*.1}{Anhang}{}% 45
+\BOOKMARK [1][-]{appendix.1.A}{Anhang Teil 1}{}% 46
+\BOOKMARK [1][-]{appendix.1.B}{Anhang Teil 2}{}% 47
+\BOOKMARK [1][-]{appendix.1.C}{Anhang Lambda}{}% 48
