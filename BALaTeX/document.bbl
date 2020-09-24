@@ -132,6 +132,16 @@
   applications}, \url{https://geekflare.com/serverless-application-security/},
   2019, [Abgerufen am 07.09.2020].
 
+\bibitem[{Mar}20]{Cache}
+{Marc-Andre Giroux}, \emph{Graphql \& caching: The elephant in the room},
+  \url{https://www.apollographql.com/blog/graphql-caching-the-elephant-in-the-room-11a3df0c23ad/},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Max}20]{JavascriptFrameworks}
+{Maximilian Schwarzmueller}, \emph{Angular vs react vs vue [2020 update]},
+  \url{https://academind.com/learn/angular/angular-vs-react-vs-vue-my-thoughts/},
+  2020, [Abgerufen am 07.09.2020].
+
 \bibitem[{Mic}19]{Checkpoint}
 {Michael Novinson}, \emph{Check point to buy serverless security firm protego
   to protect cloud},
@@ -179,13 +189,24 @@
   \url{https://graphql.org/learn/queries/}, 2020, [Abgerufen am 07.09.2020].
 
 \bibitem[{The}20b]{GraphQL1}
-\bysame, \emph{Schemas and types}, \url{https://graphql.org/learn/schema/},
-  2020, [Abgerufen am 07.09.2020].
+\bysame, \emph{Schemas and types},
+  \url{https://graphql.org/learn/schema/#the-query-and-mutation-types}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{The}20c]{GraphQLHTTP}
+\bysame, \emph{Serving over http},
+  \url{https://graphql.org/learn/serving-over-http/}, 2020, [Abgerufen am
+  07.09.2020].
 
 \bibitem[{Til}19]{AWSPolizei}
 {Tilman Wittenhorst}, \emph{Bundespolizei speichert bodycam-aufnahmen in
   amazons aws-cloud},
   \url{https://www.heise.de/newsticker/meldung/Bundespolizei-speichert-Bodycam-Aufnahmen-in-Amazons-AWS-Cloud-4324689.html},
   2019, [Abgerufen am 07.09.2020].
+
+\bibitem[{W3S}20]{JSX}
+{W3Schools}, \emph{React jsx},
+  \url{https://www.w3schools.com/react/react_jsx.asp}, 2020, [Abgerufen am
+  07.09.2020].
 
 \end{thebibliography}
