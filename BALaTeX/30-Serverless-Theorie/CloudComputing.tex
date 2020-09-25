@@ -14,7 +14,7 @@ Anwender zahlen nur die tatsächlich genutzte Leistung und können den Bedarf je
 Lokal muss in der Regel nur ein geeigneter Client installiert sein, etwa ein Webbrowser.
 
 Die wichtigsten Vorteile gegenüber einer On Premises-Landschaft sind die schnelle Verfügbarkeit und Skalierung von Diensten, sowie keine Kosten im Voraus.
-Durch den Einsatz von Cloudtechnologien verlagert sich das Kostenmodel von Capex\footnote{ Capex(Capital Expenditure) bezeichnet Investitionen und Ausgaben die einmalig getätigt werden
+Durch den Einsatz von Cloudtechnologien verlagert sich das Kostenmodel von Capex\footnote{ Capex(Capital Expenditure) bezeichnet Investitionen und Ausgaben die einmalig getätigt werden,
 um den Umsatz zu erhöhen. Dazu gehört zum Beispiel die Anschaffung von neuer Hardware. } zu Opex\footnote{Opex(Operational Expenditure) bezeichnet wiederkehrende Kosten wie Verwaltungs- und Betriebskosten.
 Auch fallen mittlerweile viele Softwarelizenzen regelmäßig an. }.
 Mit einem Knopfdruck ist es möglich beliebig\footnote{Das Wort beliebig ist nicht sinngemäß zu verstehen.
@@ -27,6 +27,7 @@ Je nach Servicemodell verschiebt sich der Verantwortlichkeitsbereich zwischen de
 \clearpage
 
 \subsection{Cloud Computing-Modelle}
+\label{Servicemodelle}
 Zur Veranschaulichung der unterschiedlichen Servicemodelle dient folgende Grafik.
 Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
 
@@ -43,29 +44,31 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Unter dem Begriff Infrastructure as a Service, kurz IaaS, versteht man Infrastruktur bei der Administratoren bzw. Anwender sowohl die größte Kontrolle als auch die höchste Verantwortung tragen.
    Der Cloud Provider kümmert sich nur um die nötige Infrastruktur um Computing-Ressourcen über das Internet zur Verfügung stellen zu können.
    Dazu gehört der Erwerb und Betrieb von Servern, Switchen, Routern und Speichersystemen und der Virtualisierung von Maschinen.(siehe Abbildung 1).
-   Dieses Modell ist am ehesten mit einer On Premises Infrastruktur vergleichbar.
-   Der größter Vorteil jedoch sind die Initialkosten und das Investitionsrisiko.
-   Ist man sich unsicher über die benötigte Rechenleistung oder schwankt diese häufig kann man jederzeit Ressourcen terminieren und Geld sparen.
+   Dieses Modell ist am ehesten mit einer On Premises Infrastruktur vergleichbar und bietet eine hohe Vertrautheit und Ähnlichkeit zu diesen Systemen.
+   Im direkten Vergleich muss man bei einer Cloud-Lösung, irrelevant welches Servicemodell, kein Investitionsrisiko eingehen.
+   Ist man sich unsicher über die benötigte Rechenleistung oder schwankt diese häufig kann, man jederzeit Ressourcen terminieren und Geld sparen.
 
    Das Betriebssystem inklusive aller damit verbunden Updates, die Regelung aller Zugriffe sowie die Installation und Wartung von Software liegen im Verantwortungsbereich des Kunden.
-   Dieses Modell wird häufig verwendet wenn man eine Hybridlösung mit einer On Premises Landschaft aufbauen möchte oder die eigene Applikation noch nicht für die Anwendung in der Cloud optimiert wurde, man diese aber trotzdem in die Cloud migrieren möchte.\cite[]{CloudComputingDef}
+   Dieses Modell wird häufig verwendet, wenn man eine Hybridlösung mit einer On Premises Landschaft aufbauen möchte oder die eigene Applikation noch nicht für die Anwendung in der Cloud optimiert wurde, man diese aber trotzdem in die Cloud migrieren möchte.\cite[]{CloudComputingDef}
 
    \subsubsection{CaaS: Container as a Service}
    Container as a Service bezeichnet das Bereitstellen sämtlicher Ressourcen zur Verwaltung von Containern und der dort installierten Software.
-   Unter Container versteht man ein {}\glqq Standardsoftwarepaket \grqq{} welches {}\glqq den Code einer Anwendung zusammen mit den zugehörigen Konfigurationsdateien,
-   Bibliotheken und den für die Ausführung der Anwendung erforderlichen Abhängigkeiten \grqq{} bündelt. \cite[]{CaaS}
+   Unter Container versteht man ein {}\glqq Standardsoftwarepaket\grqq{} welches {}\glqq den Code einer Anwendung zusammen mit den zugehörigen Konfigurationsdateien,
+   Bibliotheken und den für die Ausführung der Anwendung erforderlichen Abhängigkeiten\grqq{} bündelt. \cite[]{CaaS}
    Dieser gebündelte Container ist leicht portierbar und die Ausführung erfolgt in einer konsistenten Umgebung.
 
-   Der bekannteste Dienst Docker unterstützt Windows und Linuxsysteme, sowohl OnPremises als auch in der Cloud.
+   Der bekannteste Dienst ,um solche Pakete bereitzustellen, Docker unterstützt Windows und Linuxsysteme, sowohl OnPremises als auch in der Cloud.
 
-   Das zugrunde liegende Betriebssystem und die Hardware werden für den Container abstrahiert. Dies führt zu einer kürzen Entwicklungszeit.
+   Das zugrunde liegende Betriebssystem und die Hardware werden für den Container abstrahiert.
+   Dies führt zu einer kürzen Entwicklungszeit, da jeder Container reproduzierbar ist, und nicht individuell an das Betriebssystem angepasst werden muss.
    Auch können mehrere Container dasselbe Host Betriebssystem nutzen und sind dadurch schlanker und schneller einsatzbereit als klassische Virtuelle Maschinen.
    Außerdem erleichtert es das Management von Patches sowie die Sicherstellung der Hochverfügbarkeit.
    Die Skalierung der Container kann der Cloud Provider übernehmen. Auch die Images lassen sich dort hosten und automatisiert deployen.
-   In der Regel kommt Docker Swarm oder das von Google entwickelte Kubernetes zum Einsatz.
+   In der Regel kommt Docker Swarm oder das ursprünglich von Google entwickelte Kubernetes zum Einsatz.
+   Mittlerweile ist Kubernetes Open Source und wird von der Cloud Native Computing Foundation weiterentwickelt.
 
-   Typischerweise werden Container as a Service zur Bereitstellung von Microservices
-   verwendet. Das Container as a Service Angebot des Cloud Providers AWS lautet ECS (Elastic Container Service).
+   Typischerweise werden Container as a Service zur Bereitstellung von Microservices verwendet.
+   Das Container as a Service Angebot des Cloud Providers AWS heißt ECS (Elastic Container Service).
    AWS bietet Nutzern die Möglichkeit ihre Container entweder Serverless oder auf EC2-Instanzen\footnote{Amazon Elastic Compute Cloud-Instances(EC2) ist ein AWS Service
    zur Bereitstellung von Virtuellen Maschinen in der Cloud. Es gibt viele verschiedene Instanztypen für jede Art von Anforderung.
    Zum Beispiel bietet AWS CPU, GPU oder RAM optimierte Instanzen in unterschiedlichen Größen an. } zu hosten. \cite[]{AWSECS}
@@ -78,9 +81,10 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
 
 
    Anders als bei den vorherigen Modellen besteht hier keine Möglichkeit auf das Betriebssystem oder die Middleware zuzugreifen.
-   Der Dienst muss mittels einer API oder einer Weboberfläche angesprochen werden. Dem Kunden werden zusätzliche Optionen
-   zur Verfügung gestellt um leichter Testumgebungen erstellen zu können. Auch gibt es hier bereits vorinstallierte Dienste für Monitoring oder auch Alarme.
-   Als Beispiele lassen sich hier GitHub, Google App Engine oder AWS Elastic Beanstalk nennen.
+   Der Dienst muss mittels einer API oder einer Weboberfläche angesprochen werden.
+   Dem Kunden werden zusätzliche Optionen zur Verfügung gestellt um leichter Testumgebungen erstellen zu können.
+   Auch gibt es hier bereits vorinstallierte Dienste für Monitoring oder auch Alarme.
+   Als Beispiele lassen sich hier etwa GitHub, Google App Engine oder AWS Elastic Beanstalk nennen.
 
 
    Elastic Beanstalk ist ein Service zum Bereitstellen von Webanwendungen. Da der Cloud Provider deutlich mehr Aufgaben übernimmt, kann der Kunde
@@ -90,22 +94,21 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Direkte Änderungen am System, wie eine Anpassung des Logverhaltens von Nginx, ist nicht möglich. Dafür bietet der Dienst
    Nutzern einen besonders leichten Start in die Entwicklung.
 
-   GitHub ist ein Web-basierter Dienst der öffentlich im Internet erreichbar ist und Git für die Versionsverwaltung bereitstellt sowie weitere Funktionen zugänglich macht.
-   Github wurde 2008 wurde gegründet und 2018 von Microsoft aufgekauft. Auf dieser Plattform kann jede Person ihren Code(bzw. Dateien) veröffentlichen und teilen.
-   Jeder Benutzer hat die Möglichkeit jedes andere öffentliche Repository zu klonen und selbst daran zu arbeiten, oder auch dem Besitzer eines Repositories
+   GitHub ist ein Web-basierter Dienst, der öffentlich im Internet erreichbar ist, und Git für die Versionsverwaltung bereitstellt sowie weitere Funktionen zugänglich macht.
+   Github wurde 2008 gegründet und 2018 von Microsoft aufgekauft. Auf dieser Plattform kann jede Person ihren Code(bzw. Dateien) veröffentlichen und teilen.
+   Jeder Benutzer hat die Möglichkeit jedes andere öffentliche Repository zu klonen und selbst daran zu arbeiten oder auch dem Besitzer eines Repositories
    Anpassungen an den Code anzubieten. GitHub bietet viele Integrationen zu Cloud Providern an. So ist es möglich eine CI/CD\footnote{CI/CD steht für
    Continuous Integration, Continuous Delivery und Continuous Deployment und beschreibt eine Brücke zwischen Integrität von Daten und Automatisierung von Prozessen.
-   Mit Continuous Integration wird, durch Zusammenführen und Testen, stets die Integrität des Quellcodes geprüft. Durch Continuous Deployment kann ein Software Paket
-   automatisch in beliebe Umgebungen deployed werden. } Pipeline aufzubauen um voll automatisiert
-   Ressourcen in der Cloud hochfahren zu können. \cite[]{GitHub}
+   Mit Continuous Integration wird, durch Zusammenführen und Testen, stets die Integrität des Quellcodes geprüft.
+   Durch Continuous Deployment kann ein Softwarepaket automatisch in beliebige Umgebungen deployed werden. } Pipeline aufzubauen um voll automatisiert Ressourcen in der Cloud hochfahren zu können. \cite[]{GitHub}
 
 
    \subsubsection{BaaS: Backend as a Service}
-   Dieses Servicemodell beinhaltet alle benötigten Dienste um ein Backend für Entwickler zur Verfügung zu stellen.
+   Dieses Servicemodell beinhaltet alle benötigten Dienste, um ein Backend für Entwickler zur Verfügung zu stellen.
    Entwicklern wird zum Beispiel ein Endpunkt bereitgestellt um Funktionen wie Push-Benachrichtigungen oder eine Social Media Integration verwenden zu können.
-   Auch wird eine Datenspeicherung in SQL oder NoSQL Datenbanken sowie das Hosting von Websites angeboten. Insgesamt gibt es einige Überschneidungen zu den anderen Servicemodellen.
+   Auch wird eine Datenspeicherung in relationale oder nicht relationale Datenbanken sowie das Hosting von Websites angeboten. Insgesamt gibt es einige Überschneidungen zu den anderen Servicemodellen.
    Backend as a Service wird genau wie Function as a Service als Serverless Dienst angeboten, hat jedoch keinen eventbasierten Ansatz oder die Möglichkeit ein Frontend anzubieten.
-   Genau wie bei Plattform as a Service werden einem viele Funktionen direkt vom Betreiber angeboten.
+   Genau wie bei Plattform as a Service werden viele Funktionen direkt vom Betreiber angeboten.
 
    Häufig wird dieses Modell in Kombinationen mit Function as a Service genutzt. Beide Modelle ergänzen sich und können in Kombination eine vollwertige
    Webanwendungen ermögliche. (Siehe 2.4 Serverless).
@@ -120,42 +123,39 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Function as a Service überlässt dem Nutzer nur die Verantwortung über die Business Logik und das Frontend.
    Dieses Modell ist der Kern einer Serverless Anwendung und wird deshalb auch im weiteren Verlauf der Bachelorarbeit für die Implementierung
    verwendet.
-   Wichtigstes Prinzip ist, dass der zuvor hochgeladene Code bei bestimmten festgelegten Events\footnote{Event, oder auch Ereignis, meint das reagieren auf eine Statusänderung einer bestimmten Ressource.} reagiert und ausgeführt wird.
+   Wichtigstes Prinzip ist, dass der zuvor hochgeladene Code bei bestimmten festgelegten Events\footnote{Event, oder auch Ereignis, meint das Reagieren auf eine Statusänderung einer bestimmten Ressource.} reagiert und ausgeführt wird.
    Diese eventbasierten Funktionen ermöglichen dem Entwickler den Code on the fly auszuführen und zu testen.
    Zudem sind sie stateless bzw. zustandslos. Bei einem Zustandslosen Prozess gibt es keine Verweise oder Kenntnisse über bisherige Ereignisse.
    Dieser Prozess ist isoliert. Beispielhaft für zustandslose Kommunikation ist ein Web- oder Druckserver.
-   Jede Anfrage ist erst einmal unabhängig von bisherigen oder zukünftigen Anfragen.
-   Sobald jedoch Tracking-Cookies mit einem eindeutigen Identifikator abgespeichert verwendet werden ändert sich die Kommunikation zu einer zustandsorientierten ab.\cite[]{Zustandslos}
+   Jede Anfrage ist erst einmal unabhängig von bisherigen oder zukünftigen Anfragen.\cite[]{Zustandslos}
 
    Aufgrund der Zustandslosigkeit kann eine Funktion beliebig häufig kopiert und gestartet werden.
-   Dadurch ist es auch besonders einfach diese Funktionen zu skalieren oder Hochverfügbar bereitzustellen. Diese Aufgaben muss der Cloud Provider übernehmen.
-   Es darf keine Bindung an die zugrunde liegende Infrastruktur existieren, da sonst die Zustandslosigkeit verloren ginge.
+   Dadurch ist es auch besonders einfach diese Funktionen zu skalieren oder Hochverfügbar bereitzustellen.
+   Diese Aufgaben muss der Cloud Provider übernehmen.
 
    Insgesamt bietet Function as a Service eine simplifizierte und automatisch skalierte Möglichkeit eventbasierte Funktionen zu erzeugen.
-   Nutzer können sich voll und ganz auf ihre Anwendung konzentrieren.
+   Nutzer können sich auf die Entwicklung ihre Anwendung konzentrieren.
    Auch preislich ist der Function as a Service Ansatz häufig lohnenswert, vorausgesetzt die Anwendung ist auch für den Einsatz optimiert.
    Es muss im Gegensatz zu den anderen Modellen gar keine Pauschale für
    jegliche Infrastruktur bezahlt werden, sondern nur die tatsächliche Nutzung der Funktionen. Wird ein Code also nie ausgelöst, und somit auch nie ausgeführt,
    entstehen auch keine Kosten.
    Prominente Beispiele sind Azure Cloud Functions, Google Cloud Functions und AWS Lambda.
-   Der Dienst AWS Lambda wird für die Implementierung der Anwendung verwendet und im Abschnitt 3.X im Detail erläutert und im Abschnitt 4.X auch
-   implementiert.\cite[]{AWSWhitepaper}
+   Der Dienst AWS Lambda wird für die Implementierung der Anwendung verwendet und im Abschnitt \ref{Lambda} \nameref{Lambda} im Detail erläutert und im Abschnitt 4.X auch
+   implementiert.\cite[]{LambdaZitat}
 
    \subsubsection{SaaS: Software as a Service}
-   Bei Software as a Service hat der Kunde nur noch Zugriff über eine Weboberfläche. Der Unterschied liegt jedoch darin, dass dem Nutzer
-   ein Zugang zu einer bestimmten Software bereitgestellt wird und er keine mehr selbst entwickeln muss. Deshalb ist es auch die populärste und
-   zugänglichste Form von Cloud Computing. Anders als bei Plattform as a Service wird hier häufig pro Benutzer und Zeitraum abgerechnet. Bei Plattform
-   as a Service kann die Abrechnung auch pro Datenmenge und erforderliche Leistung erfolgen.
+   Bei Software as a Service hat der Kunde nur noch Zugriff über eine Weboberfläche.
+   Der Unterschied liegt jedoch darin, dass dem Nutzer ein Zugang zu einer bestimmten Software bereitgestellt wird und er keine mehr selbst entwickeln muss.
+   Deshalb ist es auch die populärste und zugänglichste Form von Cloud Computing.
+   Anders als bei Plattform as a Service wird hier häufig pro Benutzer und Zeitraum abgerechnet.
+   Bei Plattform as a Service kann die Abrechnung auch pro Datenmenge und erforderliche Leistung erfolgen.
    Vorallem Endanwender ohne tiefgreifende IT-Kenntnisse können viele solcher Dienste nutzen und davon profitieren. \cite[]{SaaS}
 
-   Bekannte Vertreter sind Microsoft 365, GSuite oder auch Slack. Über Microsoft 365 können Anwender die gesamte Microsoft Office Suite sowie Email-Lösungen des Unternehmens nutzen.
-   Anwender haben bei diesem Modell das geringste Investitionsrisiko sowie den geringsten
-   Aufwand zur Administration. Auf der anderen Seite besteht die Gefahr eine stärkere Abhängigkeit zum jeweiligen Betreiber zu haben sowie weniger Anpassungsmöglichkeiten als bei den bisher vorgestellten
-   Modellen.
-   Das Abhängigkeitsverhältnis wird auch als Vendor-Lock-In bezeichnet. Dort wird der Kunde so stark an das Produkt gebunden, dass es er nur schwer
-   Produkt bzw. Anbieter wechseln kann.
-   Hat ein Unternehmen alle Daten der Mitarbeiter in Microsoft 365 hinterlegt und nutzt zudem Exchange Online als Email Provider, ist es mit viel Aufwand verbunden
-   zum Beispiel zur Konkurrenz von Google zu wechseln.
+   Bekannte Vertreter sind Microsoft 365, GSuite oder auch Slack.
+   Über Microsoft 365 können Anwender die gesamte Microsoft Office Suite sowie Email-Lösungen des Unternehmens nutzen.
+   Anwender haben bei diesem Modell das geringste Investitionsrisiko sowie den geringsten Aufwand zur Administration.
+   Auf der anderen Seite besteht die Gefahr eine stärkere Abhängigkeit von dem jeweiligen Betreiber zu haben sowie weniger Anpassungsmöglichkeiten als bei den bisher vorgestellten Modellen.
+   Ein sehr großes Abhängigkeitsverhältnis wird auch als Vendor-Lock-In bezeichnet. Dort wird der Kunde so stark an das Produkt gebunden, dass es er nur schwer Produkt bzw. Anbieter wechseln kann.
 
 
 

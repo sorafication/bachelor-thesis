@@ -25,8 +25,8 @@
 \BOOKMARK [3][-]{subsubsection.3.2.2}{GraphQL API: AWS Appsync}{subsection.3.2}% 25
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Entscheidung}{subsection.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.3}{Datenbanksystem}{section.3}% 27
-\BOOKMARK [3][-]{subsubsection.3.3.1}{SQL: AWS RDS}{subsection.3.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.2}{NoSQL: AWS DynamoDB}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Relationale Datenbanken: AWS RDS}{subsection.3.3}% 28
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Nicht relationale Datenbanken: AWS DynamoDB}{subsection.3.3}% 29
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Entscheidung}{subsection.3.3}% 30
 \BOOKMARK [2][-]{subsection.3.4}{Authentifizierung}{section.3}% 31
 \BOOKMARK [3][-]{subsubsection.3.4.1}{AWS Cognito}{subsection.3.4}% 32

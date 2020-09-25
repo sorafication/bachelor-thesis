@@ -1,19 +1,20 @@
 \subsection{Motivation}
 \label{Motivation}
 Die Abteilung Datacenter and Clouds innerhalb von CBC beschäftigt sich mittlerweile seit einigen Jahren mit Cloud Infrastruktur.
-Zu Beginn wurden größenteils dynamisch Linux Server mit einer Datenbank und einem Loadbalancer realisiert(Infrastructure as a Service).
+Zu Beginn wurden größtenteils dynamisch Linux Server mit einer Datenbank und einem Loadbalancer realisiert(Infrastructure as a Service).
 Mit der Zeit wurden auch Container-basierte Varianten mit Docker sowie Platform as a Service Lösungen umgesetzt.
-Function as a Service wurde bisher nur mit Amazon Web Services Dienst Lambda (siehe \ref{Lambda} \nameref{Lambda})realisiert.
+Function as a Service wurde bisher nur mit Amazon Web Services Dienst Lambda (siehe \ref{Lambda} \nameref{Lambda}) realisiert.
 Mittlerweile gibt es den Wunsch sich intensiv mit Function as a Service zu beschäftigen um vor allem eine schnelle Bereitstellung von Diensten zu geringen Kosten zu ermöglichen.
 Webanwendungen sollen schneller bereitgestellt werden, ohne dass Server konfiguriert und gewartet werden müssen.
+Eine genau Erläuterung der genannten \glqq [...] as a Service\grqq{} Begriffe befindet sich im Kapitel \ref{Servicemodelle} \nameref{Servicemodelle}.
 
 Da sehr viele Firmen innerhalb der Mediengruppe RTL intensiv mit AWS und anderen Cloud Providern arbeiten ist die Kostenzuweisung unübersichtlich geworden.
-Jeder Cloud Provider stellt seine Abrechnungen auf unterschiedliche Weise dar und alle Daten müssen unterschiedlich aufbereitet werden.
-AWS exportiert die Abrechnungen monatlich in dem Cloud-Speicher
+Jeder Cloud Provider stellt Informationen zu Kosten und der Abrechnungen auf unterschiedliche Weise dar und alle Daten müssen unterschiedlich aufbereitet werden.
+AWS z.B. exportiert die Abrechnungen monatlich in dem Cloud-Speicher
 S3\footnote{S3 steht für Simple Storage Service und ist ein Objektspeicherservice von Amazon, für eine beliebe Menge von Daten.
 Daten werden in S3 Buckets abgelegt und können aus dem Internet abgerufen werden.
 CBC verwendet S3 für viele unterschiedliche Szenarien, darunter auch das Speichern von Videodateien für den Dienst TVNow.   }, wohingegen Google Cloud Plattform alle Daten in ein SQL ähnliches Data Warehouse speichert.
-Zudem ist es notwendig innerhalb der Mediengruppe RTL intern Abteilungen zuzuweisen und abzuschreiben.
+Zudem ist es notwendig die Kosten der Mediengruppe RTL Abteilungen zuzuweisen und abzuschreiben.
 
 Deshalb besteht innerhalb der Abteilung Datacenter and Clouds der Wunsch nach einer modernen Web Applikation, welche die Informationen der jeweiligen Cloud Provider zentral sammelt und zur Verfügung stellt.
 Zu den Informationen gehören Daten zu den Kosten, Abrechnungen, verwendete Ressourcen und nach Bedarf weitere.
