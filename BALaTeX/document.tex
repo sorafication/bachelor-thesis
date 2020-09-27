@@ -1,6 +1,5 @@
 \documentclass[12pt,titlepage,twoside]{article}
 \usepackage{titlesec}
-
 \usepackage{blindtext}
 
 \usepackage{german}				% deutsche Überschriften etc.
@@ -27,9 +26,12 @@
 }
 \renewcommand{\lstlistlistingname}{Listingverzeichnis}	% header name for the list of listings
 
+\usepackage{spverbatim}
+
 \usepackage{fancyhdr}			% for header line
 \usepackage{booktabs}
 \usepackage{float}
+
 
 \usepackage{diagbox}			% diagonal table cell lines
 
@@ -203,8 +205,9 @@
 \fancyhead[OR]{Implementierung}
 \fancyhead[ER]{Implementierung}
 \fancyfoot[C]{\thepage}
-\section{Implementierung}
+\section{Implementierung aller Komponenten}
 \input{50-Implementierung/Imp-Allgemein.tex}
+\input{50-Implementierung/Imp-Dienste.tex}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

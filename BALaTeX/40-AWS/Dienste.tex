@@ -85,7 +85,7 @@ Hier kosten 0,5 GB an Zwischenspeicher 0,02 USD pro Stunde. Je höher der Speich
 \cite[]{APIGWPrice}
 
 \subsubsection{GraphQL API: AWS Appsync}
-
+\label{GraphQL}
 2015 wurde GraphQL von Facebook veröffentlicht und 2018 in die Linux Foundation\footnote{Die Linux Foundation ist eine gemeinnützige Organisation mit Sitz in der USA.
 Das Ziel ist es Linux zu fördern und das Wachstum zu unterstützen.} ausgegliedert.
 GraphQL APIs arbeiten nicht mit Ressourcen oder mehreren Endpunkten, sondern mit Typen und Feldern.
@@ -445,7 +445,7 @@ Außerdem können Kosten für die SMS-Nachrichten bei der MFA Authentifizierung 
 
 
 \subsubsection{Alternative und Entscheidung}
-
+\label{CognitoEntscheidung}
 Da Amazon Cognito alle gängigen Standards zur Authentifizierung unterstützt, wird auch kein alternativer Dienst angeboten.
 Alle Möglichkeiten werden bedient und mithilfe des Amplify-Frameworks ist eine Implementierung ebenfalls leicht realisierbar.
 Theoretisch ist es nicht einmal notwendig eine eigene Oberfläche zur Anmeldung zu schreiben.
@@ -526,6 +526,7 @@ Die Dauer wird in 100-Millisekunden-Schritten berechnet und der Preis ist je nac
 Anforderungen, zu denen jeder Aufruf oder jede Ereignisbenachrichtigung zählen, kosten 0,20 USD pro 1 Mio. Anforderungen.\cite[]{LambdaPreise}
 
 \subsubsection{Entscheidung}
+\label{LambdaEntscheidung}
 AWS Lambda eignet sich optimal zur Realisierung der Webanwendung.
 Direkt nach Erstellung der Lambda-Funktion und setzen der passenden Berechtigungen kann am Code geschrieben werden.
 Dementsprechend muss keine Zeit für Themen wie Netzwerk, Virtualisierung oder der Laufzeitumgebung vergeudet werden.

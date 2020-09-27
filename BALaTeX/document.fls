@@ -66,6 +66,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/spverbatim/spverbatim.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/spverbatim/spverbatim.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/booktabs/booktabs.sty
@@ -320,6 +322,14 @@ INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementieru
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Architektur.png
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Architektur.png
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Architektur.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Imp-Dienste.tex
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Imp-Dienste.tex
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/AppSync-DynamoDB.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/AppSync-DynamoDB.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/AppSync-DynamoDB.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/IAM-Rolle.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/IAM-Rolle.png
+INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/IAM-Rolle.png
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Zusammenfassung.tex
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Zusammenfassung.tex
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Ausblick.tex

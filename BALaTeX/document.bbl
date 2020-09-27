@@ -78,52 +78,62 @@
   \url{https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Organizations.html#listAccounts-property},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20o]{AmplifyHosting}
+\bibitem[{Ama}20o]{ServiceObject}
+\bysame, \emph{Erstellen und aufrufen von service-objekten},
+  \url{https://docs.aws.amazon.com/de_de/sdk-for-javascript/v2/developer-guide/creating-and-calling-service-objects.html},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20p]{AmplifyHosting}
 \bysame, \emph{Häufig gestellte fragen},
   \url{https://aws.amazon.com/de/amplify/faqs/?nc=sn&loc=5}, 2020, [Abgerufen
   am 07.09.2020].
 
-\bibitem[{Ama}20p]{Cognito2}
+\bibitem[{Ama}20q]{Cognito2}
 \bysame, \emph{Integration von amazon cognito in web- und mobile apps},
   \url{https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/cognito-integrate-apps.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20q]{DynamoDB}
+\bibitem[{Ama}20r]{DynamoDB}
 \bysame, \emph{Preise für on-demand-kapazität},
   \url{https://aws.amazon.com/de/dynamodb/pricing/on-demand/}, 2020, [Abgerufen
   am 07.09.2020].
 
-\bibitem[{Ama}20r]{AWSWhitepaper}
+\bibitem[{Ama}20s]{ImpVoraus}
+\bysame, \emph{Prerequisites},
+  \url{https://docs.amplify.aws/start/getting-started/installation/q/integration/react},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Ama}20t]{AWSWhitepaper}
 \bysame, \emph{Serverless architectures with aws lambda},
   \url{https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20s]{LambdaDynamo}
+\bibitem[{Ama}20u]{LambdaDynamo}
 \bysame, \emph{Verwenden von aws lambda mit amazon dynamodb},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/with-ddb.html}, 2020,
   [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20t]{LambdaDienste}
+\bibitem[{Ama}20v]{LambdaDienste}
 \bysame, \emph{Verwenden von aws lambda mit sonstigen services},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/lambda-services.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20u]{Cognito1}
+\bibitem[{Ama}20w]{Cognito1}
 \bysame, \emph{Was ist amazon cognito?},
   \url{https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/what-is-amazon-cognito.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20v]{AWSECS}
+\bibitem[{Ama}20x]{AWSECS}
 \bysame, \emph{Was ist amazon elastic container service?},
   \url{https://docs.aws.amazon.com/de_de/AmazonECS/latest/developerguide/Welcome.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20w]{AWSAllgemein}
+\bibitem[{Ama}20y]{AWSAllgemein}
 \bysame, \emph{Was ist aws?},
   \url{https://aws.amazon.com/de/what-is-aws/?nc1=f_cc}, 2020, [Abgerufen am
   07.09.2020].
 
-\bibitem[{Ama}20x]{LambdaZitat}
+\bibitem[{Ama}20z]{LambdaZitat}
 \bysame, \emph{Was ist aws lambda?},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/welcome.html}, 2020,
   [Abgerufen am 07.09.2020].
@@ -148,9 +158,14 @@
   2019, [Abgerufen am 07.09.2020].
 
 \bibitem[{Ele}20]{MQTT}
-{Elektronik-Kompendium.de}, \emph{Websockets},
-  \url{https://developer.mozilla.org/de/docs/WebSockets#Documentation}, 2020,
+{Elektronik-Kompendium.de}, \emph{Mqtt - message queue telemetry transport},
+  \url{https://www.elektronik-kompendium.de/sites/net/2204051.htm}, 2020,
   [Abgerufen am 07.09.2020].
+
+\bibitem[{Fac}20]{ReactNew}
+{Facebook Inc.}, \emph{Create a new react app},
+  \url{https://reactjs.org/docs/create-a-new-react-app.html}, 2020, [Abgerufen
+  am 07.09.2020].
 
 \bibitem[{Mar}20]{Cache}
 {Marc-Andre Giroux}, \emph{Graphql \& caching: The elephant in the room},
@@ -193,10 +208,15 @@
   \url{https://t3n.de/news/eigentlich-github-472886/}, 2020, [Abgerufen am
   07.09.2020].
 
-\bibitem[{Moz}20]{Websockets}
-{Mozilla and individual contributors}, \emph{Mqtt - message queue telemetry
-  transport}, \url{https://www.elektronik-kompendium.de/sites/net/2204051.htm},
+\bibitem[{Moz}20a]{Promises}
+{Mozilla and individual contributors}, \emph{Promises benutzen},
+  \url{https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Using_promises},
   2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Moz}20b]{Websockets}
+\bysame, \emph{Websockets},
+  \url{https://developer.mozilla.org/de/docs/WebSockets#Documentation}, 2020,
+  [Abgerufen am 07.09.2020].
 
 \bibitem[{Red}20]{Zustandslos}
 {Red Hat, Inc.}, \emph{Zustandsbehaftet oder zustandslos?},

@@ -36,12 +36,25 @@
 \BOOKMARK [3][-]{subsubsection.3.5.2}{Entscheidung}{subsection.3.5}% 36
 \BOOKMARK [2][-]{subsection.3.6}{Frontend Framework}{section.3}% 37
 \BOOKMARK [2][-]{subsection.3.7}{AWS Amplify}{section.3}% 38
-\BOOKMARK [1][-]{section.4}{Implementierung}{}% 39
-\BOOKMARK [1][-]{section.5}{Fazit}{}% 40
-\BOOKMARK [2][-]{subsection.5.1}{Zusammenfassung}{section.5}% 41
-\BOOKMARK [2][-]{subsection.5.2}{Ausblick}{section.5}% 42
-\BOOKMARK [1][-]{subsection.5.2}{Literaturverzeichnis}{}% 43
-\BOOKMARK [1][-]{section*.1}{Anhang}{}% 44
-\BOOKMARK [1][-]{appendix.1.A}{Anhang Teil 1}{}% 45
-\BOOKMARK [1][-]{appendix.1.B}{Anhang Teil 2}{}% 46
-\BOOKMARK [1][-]{appendix.1.C}{Anhang Lambda}{}% 47
+\BOOKMARK [1][-]{section.4}{Implementierung aller Komponenten}{}% 39
+\BOOKMARK [2][-]{subsection.4.1}{Architekturdiagramm }{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.2}{AWS Accountstruktur }{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.3}{Amplify Voraussetzungen}{section.4}% 42
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Einrichtung Amplify CLI}{subsection.4.3}% 43
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Einrichtung React Projekt}{subsection.4.3}% 44
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Konfiguration Amplify}{subsection.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.4}{Implementierung AppSync und DynamoDB}{section.4}% 46
+\BOOKMARK [2][-]{subsection.4.5}{Implementierung Lambda}{section.4}% 47
+\BOOKMARK [3][-]{subsubsection.4.5.1}{Account\374bergreifender Zugriff}{subsection.4.5}% 48
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Asynchrone Verarbeitung mit NodeJS}{subsection.4.5}% 49
+\BOOKMARK [2][-]{subsection.4.6}{Implementierung Cognito}{section.4}% 50
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Probleme mit AzureAD}{subsection.4.6}% 51
+\BOOKMARK [2][-]{subsection.4.7}{Implementierung Hosting und Ver\366ffentlichung}{section.4}% 52
+\BOOKMARK [1][-]{section.5}{Fazit}{}% 53
+\BOOKMARK [2][-]{subsection.5.1}{Zusammenfassung}{section.5}% 54
+\BOOKMARK [2][-]{subsection.5.2}{Ausblick}{section.5}% 55
+\BOOKMARK [1][-]{subsection.5.2}{Literaturverzeichnis}{}% 56
+\BOOKMARK [1][-]{section*.1}{Anhang}{}% 57
+\BOOKMARK [1][-]{appendix.1.A}{Anhang Teil 1}{}% 58
+\BOOKMARK [1][-]{appendix.1.B}{Anhang Teil 2}{}% 59
+\BOOKMARK [1][-]{appendix.1.C}{Anhang Lambda}{}% 60
