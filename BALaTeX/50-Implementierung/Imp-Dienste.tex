@@ -2,7 +2,7 @@
 Der erste benötigte Dienst für die Webanwendung ist die GraphQL API.
 Mit \verb+amplify add api+ startet der Konfigurationsassistent:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
 Please select from one of the below mentioned services: GraphQL
 Provide API name: amplify-kumo-api
 Choose the default authorization type for the API API key
@@ -12,17 +12,17 @@ Do you want to configure advanced settings for the GraphQL API: No
 Do you have an annotated GraphQL schema? No
 Do you want a guided schema creation? Yes
 What best describes your project:
-Single object with fields (e.g., “Todo” with ID, name, description)
+Single object with fields (e.g., Todo with ID, name, description)
 Do you want to edit the schema now? Yes
 
-\end{verbatim}
+\end{lstlisting}
 
 Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugefügt wird, erfolgt sie solange mittels API Key.
 Nach dem bestätigen des letzten Schrittes, öffnet sich das GraphQL Schema, \verb+schema.graphql+ welches im Projektverzeichnis erstellt wurde. (siehe \ref{GraphQL} \nameref{GraphQL} für weitere Informationen.)
 In dieser Datei werden alle benötigten Objekttypen erstellt.
 Für den ersten Schritt wird nur ein Objekt mit dem Namen Account generiert:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
 type Account @model {
   id: ID!
   accountid: String!
@@ -33,17 +33,19 @@ type Account @model {
 
 }
 
-\end{verbatim}
+\end{lstlisting}
 
 Alle angegeben Felder müssen im späteren Verlauf von der Lambda-Funktion abgerufen und gespeichert werden.
 Mit dem Befehl \verb+amplify push+ wird die API in der Cloud bereitgestellt.
 Im folgenden Dialog besteht die Möglichkeit alle möglichen Mutationen und Queries generieren zu lassen.
-\begin{verbatim}
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+
 # You will be walked through the following questions for GraphQL code generation
 Do you want to generate code for your newly created GraphQL API? Y
 Choose the code generation language target: javascript
 Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y
-\end{verbatim}
+\end{lstlisting}
 
 Sobald der Prozess fertig gestellt ist, sind die Dienste AWS AppSync und DynamoDB konfiguriert.
 In der Webkonsole kann überprüft werden, ob der Vorgang erfolgreich war.
@@ -64,7 +66,8 @@ Die gesamte Backend-Logik wird durch Lambda realisiert.
 Wie bereits erwähnt soll Lambda in regelmäßigen Abständen ausgeführt werden, um die Daten aktuell zu halten.
 Mit dem Befehl \verb+amplify add function+ startet Amplify den Prozess:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+
 [143302S0:amplify-kumo] master # amplify add function
 Using service: Lambda, provided by: awscloudformation
   Provide a friendly name for your resource to be used as a label for this category in the project: getallaccounts
@@ -77,7 +80,7 @@ Using service: Lambda, provided by: awscloudformation
   At which interval should the function be invoked: Daily
   Select the start time (use arrow keys): 06:35 PM
 Successfully added resource getallaccounts locally.
-\end{verbatim}
+\end{lstlisting}
 
 Bevor spezielle Auslöser für die Funktion erstellt werden, reicht eine tägliche Ausführung aus.
 In der Regel werden neue AWS Accounts in Abständen von 2-3 Wochen erstellt.
@@ -119,9 +122,9 @@ In der Lambda-Funktion muss dementsprechend ein Service-Objekt für die Dienste 
 \cite[]{ServiceObject}
 
 Für DynamoDB reicht etwa folgender Befehl aus um eine passendes Service-Objekt zu erstellen:
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
     var docClient = new AWS.DynamoDB.DocumentClient
-\end{verbatim}
+\end{lstlisting}
 
 Die Lambda-Funktion und die DynamoDB-Tabelle befinden sich im selben Account.
 Auch besitzt die Lambda-Funktion bereits alle nötigen Berechtigungen, da diese durch Amplify gesetzt wurden.
@@ -130,14 +133,14 @@ Für AWS Organizations müssen bei der Erstellung des Service-Objekts zusätzlic
 Außerdem muss die Region geändert werden. AWS Organizations ist ein Dienst, der nur in der Region \verb+us-east-1+ betrieben wird.
 Für den Vorgang wird die Funktion \verb+getCrossAccountCredentials()+ benötigt:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
     var accessparams = await getCrossAccountCredentials();
 
     const cbc_master_orgs = new AWS.Organizations({
         credentials: accessparams,
         region: 'us-east-1'
       });
-\end{verbatim}
+\end{lstlisting}
 
 Im ersten Schritt werden temporäre Anmeldeinformation abgerufen und anschließend dem Service-Objekt übergeben.
 Dadurch ist es der Funktion möglich die Funktion \verb+listAllAccounts()+ mit einer anderen Identität auszuführen.
@@ -171,30 +174,177 @@ Die Lambda-Funktion nutzt Promises und \verb+async/await+ zu einem großen Teil 
 Der Event Handler wird als Asnychron deklariert und innerhalb des Handlers werden alle oben genannten Funktion nacheinander aufgerufen.
 Die genaue Verwendung der asnychronen Abläufe befindet sich im Anhang.
 
+\subsubsection{Verifizierung Lambda-Funktion}
+
+Nachdem die Lambda-Funktion erfolgreich erstellt wurde, ist es erforderlich das Ergebnis zu überprüfen.
+Nur wenn die Funktion erfolgreich Daten in die DynamoDB-Tabelle gespeichert hat, kann der nächste Dienst integriert werden.
+Zur einfachen Überprüfung kann die der Dienst DynamoDB in der Webkonsole geöffnet werden.
+Sind in der Tabelle Daten hinterlegt, war der Prozess erfolgreich.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{50-Implementierung/DynamoWeb.png}
+    \caption{Verifizierung der Lambda-Funktion}
+    \label{fig:meine-grafik}
+\end{figure}
+
+Die folgende Grafik zeigt den Erfolg der Lambda-Funktion.
+In der Grafik ist nur ein kleiner Ausschnitt der gespeicherten Accounts zu sehen.
+Als ID wurde eine MD5 Hash aus dem Accountnamen und der AccountID gewält, um die Eindeutigkeit sicherzustellen.
+Es kann nicht ausgeschlossen werden, dass ein anderer Wert eventuell erneut auftritt.
+Der Hash-Wert wird in Lambda mit dem Modul \verb+crypto+ realisiert.
 
 \subsection{Implementierung Cognito}
 
 Im Abschnitt \ref{CognitoEntscheidung} \nameref{CognitoEntscheidung} wurde bereits erwähnt, dass Amplify in Kombination mit Cognito
-alle benötigten Module für ine vollständige Authentifizierung beinhaltet.
+alle benötigten Module für eine vollständige Authentifizierung beinhaltet.
 Um eine Authentifizierung für Amplify hinzuzufügen muss der Befehl \verb+amplify add auth+ ausgeführt werden.
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
   Do you want to use the default authentication and security configuration? Default configuration
   How do you want users to be able to sign in? E-Mail
   Do you want to configure advanced settings?  No, I am done.
-\end{verbatim}
+\end{lstlisting}
 
 Nach dem Befehl \verb+amplify push+ wird ein Cognito User Pool inklusive App Clients erstellt.
 Über die Webkonsole besteht im Anschluss Option die Option MFA zu aktivieren.
 
+Für die Einbindung in das React Frontend bietet das Amplify-Framework ein fertige Komponente an.
+Die Komponente \verb+withAuthenticator+ muss in dem Frontend importiert werden und die Hauptkomponente exportieren.\cite[]{ImpAuth}
+Der Auszug aus dem Code(\verb+index.js+):
+
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+    import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+
+    class AWSAccountListsMaterial extends React.Component {
+        [...]
+    }
+    export default withAuthenticator(AWSAccountListsMaterial, true)
+    \end{lstlisting}
+
+Die React Komponente \verb+AWSAccountListsMaterial+ beinhaltet den Code zum Abfragen der Daten aus der DynamoDB-Tabelle und zum Erstellen der Übersicht.
+Diese Komponente wird mit \verb+withAuthenticator+ umhüllt und exportiert.
+
+Startet man den Server im Anschluss erneut und ruft die Anwendung auf, erscheint eine voll funktionsfähige Login-Maske.
+Diese Ansicht lässt sich auf Wunsch noch anpassen.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{50-Implementierung/Login.png}
+    \caption{Login-Maske mit Amplify und Cognito}
+    \label{fig:meine-grafik}
+\end{figure}
+
+Ohne Cognito und Amplify wäre Implementierung einer sicheren und funktionierenden Authentifizierungsmethode einer der aufwändigeren Aufgaben.
+Dank der vorgefertigten Module ist es mit Amplify jedoch schnell umsetzbar.
+
+
+
 \subsubsection{Probleme mit AzureAD}
 
-Probleme mit Authentifizierung
-https://medium.com/@zippicoder/setup-aws-cognito-user-pool-with-an-azure-ad-identity-provider-to-perform-single-sign-on-sso-7ff5aa36fc2a
+Wie im Abschnitt \ref{Authentifizierung} \nameref{Authentifizierung} bereits erwähnt, wäre es wünschenswert die Anmeldung mit Unternehmensidentitäten zu ermöglichen.
+Die Mediengruppe RTL nutzt hierfür den Dienst Azure Active Directory.
+Mittlerweile sind einige Anbindung als SSO über Azure AD verfügbar.
+Die Anmeldung zu allen drei Cloud Providern erfolgt etwa über die gemeinsame Identität des Unternehmens.
 
-Customize Auth
-https://blog.kylegalbraith.com/2020/03/31/customizing-the-aws-amplify-authentication-ui-with-your-own-react-components/
+Cognito bietet eine Unterstützung mit Unternehmens-Identitätsanbietern über SAML an.
+Dafür müssen Konfigurationen innerhalb von Azure und von AWS Cognito getätigt werden.
+Während des Vorgangs ist zur Erkenntnis gekommen, dass es keine geeignete Implementierung in Zusammenspiel mit Amplify gibt.
+Während des Versuchs wurden mehrere Anleitungen im Internet ausprobiert.
+Der Cognito Dienst wurde dabei mit einer \glqq Azure Enterprise Application\grqq{} konfiguriert und verknüpft.
+Bei \glqq Azure Enterprise Application\grqq{} handelt es sich um einen Dienst der zur Verwaltung von Identitäten genutzt wird.
+Nach der Einrichtung sind leider weiterhin Fehlermeldungen aufgetreten.
+Das Ergebnis einer Recherche zeigte, dass Amplify für diese spezielle Anbindung nicht optimiert ist.
+Der SSO Authentifizierungsweg muss in das Frontend eingebaut werden.
+Für diesen Prozess existieren im Internet mehrere Dokumentationen für Android oder iOS Apps.
+Für React oder ein anderes JavaScript-Framework scheint die Integration deutlich komplexer.
+Auf der Website \verb+https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/+ wird ein Lösungsvorschlag angeboten, der jedoch im Rahmen dieser Bachelorarbeit nicht umgesetzt wird.
+Laut der Anleitung ist es notwendig mehrere Stellen im Frontend stark zu bearbeiten und einen großen Teil der Authentifizierung manuell zu erstellen.
+Zudem ist es laut Autor notwendig die Datei \verb+aws-exports.js+ zu bearbeiten, wobei in der Datei selbst eine Warnung zu finden ist dies nicht zu tun.
+Auszug aws-exports.js:
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+    // WARNING: DO NOT EDIT. This file is automatically generated by AWS Amplify. It will be overwritten.
+    \end{lstlisting}
 
-Blöde Lösung: https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/
+Aufgrund des hohen Aufwands und der nicht zufriedenstellenden Lösung wird die Anwendung vorerst ohne eine Anbindung an Untermehmensaccounts auskommen.
+Mitarbeiter die Zugang benötigten müssen sich einen separaten Account erstellen.
+Falls in Zukunft eine bessere Option zur Verfügung steht, kann sie jederzeit hinzugefügt werden, ohne das bestehende System zu beeinträchtigen.
+
 
 \subsection{Implementierung Hosting und Veröffentlichung}
+
+\subsubsection{Programmierung React Frontend}
+Im letzten Schritt der Implementierung muss das Frontend konfiguriert werden und die gesamte Anwendung veröffentlicht werden.
+Bisher weißt das Frontend eine Authentifizierung auf und dank der Lambda-Funktion sind Informationen in der DynamoDB-Tabelle verfügbar.
+Nun muss mit React und AppSync eine Abfrage der Daten stattfinden.
+Am Anschluss müssen die Daten visualisiert werden.
+Um erste Erfahrungen mit React zu sammeln, wurde eine Komponente zur Begrüßung erstellt.
+Die React Komponente \verb+Greeting+ gibt zwei simple HTML Elemente mit einem definierten Text zurück.
+Als nächstes wurde die React Komponente \verb+AWSAccountLists+ erzeugt, die zur Aufgabe auf die DynamoDB-Tabelle zuzugreifen.
+Zuerst wird eine passende Query benötigt, die alle Daten abfragt.
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+    // GraphQL Query to get all data
+    const listAllAccounts = `query listAllAccounts {
+      listAccounts (limit: 300) {
+        items{
+          id
+          accountid
+          num
+          name
+          email
+          status
+        }
+      }
+    }`;
+    \end{lstlisting}
+
+
+
+Auch hier muss sichergestellt werden, dass zuerst alle Daten bereits abgerufen sind bevor sie verwendet werden.
+React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite[]{ReactComp}
+Innerhalb der Funktion \verb+componentDidMount()+ wird die Funktion \verb+queryAccounts()+ gestartet.
+Hier wird der Befehl \verb+API.graphql(graphqlOperation(listAllAccounts))+ ausgeführt, der von GraphQL zur Verfügung gestellt wird. \cite[]{AmplifyAPI}
+Dieser Befehl führt die zuvor angegebene Query aus.
+Gespeichert werden die Daten in der State Variable.
+State kann alle internen Daten einer Komponente beinhalten.
+Wird die State Variable mithilfe von \verb+setState()+ geändert, ruft React automatisch die Renderfunktion erneut auf und aktualisiert die Seite.
+In einer reinen JavaScript basierten Anwendung wäre diese Implementation aufwändiger.
+Im letzten Schritt müssen die Information aus der State Variable im Frontend angezeigt werden.
+Hierfür eignet sich eine tabellarische Ansicht am meisten.
+Zuerst wurde mit JSX ein HTML \verb+<table>+ Element erstellt und die einzelnen Daten korrekt hinzugefügt.
+Da hierbei jedoch jede weitere Funktionalität manuell entwickelt werden muss, wurde letztendlich die frei zugängliche Komponente \glqq material-table\grqq{} genutzt.
+Diese Komponente ermöglicht das Erstellen einer übersichtlichen Tabellen mit den wichtigsten Features wie einer Suche oder einer Sortierfunktion.
+Zudem ist nahezu jeder Aspekt frei konfigurierbar, etwa die Anzahl an Elementen pro Seite.
+ Das folgende Bild zeigt das Ergebnis nach der Implementierung des Codes:
+\clearpage
+ \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1.0\textwidth]{50-Implementierung/Webanwendung.png}
+    \caption{Konfigurierte Website mit zugehörigen Daten}
+    \label{fig:meine-grafik}
+\end{figure}
+
+\subsubsection{Hosting}
+
+Da alle Komponenten erfolgreich implementiert worden sind und die Webanwendung alle geforderten Aufgaben erfüllt, kann sie veröffentlicht werden.
+Mithilfe von \verb+amplify add hosting+ kann die Webanwendung bei Amazon gehosted werden.
+In diesem Schritt kann Amplify zudem eine Integration mit GitHub übernehmen.
+Es wird ein bestimmtes Repository mit Amplify verknüpft.
+Sobald neuer Code in das Repository hochgeladen wird, startet Amplify ein automatisches Deployment mit diesen Änderungen.
+Werden mehrere Branches mit unterschiedlichen Umgebungen genutzt, etwa Dev und Prod, können diese ebenfalls seperat hinzugefügt werden.
+Nach Fertigstellung, gibt Amplify eine URL zurück über die die Anwendung aufgerufen werden kann.
+Auf Wunsch kann hier im weiteren Verlauf eine eigene Domäne hinzugefügt werden.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+    [143302S0:node-tst] master # amplify add hosting
+    Select the plugin module to execute Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)
+    Choose a type Continuous deployment (Git-based deployments)
+    Continuous deployment is configured in the Amplify Console. Please hit enter once you connect your repository
+    [...]
+    Amplify hosting urls:
+    FrontEnd Env   Domain
+    dev            https://dev.drjgagjbys8gs.amplifyapp.com
+
+    \end{lstlisting}
+

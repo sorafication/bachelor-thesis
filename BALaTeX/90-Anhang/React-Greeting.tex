@@ -1,0 +1,29 @@
+
+\input{99-Format/JavaScript/JSStyle}
+\begin{lstlisting}[caption={React Greeting.js Render a Greeting},
+label=lst:React Greeting ,basicstyle=\ttfamily\small ] Lambda-Code {
+
+    import React from 'react'
+
+    export class Greeting extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            value: "BLA",
+          }
+        }
+          render() {
+          return (
+              <div>
+            <h1> Herzlich Willkommen bei dem Bachelorprojekt Kumo von { this.props.name } </h1>
+            <h1> an der Hochschule Niederrhein </h1>
+
+            </div>
+
+          );
+        }
+      }
+
+
+
+\end{lstlisting}

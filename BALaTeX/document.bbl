@@ -98,45 +98,55 @@
   \url{https://aws.amazon.com/de/dynamodb/pricing/on-demand/}, 2020, [Abgerufen
   am 07.09.2020].
 
-\bibitem[{Ama}20s]{ImpVoraus}
-\bysame, \emph{Prerequisites},
-  \url{https://docs.amplify.aws/start/getting-started/installation/q/integration/react},
-  2020, [Abgerufen am 07.09.2020].
-
-\bibitem[{Ama}20t]{AWSWhitepaper}
+\bibitem[{Ama}20s]{AWSWhitepaper}
 \bysame, \emph{Serverless architectures with aws lambda},
   \url{https://d1.awsstatic.com/whitepapers/serverless-architectures-with-aws-lambda.pdf},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20u]{LambdaDynamo}
+\bibitem[{Ama}20t]{LambdaDynamo}
 \bysame, \emph{Verwenden von aws lambda mit amazon dynamodb},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/with-ddb.html}, 2020,
   [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20v]{LambdaDienste}
+\bibitem[{Ama}20u]{LambdaDienste}
 \bysame, \emph{Verwenden von aws lambda mit sonstigen services},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/lambda-services.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20w]{Cognito1}
+\bibitem[{Ama}20v]{Cognito1}
 \bysame, \emph{Was ist amazon cognito?},
   \url{https://docs.aws.amazon.com/de_de/cognito/latest/developerguide/what-is-amazon-cognito.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20x]{AWSECS}
+\bibitem[{Ama}20w]{AWSECS}
 \bysame, \emph{Was ist amazon elastic container service?},
   \url{https://docs.aws.amazon.com/de_de/AmazonECS/latest/developerguide/Welcome.html},
   2020, [Abgerufen am 07.09.2020].
 
-\bibitem[{Ama}20y]{AWSAllgemein}
+\bibitem[{Ama}20x]{AWSAllgemein}
 \bysame, \emph{Was ist aws?},
   \url{https://aws.amazon.com/de/what-is-aws/?nc1=f_cc}, 2020, [Abgerufen am
   07.09.2020].
 
-\bibitem[{Ama}20z]{LambdaZitat}
+\bibitem[{Ama}20y]{LambdaZitat}
 \bysame, \emph{Was ist aws lambda?},
   \url{https://docs.aws.amazon.com/de_de/lambda/latest/dg/welcome.html}, 2020,
   [Abgerufen am 07.09.2020].
+
+\bibitem[{Amp}20a]{ImpAuth}
+{Amplify supported by Amazon Web Services}, \emph{Add authentication},
+  \url{https://docs.amplify.aws/start/getting-started/auth/q/integration/react#create-login-ui},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Amp}20b]{AmplifyAPI}
+\bysame, \emph{Api (graphql)getting started},
+  \url{https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js},
+  2020, [Abgerufen am 07.09.2020].
+
+\bibitem[{Amp}20c]{ImpVoraus}
+\bysame, \emph{Prerequisites},
+  \url{https://docs.amplify.aws/start/getting-started/installation/q/integration/react},
+  2020, [Abgerufen am 07.09.2020].
 
 \bibitem[{Apo}20]{Apollo}
 {Apollo Graph Inc.}, \emph{Caching},
@@ -162,8 +172,13 @@
   \url{https://www.elektronik-kompendium.de/sites/net/2204051.htm}, 2020,
   [Abgerufen am 07.09.2020].
 
-\bibitem[{Fac}20]{ReactNew}
-{Facebook Inc.}, \emph{Create a new react app},
+\bibitem[{Fac}20a]{ReactComp}
+{Facebook Inc.}, \emph{componentdidmount()},
+  \url{https://reactjs.org/docs/react-component.html#componentdidmount}, 2020,
+  [Abgerufen am 07.09.2020].
+
+\bibitem[{Fac}20b]{ReactNew}
+\bysame, \emph{Create a new react app},
   \url{https://reactjs.org/docs/create-a-new-react-app.html}, 2020, [Abgerufen
   am 07.09.2020].
 

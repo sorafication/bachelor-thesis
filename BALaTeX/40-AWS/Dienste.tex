@@ -26,12 +26,13 @@ Die gewünschten Daten sind immer über eine spezifische URI identifizierbar.
 Jede Ressource besitzt eine eigene URI.\cite[]{REST}
 
 Beispiel für Abfragen könnten folgendermaßen aussehen:
-\begin{verbatim}
- GET /AccountNames/
- GET /AccountNames/123
- GET /AccountNames/456
- POST /Accounts/1
-\end{verbatim}
+
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+  GET /AccountNames/
+  GET /AccountNames/123
+  GET /AccountNames/456
+  POST /Accounts/1
+\end{lstlisting}
 
 Mithilfe des ersten \verb+GET+ Requests kann eine Liste von Accounts abgerufen werden, der zweite \verb+GET+ Request liefert nur die Informationen für den 123 Eintrag der Accountnamen.
 Um nur zwei Namen zu erhalten, sind dementsprechend auch zwei Requests notwendig, da sie separate Ressourcen sind.
@@ -107,7 +108,7 @@ Ein Vorteil der stark definierten Typen ist eine geringere Fehlkommunikation zwi
 Der Server kann die Anfragen automatisch auf Korrektheit prüfen und fehlerhafte Anfragen bereits zu Beginn der Transaktion ablehnen.
 
 Um Datenobjekte in einem Schema zu erzeugen kann man folgende Struktur nutzen:
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
 type Account {
   id: ID!
   accountid: String!
@@ -116,7 +117,7 @@ type Account {
   num: Int!
   status: String!
 }
-\end{verbatim}
+\end{lstlisting}
 
 Es wird der Typ Account mit sechs Feldern generiert.
 Den einzelnen Feldern wird zugewiesen, ob es sich um ein String, Int oder etwas anderes handelt.
@@ -124,16 +125,16 @@ Mit dem Ausrufezeichen wird ein Feld als zwingend benötigt markiert.
 Es darf also nicht leer sein. Die einzigartige ID wird vom Server beim Erzeugen von neuen Einträgen automatisch erstellt.
 Damit das erstellte Objekt \verb+Account+ durch eine Query abgerufen werden kann, muss noch ein entsprechender Query-Typ erzeugt werden:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
 type Query {
 	getAccount(id: ID!): Account
 }
 
-\end{verbatim}
+\end{lstlisting}
 
 Um diesen Typ zu verwenden muss folgende Query aufgerufen werden:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
   query MyQuery {
   getAccount(id: "MyDesiredID") {
     id
@@ -144,23 +145,23 @@ Um diesen Typ zu verwenden muss folgende Query aufgerufen werden:
   }
 }
 
-\end{verbatim}
+\end{lstlisting}
 
 Hierbei ist es unwichtig, ob alle oder nur ein Feld mit angegeben wird.
 Wird zum Beispiel die Email nicht benötigt, lässt man das Feld weg und die Information wird nicht mehr an den Client übertragen.\cite[]{GraphQL1}
 Eine HTTP-Abfrage könnte folgenermaßen aussehen\cite[]{GraphQLHTTP}:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
   GET http://meineapi.com/graphql?query={me{name}}
 
-\end{verbatim}
+\end{lstlisting}
 
 
 Zum Hinzufügen eines neuen Eintrags wäre folgender Mutations-Typ notwendig.
 Zusätzlich werden mögliche Felder für die Eingabe benötigt.
 
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
   type Mutation {
     addAccount(userInput: UserInput!): User
 }
@@ -173,11 +174,11 @@ input UserInput {
   num: Int!
   status: String!
 }
-\end{verbatim}
+\end{lstlisting}
 
 Anschließend kann eine Mutation wie folgt aussehen:
 
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
 mutation {
   addAccount(
       name: "AWS-XXX",
@@ -189,7 +190,7 @@ mutation {
         id
       }
 }
-\end{verbatim}
+\end{lstlisting}
 
 Es ist außerdem möglich in einer Mutation auch direkt Daten abzufragen. Beim Erstellen eines neuen Accounts kann man gleichzeitig die
 vom Server angelegte ID abfragen und überprüfen.\cite[]{GraphQL1}
@@ -389,7 +390,7 @@ Eine Umsetzung mit DynamoDB ermöglicht es den Konfigurationsaufwand und die Kos
 
 
 \subsection{Authentifizierung}
-
+\label{Authentifizierung}
 Da die Anwendung bei AWS gehostet wird, wird sie auch über das Internet erreichbar sein.
 Um den Zugriff nur für ausgewählte Mitarbeiter der Mediengruppe RTL einschränken zu können ist eine Authentifizierung essentiell.
 Ohne Registrierung und Anmeldung darf es nicht möglich seine Daten einsehen zu können.
@@ -572,23 +573,25 @@ Hinsichtlich der geringeren Verbreitung im englischsprachigen Raum und dem Aspek
 
 React wurde 2013 von Facebook veröffentlicht und wird zusammen mit der Community weiterentwickelt.
 Anders als bei Vue, wird in React kein Code getrennt.
+React arbeitet, wie die meisten JavaScript-Frameworks, komponentenbasiert und trennt Einheiten auf falls möglich.
 Zum Rendern von HTML Elementen nutzt React die JavaScript-Erweiterung JSX, welche JavaScript und HTML Syntax kombiniert.
-Der JSX Code wird vor dem Start der Anwendung in normalen Javascript-Code umgewandelt.
+Der JSX Code wird vor dem Start der Anwendung in normalen Javascript-Code übersetzt.
+Innerhalb von geschweiften Klammern wird alles als Javascript Code behandelt.
 Es ist also auch möglich alle Elemente direkt mit React und Javascript zu erzeugen, jedoch versucht JSX eine komfortablere und leichtere Lösung anzubieten.
 Anstatt Methoden wie \verb+React.createElement()+ zu nutzen reicht es aus die HTML Syntax zu kennen.
 Mit JSX lässt sich ein \verb+<div>+ Element wie folgt erzeugen:
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
   const divelement = <div>Ich bin ein DIV-Element</div>;
 
   ReactDOM.render(divelement, document.getElementById('root'));
-\end{verbatim}
+\end{lstlisting}
 
 Ohne JSX wäre folgender Code notwendig:
-\begin{verbatim}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
   const divelement = React.createElement('div', {}, 'TEXT');
 
   ReactDOM.render(divelement, document.getElementById('root'));
-\end{verbatim}
+\end{lstlisting}
 \cite[]{JSX}
 
 Da im Studium bereits Erfahrung mit HTML und JavaScript gemacht wurde, ist der Einstieg in JSX und React der komfortabelste.
