@@ -1,5 +1,63 @@
+\subsection{Diskussion}
+
+Ziel dieser Bachelorarbeit war es, die Serverless Architektur zu betrachten und, nach einer umfangreichen Betrachtung aller Dienste, einen Prototypen beim Cloud Provider AWS zu entwickeln.
+Ein wichtiges Merkmal war zudem, dass die Möglichkeit vorgesehen ist, dass die Webanwendung in Zukunft ohne viel Aufwand um weitere Funktionalitäten ergänzt werden kann.
+Die Wartung und Administration der Infrastruktur sollte dabei nach Möglichkeit so weit wie möglich vom Cloud Provider übernommen werden.
+
+Im Rahmen der Bachelorarbeit lag der Fokus dabei insbesondere auf die Designentscheidungen der einzelnen Dienste sowie eine grundsätzliche Funktionalität der Anwendung.
+Dazu gehören eine sichere Möglichkeit zur Authentifizierung sowie eine Backend-Logik, die bestimmte Daten abrufen und verarbeiten kan.
+Es ist sichergestellt, dass nur zugelassene Mitarbeiter die Anwendung nutzen können.
+Außerdem sollte das Web Frontend eine Übersicht über alle Daten darstellen können und bei Bedarf leicht angepasst werden.
+Neben dem Aspekt sich hauptsächlich mit Webanwendung an sich zu kümmern und nicht die zugrundeliegende Infrastruktur, sollten auch unnötige Kosten vermieden werden.
+Da die meisten Dienste nach benötigten Anforderungen abgerechnet werden, können die Kosten auf ein Minimum gehalten werden.
+Diese Ziele wurden erreicht.
+
+
+Eine Integration mit Unternehmensidentäten war zum Zeitpunkt leider nicht umsetzbar.
+Zum einem ist der Aufwand zu groß, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Wünschen.
+
+Die gründliche Auseinandersetzung mit den einzelnen Dienste stellte sich als äußerst nützlich dar.
+Durch die Abstraktion von Amplify ist nicht jeder Prozess im Detail ersichtlich und es kann schwer fallen den genauen Zusammenhang zu verstehen.
+Dank der intensiven Beschäftigung des Designs ist es leichter die optimalen Anwendungsfälle zu erörtern, sowie auch außerhalb von Amplify mit den Diensten arbeiten zu können.
+
+Die Entwicklung der Anwendung mit Amplify stellte sich als problemlos dar.
+Viele Vorgänge wurden merklich beschleunigt.
+Zudem war es so möglich innerhalb von kurzer Zeit eine vollständige serverlose Webanwendung mit den essentialsten Funktionen zu entwickeln, die keine Wartung oder Administration benötigt.
+
+\clearpage
 \subsection{Zusammenfassung}
-\blindtext
+Im Rahmen dieser Bachelorarbeit wurde die Serverless Architektur analysiert und ein funktionsfähiger Prototyp entwickelt.
+Als Motivation gilt ein steigendes Interesse an Function as a Service Diensten und an einer schnelleren Bereitstellung von Diensten.
+Die Kostenübersicht aller Cloud-Provider der Mediengruppe RTL soll vereinfacht werden und zentral aufbereitet werden.
+Damit geht die Anforderung einher eine einfache und Administrationsfreie Realisierung zu ermöglichen, die im Besten Fall keine hohen Kosten verursacht.
+Um eine qualifizierte Aussage zu einer Implementierung mit Serverless Diensten geben zu können, wurden im voraus die wichtigsten Cloud Computing-Modelle erläutert und den Zusammenhang zu Serverless erklärt.
+Im Anschluss wurde die Serverless Architektur auf ihre Eignung geprüft und bestätigt.
+Die Umsetzung sollte möglichst von nur einer Person erfolgen, ohne Expertenwissen in jedem Fachgebiet zu erfordern.
+
+Da es mehrere mögliche Ansätze zur Umsetzung gibt, is es besonders wichtig sich mit den einzelnen Möglichkeiten auseinanderzusetzen.
+Aus diesem Grund wurden im Rahmen der Bachelorarbeit einzelne Dienste des Cloud Providers AWS untersucht und miteinander verglichen.
+Nachdem die zugrundeliegende Technologie des Dienstes und der Funktionsumfang des Dienstes geprüft wurden, konnte schließlich eine Entscheidung gefällt werden.
+Die einzelnen zu prüfenden Bereiche beschäftigten sich mit den Themen API, Datenbanken, Backend-Logik und Authentifizierung.
+In jedem Bereich wurde ein passender Dienst ausgewählt und im weiteren Verlauf auch implementiert.
+Als API wurde der AWS Dienst AppSync genutzt, der auf GraphQL basiert.
+Als relationale Datenbank kommt der Dienst AWS DynamoDB zum Einsatz.
+Die Backend-Logik wird mit dem Function as a Service Dienst AWS-Lambda realisiert.
+Der Dienst AWS Cognito übernimmt die Authentifizierung und Absicherung der Anwendung.
+Das Frontend wurde mit dem JavaScript-Framework React erstellt.
+AWS Amplify dient als zentraler Dienst, um alle zuvor genannten Komponenten an zentraler Stelle konfigurieren zu können.
+
+Das Ziel des Prototypen war es, eine funktionale Webanwendung zu erzeugen die eine Übersicht über alle aktiven AWS Accounts liefert.
+Dafür musste ein Accountübergreifender Zugriff eingerichtet werden, da sich die benötigten Daten in einem anderen Account befinden, als die Anwendung selbst.
+Die gesammelten Daten speichert die Lambda-Funktion in eine DynamoDB-Tabelle ab.
+Auf diese Daten greift das Frontend über die API zu und erstellt mithilfe von React eine übersichtliche Tabelle aller Daten.
+Da die gesamte Webanwendung im Internet erreichbar ist, wurde mit AWS Cognito eine Authentifizierung sichergestellt.
+Registrierte Nutzer können die Webanwendung nutzen und auf die Daten zugreifen.
+
+Während der Entwicklung wurde darauf geachtet eine möglichst einheitliche Programmiersprache inklusive Syntax zu verwenden.
+Aufgrunddessen können andere Kollegen der Abteilung Datacenter and Clouds, ohne viel Einarbeitung, an dieser Webanwendung weiterentwickeln.
+Zudem ist dank Anbindung an den Dienst GitHub eine gemeinsame Bearbeitung mühelos möglich.
+Die Versionsverwaltung ermöglicht es leicht Änderungen nachzuvollziehen.
+
 
 
 
