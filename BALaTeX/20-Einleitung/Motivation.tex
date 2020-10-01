@@ -2,16 +2,16 @@
 \label{Motivation}
 Die Abteilung Datacenter and Clouds innerhalb von CBC beschäftigt sich mittlerweile seit einigen Jahren mit Cloud Infrastruktur.
 Zu Beginn wurden größtenteils dynamisch Linux Server mit einer Datenbank und einem Loadbalancer realisiert(Infrastructure as a Service).
-Mit der Zeit wurden auch Container-basierte Varianten mit Docker sowie Platform as a Service Lösungen umgesetzt.
-Function as a Service wurde bisher nur mit Amazon Web Services Dienst Lambda (siehe \ref{Lambda} \nameref{Lambda}) realisiert.
-Mittlerweile gibt es den Wunsch sich intensiv mit Function as a Service zu beschäftigen um vor allem eine schnelle Bereitstellung von Diensten zu geringen Kosten zu ermöglichen.
+Mit der Zeit wurden auch containerbasierte Varianten mit Docker sowie Platform as a Service Lösungen umgesetzt.
+Function as a Service wurde bisher nur mit dem Dienst Lambda (siehe \textit{\ref{Lambda} \nameref{Lambda}}) von AWS realisiert.
+Mittlerweile gibt es den Wunsch sich intensiv mit Function as a Service zu beschäftigen um vor allem eine schnelle Bereitstellung von Diensten mit geringen Kosten zu ermöglichen.
 Webanwendungen sollen schneller bereitgestellt werden, ohne dass Server konfiguriert und gewartet werden müssen.
-Eine genau Erläuterung der genannten \glqq [...] as a Service\grqq{} Begriffe befindet sich im Kapitel \ref{Servicemodelle} \nameref{Servicemodelle}.
+Eine genau Erläuterung der genannten \glqq [...] as a Service\grqq{} Begriffe befindet sich im Kapitel \textit{\ref{Servicemodelle} \nameref{Servicemodelle}}.
 
 Da sehr viele Firmen innerhalb der Mediengruppe RTL intensiv mit AWS und anderen Cloud Providern arbeiten ist die Kostenzuweisung unübersichtlich geworden.
-Jeder Cloud Provider stellt Informationen zu Kosten und der Abrechnungen auf unterschiedliche Weise dar und alle Daten müssen unterschiedlich aufbereitet werden.
+Jeder Cloud Provider stellt Informationen zu Kosten und Abrechnungen auf unterschiedliche Weise dar und alle Daten müssen unterschiedlich aufbereitet werden.
 AWS z.B. exportiert die Abrechnungen monatlich in dem Cloud-Speicher
-S3\footnote{S3 steht für Simple Storage Service und ist ein Objektspeicherservice von Amazon, für eine beliebe Menge von Daten.
+S3\footnote{S3 steht für Simple Storage Service und ist ein Objektspeicherservice für eine beliebe Menge von Daten.
 Daten werden in S3 Buckets abgelegt und können aus dem Internet abgerufen werden.
 CBC verwendet S3 für viele unterschiedliche Szenarien, darunter auch das Speichern von Videodateien für den Dienst TVNow.   }, wohingegen Google Cloud Plattform alle Daten in ein SQL ähnliches Data Warehouse speichert.
 Zudem ist es notwendig die Kosten der Mediengruppe RTL Abteilungen zuzuweisen und abzuschreiben.

@@ -43,23 +43,24 @@
 \BOOKMARK [3][-]{subsubsection.4.3.1}{Einrichtung Amplify CLI}{subsection.4.3}% 43
 \BOOKMARK [3][-]{subsubsection.4.3.2}{Einrichtung React Projekt}{subsection.4.3}% 44
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Konfiguration Amplify}{subsection.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.4}{Implementierung AppSync und DynamoDB}{section.4}% 46
-\BOOKMARK [2][-]{subsection.4.5}{Implementierung Lambda}{section.4}% 47
+\BOOKMARK [2][-]{subsection.4.4}{Implementierung API und Datenbank}{section.4}% 46
+\BOOKMARK [2][-]{subsection.4.5}{Implementierung Backend-Logik}{section.4}% 47
 \BOOKMARK [3][-]{subsubsection.4.5.1}{Account\374bergreifender Zugriff}{subsection.4.5}% 48
 \BOOKMARK [3][-]{subsubsection.4.5.2}{Asynchrone Verarbeitung mit NodeJS}{subsection.4.5}% 49
 \BOOKMARK [3][-]{subsubsection.4.5.3}{Verifizierung Lambda-Funktion}{subsection.4.5}% 50
-\BOOKMARK [2][-]{subsection.4.6}{Implementierung Cognito}{section.4}% 51
+\BOOKMARK [2][-]{subsection.4.6}{Implementierung Authentifizierung}{section.4}% 51
 \BOOKMARK [3][-]{subsubsection.4.6.1}{Probleme mit AzureAD}{subsection.4.6}% 52
-\BOOKMARK [2][-]{subsection.4.7}{Implementierung Hosting und Ver\366ffentlichung}{section.4}% 53
+\BOOKMARK [2][-]{subsection.4.7}{Implementierung Frontend und Hosting}{section.4}% 53
 \BOOKMARK [3][-]{subsubsection.4.7.1}{Programmierung React Frontend}{subsection.4.7}% 54
 \BOOKMARK [3][-]{subsubsection.4.7.2}{Hosting}{subsection.4.7}% 55
 \BOOKMARK [1][-]{section.5}{Fazit}{}% 56
 \BOOKMARK [2][-]{subsection.5.1}{Diskussion}{section.5}% 57
-\BOOKMARK [2][-]{subsection.5.2}{Zusammenfassung}{section.5}% 58
-\BOOKMARK [2][-]{subsection.5.3}{Ausblick}{section.5}% 59
-\BOOKMARK [1][-]{subsection.5.3}{Literaturverzeichnis}{}% 60
-\BOOKMARK [1][-]{section*.1}{Anhang}{}% 61
-\BOOKMARK [1][-]{appendix.1.A}{Anhang Lambda}{}% 62
-\BOOKMARK [1][-]{appendix.1.B}{Anhang React main.js}{}% 63
-\BOOKMARK [1][-]{appendix.1.C}{Anhang React Greeting.js}{}% 64
-\BOOKMARK [1][-]{appendix.1.D}{Anhang React AccountsList.js}{}% 65
+\BOOKMARK [2][-]{subsection.5.2}{Kosten}{section.5}% 58
+\BOOKMARK [2][-]{subsection.5.3}{Zusammenfassung}{section.5}% 59
+\BOOKMARK [2][-]{subsection.5.4}{Ausblick}{section.5}% 60
+\BOOKMARK [1][-]{subsection.5.4}{Literaturverzeichnis}{}% 61
+\BOOKMARK [1][-]{section*.1}{Anhang}{}% 62
+\BOOKMARK [1][-]{appendix.1.A}{Anhang Lambda}{}% 63
+\BOOKMARK [1][-]{appendix.1.B}{Anhang React main.js}{}% 64
+\BOOKMARK [1][-]{appendix.1.C}{Anhang React Greeting.js}{}% 65
+\BOOKMARK [1][-]{appendix.1.D}{Anhang React AccountsList.js}{}% 66

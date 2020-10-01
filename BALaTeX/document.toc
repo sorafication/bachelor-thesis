@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {3.4}Authentifizierung}{21}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}AWS Cognito}{21}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Alternative und Entscheidung}{22}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Backend Logik}{22}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.5}Backend Logik}{23}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}AWS Lambda}{23}{subsubsection.3.5.1}%
 \contentsline {subsubsection}{\numberline {3.5.2}Entscheidung}{24}{subsubsection.3.5.2}%
 \contentsline {subsection}{\numberline {3.6}Frontend Framework}{25}{subsection.3.6}%
@@ -39,25 +39,26 @@
 \contentsline {section}{\numberline {4}Implementierung aller Komponenten}{28}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Architekturdiagramm }{28}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}AWS Accountstruktur }{29}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Amplify Voraussetzungen}{29}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Einrichtung Amplify CLI}{29}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Einrichtung React Projekt}{30}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3}Amplify Voraussetzungen}{30}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Einrichtung Amplify CLI}{30}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Einrichtung React Projekt}{31}{subsubsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.3}Konfiguration Amplify}{31}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}Implementierung AppSync und DynamoDB}{32}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Implementierung Lambda}{33}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Accountübergreifender Zugriff}{34}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Asynchrone Verarbeitung mit NodeJS}{35}{subsubsection.4.5.2}%
-\contentsline {subsubsection}{\numberline {4.5.3}Verifizierung Lambda-Funktion}{36}{subsubsection.4.5.3}%
-\contentsline {subsection}{\numberline {4.6}Implementierung Cognito}{37}{subsection.4.6}%
-\contentsline {subsubsection}{\numberline {4.6.1}Probleme mit AzureAD}{37}{subsubsection.4.6.1}%
-\contentsline {subsection}{\numberline {4.7}Implementierung Hosting und Veröffentlichung}{38}{subsection.4.7}%
-\contentsline {subsubsection}{\numberline {4.7.1}Programmierung React Frontend}{38}{subsubsection.4.7.1}%
-\contentsline {subsubsection}{\numberline {4.7.2}Hosting}{40}{subsubsection.4.7.2}%
-\contentsline {section}{\numberline {5}Fazit}{41}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Diskussion}{41}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Zusammenfassung}{42}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Ausblick}{43}{subsection.5.3}%
-\contentsline {section}{Literaturverzeichnis}{44}{subsection.5.3}%
+\contentsline {subsection}{\numberline {4.4}Implementierung API und Datenbank}{32}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Implementierung Backend-Logik}{34}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Accountübergreifender Zugriff}{35}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Asynchrone Verarbeitung mit NodeJS}{37}{subsubsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.3}Verifizierung Lambda-Funktion}{38}{subsubsection.4.5.3}%
+\contentsline {subsection}{\numberline {4.6}Implementierung Authentifizierung}{38}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Probleme mit AzureAD}{39}{subsubsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.7}Implementierung Frontend und Hosting}{40}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Programmierung React Frontend}{40}{subsubsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {4.7.2}Hosting}{42}{subsubsection.4.7.2}%
+\contentsline {section}{\numberline {5}Fazit}{43}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Diskussion}{43}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Kosten}{43}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Zusammenfassung}{44}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Ausblick}{45}{subsection.5.4}%
+\contentsline {section}{Literaturverzeichnis}{46}{subsection.5.4}%
 \contentsline {section}{Anhang}{A-0}{section*.1}%
 \contentsline {section}{\numberline {A}Anhang Lambda}{A-0}{appendix.1.A}%
 \contentsline {section}{\numberline {B}Anhang React main.js}{A-4}{appendix.1.B}%

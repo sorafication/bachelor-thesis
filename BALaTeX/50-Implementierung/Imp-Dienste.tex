@@ -1,28 +1,29 @@
-\subsection{Implementierung AppSync und DynamoDB}
+\subsection{Implementierung API und Datenbank}
 Der erste benötigte Dienst für die Webanwendung ist die GraphQL API.
-Mit \verb+amplify add api+ startet der Konfigurationsassistent:
-
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
-Please select from one of the below mentioned services: GraphQL
-Provide API name: amplify-kumo-api
-Choose the default authorization type for the API API key
-Enter a description for the API key: My-Dev-ApiKey
-After how many days from now the API key should expire (1-365): 7
-Do you want to configure advanced settings for the GraphQL API: No
-Do you have an annotated GraphQL schema? No
-Do you want a guided schema creation? Yes
+Mit \spverb+amplify add api+ startet der Konfigurationsassistent.
+Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugefügt wird, erfolgt sie solange mittels API Key.
+Nach Bestätigung des letzten Schrittes öffnet sich die Datei \verb+schema.graphql+, die das Schema der API darstellt.
+In dieser Datei werden alle benötigten Objekttypen erstellt.
+\clearpage
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+Please select from one of the below mentioned services:(*@ \textrm{GraphQL} @*)
+Provide API name:(*@ \textrm{amplify-kumo-api} @*)
+Choose the default authorization type for the API:(*@ \textrm{API key} @*)
+Enter a description for the API key:(*@ \textrm{My-Dev-ApiKey} @*)
+After how many days from now the API key should expire (1-365):(*@ \textrm{7} @*)
+Do you want to configure advanced settings for the GraphQL API:(*@ \textrm{No} @*)
+Do you have an annotated GraphQL schema?(*@ \textrm{No} @*)
+Do you want a guided schema creation?(*@ \textrm{Yes} @*)
 What best describes your project:
 Single object with fields (e.g., Todo with ID, name, description)
-Do you want to edit the schema now? Yes
-
+Do you want to edit the schema now?(*@ \textrm{Yes} @*)
 \end{lstlisting}
 
-Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugefügt wird, erfolgt sie solange mittels API Key.
-Nach dem bestätigen des letzten Schrittes, öffnet sich das GraphQL Schema, \verb+schema.graphql+ welches im Projektverzeichnis erstellt wurde. (siehe \ref{GraphQL} \nameref{GraphQL} für weitere Informationen.)
-In dieser Datei werden alle benötigten Objekttypen erstellt.
-Für den ersten Schritt wird nur ein Objekt mit dem Namen Account generiert:
-
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+Im Rahmen der Bachelorarbeit wird nur ein Objekttyp mit dem Namen Account benötigt.
+Es werden weiterhin alle verfügbaren Felder angegeben.
+Werden in Zukunft neue Felder oder weitere Typen benötigt, kann die Datei \verb+schema.graphql+ jederzeit angepasst werden.
+\\
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 type Account @model {
   id: ID!
   accountid: String!
@@ -30,7 +31,6 @@ type Account @model {
   email: String!
   num: Int!
   status: String!
-
 }
 
 \end{lstlisting}
@@ -38,68 +38,107 @@ type Account @model {
 Alle angegeben Felder müssen im späteren Verlauf von der Lambda-Funktion abgerufen und gespeichert werden.
 Mit dem Befehl \verb+amplify push+ wird die API in der Cloud bereitgestellt.
 Im folgenden Dialog besteht die Möglichkeit alle möglichen Mutationen und Queries generieren zu lassen.
-
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
+Wie bereits im Abschnitt \textit{\ref{GraphQL} \nameref{GraphQL}} erwähnt, wäre es bei GraphQL normalerweise üblich die Query-Typen etc. manuell zu erzeugen.
+AppSync übernimmt hier also wie versprochen einen großen Teil der Arbeit.
+\\
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 
 # You will be walked through the following questions for GraphQL code generation
-Do you want to generate code for your newly created GraphQL API? Y
-Choose the code generation language target: javascript
-Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y
+
+Do you want to generate code for your newly created GraphQL API? (*@ \textrm{Y} @*)
+Choose the code generation language target:(*@ \textrm{javascript} @*)
+
+Do you want to generate/update all possible GraphQL operations -
+queries, mutations and subscriptions? (*@ \textrm{Y} @*)
+
 \end{lstlisting}
 
-Sobald der Prozess fertig gestellt ist, sind die Dienste AWS AppSync und DynamoDB konfiguriert.
-In der Webkonsole kann überprüft werden, ob der Vorgang erfolgreich war.
 
+Sobald der Prozess fertig gestellt ist, sind die Dienste AWS AppSync und DynamoDB konfiguriert.
+Dank DynamoDB-Resolver wurde eine entsprechende DynamoDB-Tabelle angelegt und konfiguriert.
+In der Webkonsole von AWS kann überprüft werden, ob der Vorgang erfolgreich war.
+Die Ansicht von AppSync zeigt im Menüpunkt \grqq Data Sources\grqq{}, dass eine DynamoDB-Tabelle passend zum GraphQL Objekttyp erstellt wurde.
+Der Name der Tabelle wurde nach dem GraphQL Objekttyp gewählt.
+Nun ist es möglich per API auf die Datenbank zuzugreifen und Daten abzufragen.
+Die jeweilige Abfrage findet im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}} statt.
+Bevor das Frontend jedoch Anfragen an die Datenbank ausführen kann, muss Lambda konfiguriert werden, sodass Daten gespeichert werden.
+\\
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/AppSync-DynamoDB.png}
-    \caption{Ansicht AWS AppSync in der Webkonsole}
+    \caption{Erfolg der GraphQL API Erstellung überprüfen}
     \label{fig:meine-grafik}
 \end{figure}
 
-In der Ansicht von AppSync sieht man, dass eine DynamoDB-Tabelle passend zum GraphQL Objekttyp erstellt wurde.
-In dem React Frontend kann jetzt mit dem AppSync SDK auf diese Datenbank zugegriffen werden.
-Bevor das Frontend jedoch Anfragen an die Datenbank ausführen kann, muss Lambda konfiguriert werden, sodass Daten gespeichert werden.
 
-\subsection{Implementierung Lambda}
+
+
+
+\subsection{Implementierung Backend-Logik}
+\label{ImpLambda}
 Die gesamte Backend-Logik wird durch Lambda realisiert.
-Wie bereits erwähnt soll Lambda in regelmäßigen Abständen ausgeführt werden, um die Daten aktuell zu halten.
-Mit dem Befehl \verb+amplify add function+ startet Amplify den Prozess:
-
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lavender} ]
-
+Mit dem Befehl \spverb+amplify add function+ startet Amplify den Prozess.
+Dabei ist es im Rahmen der Bachelorarbeit ausreichend, wenn die Lambda-Funktion in regelmäßigen Abständen ausgeführt wird.
+Weitere Auslöser können in Zukunft ergänzt werden.
+In der Regel werden neue AWS Accounts in Abständen von 2-3 Wochen erstellt.
+\\
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 [143302S0:amplify-kumo] master # amplify add function
+
 Using service: Lambda, provided by: awscloudformation
-  Provide a friendly name for your resource to be used as a label for this category in the project: getallaccounts
-  Provide the AWS Lambda function name: getallaccounts
-  Choose the function runtime that you want to use: NodeJS
-  Choose the function template that you want to use: Hello World
-  Do you want to access other resources created in this project from your Lambda function? Yes
-  Select the category: storage
-  Do you want to invoke this function on a recurring schedule? Yes
-  At which interval should the function be invoked: Daily
-  Select the start time (use arrow keys): 06:35 PM
+Provide a friendly name for your resource to be used as
+a label for this category in the project: (*@ \textrm{getallaccounts} @*)
+Provide the AWS Lambda function name: (*@ \textrm{getallaccounts} @*)
+Choose the function runtime that you want to use: (*@ \textrm{NodeJS} @*)
+Choose the function template that you want to use:(*@ \textrm{Hello World} @*)
+Do you want to access other resources created in this
+project from your Lambda function? (*@ \textrm{Yes} @*)
+Select the category:(*@ \textrm{storage} @*)
+Do you want to invoke this function on a recurring schedule? (*@ \textrm{Yes} @*)
+At which interval should the function be invoked: (*@ \textrm{Daily} @*)
+Select the start time (use arrow keys):(*@ \textrm{06:35 PM} @*)
+
 Successfully added resource getallaccounts locally.
 \end{lstlisting}
 
-Bevor spezielle Auslöser für die Funktion erstellt werden, reicht eine tägliche Ausführung aus.
-In der Regel werden neue AWS Accounts in Abständen von 2-3 Wochen erstellt.
-Daher hat ein zeitnaher Auslöser zu Beginn keine hohe Priorität.
+\clearpage
 Nachdem Amplify die Lambda-Funktion erstellt hat, kann diese direkt bearbeitet werden.
+Der vollständige Code befindet sich im Anhang (Siehe Anhang \ref{lst:LambdaCode} \nameref{lst:LambdaCode}).
+Im Kern besteht die Lambda-Funktion aus vier Funktionen.
+\\
 
-Der vollständige Code befindet sich im Anhang. (Siehe XXXX)
-Die Lambda-Funktion besteht aus den Funktionen \verb+getCallerIdentity()+,
-\verb+getCrossAccountCredentials()+, \verb+listAllAccounts()+ sowie \verb+writeAllDynamoDBItems()+.
-Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen.
-Die Lambda-Funktion befindet sich im AWS Account \verb+Cbc-Clouds-Sandbox+ und muss auf den Account \verb+Cbc-Master+ zugreifen.
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+getCallerIdentity()
+getCrossAccountCredentials()
+listAllAccounts()
+writeAllDynamoDBItems()
+\end{lstlisting}
+
+
+Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ dienen den Zweck temporäre Zugriff auf den Account \spverb+Cbc-Master+ zu erhalten.
+\spverb+listAllAccounts()+ liest anschließend alle Daten und \spverb+writeAllDynamoDBItems()+ schreibt diese in die DynamoDB-Tabelle.
+Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen, eine weitere die korrekte Abarbeitung der Funktion sicherzustellen.
+In den folgenden Abschnitten werden diese beiden Hürden genauer erläutert.
 
 \subsubsection{Accountübergreifender Zugriff}
+\label{AccountübergreifenderZugriff}
+Die Lambda-Funktion befindet sich im AWS Account \verb+Cbc-Clouds-Sandbox+ und muss auf den Account \verb+Cbc-Master+ zugreifen.
+Im Account \verb+Cbc-Master+ wird eine IAM-Rolle benötigt, die der Lambda-Funktion Zugriff gewährt.
+Der Abschnitt \ref{Accountstruktur} \nameref{Accountstruktur} beschreibt den Aufbau aller Accounts der Mediengruppe RTL.
+Mit IAM-Rollen können Benutzeraccounts oder AWS-Dienste temporäre Anmeldeinformationen erhalten, die Accountübergreifend funktionieren.
+Dabei wird die Identität der IAM-Rolle übernommen.
+Dementsprechend sind alle Operationen erlaubt, die der IAM-Rolle zugewiesen worden sind.
+Damit die Lambda-Funktion also in dem Account \verb+Cbc-Master+ auf AWS Organizations zugreifen kann, benötigt die IAM-Rolle mindestens Lesezugriff auf den Dienst AWS Organizations.
+AWS bietet hierfür die Berechtigung \verb+AWSOrganizationsReadOnlyAccess+.
 
-Im Account \verb+Cbc-Master+ wird eine IAM-Rolle benötigt, die der Lambda-Funktion aus dem anderen Account Zugriff gewährt.
-Mit IAM-Rollen können anderen Benutzeraccounts oder AWS-Dienste Zugriff temporäre Anmeldeinformationen erhalten, die Accountübergreifend funktionieren.
-Die IAM-Rolle erhält die Berechtigung \verb+AWSOrganizationsReadOnlyAccess+ und hat eine Vertrauensstellung zu der Lambda-Funktion.
-Das folgende Bild zeigt die konfigurierte Vertrauensstellung zwischen Lambda-Funktion im \verb+Cbc-Clouds-Sandbox+ und IAM-Rolle im \verb+Cbc-Master+ Account.
+Außerdem muss eine Vertrauensstellung hergestellt werden.
+Das folgende Bild zeigt die konfigurierte Vertrauensstellung zwischen Lambda-Funktion im \verb+Cbc-Clouds-Sandbox+ und der IAM-Rolle im \verb+Cbc-Master+ Account.
+Im unteren Linken Bereich bei \glqq Trusted Identities\grqq{} ist die Identität der Lambda-Funktion aus dem Account \verb+Cbc-Clouds-Sandbox+ zu sehen.
+163962199350 ist die dazugehörige AccountID.
+Die IAM-Rolle hat den Namen \grqq amplify-kumo-access-role\grqq{} und besitzt einen eindeutigen Ressourcennamen (ARN).
+Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß weiß die Funktion welche Identität sie übernehmen soll.
 
+\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -109,46 +148,53 @@ Das folgende Bild zeigt die konfigurierte Vertrauensstellung zwischen Lambda-Fun
 \end{figure}
 
 
-Dieser Zugriff auf den Account muss in Lambda programmiert werden.
-Dazu dienen die Funktionen \verb+getCallerIdentity()+ und \verb+getCrossAccountCredentials()+.
+Um diesen Zugriff zu programmieren, dienen die Funktionen \verb+getCallerIdentity()+ und \verb+getCrossAccountCredentials()+.
 \verb+getCallerIdentity()+ ist eine Hilfsfunktion und gibt die aktuelle Identität zurück.
-So ist es leichter zu überprüfen ob die Rolle im \verb+Cbc-Master+ Account erfolgreich angenommen wurde.
+So ist es leichter zu überprüfen, ob die Rolle \grqq amplify-kumo-access-role\grqq{} im \verb+Cbc-Master+ Account erfolgreich angenommen wurde.
 Das eigentliche Übernehmen der IAM-Rolle erledigt \verb+getCrossAccountCredentials()+.
-Es wird ein neues AWS Service-Objekt für den Dienst AWS Organizations erstellt und mithilfe der Funktion \verb+sts.assumeRole()+ ein temporärer Zugang im Master-Account erstellt.
+Es wird ein neues AWS Service-Objekt für den Dienst AWS Organizations erstellt und mithilfe der Funktion \verb+sts.assumeRole()+ ein temporärer Zugriff im Master-Account erstellt.
 
-Ein Service-Objekt wird benötigt, um auf Service-Funktionen über die JavaScript-API zugreifen zu können.
+Ein Service-Objekt wird benötigt, um auf Service-Funktionen zugreifen zu können.
 Die meisten AWS-Dienste bieten mindestens ein passendes Service-Objekt an.
 In der Lambda-Funktion muss dementsprechend ein Service-Objekt für die Dienste AWS Organizations, DynamoDB und für die Hilfsfunktion AWS STS \footnote{STS steht für Security Token Service und ermöglicht die Bereitstellung von temporären Anmeldeinformationen.} erstellt werden.
 \cite[]{ServiceObject}
 
-Für DynamoDB reicht etwa folgender Befehl aus um eine passendes Service-Objekt zu erstellen:
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-    var docClient = new AWS.DynamoDB.DocumentClient
-\end{lstlisting}
-
+Für DynamoDB reicht etwa folgender Befehl aus um eine passendes Service-Objekt zu erstellen.
 Die Lambda-Funktion und die DynamoDB-Tabelle befinden sich im selben Account.
 Auch besitzt die Lambda-Funktion bereits alle nötigen Berechtigungen, da diese durch Amplify gesetzt wurden.
-
-Für AWS Organizations müssen bei der Erstellung des Service-Objekts zusätzlich die temporären Anmeldeinformation mitgegeben werden, da sich der Dienst in einem anderen Account befindet.
-Außerdem muss die Region geändert werden. AWS Organizations ist ein Dienst, der nur in der Region \verb+us-east-1+ betrieben wird.
-Für den Vorgang wird die Funktion \verb+getCrossAccountCredentials()+ benötigt:
-
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-    var accessparams = await getCrossAccountCredentials();
-
-    const cbc_master_orgs = new AWS.Organizations({
-        credentials: accessparams,
-        region: 'us-east-1'
-      });
+\\
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+var docClient = new AWS.DynamoDB.DocumentClient
 \end{lstlisting}
 
+
+Für AWS Organizations müssen bei der Erstellung des Service-Objekts zusätzlich die temporären Anmeldeinformation mitgegeben werden, da sich der Dienst in einem anderen Account befindet.
+Außerdem muss die Region geändert werden.
+AWS Organizations ist ein Dienst, der nur in der Region \verb+us-east-1+ betrieben wird.
+Für diesen Vorgang wird die Funktion \verb+getCrossAccountCredentials()+ benötigt.
 Im ersten Schritt werden temporäre Anmeldeinformation abgerufen und anschließend dem Service-Objekt übergeben.
-Dadurch ist es der Funktion möglich die Funktion \verb+listAllAccounts()+ mit einer anderen Identität auszuführen.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Neues ServiceObject mit einer anderen Identität} ]
+var accessparams = await getCrossAccountCredentials();
+
+const cbc_master_orgs = new AWS.Organizations({
+    credentials: accessparams,
+    region: 'us-east-1'
+  });
+\end{lstlisting}
+
+
+Im Anschluss ist es möglich die Funktion \verb+listAllAccounts()+ mit einer anderen Identität auszuführen.
+Dafür muss das neu erstellte ServiceObjekt übergeben werden.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Funktionsaufruf mit anderer Identität} ]
+    listAllAccounts(cbc_master_orgs)
+\end{lstlisting}
 
 \subsubsection{Asynchrone Verarbeitung mit NodeJS}
 
 Alle vier Funktionen werden im Handler der Funktion nacheinander ausgeführt.
-Neben den unterschiedlichen IAM-Rollen war die Sicherstellung der asynchronen Abarbeitung ein wichtiger Aspekt bei der Programmierung.
+Neben den unterschiedlichen Identitäten war die Sicherstellung der asynchronen Abarbeitung ein wichtiger Aspekt bei der Programmierung.
 Alle Funktionen durften nicht gleichzeitig ausgeführt werden, da sie voneinander abhängig waren.
 Damit die Funktion \verb+listAllAccounts()+ erfolgreich war, musste zuvor Identität des Master-Accounts angenommen werden.
 Zudem muss die Funktion \verb+writeAllDynamoDBItems()+ auf die Fertigstellung von \verb+listAllAccounts()+ warten, da sie sonst keine Daten zum speichern hat.
@@ -194,7 +240,7 @@ Als ID wurde eine MD5 Hash aus dem Accountnamen und der AccountID gewält, um di
 Es kann nicht ausgeschlossen werden, dass ein anderer Wert eventuell erneut auftritt.
 Der Hash-Wert wird in Lambda mit dem Modul \verb+crypto+ realisiert.
 
-\subsection{Implementierung Cognito}
+\subsection{Implementierung Authentifizierung}
 
 Im Abschnitt \ref{CognitoEntscheidung} \nameref{CognitoEntscheidung} wurde bereits erwähnt, dass Amplify in Kombination mit Cognito
 alle benötigten Module für eine vollständige Authentifizierung beinhaltet.
@@ -272,9 +318,10 @@ Mitarbeiter die Zugang benötigten müssen sich einen separaten Account erstelle
 Falls in Zukunft eine bessere Option zur Verfügung steht, kann sie jederzeit hinzugefügt werden, ohne das bestehende System zu beeinträchtigen.
 
 
-\subsection{Implementierung Hosting und Veröffentlichung}
+\subsection{Implementierung Frontend und Hosting}
 
 \subsubsection{Programmierung React Frontend}
+\label{ReactFrontend}
 Im letzten Schritt der Implementierung muss das Frontend konfiguriert werden und die gesamte Anwendung veröffentlicht werden.
 Bisher weißt das Frontend eine Authentifizierung auf und dank der Lambda-Funktion sind Informationen in der DynamoDB-Tabelle verfügbar.
 Nun muss mit React und AppSync eine Abfrage der Daten stattfinden.

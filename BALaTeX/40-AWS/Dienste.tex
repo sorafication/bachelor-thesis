@@ -27,17 +27,17 @@ Jede Ressource besitzt eine eigene URI.\cite[]{REST}
 
 Beispiel für Abfragen könnten folgendermaßen aussehen:
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  GET /AccountNames/
-  GET /AccountNames/123
-  GET /AccountNames/456
-  POST /Accounts/1
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+GET /AccountNames/
+GET /AccountNames/123
+GET /AccountNames/456
+POST /Accounts/1
 \end{lstlisting}
 
-Mithilfe des ersten \verb+GET+ Requests kann eine Liste von Accounts abgerufen werden, der zweite \verb+GET+ Request liefert nur die Informationen für den 123 Eintrag der Accountnamen.
-Um nur zwei Namen zu erhalten, sind dementsprechend auch zwei Requests notwendig, da sie separate Ressourcen sind.
-Eine Alternative Option wäre alle Accountnamen zu erhalten und nur die benötigten heraus zu filtern.
-Der \verb+POST+ Request erlaubt es einen neuen Account anzulegen.
+Mithilfe desrersten \verb+GET+ Anfrage kann eine Liste von Accounts abgerufen werden, die zweite \verb+GET+ Anfrage liefert nur die Informationen für den Eintrag \glqq 123\grqq{}  der Accountnamen.
+Um nur zwei Namen zu erhalten, sind dementsprechend auch zwei Abfragen notwendig, da sie separate Ressourcen sind.
+Eine alternative Option wäre alle Accountnamen zu erhalten und nur die benötigten heraus zu filtern.
+Die \verb+POST+ Abfrage erlaubt es einen neuen Account anzulegen.
 Es ist wichtig vorher zu überlegen in welchem Kontext die Daten später benötigt werden.
 Dank der Zustandslosigkeit wird eine leichtere Skalierung ermöglicht.
 Anfragen können durch einen Loadbalancer auf mehrere Server verteilt und bearbeitet werden.
@@ -49,13 +49,13 @@ Stellt zum Beispiel ein Browser eine Anfrage, wird zuerst geschaut, ob sich die 
 Falls ja werden sie aus dem Cache geliefert und der Server wird nicht kontaktiert.
 Fehlen die Daten im Cache werden sie von dem Server abgefragt und anschließend dem Client zurückgegeben und zusätzlich im Cache gespeichert, sodass jede weitere Anfrage direkt aus dem Cache ausgeliefert werden kann.
 Der Client stellt seine Anfrage dabei normal an den Zielserver, für ihn ist der Cache nicht direkt sichtbar.
-Beim HTTP-Caching entscheidet der \verb+Cache-Control+ Header\footnote{Ein HTTP-Header ist eine Zusatzinformation die zwischen Client und Server ausgetauscht werden kann.} ob und wie lange eine Datei als gültig gilt.
+Beim HTTP-Caching entscheidet der \verb+Cache-Control+ Header\footnote{Ein HTTP-Header ist eine Zusatzinformation die zwischen Client und Server ausgetauscht werden kann.} ob und wie lange ein Datensatz als gültig gilt.
 Ein gesetzter Header mit dem Wert \verb+Cache-Control: max-age=3600+ teilt dem Client etwa mit, dass die Datei eine Stunde gültig ist, und in diesem Zeitraum nicht erneut abgerufen werden muss. \cite[]{Cache}
 
 Wächst eine Applikation immer weiter entstehen auch immer neue API Endpunkte.
 Besteht die Anforderung alle Daten abzufragen, wären mehrere separate Anfragen notwendig.
 Es ist zudem nicht möglich die angeforderten Daten genauer zu spezifizieren.
-Mittels \verb+GET+ Request erhält man immer alle Daten die die API zurückgibt, egal wie viel man tatsächlich davon benötigt.
+Mittels \verb+GET+ Abfrage erhält man immer alle Daten die die API zurückgibt, egal wie viel man tatsächlich davon benötigt.
 Dieses Phänomen nennt sich Over-fetching bzw. Under-fetching.
 Beim Over-fetching werden mehr Daten bezogen als die Anwendung eigentlich benötigt und beim Under-fetching müssen mehrere Anfragen an den Server gesendet werden um die benötigte Menge an Daten zu erhalten.\cite[]{API}
 
@@ -65,12 +65,12 @@ Zu den Endgeräten zählen Webanwendungen, Mobilgeräte oder auch
 IoT\footnote{IoT steht für Internet of Things (deutsch: Internet der Dinge) und bezeichnet ein System von vernetzten Geräten, welche
  über das Internet miteinander kommunizieren können. Dazu gehören Geräte die ihre Daten selbständig sammeln und zur Verfügung stellen können,
  etwa auch Alltagsgegenstände wie smarte Thermostate oder digitale Sprachassistenten. } Geräte.
-Eingehende Requests werden mit API Gateway an einen ausgewählten Dienst weitergeleitet.
-Für jeden unterschiedlichen Request lässt sich ein anderes Verhalten konfigurieren.
-Mithilfe des Dienstes lässt sich beispielhaft der zuvor beschriebene \verb+GET+ Request an eine Datenbank weiterleiten, die die gewünschten Daten zurückgibt.
-Der \verb+POST+ Request könnte an eine Lambda-Funktion weitergeleitet werden, welche die Daten verarbeitet und an einem anderen Ort speichert.
+Eingehende Abfragen werden mit API Gateway an einen ausgewählten Dienst weitergeleitet.
+Für jede unterschiedliche Abfrage lässt sich ein anderes Verhalten konfigurieren.
+Mithilfe des Dienstes lässt sich beispielhaft die zuvor beschriebene \verb+GET+ Abfrage an eine Datenbank weiterleiten, die die gewünschten Daten zurückgibt.
+Die \verb+POST+ Abfrage könnte an eine Lambda-Funktion weitergeleitet werden, welche die Daten verarbeitet und an einem anderen Ort speichert.
 AWS API Gateway arbeitet dabei vollkommen Serverless und skaliert automatisch mit den Anforderungen. Neben Zugriff auf den Lambda-Dienst, ist es auch möglich
-mit anderen Diensten wie EC2, S3 oder auch DynamoDB (siehe \ref{DynamoDB} \nameref{DynamoDB}) zu kommunizieren.
+mit anderen Diensten wie EC2, S3 oder auch DynamoDB (siehe \textit{\ref{DynamoDB} \nameref{DynamoDB}}) zu kommunizieren.
 
 Zusätzlich bietet der Dienst viele weitere Funktionalitäten. Dazu gehören CORS-Support\footnote{CORS steht für Cross-Origin Resource Sharing und
 beschreibt einen Mechanismus der mittels zusätzlicher HTTP Header Berechtigungen für Ressourcen vergibt, falls sich diese Ressourcen auf einer anderen
@@ -87,7 +87,7 @@ Hier kosten 0,5 GB an Zwischenspeicher 0,02 USD pro Stunde. Je höher der Speich
 
 \subsubsection{GraphQL API: AWS Appsync}
 \label{GraphQL}
-2015 wurde GraphQL von Facebook veröffentlicht und 2018 in die Linux Foundation\footnote{Die Linux Foundation ist eine gemeinnützige Organisation mit Sitz in der USA.
+2015 wurde GraphQL von Facebook veröffentlicht und 2018 in die Linux Foundation\footnote{Die Linux Foundation ist eine gemeinnützige Organisation mit Sitz in den USA.
 Das Ziel ist es Linux zu fördern und das Wachstum zu unterstützen.} ausgegliedert.
 GraphQL APIs arbeiten nicht mit Ressourcen oder mehreren Endpunkten, sondern mit Typen und Feldern.
 Häufigste Art von Typen sind Objekttypen, welche ein Objekt mit bestimmten Feldern repräsentiert, zum Beispiel der Typ Accounts mit allen zugehörigen Informationen.
@@ -108,7 +108,7 @@ Ein Vorteil der stark definierten Typen ist eine geringere Fehlkommunikation zwi
 Der Server kann die Anfragen automatisch auf Korrektheit prüfen und fehlerhafte Anfragen bereits zu Beginn der Transaktion ablehnen.
 
 Um Datenobjekte in einem Schema zu erzeugen kann man folgende Struktur nutzen:
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 type Account {
   id: ID!
   accountid: String!
@@ -120,22 +120,22 @@ type Account {
 \end{lstlisting}
 
 Es wird der Typ Account mit sechs Feldern generiert.
-Den einzelnen Feldern wird zugewiesen, ob es sich um ein String, Int oder etwas anderes handelt.
+Den einzelnen Feldern wird zugewiesen, ob es sich um einen String, Integer oder etwas anderes handelt.
 Mit dem Ausrufezeichen wird ein Feld als zwingend benötigt markiert.
 Es darf also nicht leer sein. Die einzigartige ID wird vom Server beim Erzeugen von neuen Einträgen automatisch erstellt.
 Damit das erstellte Objekt \verb+Account+ durch eine Query abgerufen werden kann, muss noch ein entsprechender Query-Typ erzeugt werden:
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 type Query {
-	getAccount(id: ID!): Account
+  getAccount(id: ID!): Account
 }
 
 \end{lstlisting}
 
 Um diesen Typ zu verwenden muss folgende Query aufgerufen werden:
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  query MyQuery {
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+query MyQuery {
   getAccount(id: "MyDesiredID") {
     id
     email
@@ -151,8 +151,8 @@ Hierbei ist es unwichtig, ob alle oder nur ein Feld mit angegeben wird.
 Wird zum Beispiel die Email nicht benötigt, lässt man das Feld weg und die Information wird nicht mehr an den Client übertragen.\cite[]{GraphQL1}
 Eine HTTP-Abfrage könnte folgenermaßen aussehen\cite[]{GraphQLHTTP}:
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  GET http://meineapi.com/graphql?query={me{name}}
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+GET http://meineapi.com/graphql?query={me{name}}
 
 \end{lstlisting}
 
@@ -161,9 +161,9 @@ Zum Hinzufügen eines neuen Eintrags wäre folgender Mutations-Typ notwendig.
 Zusätzlich werden mögliche Felder für die Eingabe benötigt.
 
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  type Mutation {
-    addAccount(userInput: UserInput!): User
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+type Mutation {
+  addAccount(userInput: UserInput!): User
 }
 
 input UserInput {
@@ -178,17 +178,17 @@ input UserInput {
 
 Anschließend kann eine Mutation wie folgt aussehen:
 
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 mutation {
   addAccount(
-      name: "AWS-XXX",
-      num: 145,
-      email: "oktavius@cbc.de",
-      accountid: "123456789",
-      status: "ACTIVE)
-       {
-        id
-      }
+    name: "AWS-XXX",
+    num: 145,
+    email: "oktavius@cbc.de",
+    accountid: "123456789",
+    status: "ACTIVE)
+    {
+     id
+    }
 }
 \end{lstlisting}
 
@@ -196,7 +196,7 @@ Es ist außerdem möglich in einer Mutation auch direkt Daten abzufragen. Beim E
 vom Server angelegte ID abfragen und überprüfen.\cite[]{GraphQL1}
 
 Neben den bisher genannten Funktion bietet GraphQL noch Subscriptions an.
-Diese ermöglichen dem Client Echtzeitbenachrichtigungen zu erhalten, sobald neue Daten dem Backend hinzugefügt worden sind.
+Diese ermöglichen dem Client Echtzeitbenachrichtigungen zu erhalten, sobald dem Backend neue Daten hinzugefügt worden sind.
 Subscriptions werden durch Mutationen ausgelöst, wobei das AWS AppSync SDK sich um die Verwaltung dieser kümmert.
 Realisiert wird die Echtzeitverarbeitung mithilfe von Websockets\footnote{Unter WebSockets versteht man ein Protokoll, dass eine bidirektionale Kommunikation zwischen Client und Server ermöglicht. Nachdem ein Client eine initiale Anfrage gesendet hat, kann die Verbindung offen bleiben und so der Server selbstständig Informationen verschicken. \cite[]{Websockets}}
 oder dem MQTT-Protokoll\footnote{MQTT steht für Message Queue Telemetry Transport und dient zum zuverlässigen Nachrichtenaustausch. Abgebrochene Verbindungen können wieder aufgebaut werden und verlorene Nachrichten erneut ausgeliefert. \cite[]{MQTT} } in Kombination mit WebSockets. \cite[]{GraphQLSubs}
@@ -219,6 +219,7 @@ Das folgende Schaubild von Amazon zeigt die Funktionsweise des Dienstes genauer.
     \label{fig:meine-grafik}
 \end{figure}
 
+\label{GraphQLResolver}
 AppSync besteht aus den Hauptkomponenten GraphQL Schema und Resolver.
 Damit GraphQL weiß welche Operationen es bei Anfragen durchführen soll, werden Resolver benötigt.
 Resolver sind Funktionen, welche bestimmen wie jedes einzelne Feld im Schema weiterverarbeitet wird.
@@ -230,12 +231,12 @@ Daraufhin verknüpft der Resolver die Datenbank mit der API und erstellt alle m�
 Infolgedessen ist es mit AppSync nicht notwendig Query-Typen oder Mutations-Typen zu erstellen.
 Darüber hinaus ist es möglich auch eigene Resolver zu erstellen, falls dies benötigt wird.
 
-Zusätzlich kann AppSync eine Autorisierung mit dem Dienst AWS Cognito (siehe \ref{Cognito} \nameref{Cognito}) ermöglichen.
+Zusätzlich kann AppSync eine Autorisierung mit dem Dienst AWS Cognito (siehe \textit{\ref{Cognito} \nameref{Cognito}}) ermöglichen.
 Die Autorisierung von Clients ist mit API Keys\footnote{Der API Key ist ein Authentifizierungsschlüssel und wird bei jeder Anfrage übertragen. AWS empfiehlt ihn bei AppSync nur für Entwicklungsumgebungen,
 da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermöglicht.}
 , AWS IAM Credentials \footnote{
     AWS IAM steht für Identity Access Management und beschreibt Amazons Dienst zur Identität- und Benutzerverwaltung. Der Dienst erlaubt es Nutzer anzulegen und
-    Ihnen Berechtigungen zu verteilen.},
+    ihnen Berechtigungen zu zuzuweisen.},
     OIDC Tokens \footnote{OIDC steht für OpenID Connect und basiert auf dem OAuth 2.0 Protokoll zur Authentifizierung.
     OAuth 2.0 erlaubt es den Clients die Identität des nutzers zu überprüfen.
     OpenID ermöglicht es mittels eines Tokens sich bei weiteren Diensten Diensten anzumelden die ebenfalls OpenID unterstützen (OpenID Provider).
@@ -243,9 +244,9 @@ da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermög
     Die Tokens zur Authentifizierung (JWT Tokens) der Identität werden verschlüsselt im JSON Format versendet und ermöglichen einen standardisierten Weg zum Anmelden.
 
           } oder einem AWS
-Cognito User Pool (siehe \ref{Cognito} \nameref{Cognito}) möglich. \cite[]{AppSyncAuth}
+Cognito User Pool (siehe \textit{\ref{Cognito} \nameref{Cognito}}) möglich. \cite[]{AppSyncAuth}
 
-Sämtliche Protokolldaten sowie Metriken können in dem Dienst AWS CloudWatch Logs\footnote{ Amazon CloudWatch Logs ist ein Überwachungs- und Management-Service, indem Logs von sämtlichen AWS-Diensten gespeichert und ausgewertet werden können. } gespeichert und ausgewertet werden.
+Sämtliche Protokolldaten sowie Metriken können in dem Dienst AWS CloudWatch Logs\footnote{ Amazon CloudWatch Logs ist ein Überwachungs- und Management-Service, in dem Logs von sämtlichen AWS-Diensten gespeichert und ausgewertet werden können. } gespeichert und ausgewertet werden.
 Ähnlich wie AWS API Gateway unterstützt AppSync mehrere unterschiedliche Endgeräte.
 
 Auch Echtzeitanwendungen können mit AppSync und GraphQL Subscriptions realisiert werden.
@@ -261,10 +262,10 @@ Eine Millionen API-Aufrufe kosten 4,00 USD, eine Vergünstigung bei mehr Abrufen
 
 \subsubsection{Entscheidung}
 Für das, in dieser Arbeit, gewünschte Projekt wäre eine Implementierung sowohl mit einer REST API als auch mit GraphQL möglich.
-Beide Dienste für die API sind zudem direkt in Amplify (siehe \ref{Amplify} \nameref{Amplify}) integriert und benötigen keine separate Konfiguration.
+Beide Dienste für die API sind zudem direkt in Amplify (siehe \textit{\ref{Amplify} \nameref{Amplify}}) integriert und benötigen keine separate Konfiguration.
 
 Mit AWS APIGateway müsste man mehrere unterschiedliche Endpunkte konfigurieren und im Frontend einbauen.
-Im ersten Schritt würde ein \verb+GET+ Request auf alle Accounts inklusive aller zusätzlichen Daten ausreichen.
+Im ersten Schritt würde eine \verb+GET+ Abfrage auf alle Accounts inklusive aller zusätzlichen Daten ausreichen.
 Die benötigte Datenbank und alle damit verbundenen Autorisierungen müssten manuell eingerichtet werden.
 
 GraphQL bietet sich an, wenn man mehrere Microservices nutzt und alle in einem Schema konsolidieren möchte.
@@ -285,16 +286,16 @@ Diese Operationen können dann im Anschluss direkt im Frontend verwendet werden.
 
 Aufgrund der überzeugenderen Integration und höheren Flexibilität wird die Anwendung mit AWS AppSync realisiert, da viele Einstiegshürden von AWS übernommen werden.
 Es ist davon auszugehen, dass es keine gravierenden Unterschiede bei den Kosten geben wird.
-Zum einem sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden keine Millionen von Requests erwartet.
+Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden keine Millionen von Anfragen erwartet.
 
 
 
 
 
 \subsection{Datenbanksystem}
-Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationelle und nicht relationelle Datenbanken.
+Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationale und nicht relationale Datenbanken.
 Sie variieren in vielen Aspekten und haben andere Anwendungsfälle.
-Amazon bietet für beide Technologien eigene Dienste an, die im folgenden genauer betrachtet und verglichen werden sollen.
+Amazon bietet für beide Technologien eigene Dienste an, die im Folgenden genauer betrachtet und verglichen werden sollen.
 
 \subsubsection{Relationale Datenbanken: AWS RDS}
 
@@ -312,17 +313,17 @@ PostgreSQL, MySQL, MariaDB, Oracle Database, Microsoft SQL-Server und Amazons ei
 RDS bietet mehrere unterschiedliche Instanztypen an.
 Je höher die geforderte Kapazität, desto höher auch der Preis.
 Der Instanztyp lässt sich jederzeit anpassen.
-Während des Erstellens müssen Credentials für den Zugriff angegeben werden.
+Während des Erstellens müssen Zugangsdaten für den Zugriff angegeben werden.
 Man erhält keinen direkten Zugang auf die zugrundeliegende Hardware, sondern einen User für den jeweils ausgewählten SQL Service.
-Im Falle von MySQL würde man etwa nach Erstellen einen Endpunkt erhalten, auf den man per
-\begin{lstlisting}
-     mysql -h <Endpunkt> -u <User> -p <Passwort>
-    \end{lstlisting} Befehl sich anmelden kann. SSH-Zugang oder ähnliches ist bei RDS nicht vorgesehen.
+Im Falle von MySQL würde man etwa nach Erstellen einen Endpunkt erhalten, auf den man sich per
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+  mysql -h <Endpunkt> -u <User> -p <Passwort>
+    \end{lstlisting} Befehl sich anmelden kann. SSH-Zugang oder Ähnliches ist bei RDS nicht vorgesehen.
     Das angegebene Beispiel ist typisch für einen Plattform as a Service Dienst.
 
 Eine Hochverfügbarkeit ist möglich, indem man den Punkt Multi-Availability Zone auswählt und so eine Standby-Instanz in einer anderen Availability Zone bereitsteht.
 Hierdurch steigt jedoch auch der Preis. Software-Patches können von dem Dienst automatisch eingespielt werden.
-Anders als DynamoDB, gibt es keine direkte Integration von RDS Datenbanken mit Serverless Anwendungen bei AWS.
+Anders als bei DynamoDB gibt es keine direkte Integration von RDS Datenbanken mit Serverless Anwendungen bei AWS.
 AWS stellt keine direkte Verknüpfung zwischen GraphQL API und RDS zur Verfügung. Eine Implementierung mittels REST bzw. API Gateway würde eine zusätzliche Lambda-Funktion voraussetzen, welche
 die Abfrage gegen eine nicht öffentliche RDS Datenbank ausführt. Wäre die Datenbank im Internet erreichbar müsste das Frontend Credentials besitzen um auf die Datenbank zugreifen zu können.
 RDS eignet sich vor allem bei klassischen SQL-basierten Datenbanksystemen. Gibt es Einschränkungen eine bestimmte Datenbank-Engine zu nutzen, bietet sich der Dienst ebenfalls an.
@@ -352,11 +353,11 @@ Da bei SQL-basierten Datenbanken lesende Abfragen so lange warten bis schreibend
 NoSQL Datenbanken könnten im Zweifel unterschiedliche Daten zurückgeben, falls noch nicht alles ausgetauscht wurde. \cite[]{Datenbankvergleich}
 
 Anders als AWS RDS gibt es bei DynamoDB gar keine Möglichkeiten mehr sich bei der Datenbank-Engine anzumelden. Der Dienst wird als Serverless angeboten.
-Es müssen keine Kapazitäten im voraus berechnet werden, da der Dienst automatisch skaliert.
+Es müssen keine Kapazitäten im Voraus berechnet werden, da der Dienst automatisch skaliert.
 Anwender haben die Option direkt Tabellen anzulegen.
 Zudem entfällt es auch sich um Software-Patches oder der Sicherstellung der Hochverfügbarkeit zu kümmern, da Tabellen immer global bereitgestellt werden.
 Im Gegensatz zu den meisten NoSQL Datenbanken unterstützt DynamoDB ACID-Transaktionen. Amazon bietet dafür eine eigene API an, die in der Applikation zusätzlich
-implementiert werden muss. Insgesamt ist es sehr schnell möglich eine Tabelle mit dem Dienst bereitzustellen. Zudem existiert sogut wie kein Wartungsaufwand,
+implementiert werden muss. Insgesamt ist es sehr schnell möglich eine Tabelle mit dem Dienst bereitzustellen. Zudem existiert so gut wie kein Wartungsaufwand,
 da Amazon die Verantwortung für die wichtigsten Aspekte übernimmt.\cite[]{DynamoDB}
 
 Das Preiskonzept für DynamoDB ist sehr granular aufgebaut und bietet zwei unterschiedliche Kapazitätsmodi an. Der Modus \glqq Bereitgestellt\grqq{} bietet sich an,
@@ -369,7 +370,7 @@ Nachteil von Strongly Consistent ist die höhere Latenz und ein höherer Verbrau
 \glqq Eventually Consistent Reads\grqq , wobei ein Aufruf bis zu 8 KB eine Einheit erfordert.
 Eine Million dieser Schreibanforderungen kosten in Frankfurt 1,525 USD und eine Million Leseanforderungen 0,305 USD.
 Zudem entstehen Kosten für den Datenspeicher, die Sicherung, Datenübertragung und ein paar weitere speziellere Funktionen.
-Beim Datenspeicher sind die ersten 25 GB pro Monat Kostenlos und kosten danach pro GB-Monat 0,306 USD. \cite[]{DynamoDBPreise}
+Beim Datenspeicher sind die ersten 25 GB pro Monat kostenlos und kosten danach pro GB-Monat 0,306 USD. \cite[]{DynamoDBPreise}
 
 \subsubsection{Entscheidung}
 Eine NoSQL-Datenbank, und damit AWS DynamoDB, sind für diese Projektumsetzung besser geeignet.
@@ -378,7 +379,7 @@ auch durch die höhere Flexibilität passender.
 Eine RDS Datenbank müsste separat vom restlichen Workflow aufgesetzt und konfiguriert werden. Egal ob GraphQL API oder REST API, eine Umsetzung mit RDS wäre deutlich
 aufwendiger als mit DynamoDB.
 Bei der Kombination GraphQL und RDS müsste das GraphQL Schema samt aller Queries und Mutationen manuell erstellt werden, da kein automatisierter
-Dienst dafür existiert. Auf der anderen Seite müsste für das API Gateway zusätzlich ein Weg zur Kommunikation mit der RDS Datenbank bereitgestellt werden.
+Dienst dafür existiert. Auf der anderen Seite müsste für das API Gateway zusätzlich einen Weg zur Kommunikation mit der RDS Datenbank bereitgestellt werden.
 Die Möglichkeit die RDS Datenbank im Internet erreichbar zu machen ist auf Grund des erhöhten Sicherheitsrisikos keine Option.
 
 Der DynamoDB Dienst ist im Vergleich dazu erheblich einfacher aufzusetzen.
@@ -386,14 +387,14 @@ Der Workflow der Anwendung benötigt keine ACID-Garantien oder komplexe Abfragen
 Cloud Provider handelt die keinen direkt Bezug zueinander haben.
 Mit RDS ist eine Auswahl eines Instanztypes notwendig und es würden ebenfalls pauschale Kosten für die Server anfallen.
 Da bereits die Entscheidung für AWS AppSync bei der API fiel, ist es zudem eine erhebliche Erleichterung eine DynamoDB Tabelle mit der API zu verknüpfen.
-Eine Umsetzung mit DynamoDB ermöglicht es den Konfigurationsaufwand und die Kosten auf ein Minimum zu halten.
+Eine Umsetzung mit DynamoDB ermöglicht es den Konfigurationsaufwand und die Kosten minimal zu halten.
 
 
 \subsection{Authentifizierung}
 \label{Authentifizierung}
 Da die Anwendung bei AWS gehostet wird, wird sie auch über das Internet erreichbar sein.
 Um den Zugriff nur für ausgewählte Mitarbeiter der Mediengruppe RTL einschränken zu können ist eine Authentifizierung essentiell.
-Ohne Registrierung und Anmeldung darf es nicht möglich seine Daten einsehen zu können.
+Ohne Registrierung und Anmeldung darf es nicht möglich sein Daten einzusehen.
 Im besten Fall ist es sogar möglich die Authentifizierung mit bereits vorhandenen Firmenidentitäten zu verknüpfen, sodass keine eigenen
 Benutzer registriert werden müssen.
 
@@ -404,6 +405,9 @@ Mit Single Sign-On benötigt man nur eine einmalige Authentifizierung, um auf s�
 Der Anwender muss sich nicht mehr überall einzeln anmelden.
 Innerhalb des SSO-Systems wird die Identität zusammengeführt und übernimmt die Aufgabe die Identität des Anwenders zu bestätigen.
 Größter Vorteil ist eine konsolidierte Möglichkeit zur Anmeldung. Zudem muss der Anwender, falls er das Unternehmen verlässt, nur noch an einer Stelle entfernt werden und der Zugang zu allen Diensten wird automatisch entzogen.
+Zusätzlich wird unter bestimmten Bedingungen eine MFA-Verifizierung \footnote{MFA steht für Multi-Factor Authentication und steigert die Sicherheit für Nutzer indem neben dem Passwort
+ein weiterer Faktor zum Anmelden benötigt wird. Häufig wird als Zweitfaktor eine SMS mit einem Code oder
+ein Einmalkennwort welches mittels TOTP(Time-based One-time Password) Verfahren generiert wird. } erfordert.
 
 Um den Registrierungs- und Anmeldeprozess so einfach wie möglich zu gestalten, bietet AWS den Dienst Cognito an.
 
@@ -411,8 +415,9 @@ Um den Registrierungs- und Anmeldeprozess so einfach wie möglich zu gestalten, 
 \label{Cognito}
 Amazon Cognito ist ein voll integrierter Dienst zur Benutzerverwaltung und Autorisierung.
 Cognito übernimmt dabei die Registrierung und Verwaltung neuer Benutzer sowie die Steuerung von Zugriffen.
-Mithilfe des AWS Amplify-Frameworks kann die Benutzeroberfläche zum Registrieren, An- und Abmelden leicht in die eigene Anwendung implementiert werden.
-Das Framework stellt SDKs für alle gängigen mobilen Plattformen sowie JavaScript inklusive JavaScript-Frameworks wie React,Angular und Vue bereit.
+Mithilfe des AWS Amplify-Frameworks kann die Benutzeroberfläche zum Registrieren bzw. An- und Abmelden leicht in die eigene Anwendung implementiert werden.
+Das Framework stellt SDKs für alle gängigen mobilen Plattformen sowie JavaScript inklusive JavaScript-Frameworks wie React, Angular und Vue bereit.
+Ein Vergleich der Javascript-Frameworks befindet sich im Abschnitt \textit{\ref{FrontendFramework} \nameref{FrontendFramework}}.
 Es soll möglich sein, mit wenig Code die eigene Anwendung mit Cognito zu verknüpfen, und bei Bedarf die Oberfläche anzupassen.
 Der Dienst ist vollständig Serverless aufgebaut und bietet die Option \glqq Hunderte von Millionen Benutzern\grqq{} zu verwalten,
 \glqq ohne dass Server-Infrastruktur aufgestellt werden muss\grqq{} \cite[]{CognitoUebersicht}. \cite[]{Cognito2}
@@ -422,9 +427,7 @@ Ein Benutzerpool ist ein Verzeichnis durch den Benutzer angelegt und verwaltet w
 Hier können Attribute konfiguriert werden, z.B. mit welcher Information sich Benutzer anmelden können.
 Zur Option stehen ein Username, die E-Mail Adresse oder eine Telefonnummer.
 Außerdem ist es möglich weitere Attribute zu setzen, wie etwa das Geschlecht, der Wohnort, das Geburtsdatum und noch viele weitere.
-Eine MFA-Verifizierung\footnote{MFA steht für Multi-Factor Authentication und steigert die Sicherheit für Nutzer indem neben dem Passwort
-ein weiterer Faktor zum Anmelden benötigt wird. Häufig wird als Zweitfaktor eine SMS mit einem Code oder
-ein Einmalkennwort welches mittels TOTP(Time-based One-time Password) Verfahren generiert wird. } ist ebenfalls im Dienst implementiert.
+Eine MFA-Verifizierung ist ebenfalls im Dienst implementiert.
 Über den Benutzerpool können ebenfalls App-Clients erstellt werden.
 Ein App-Client wird genutzt um nicht authentifizierte Operationen durchführen zu können.
 Dazu gehört das Registrieren, Anmelden und die Passwortwiederherstellung.
@@ -459,7 +462,7 @@ Wird gewünscht zusätzlich noch MFA oder eine sichere Passwortwiederherstellung
 Angesichts der enormen Einfachheit und ausreichenden Flexibilität ist die Verwendung von Cognito die sinnvollere Wahl.
 Auf Wunsch kann Cognito mit einer Vielzahl von Anbietern und Diensten verknüpft werden, sowie direkt in Amplify integriert werden.
 Das Amplify-Framework bietet für die gängigen JavaScript-Frameworks vorgefertigte Module an, um noch weniger Konfigurationsaufwand betreiben zu müssen.
-Dank Cognito dürfe die Implementierung einer Authentifizierung in einer Serverless Anwendung keinen allzu großen Aufwand mehr benötigen.
+Dank Cognito dürfte die Implementierung einer Authentifizierung in einer Serverless Anwendung keinen allzu großen Aufwand mehr benötigen.
 
 
 \subsection{Backend Logik}
@@ -487,7 +490,7 @@ Mit etwas mehr Aufwand ist es zudem auch möglich eine Benutzerdefinierte Laufze
 NodeJS und Python Code können direkt in der Webkonsole geschrieben und getestet werden.
 Weiterhin besteht die Möglichkeit den Code mithilfe einer ZIP-Datei oder über die lokale Entwicklungsumgebungen hochzuladen.\cite[]{LambdaFAQ}
 
-Wie bereits im Abschnitt \frqq \ref{FaaS} \nameref{FaaS} \flqq{} erwähnt arbeitet Lambda eventbasiert und kann sowohl von anderen AWS-Diensten, als auch durch einen manuellen Aufruf ausgelöst werden.
+Wie bereits im Abschnitt \textit{\ref{FaaS} \nameref{FaaS}} erwähnt arbeitet Lambda eventbasiert und kann sowohl von anderen AWS-Diensten, als auch durch einen manuellen Aufruf ausgelöst werden.
 Ingsesamt gibt es unterschiedliche Varianten eine Lambda-Funktion zu starten.
 Zum einem kann Lambda direkt Daten aus Services lesen, welche einen Datenstrom oder eine Warteschlange erzeugen.
 So ist es möglich jedes Mal eine Lambda-Funktion auszulösen, sobald eine DynamoDB-Tabelle aktualisiert wird.
@@ -530,7 +533,7 @@ Anforderungen, zu denen jeder Aufruf oder jede Ereignisbenachrichtigung zählen,
 \label{LambdaEntscheidung}
 AWS Lambda eignet sich optimal zur Realisierung der Webanwendung.
 Direkt nach Erstellung der Lambda-Funktion und setzen der passenden Berechtigungen kann am Code geschrieben werden.
-Dementsprechend muss keine Zeit für Themen wie Netzwerk, Virtualisierung oder der Laufzeitumgebung vergeudet werden.
+Dementsprechend muss keine Zeit für Themen wie Netzwerk, Virtualisierung oder die Laufzeitumgebung vergeudet werden.
 
 Für die Webanwendung wird eine Lambda-Funktion benötigt, die über den Dienst AWS Organizations alle zurzeit verfügbaren Accounts abrufen kann.
 AWS Organizations ist ein zentraler Dienst zur Steuerung und Verwaltung von AWS Accounts.
@@ -539,15 +542,15 @@ Nur dieser Master-Account besitzt Informationen über alle verfügbaren Accounts
 Die Lambda-Funktion, welche in einem anderen Account bereitgestellt wird, benötigt Zugriff auf den Master-Account und muss über eine API die Liste der Accounts abrufen können.
 Anschließend müssen die gesammelten Daten in die DynamoDB-Tabelle gespeichert werden.
 Alle Komponenten dieses Projektes werden in einem separaten Account erzeugt, der durch die Organisation erstellt wurde.
-Eine genauere Beschreibung der benötigten Berechtigungen und Accountstruktur befindet sich im Abschnitt (XXXX).
 
 Da das Frontend mit einem JavaScript-Framework erzeugt wird, bietet es sich an für Lambda NodeJS als Programmiersprache zu verwenden.
 So wird vermieden zwei unterschiedliche Syntaxstrukturen und Funktionsweisen lernen zu müssen.
 AWS bietet für NodeJS eine AWS Organizations API an, um exakt diesen Aufruf tätigen zu können.
-Der Zugriff auf AWS Organizations sowie die Verwendung dieser API werden im Abschnitt (XXXX) genauer erläutert.
+Der Zugriff auf AWS Organizations sowie die Accountstruktur der Mediengruppe RTL werden im Abschnitt (\ref{Accountstruktur} \nameref{Accountstruktur}) genauer erläutert.
 \cite[]{SDKListAccounts}
 
 \subsection{Frontend Framework}
+\label{FrontendFramework}
 Die bisher ausgewählten Dienste Cognito und AppSync unterstützten die gängigsten JavaScript-Frameworks.
 Auch im Zusammenspiel mit Amplify gibt es keine Einschränkungen.
 Zur Auswahl für das Web-Frontend stehen React, React Native, Vue oder Angular.
@@ -580,17 +583,17 @@ Innerhalb von geschweiften Klammern wird alles als Javascript Code behandelt.
 Es ist also auch möglich alle Elemente direkt mit React und Javascript zu erzeugen, jedoch versucht JSX eine komfortablere und leichtere Lösung anzubieten.
 Anstatt Methoden wie \verb+React.createElement()+ zu nutzen reicht es aus die HTML Syntax zu kennen.
 Mit JSX lässt sich ein \verb+<div>+ Element wie folgt erzeugen:
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  const divelement = <div>Ich bin ein DIV-Element</div>;
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+const divelement = <div>Ich bin ein DIV-Element</div>;
 
-  ReactDOM.render(divelement, document.getElementById('root'));
+ReactDOM.render(divelement, document.getElementById('root'));
 \end{lstlisting}
 
 Ohne JSX wäre folgender Code notwendig:
-\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
-  const divelement = React.createElement('div', {}, 'TEXT');
+\begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+const divelement = React.createElement('div', {}, 'TEXT');
 
-  ReactDOM.render(divelement, document.getElementById('root'));
+ReactDOM.render(divelement, document.getElementById('root'));
 \end{lstlisting}
 \cite[]{JSX}
 
@@ -606,42 +609,41 @@ Amplify ist ein zentraler Dienst rund um das Thema Serverless Webanwendungen, di
 Amazon bezeichnet Amplify selbst als {}\glqq ein Set aus Tools und Services, das Entwicklern erlaubt, skalierbare vollständige
 mobile und Front-End-Anwendungen zu entwickeln, powered by AWS.\grqq{}\cite[]{AWSAmplify}
 
-Amplify kann als übergeordneter Einheit angesehen werden, welche alle zuvor erläuterten Dienste an einem Ort zusammenfasst und verwaltet.
+Amplify kann als übergeordnete Einheit angesehen werden, welche alle zuvor erläuterten Dienste an einem Ort zusammenfasst und verwaltet.
 Dank Amplify soll es nicht mehr notwendig sein, Dienste einzeln zu erstellen und manuell miteinander zu verknüpfen.
 Zusätzlich bietet Amplify die Option für ein statisches Web-Hosting an.
 Es ist nur notwendig den Code für die Anwendung entweder über die Web-Konsole oder die CLI hochzuladen.
 Den gesamten Workflow für die Bereitstellung kann im Anschluss von Amplify übernommen werden.
-Dafür wird eine eigene amplifyapp.com-Subdomain bereitgestellt.
+Dafür wird eine eigene \glqq amplifyapp.com\grqq-Subdomain bereitgestellt.
 Diese lässt sich auch auf eine Wunsch-Domain anpassen.
-Außerdem besteht die Möglichkeit Amplify mit GitHub zu verknüpfen und somit ein automatisierten CI/CD Workflow aufzubauen.
+Außerdem besteht die Möglichkeit Amplify mit GitHub zu verknüpfen und somit einen automatisierten CI/CD Workflow aufzubauen.
 Sobald ein Code in einem bestimmten Repository aktualisiert wurde, kann Amplify die Anwendung automatisch aktualisieren und veröffentlichen.
  \cite[]{AmplifyHosting}
 
-Amplify lässt sich sowohl über die Amazon Web Console konfigurieren, als auch über eine eigene Amplify CLI.
+Amplify lässt sich sowohl über die Amazon Web Console, als auch über eine eigene Amplify CLI konfigurieren.
 Alle verfügbaren Dienste sind in der Amplify Bibliothek vereint und können in das Frontend eingebaut werden.
-Das Amplify Framework lässt sich in drei Komponenten unterteilen: Bibliotheken, UI-Komponenten und einer CLI Toolchain.
+Das Amplify Framework lässt sich in drei Komponenten unterteilen: Bibliotheken, UI-Komponenten und eine CLI Toolchain.
 Jede Komponente kann einzeln oder gemeinsam genutzt werden.
 
 Bibliotheken sind Open Source und nutzen bereits vorhandene AWS Dienste, um eine native Webanwendung für die Cloud bereitzustellen.
-Hierzu zählen unter anderem Module für erwähnte Dienste wie Cognito, AppSync, API Gateway, oder S3.
-Darüber hinaus existieren auch Module für Chatbots, Push Benachrichtungen, AR/VR, Künstliche Intelligenz sowie weitere.
+Hierzu zählen unter anderem Module für zuvor erwähnte Dienste wie Cognito, AppSync, API Gateway, oder S3.
+Darüber hinaus existieren auch Module für Chatbots, Push Benachrichtungen, AR/VR, künstliche Intelligenz sowie weitere.
 
 Auch die UI-Komponenten sind Open Source und sollen eine einfache Verzahnung zwischen dem User Interface und den Workflows der Dienste anbieten.
 So gibt es zum Beispiel fertige Interface Elemente für das Hochladen von Bildern und Dateien in S3.
 
 Die Amplify CLI Toolchain dient dazu, ein Serverless Backend zu erstellen und verwalten.
 Dazu gehört die Erstellung aller zuvor genannten Dienste und Funktionen.
-Zudem ist es möglich ein Statisches Hosting einzurichten.
+Zudem ist es möglich ein statisches Hosting einzurichten.
+Dabei werden die benötigten Daten über ein S3 Bucket bereitgestellt.
 
 Amplify erleichtert es einem Projekte als Full Stack Developer\footnote{Als Full Stack Developer wird jemand bezeichnet, der sowohl Client als auch Server
 erstellen und betreuen kann. Er ist allein Verantwortlich für das Frontend, Backend und eventuell damit verbundene Datenbanken.} zu realisieren.
-Dies ermöglicht einem ein voll umfängliches Verständnis über die gesamte Applikation und Änderungen können leichter durchgeführt werden.
-Ein Prototyp kann ebenfalls schnell erstellt werden.
+Aus demselben Grund ist die Erstellung eines Prototypen ebenfalls schneller realisierbar.
+Neben dem statischen Hosting bietet Amplify vor allem den großen Mehrwert alle benötigten Dienste zentral verwalten zu können.
+Dies führt zu einer besseren Übersicht und einem einfacheren Einstieg in die Realisierung.
  \cite[]{AWSAmplifyKomponenten}
 
-
- Neben dem statischen Hosting bietet Amplify vor allem den großen Mehrwert alle benötigten Dienste zentral verwalten zu können.
- Dies führt zu einer besseren Übersicht und einfacheren Einstieg in die Realisierung.
 
  Nachdem nun alle Dienste vorgestellt wurden und das Design entschieden wurde, wird im kommenden Kapitel die Implementierung durchgeführt.
  Auf Basis der bisher gesammelten Erkenntnisse kann ein Architekturbild entwickelt werden, um die Zugehörigkeit aller Komponenten zu verdeutlichen.
