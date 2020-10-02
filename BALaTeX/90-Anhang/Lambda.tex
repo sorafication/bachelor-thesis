@@ -23,26 +23,24 @@ const crypto = require('crypto')
 
 
 // DynamoDB Helper Function. Currently not used.
-   async function getAllDynamoDBItems(){
-    let params = {
-      TableName: 'Comments-ifdtxan4k5fglip5ynnopk6bky-dev',
-     };
+async function getAllDynamoDBItems(){
+  let params = {
+    TableName: 'Comments-ifdtxan4k5fglip5ynnopk6bky-dev',
+   };
 
        console.log("Starting Function")
-    try {
-        var result = await docClient.scan(params).promise()
-        console.log(JSON.stringify(result))
-        console.log("Success")
-    } catch (error) {
-        console.log("FAILED")
-        console.error(error);
-    }
+  try {
+     var result = await docClient.scan(params).promise()
+     console.log(JSON.stringify(result))
+     console.log("Success")
+  } catch (error) {
+     console.log("FAILED")
+     console.error(error);
+  }
 }
 
 // DynamoDB Function to write all collected Data
  const writeAllDynamoDBItems = async (id,num,accountid,name,email,status) => {
-
-
   let params = {
     TableName: 'Account-ifdtxan4k5fglip5ynnopk6bky-dev',
     Item:{
@@ -57,11 +55,11 @@ const crypto = require('crypto')
 
      console.log("Writing Account " + name)
   try {
-      var result = await docClient.put(params).promise()
-      console.log("Success")
+    var result = await docClient.put(params).promise()
+    console.log("Success")
   } catch (error) {
-      console.log("Failed Writing Files:")
-      console.error(error);
+    console.log("Failed Writing Files:")
+    console.error(error);
   }
 }
 
@@ -108,8 +106,6 @@ const listAllAccounts =  (identity,params) => {
       else {
         console.log("Saved all Accounts");
 
-
-
             for (var i=0, max=data.Accounts.length; i < max; i++) {
                 //console.log("Count: " + j + " ID:" + data.Accounts[i].Id +" is: " +  data.Accounts[i].Name)
                 j += 1;
@@ -136,7 +132,7 @@ const listAllAccounts =  (identity,params) => {
           resolve (all_accounts);
       }
 
-          }    // successful response
+   }    // successful response
 })
 });
 } ;
@@ -154,7 +150,6 @@ try {
     region: 'us-east-1'
   });
 
-
   //Check own and assumed Identity
 
   const msg_caller = await getCallerIdentity(sts)
@@ -162,20 +157,16 @@ try {
   const msg_caller_org = await getCallerIdentity(cbc_master_sts)
   console.log("Username Assumed Identity: " + msg_caller_org.Arn)
 
-
   const all_acc = await listAllAccounts(cbc_master_orgs)
   const start = async () => {
     for (let element of all_acc) {
-      await writeAllDynamoDBItems(element.id, element.num, element.accountid, element.name, element.email, element.status) ;
+      await writeAllDynamoDBItems(element.id,element.num,element.accountid,element.name,element.email,element.status) ;
       //console.log(element);
     }
     console.log('Done');
   }
 
   await start();
-
-
-
 
 }
 catch(err){

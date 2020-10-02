@@ -16,7 +16,7 @@ Sobald Anwender die Webanwendung aufrufen, kommunizieren sie mit den Diensten Co
 Das Frontend greift mithilfe von AppSync wiederrum auf die DynamoDB-Tabelle zu, um die benötigten Daten abzufragen.
 Die Lambda-Funktion sorgt im Hintergrund dafür, dass die Daten in der Tabelle stets aktuell sind.
 Dafür wird ein Zugriff auf einen anderen AWS Account benötigt.
-GitHub wird für eine CI/CD Pipeline genutzt, und kann über Amplify konfiguriert werden.
+GitHub wird für eine CI/CD Pipeline genutzt und kann über Amplify konfiguriert werden.
 
 Die Umsetzung der Anwendung erfolgt in fünf einzelnen Schritten.
 Erzeugt werden alle Dienste über die Amplify CLI.
@@ -54,7 +54,7 @@ Aus Sicherheitsgründen wird zudem immer eine separate Umgebung für Test- und P
 Dadurch ist es möglich den Zugriff für bestimmte Umgebungen einzuschränken.
 Eine Produktivumgebung sollte so wenig Zugriff wie möglich erlauben.
 Beispiele für solche Accounts sind etwa \verb+Ntv-Streaming-Dev+ und \verb+Ntv-Streaming-Prod+.
-Jeder der Accounts ist grundsätzlich unabhängig und weißt nur über die gemeinsame Organization eine Verbindung auf.
+Jeder der Accounts ist grundsätzlich unabhängig und weißt nur über die gemeinsame Organisation eine Verbindung auf.
 Zusätzlich gibt es für N-TV noch weitere Accounts für andere Projektbereiche.
 Die Accounts \verb+Ntv-Web-Dev+ und \verb+Ntv-Web-Prod+ werden von anderen Personen betreut werden.
 Daneben ist es möglich, dass noch weitere Accounts oder Entwicklungsumgebungen benötigt werden, etwa eine \verb+PreProd+ Umgebung.
@@ -115,7 +115,7 @@ Successfully set up the new user.
 \clearpage
 \subsubsection{Einrichtung React Projekt}
 
-Eine weitere Voraussetzungen für Amplify ist die Erstellung eines neuen React-Projektes.
+Eine weitere Voraussetzung für Amplify ist die Erstellung eines neuen React-Projektes.
 Dafür bieten die Entwickler von React den Befehl \verb+npx create-react-app+ an, welcher eine fertige Entwicklungsumgebung aufsetzt.
 Dabei werden Aspekte wie die Ordnerstruktur, benötigte JavaScript-Pakete oder auch die Konfiguration eines Webservers übernommen.\cite[]{ReactNew}
 Nachdem das Projekt erstellt wurde, kann der Webserver unter der Adresse \verb+http://localhost:3000+ gestartet werden.
@@ -134,9 +134,9 @@ Nachdem das React-Projekt erfolgreich erstellt wurde, kann Amplify konfiguriert 
 Anschließend ist es möglich alle gewünschten Dienste hinzuzufügen.
 
 Zur Konfiguration muss \verb+amplify init+ ausgeführt werden.
-Als erstes werden allgemeine Informationen benötigt, wie der Projektname oder das gewünschte Javascript-Framework.
+Als Erstes werden allgemeine Informationen benötigt, wie der Projektname oder das gewünschte Javascript-Framework.
 Die darauffolgenden Pfade und Befehle sind nicht geändert worden.
-Des weiteren wird der, in \textit{\ref{EinrichtungAmplify} \nameref{EinrichtungAmplify}} erstellte, IAM-User angegeben.
+Des Weiteren wird der, in \textit{\ref{EinrichtungAmplify} \nameref{EinrichtungAmplify}} erstellte, IAM-User angegeben.
 Nach kurzer Zeit ist das Amplify Projekt bereits in der Cloud erstellt worden und verfügbar.
 
 Wie im Code ersichtlich, benutzt Amplify den Dienst AWS Cloudformation, sodass die gesamte Konfiguration in einem Template festgehalten wird.

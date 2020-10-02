@@ -236,8 +236,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Gender.tex
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Gender.tex
-INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Thx.tex
-INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/10-Praeambel/Thx.tex
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.toc
 INPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.toc
 OUTPUT /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.toc

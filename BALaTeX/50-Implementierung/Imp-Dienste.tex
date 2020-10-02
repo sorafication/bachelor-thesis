@@ -1,7 +1,7 @@
 \subsection{Implementierung API und Datenbank}
 Der erste benötigte Dienst für die Webanwendung ist die GraphQL API.
 Mit \spverb+amplify add api+ startet der Konfigurationsassistent.
-Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugefügt wird, erfolgt sie solange mittels API Key.
+Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugefügt wird, erfolgt sie so lange mittels API Key.
 Die Änderung der Authentifizierung erfolgt im Abschnitt \textit{\ref{ImpAuth} \nameref{ImpAuth}}.
 Nach Bestätigung des letzten Schrittes öffnet sich die Datei \verb+schema.graphql+, die das Schema der API darstellt.
 In dieser Datei werden alle benötigten Objekttypen erstellt.
@@ -104,7 +104,7 @@ Successfully added resource getallaccounts locally.
 
 \clearpage
 Nachdem Amplify die Lambda-Funktion erstellt hat, kann diese direkt bearbeitet werden.
-Der vollständige Code befindet sich im Anhang (Siehe Anhang  \textit{\ref{lst:LambdaCode} \nameref{lst:LambdaCode}}).
+Der vollständige Code befindet sich im Anhang (Siehe Anhang \textit{\nameref{lst:LambdaCode}}).
 Im Kern besteht die Lambda-Funktion aus vier Funktionen.
 \\
 
@@ -116,7 +116,7 @@ writeAllDynamoDBItems()
 \end{lstlisting}
 
 
-Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ dienen den Zweck temporäre Zugriff auf den Account \spverb+Cbc-Master+ zu erhalten.
+Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ haben den Zweck temporären Zugriff auf den Account \spverb+Cbc-Master+ zu ermöglichen.
 \spverb+listAllAccounts()+ liest anschließend alle Daten und \spverb+writeAllDynamoDBItems()+ schreibt diese in die DynamoDB-Tabelle.
 Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen, eine weitere die korrekte Abarbeitung der Funktion sicherzustellen.
 In den folgenden Abschnitten werden diese beiden Hürden genauer erläutert.
@@ -137,7 +137,7 @@ Das folgende Bild zeigt die konfigurierte Vertrauensstellung zwischen Lambda-Fun
 Im unteren Linken Bereich bei \glqq Trusted Identities\grqq{} ist die Identität der Lambda-Funktion aus dem Account \verb+Cbc-Clouds-Sandbox+ zu sehen.
 163962199350 ist die dazugehörige AccountID.
 Die IAM-Rolle hat den Namen \grqq amplify-kumo-access-role\grqq{} und besitzt einen eindeutigen Ressourcennamen (ARN).
-Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß weiß die Funktion welche Identität sie übernehmen soll.
+Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß die Funktion welche Identität sie übernehmen soll.
 
 \clearpage
 
@@ -160,7 +160,7 @@ Die meisten AWS-Dienste bieten mindestens ein passendes Service-Objekt an.
 In der Lambda-Funktion muss dementsprechend ein Service-Objekt für die Dienste AWS Organizations, DynamoDB und für die Hilfsfunktion AWS STS \footnote{STS steht für Security Token Service und ermöglicht die Bereitstellung von temporären Anmeldeinformationen.} erstellt werden.
 \cite[]{ServiceObject}
 
-Für DynamoDB reicht etwa folgender Befehl aus um eine passendes Service-Objekt zu erstellen.
+Für DynamoDB reicht etwa folgender Befehl aus, um eine passendes Service-Objekt zu erstellen.
 Die Lambda-Funktion und die DynamoDB-Tabelle befinden sich im selben Account.
 Auch besitzt die Lambda-Funktion bereits alle nötigen Berechtigungen, da diese durch Amplify gesetzt wurden.
 \\
@@ -175,7 +175,7 @@ AWS Organizations ist ein Dienst, der nur in der Region \verb+us-east-1+ betrieb
 Für diesen Vorgang wird die Funktion \verb+getCrossAccountCredentials()+ benötigt.
 Im ersten Schritt werden temporäre Anmeldeinformation abgerufen und anschließend dem Service-Objekt übergeben.
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Neues ServiceObject mit einer anderen Identität} ]
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Neues ServiceObject mit einer anderen Identität (Datei: \textit{\nameref{lst:LambdaCode}} )} ]
 var accessparams = await getCrossAccountCredentials();
 
 const cbc_master_orgs = new AWS.Organizations({
@@ -198,28 +198,38 @@ Alle vier Funktionen werden im Handler der Funktion nacheinander ausgeführt.
 Neben den unterschiedlichen Identitäten war die Sicherstellung der asynchronen Abarbeitung ein wichtiger Aspekt bei der Programmierung.
 Alle Funktionen durften nicht gleichzeitig ausgeführt werden, da sie voneinander abhängig waren.
 Damit die Funktion \verb+listAllAccounts()+ erfolgreich war, musste zuvor Identität des Master-Accounts angenommen werden.
-Zudem muss die Funktion \verb+writeAllDynamoDBItems()+ auf die Fertigstellung von \verb+listAllAccounts()+ warten, da sie sonst keine Daten zum speichern hat.
+Zudem muss die Funktion \verb+writeAllDynamoDBItems()+ auf die Fertigstellung von \verb+listAllAccounts()+ warten, da sie sonst keine Daten zum Speichern hat.
 
-NodeJS arbeitet Single-Threaded.
-Das bedeutet, dass zu einem Zeitpunkt immer nur genau eine Aufgabe erledigt werden kann.
 Aufgrund der Abhängigkeit der Funktionen muss eine asynchrone Abarbeitung stattfinden.
-Zur Option stehen dazu Callbacks, Promises oder eine Implementierung mit async/await.
+Zur Option stehen dazu Callbacks, Promises oder eine Implementierung mit \verb+async/await+.
 Ein Callback ist eine Funktion die an eine weitere Funktion weitergegeben wird.
 So wird sichergestellt, dass die zweite Funktion erst aufgerufen wird, sobald die Erste beendet ist.
-Das Problem von Callbacks ist die große Unübersichtlichkeit bei mehreren Funktionen
+Das Problem von Callbacks ist die große Unübersichtlichkeit bei mehreren Funktionen.
 Das immer tiefere verschachteln von Funktionsaufrufen wird auch als \glqq Callback-Hölle\grqq{} bezeichnet.
-Promises ermöglichen die selbe Funktionalität wie Callbacks, nur ohne die Verschachtelung.
+
+Promises ermöglichen dieselbe Funktionalität wie Callbacks, nur ohne die Ver­schach­telung.
 \glqq Ein Promise ist ein Objekt, das die finale Beendigung einer asynchronen Operation repräsentiert.
 Je nachdem, ob die Operation erfolgreich oder fehlerhaft beendet wurde, wird das Promise entsprechend gekennzeichnet. \grqq{} \cite[]{Promises}
 Mit der Option \verb+.then()+ kann sichergestellt werden, dass die Operation beendet sein muss bevor der nächste Codeblock beginnt.
+
 Die letzte Möglichkeit ist die Verwendung von \verb+async/await+, welche auf Promises basiert jedoch eine verständlichere Syntax ermöglicht.
 Eine Funktion kann mit \verb+async+ als Asynchron deklariert werden.
 Innerhalb einer asynchronen Funktion kann mit dem Operator \verb+await+ auf die Erfüllung des Promises gewartet werden.
 Es ist auch möglich den Operator \verb+await+ in einer Funktion mehrmals zu verwenden.
 
-Die Lambda-Funktion nutzt Promises und \verb+async/await+ zu einem großen Teil aus um die Funktionalität gewährleisten zu können.
-Der Event Handler wird als Asnychron deklariert und innerhalb des Handlers werden alle oben genannten Funktion nacheinander aufgerufen.
-Die genaue Verwendung der asnychronen Abläufe befindet sich im Anhang.
+Die Lambda-Funktion nutzt Promises und \verb+async/await+ zu einem großen Teil aus um die korrekte Abarbeitung gewährleisten zu können.
+Der Event Handler wird als Asynchron deklariert und innerhalb des Handlers werden alle oben genannten Funktion nacheinander aufgerufen.
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Beispiel zum asynchronen Funktionsaufruf (Datei: \textit{\nameref{lst:LambdaCode}})} ]
+    exports.handler = async (event) => {
+        [...]
+      var accessparams = await getCrossAccountCredentials();
+        [...]
+      const all_acc = await listAllAccounts(cbc_master_orgs);
+        [...]
+      await writeAllDynamoDBItems([..])
+    }
+    \end{lstlisting}
 
 \subsubsection{Verifizierung Lambda-Funktion}
 
@@ -255,8 +265,8 @@ Dafür wird beim exportieren der Hauptkomponente \verb+withAuthenticator+ mitang
 Die React-Komponente \verb+AWSAccountListsMaterial+ beinhaltet den Code zum Abfragen der Daten aus der DynamoDB-Tabelle und zum Rendern der Übersicht.
 
 Mehr Details zu der Komponente befinden sich im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}}.
-\clearpage
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite},caption={Auszug aus React-Frontend} ]
+\\
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite},caption={Auszug aus React-Frontend (Datei: \textit{\nameref{lst:React AccountList}} )} ]
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 class AWSAccountListsMaterial extends React.Component {
@@ -285,19 +295,13 @@ Dank der vorgefertigten Module ist es mit Amplify jedoch schnell umsetzbar.
 Da Cognito erfolgreich implementiert wurde, kann die Authentifizierung in der API geändert werden.
 Mit dem Befehl \spverb+amplify update api+ kann jetzt der Cognito Benutzerpool ausgewählt werden.
 Im Anschluss kann die Änderung mit \spverb+amplify publish+ veröffentlicht werden.
-\\
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite}, caption={Auszug aws-exports.js} ]
-Choose the default authorization type for the API
-(*@ \textrm{Amazon Cognito User Pool} @*)
-\end{lstlisting}
-
 
 
 \subsubsection{Anmeldung über AzureAD}
 
 Wie im Abschnitt \textit{\ref{Authentifizierung} \nameref{Authentifizierung}} bereits erwähnt, wäre es wünschenswert die Anmeldung mit Unternehmensidentitäten zu ermöglichen.
 Die Mediengruppe RTL nutzt hierfür den Dienst Azure Active Directory.
-Mittlerweile sind einige Anbindung als SSO über AzureAD verfügbar.
+Mittlerweile sind einige Anbindungen als SSO über AzureAD verfügbar.
 Die Anmeldung zu allen drei Cloud Providern erfolgt etwa über die gemeinsame Identität des Unternehmens.
 
 Cognito bietet eine Unterstützung mit Unternehmens-Identitätsanbietern über SAML an.
@@ -336,13 +340,13 @@ Im Anschluss werden diese Daten visualisiert.
 
 Um erste Erfahrungen mit React zu sammeln, wurde eine Komponente zur Begrüßung erstellt.
 Die React-Komponente \verb+<Greeting>+ gibt zwei simple HTML Elemente mit einem definierten Text zurück.
-Als nächstes wurde die React-Komponente \verb+<AWSAccountListsMaterial>+ erzeugt, die für die restliche Logik zuständig ist.
+Als Nächstes wurde die React-Komponente \verb+<AWSAccountListsMaterial>+ erzeugt, die für die restliche Logik zuständig ist.
 
 Zuallererst wird eine Query benötigt, die alle Daten der Tabelle abfragt und in der Komponente genutzt werden kann.
 In der Query werden alle Felder ausgewählt, die im Schema angegeben wurden, da alle auch benötigt werden.
 Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Felder abzufragen und so ein Over-fetching zu vermeiden.
-\\
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite},caption={Query zum Accountaufruf (Datei: \textit{\nameref{lst:React AccountList}} )} ]
 // GraphQL Query to get all data
  const listAllAccounts = `query listAllAccounts {
     listAccounts (limit: 300) {
@@ -354,22 +358,20 @@ Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Feld
         email
         status
         }
-      }
-    }`;
+      } }`;
     \end{lstlisting}
 
 
 
 Auch hier muss eine asynchrone Abarbeitung sichergestellt werden.
-Die Daten müssen bereits zur Verfügung stehen bevor sie gerendert werden können.
+Die Daten müssen bereits zur Verfügung stehen, bevor sie gerendert werden können.
 React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite[]{ReactComp}
 Innerhalb der Funktion \verb+componentDidMount()+ wird eine weitere Funktion \verb+queryAccounts()+ gestartet.
 Diese Funktion führt mithilfe von AppSync die Query aus und speichert sie in die State Variable.\cite[]{AmplifyAPI}
 State kann alle internen Daten einer Komponente beinhalten.
 Wird die State Variable mithilfe von \verb+setState()+ geändert, ruft React automatisch die Renderfunktion erneut auf und aktualisiert die Seite.
-\\
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite},caption={Abruf der Daten und Speicherung in State Variable (Datei: \textit{\nameref{lst:React AccountList}} )} ]
 queryAccounts = async() => {
     try {
       const result = await API.graphql(graphqlOperation(listAllAccounts))
@@ -377,13 +379,10 @@ queryAccounts = async() => {
       const result_optimized = result_json[0].listAccounts.items
       // this will re render the view with new data
       this.setState({
-
         AccountList:result_optimized,})
-
     } catch (err) {
       console.log(err);
-    }
-  }
+    }}
 \end{lstlisting}
 
 
@@ -391,7 +390,7 @@ Im letzten Schritt müssen die Information aus der State Variable im Frontend an
 Hierfür eignet sich eine tabellarische Ansicht am meisten.
 Zuerst wurde mit JSX ein HTML \verb+<table>+ Element erstellt und die einzelnen Daten korrekt hinzugefügt.
 Da hierbei jedoch weitere Funktionalitäten manuell entwickelt werden müssten, wurde letztendlich die frei zugängliche Komponente \glqq material-table\grqq{} genutzt.
-Diese Komponente ermöglicht das Erstellen einer übersichtlichen Tabellen mit den wichtigsten Features, wie einer Suche oder einer Sortierfunktion.
+Diese Komponente ermöglicht das Erstellen einer übersichtlichen Tabelle mit den wichtigsten Features, etwa einer Suche oder einer Sortierfunktion.
 Zudem ist nahezu jeder Aspekt frei konfigurierbar, etwa die Anzahl an Elementen pro Seite.\cite[]{MaterialTable}
 Innerhalb der \verb+<AWSAccountListsMaterial>+ wird also die externe Komponente \verb+<MaterialTable>+ eingebeut.
 Hier werden die Spalten konfiguriert, sowie dem Feld \glqq data\grqq{} die Daten aus der State Variable übergeben.
@@ -442,7 +441,6 @@ Continuous deployment is configured in the Amplify Console.
 Please hit enter once you connect your repository
 [...]
 Amplify hosting urls:
-
 FrontEnd Env       Domain
 dev                https://dev.drjgagjbys8gs.amplifyapp.com
 
@@ -460,7 +458,7 @@ Falls die Domain über AWS registirert wurde, kümmert sich Amplify automatisch 
     \label{fig:meine-grafik}
 \end{figure}
 
-Sobald der DNS Eintrag global verfügbar ist, kann die Webanwendung unter folgender Adresse aufgerufen werden.
+Sobald der DNS Eintrag verfügbar ist, kann die Webanwendung unter folgender Adresse aufgerufen werden.
 Für jede Entwicklungsumgebung lässt sich eine eigene Subdomain konfigurieren.
 \\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]

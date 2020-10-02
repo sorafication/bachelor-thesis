@@ -1,11 +1,11 @@
 \subsection{Diskussion}
 
-Ziel dieser Bachelorarbeit war es, die Serverless Architektur zu betrachten, und nach einer umfangreichen Betrachtung aller Dienste, einen Prototypen beim Cloud Provider AWS zu entwickeln.
+Ziel dieser Bachelorarbeit war es, die Serverless Architektur zu betrachten, und nach einer umfangreichen Betrachtung aller Dienste, einen Prototyp beim Cloud Provider AWS zu entwickeln.
 Ein wichtiges Merkmal war zudem, dass die Möglichkeit vorgesehen ist, dass die Webanwendung in Zukunft ohne viel Aufwand um weitere Funktionalitäten ergänzt werden kann.
 Die Wartung und Administration der Infrastruktur sollte dabei nach Möglichkeit so weit wie möglich vom Cloud Provider übernommen werden.
 
 Im Rahmen der Bachelorarbeit lag der Fokus insbesondere auf die Designentscheidungen der einzelnen Dienste sowie eine grundsätzliche Funktionalität der Anwendung.
-Dazu gehören eine sichere Möglichkeit zur Authentifizierung sowie eine Backend-Logik, die bestimmte Daten abrufen und verarbeiten kan.
+Dazu gehören eine sichere Möglichkeit zur Authentifizierung sowie eine Backend-Logik, die bestimmte Daten abrufen und verarbeiten kann.
 Es ist sichergestellt, dass nur zugelassene Mitarbeiter die Anwendung nutzen können.
 Außerdem sollte das Web Frontend eine Übersicht über alle Daten darstellen können und bei Bedarf leicht angepasst werden.
 Neben dem Aspekt sich hauptsächlich um die Programmierung der Webanwendung zu kümmern, und nicht die zugrundeliegende Infrastruktur, sollten auch unnötige Kosten vermieden werden.
@@ -15,13 +15,13 @@ Diese Ziele wurden erreicht. Die genaue Übersicht der Kosten folgt im nächsten
 Eine Integration mit Unternehmensidentäten war zum Zeitpunkt leider nicht umsetzbar.
 Zum einem ist der Aufwand zu groß, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Wünschen.
 
-Die gründliche Auseinandersetzung mit den einzelnen Dienste stellte sich als äußerst nützlich dar.
-Durch die Abstraktion von Amplify ist nicht jeder Prozess im Detail ersichtlich und es kann schwer fallen den genauen Zusammenhang zu verstehen.
+Die gründliche Auseinandersetzung mit den einzelnen Diensten stellte sich als äußerst nützlich dar.
+Durch die Abstraktion von Amplify ist nicht jeder Prozess im Detail ersichtlich und es kann schwerfallen den genauen Zusammenhang zu verstehen.
 Dank der intensiven Beschäftigung des Designs ist es leichter die optimalen Anwendungsfälle zu erörtern, sowie auch außerhalb von Amplify mit den Diensten arbeiten zu können.
 
 Die Entwicklung der Anwendung mit Amplify stellte sich als problemlos dar.
 Viele Vorgänge wurden merklich beschleunigt.
-Zudem war es so möglich innerhalb von kurzer Zeit eine vollständige serverlose Webanwendung mit den essentialsten Funktionen zu entwickeln, die keine Wartung oder Administration benötigt.
+Zudem war es so möglich innerhalb von kurzer Zeit eine vollständige serverlose Webanwendung mit den essentiellsten Funktionen zu entwickeln, die keine Wartung oder Administration benötigt.
 \clearpage
 
 \subsection{Kosten}
@@ -53,12 +53,12 @@ Wie sich die Kosten bei intensiver Nutzung verhalten muss zu einem späteren Zei
 Im Rahmen dieser Bachelorarbeit wurde die Serverless Architektur analysiert und ein funktionsfähiger Prototyp entwickelt.
 Als Motivation gilt ein steigendes Interesse an Function as a Service Diensten sowie an einer schnelleren Bereitstellung von Diensten.
 Die Kostenübersicht aller Cloud-Provider der Mediengruppe RTL soll vereinfacht werden und zentral aufbereitet werden.
-Damit geht die Anforderung einher eine einfache und administrationsfreie Realisierung zu ermöglichen, die im Besten Fall keine hohen Kosten verursacht.
-Um eine qualifizierte Aussage zu einer Implementierung mit Serverless Diensten geben zu können, wurden im voraus die wichtigsten Cloud Computing-Modelle erläutert und den Zusammenhang zu Serverless erklärt.
+Damit geht die Anforderung einher eine einfache und administrationsfreie Realisierung zu ermöglichen, die im besten Fall keine hohen Kosten verursacht.
+Um eine qualifizierte Aussage zu einer Implementierung mit Serverless Diensten geben zu können, wurden im Voraus die wichtigsten Cloud Computing-Modelle erläutert und den Zusammenhang zu Serverless erklärt.
 Im Anschluss wurde die Serverless Architektur auf ihre Eignung geprüft und bestätigt.
 Die Umsetzung sollte möglichst von nur einer Person erfolgen, ohne Expertenwissen in jedem Fachgebiet zu erfordern.
 
-Da es mehrere mögliche Ansätze zur Umsetzung gibt, is es besonders wichtig sich mit den einzelnen Möglichkeiten auseinanderzusetzen.
+Da es mehrere mögliche Ansätze zur Umsetzung gibt, ist es besonders wichtig sich mit den einzelnen Möglichkeiten auseinanderzusetzen.
 Aus diesem Grund wurden im Rahmen der Bachelorarbeit einzelne Dienste des Cloud Providers AWS untersucht und miteinander verglichen.
 Nachdem die zugrundeliegende Technologie des Dienstes und der Funktionsumfang des Dienstes geprüft wurden, konnte schließlich eine Entscheidung gefällt werden.
 Die einzelnen zu prüfenden Bereiche beschäftigten sich mit den Themen API, Datenbanken, Backend-Logik und Authentifizierung.
@@ -70,7 +70,7 @@ Die Backend-Logik wird mit dem Function as a Service Dienst AWS-Lambda realisier
 Das Frontend wurde mit dem JavaScript-Framework React erstellt.
 AWS Amplify dient als zentraler Dienst, um alle zuvor genannten Komponenten an zentraler Stelle konfigurieren zu können.
 
-Das Ziel des Prototypen war es, eine funktionale Webanwendung zu erzeugen die eine Übersicht über alle aktiven AWS Accounts liefert.
+Das Ziel des Prototyps war es, eine funktionale Webanwendung zu erzeugen die eine Übersicht über alle aktiven AWS Accounts liefert.
 Dafür musste ein Accountübergreifender Zugriff eingerichtet werden, da sich die benötigten Daten in einem anderen Account befinden als die Anwendung selbst.
 Die gesammelten Daten speichert die Lambda-Funktion in eine DynamoDB-Tabelle ab.
 Auf diese Daten greift das Frontend über die API zu, und erstellt mithilfe von React eine übersichtliche Tabelle aller Daten.
