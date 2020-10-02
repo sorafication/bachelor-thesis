@@ -182,6 +182,12 @@
   \url{https://reactjs.org/docs/create-a-new-react-app.html}, 2020, [Abgerufen
   am 07.09.2020].
 
+\bibitem[{htt}20]{MaterialTable}
+{https://material-table.com/}, \emph{React data table component that is based
+  on material-ui},
+  \url{https://reactjs.org/docs/react-component.html#componentdidmount}, 2020,
+  [Abgerufen am 07.09.2020].
+
 \bibitem[{Mar}20]{Cache}
 {Marc-Andre Giroux}, \emph{Graphql \& caching: The elephant in the room},
   \url{https://www.apollographql.com/blog/graphql-caching-the-elephant-in-the-room-11a3df0c23ad/},

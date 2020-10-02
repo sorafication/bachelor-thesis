@@ -49,9 +49,9 @@
 \BOOKMARK [3][-]{subsubsection.4.5.2}{Asynchrone Verarbeitung mit NodeJS}{subsection.4.5}% 49
 \BOOKMARK [3][-]{subsubsection.4.5.3}{Verifizierung Lambda-Funktion}{subsection.4.5}% 50
 \BOOKMARK [2][-]{subsection.4.6}{Implementierung Authentifizierung}{section.4}% 51
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Probleme mit AzureAD}{subsection.4.6}% 52
+\BOOKMARK [3][-]{subsubsection.4.6.1}{Anmeldung \374ber AzureAD}{subsection.4.6}% 52
 \BOOKMARK [2][-]{subsection.4.7}{Implementierung Frontend und Hosting}{section.4}% 53
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Programmierung React Frontend}{subsection.4.7}% 54
+\BOOKMARK [3][-]{subsubsection.4.7.1}{Programmierung React-Frontend}{subsection.4.7}% 54
 \BOOKMARK [3][-]{subsubsection.4.7.2}{Hosting}{subsection.4.7}% 55
 \BOOKMARK [1][-]{section.5}{Fazit}{}% 56
 \BOOKMARK [2][-]{subsection.5.1}{Diskussion}{section.5}% 57

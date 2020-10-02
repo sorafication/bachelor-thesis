@@ -1,20 +1,23 @@
 \subsection{Ausblick}
-Das gesammelte Wissen über die Serverless Architektur sowie über alle gewählten Dienste wird in Zukunft ebenfalls bei weiteren Projekten von Datacenter and Clouds angewandt werden können.
+Das gesammelte Wissen über die Serverless Architektur sowie über alle gewählten Dienste kann in Zukunft ebenfalls bei weiteren Projekten von Datacenter and Clouds angewandt werden können.
 Für künftige Projekte kann nun entschieden werden, ob sich eine Umsetzung mit Serverless Diensten anbietet oder ob die Realisierung mit einem anderen Service-Modell besser geeignet ist.
 
 Für die Webanwendung selbst wurde das Grundgerüst geschaffen und es kann in Zukunft von jedem Mitarbeiter der Abteilung Datacenter and Clouds erweitert werden.
 Insgesamt gibt es mehrere Bereiche in denen die Webanwendung ausgebaut werden kann.
 
-Für den Cloud Anbieter AWS stehen alle APIs und grundlegenden Funktionalitäten bereits zur Verfügung.
+Für den Cloud Anbieter AWS stehen API und grundlegenden Funktionalitäten bereits zur Verfügung.
 Allen interessierten Mitarbeiter kann Zugriff zur Anwendung gewährt werden.
-Da die Kosten der einzelnen AWS Accounts für die einzelnen Abteilungen interessant ist, könnte die Lambda Funktion um diese Aufgabe erweitert werden.
-Alle Informationen zu den Kosten befinden sich im \verb+Cbc-Master+ Account.
-Da ein Zugriff bereits auf diesen Account implementiert wurde, kann dieser Schritt höchstwahrscheinlich ohne viel Aufwand erledigt werden.
-Hier müssen die entsprechenden API Zugriffe erzeugt werden, und anschließend sowohl Datenbank als auch das Frontend dementsprechend angepasst werden.
-Denkbar wäre eine Auflistung der Kosten pro Account, oder auch pro Projekt.
+Da die Kosten der einzelnen AWS Accounts für die einzelnen Abteilungen interessant sind, könnte die Lambda Funktion um diese Aufgabe erweitert werden.
+Jeder AWS Account zeigt eine detaillierte Übersicht der Kosten im AWS CostExplorer an.
+Mithilfe des CostExplorer SDKs können beispielsweise die Gesamtkosten der letzten Monate abgerufen werden.
+Zur Realisierung wäre es notwendig in jedem einzelnen AWS Account eine IAM-Rolle mit einer Vertrauensstellung zur Lambda-Funktion zu erstellen.
+Die Lambda-Funktion müsste anschließend die IAM-Rolle in jedem Account annehmen und die Abfragen gegen den CostExplorer Dienst ausführen.
+Zusätzlich müssten sowohl Datenbank als auch das Frontend angepasst werden.
 Diese Informationen könnten für die jeweiligen Kostenstellen interessant sein.
 
 Weiterhin sollte in Zukunft erneut die Anmeldung über Unternehmensidentitäten in Betracht gezogen werden, falls es eine vorteilhaftere Methode zur Realisierung gibt.
+
+Da bisher noch keine nützliche Auswertung von Log-Dateien oder Metriken existiert, sollte dies im weiteren Verlauf implementiert werden.
 
 Neben AWS können auch andere Cloud Provider in die Anwendung integriert werden.
 Mit einer weiteren Lambda-Funktion könnte auf Daten innerhalb der Google Cloud Platform oder Azure Cloud zugegriffen werden.
