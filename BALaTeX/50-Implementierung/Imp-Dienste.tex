@@ -81,7 +81,7 @@ Die gesamte Backend-Logik wird durch Lambda realisiert.
 Mit dem Befehl \spverb+amplify add function+ startet Amplify den Prozess.
 Dabei ist es im Rahmen der Bachelorarbeit ausreichend, wenn die Lambda-Funktion in regelmäßigen Abständen ausgeführt wird.
 Weitere Auslöser können in Zukunft ergänzt werden.
-In der Regel werden neue AWS Accounts in Abständen von 2-3 Wochen erstellt.
+In der Regel werden neue AWS Accounts in Abständen von zwei bis drei Wochen erstellt.
 \\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 [143302S0:amplify-kumo] master # amplify add function
@@ -135,7 +135,7 @@ AWS bietet hierfür die Berechtigung \verb+AWSOrganizationsReadOnlyAccess+.
 Außerdem muss eine Vertrauensstellung hergestellt werden.
 Das folgende Bild zeigt die konfigurierte Vertrauensstellung zwischen Lambda-Funktion im \verb+Cbc-Clouds-Sandbox+ und der IAM-Rolle im \verb+Cbc-Master+ Account.
 Im unteren Linken Bereich bei \glqq Trusted Identities\grqq{} ist die Identität der Lambda-Funktion aus dem Account \verb+Cbc-Clouds-Sandbox+ zu sehen.
-163962199350 ist die dazugehörige AccountID.
+163XXXXXXXXX ist die dazugehörige AccountID.
 Die IAM-Rolle hat den Namen \grqq amplify-kumo-access-role\grqq{} und besitzt einen eindeutigen Ressourcennamen (ARN).
 Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß die Funktion welche Identität sie übernehmen soll.
 
@@ -153,7 +153,7 @@ Um diesen Zugriff zu programmieren, dienen die Funktionen \verb+getCallerIdentit
 \verb+getCallerIdentity()+ ist eine Hilfsfunktion und gibt die aktuelle Identität zurück.
 So ist es leichter zu überprüfen, ob die Rolle \grqq amplify-kumo-access-role\grqq{} im \verb+Cbc-Master+ Account erfolgreich angenommen wurde.
 Das eigentliche Übernehmen der IAM-Rolle erledigt \verb+getCrossAccountCredentials()+.
-Es wird ein neues AWS Service-Objekt für den Dienst AWS Organizations erstellt und mithilfe der Funktion \verb+sts.assumeRole()+ ein temporärer Zugriff im Master-Account erstellt.
+Es wird ein neues AWS Service-Objekt für den Dienst AWS Organizations erstellt und mithilfe der Funktion \verb+sts.assumeRole()+ ein temporärer Zugriff zum Master-Account erstellt.
 
 Ein Service-Objekt wird benötigt, um auf Service-Funktionen zugreifen zu können.
 Die meisten AWS-Dienste bieten mindestens ein passendes Service-Objekt an.
@@ -257,11 +257,11 @@ alle benötigten Module für eine vollständige Authentifizierung beinhaltet.
 Um die erforderliche Komponente hinzuzufügen, muss der Befehl \verb+amplify add auth+ ausgeführt werden.
 Im darauffolgenden Assistenten kann die gewünschte Option zur Anmeldung gewählt werden.
 Nach dem Befehl \verb+amplify push+ wird ein Cognito User Pool inklusive App Clients erstellt.
-Über die Webkonsole besteht im Anschluss Option die Option MFA zu aktivieren.
+Über die Webkonsole besteht im Anschluss die Option MFA zu aktivieren.
 
 Für die Einbindung in das React-Frontend bietet das Amplify-Framework die Komponente \verb+withAuthenticator+ an.
 Diese muss um die Hauptkomponente umhüllt werden.
-Dafür wird beim exportieren der Hauptkomponente \verb+withAuthenticator+ mitangegeben. \cite[]{ImpAuth}
+Dafür wird beim Exportieren der Hauptkomponente \verb+withAuthenticator+ mitangegeben. \cite[]{ImpAuth}
 Die React-Komponente \verb+AWSAccountListsMaterial+ beinhaltet den Code zum Abfragen der Daten aus der DynamoDB-Tabelle und zum Rendern der Übersicht.
 
 Mehr Details zu der Komponente befinden sich im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}}.
@@ -277,7 +277,7 @@ export default withAuthenticator(AWSAccountListsMaterial, true)
 
 
 
-Startet man den Server im Anschluss und ruft die Anwendung auf, erscheint eine voll funktionsfähige Login-Maske.
+Startet man den lokalen Webserver im Anschluss und ruft die Anwendung auf, erscheint eine voll funktionsfähige Login-Maske.
 Diese Ansicht lässt sich auf Wunsch auch anpassen.
 Damit nicht jede Person einen Account erstellen kann, ist der Punkt \glqq Allow users to sign themselves up\grqq{} in der Webkonsole deaktiviert und der Punkt \glqq Only allow administrators to create users\grqq{} aktiviert worden.
 Wird über \glqq Create Account\grqq{} versucht einen neuen Benutzer zu erstellen, erscheint
@@ -364,7 +364,7 @@ Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Feld
 
 
 Auch hier muss eine asynchrone Abarbeitung sichergestellt werden.
-Die Daten müssen bereits zur Verfügung stehen, bevor sie gerendert werden können.
+Die Daten müssen zur Verfügung stehen, bevor sie gerendert werden können.
 React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite[]{ReactComp}
 Innerhalb der Funktion \verb+componentDidMount()+ wird eine weitere Funktion \verb+queryAccounts()+ gestartet.
 Diese Funktion führt mithilfe von AppSync die Query aus und speichert sie in die State Variable.\cite[]{AmplifyAPI}
@@ -401,8 +401,8 @@ Hier werden die Spalten konfiguriert, sowie dem Feld \glqq data\grqq{} die Daten
 columns={[
   { title: 'Nummer', field: 'num', defaultSort: "asc", width: '6%' },
   { title: 'Name', field: 'name', width: '30%' },
-  { title: 'Account ID', field: 'accountid', type: 'numeric' },
-  { title: 'Email', field: 'email', type: 'numeric',width: '50%', align: "center" },
+  { title: 'Account ID', field: 'accountid' },
+  { title: 'Email', field: 'email', width: '50%', align: "center" },
   { title: 'Status', field: 'status', sorting:false, width: '6%'}
  ]}
           data={this.state.AccountList}

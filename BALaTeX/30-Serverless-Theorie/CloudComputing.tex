@@ -16,7 +16,7 @@ Lokal muss in der Regel nur ein geeigneter Client installiert sein, etwa ein Web
 Die wichtigsten Vorteile gegenüber einer On Premises-Landschaft sind die schnelle Verfügbarkeit und Skalierung von Diensten, sowie dass keine Kosten im Voraus entstehen.
 Durch den Einsatz von Cloudtechnologien verlagert sich das Kostenmodel von Capex\footnote{ Capex(Capital Expenditure) bezeichnet Investitionen und Ausgaben die einmalig getätigt werden,
 um den Umsatz zu erhöhen. Dazu gehört zum Beispiel die Anschaffung von neuer Hardware. } zu Opex\footnote{Opex(Operational Expenditure) bezeichnet wiederkehrende Kosten wie Verwaltungs- und Betriebskosten.
-Auch fallen mittlerweile viele Softwarelizenzen regelmäßig an. }.
+Auch fallen mittlerweile viele Softwarelizenzen regelmäßig an.}.
 Mit einem Knopfdruck ist es möglich beliebig\footnote{Das Wort beliebig ist nicht sinngemäß zu verstehen.
 Auch Cloud Provider haben nur eine endliche Anzahl von Kapazitäten und geben den Kunden diese nicht in vollem Ausmaß frei.
 Jede Umgebung eines Kunden hat bestimmte Limitierungen pro Service, die jedoch bei Bedarf eventuell angepasst werden können.
@@ -28,7 +28,7 @@ Je nach Servicemodell verschiebt sich der Verantwortlichkeitsbereich zwischen de
 
 \subsection{Cloud Computing-Modelle}
 \label{Servicemodelle}
-Zur Veranschaulichung der unterschiedlichen Servicemodelle dient folgende Grafik.
+Zur Veranschaulichung der unterschiedlichen Servicemodelle dient \textit{Abbildung \ref{fig:Servicemodelle}}.
 Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
 
 
@@ -36,7 +36,7 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
     \centering
     \includegraphics[width=1.0\textwidth]{30-Serverless-Theorie/ServiceModelle.png}
     \caption{Übersicht der Servicemodelle}
-    \label{fig:meine-grafik}
+    \label{fig:Servicemodelle}
 \end{figure}
 
 
@@ -71,7 +71,7 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Das Container as a Service Angebot des Cloud Providers AWS heißt ECS (Elastic Container Service).
    AWS bietet Nutzern die Möglichkeit ihre Container entweder Serverless oder auf EC2-Instanzen\footnote{Amazon Elastic Compute Cloud-Instances(EC2) ist ein AWS Service
    zur Bereitstellung von virtuellen Maschinen in der Cloud. Es gibt viele verschiedene Instanztypen für jede Art von Anforderung.
-   Zum Beispiel bietet AWS CPU, GPU oder RAM optimierte Instanzen in unterschiedlichen Größen an. } zu hosten. \cite[]{AWSECS}
+   Zum Beispiel bietet AWS CPU-, GPU- oder RAM optimierte Instanzen in unterschiedlichen Größen an. } zu hosten. \cite[]{AWSECS}
 
    \subsubsection{PaaS: Plattform as a Service}
    Wie man bereits der Abbildung entnehmen kann, werden bei dem Servicemodell Plattform as a Service auch die Bereiche um die
@@ -124,12 +124,12 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Dieses Modell ist der Kern einer Serverless Anwendung und wird deshalb auch im weiteren Verlauf der Bachelorarbeit für die Implementierung verwendet.
    Wichtigstes Prinzip ist, dass der zuvor hochgeladene Code bei bestimmten festgelegten Events\footnote{Event, oder auch Ereignis, meint das Reagieren auf eine Statusänderung einer bestimmten Ressource.} reagiert und ausgeführt wird.
    Diese eventbasierten Funktionen ermöglichen dem Entwickler den Code in Handumdrehen auszuführen und zu testen.
-   Zudem sind sie stateless bzw. zustandslos. Bei einem zustandslosen Prozess gibt es keine Verweise oder Kenntnisse über bisherige Ereignisse.
+   Zudem sind sie stateless, also zustandslos. Bei einem zustandslosen Prozess gibt es keine Verweise oder Kenntnisse über bisherige Ereignisse.
    Dieser Prozess ist isoliert. Beispielhaft für zustandslose Kommunikation ist ein Web- oder Druckserver.
    Jede Anfrage ist erst einmal unabhängig von bisherigen oder zukünftigen Anfragen.\cite[]{Zustandslos}
 
    Aufgrund der Zustandslosigkeit kann eine Funktion beliebig häufig kopiert und gestartet werden.
-   Dadurch ist es auch besonders einfach diese Funktionen zu skalieren oder Hochverfügbar bereitzustellen.
+   Dadurch ist es auch besonders einfach diese Funktionen zu skalieren oder hochverfügbar bereitzustellen.
    Diese Aufgaben muss der Cloud Provider übernehmen.
 
    Insgesamt bietet Function as a Service eine simplifizierte und automatisch skalierte Möglichkeit eventbasierte Funktionen zu erzeugen.
@@ -148,7 +148,7 @@ Im Anschluss werden die einzelnen Modelle im Detail beschrieben.
    Deshalb ist es auch die populärste und zugänglichste Form von Cloud Computing.
    Anders als bei Plattform as a Service wird hier häufig pro Benutzer und Zeitraum abgerechnet.
    Bei Plattform as a Service kann die Abrechnung auch pro Datenmenge und erforderliche Leistung erfolgen.
-   Vorallem Endanwender ohne tiefgreifende IT-Kenntnisse können viele solcher Dienste nutzen und davon profitieren. \cite[]{SaaS}
+   Vor allem Endanwender ohne tiefgreifende IT-Kenntnisse können viele solcher Dienste nutzen und davon profitieren. \cite[]{SaaS}
 
    Bekannte Vertreter sind Microsoft 365, GSuite oder auch Slack.
    Über Microsoft 365 können Anwender die gesamte Microsoft Office Suite sowie Email-Lösungen des Unternehmens nutzen.

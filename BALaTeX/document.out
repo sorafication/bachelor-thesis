@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Einleitung}{}% 1
 \BOOKMARK [2][-]{subsection.1.1}{Aufgabenstellung}{section.1}% 2
 \BOOKMARK [2][-]{subsection.1.2}{Motivation}{section.1}% 3
-\BOOKMARK [2][-]{subsection.1.3}{CBC Cologne Broadcasting GmbH}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.3}{CBC Cologne Broadcasting Center GmbH}{section.1}% 4
 \BOOKMARK [2][-]{subsection.1.4}{Gliederung}{section.1}% 5
 \BOOKMARK [1][-]{section.2}{Cloud Computing und Serverless}{}% 6
 \BOOKMARK [2][-]{subsection.2.1}{Allgemeines}{section.2}% 7
@@ -26,7 +26,7 @@
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Entscheidung}{subsection.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.3}{Datenbanksystem}{section.3}% 27
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Relationale Datenbanken: AWS RDS}{subsection.3.3}% 28
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Nicht relationale Datenbanken: AWS DynamoDB}{subsection.3.3}% 29
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Nicht-relationale Datenbanken: AWS DynamoDB}{subsection.3.3}% 29
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Entscheidung}{subsection.3.3}% 30
 \BOOKMARK [2][-]{subsection.3.4}{Authentifizierung}{section.3}% 31
 \BOOKMARK [3][-]{subsubsection.3.4.1}{AWS Cognito}{subsection.3.4}% 32

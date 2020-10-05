@@ -17,7 +17,7 @@ Backend Diensten wie Datenbanken oder Authentifizierungsdiensten eine vollwertig
 
 Ab wann gilt etwas als Serverless?
 
-Das Whitepaper von Amazon \textit{Amazon Web Services – Serverless Architectures with AWS Lambda} \cite[Seitenzahl 1]{AWSWhitepaper}
+Das Whitepaper von Amazon \textit{Amazon Web Services – Serverless Architectures with AWS Lambda} \cite[Seite 1]{AWSWhitepaper}
 stellt hierzu folgende vier Aspekte auf die zutreffen sollten:
 
 1) \glqq No server management – You don’t have to provision or maintain any servers.\grqq
@@ -41,11 +41,12 @@ Zum einen sollte jeder geschriebene Code isoliert und unabhängig voneinander au
 Zudem muss der Entwickler darauf achten alle wichtigen Daten außerhalb des Funktionskontextes persistent zu speichern, da sie beim nächsten Ausführen verloren gehen.
 Die einzelnen Events dürfen dabei nicht voneinander abhängig sein und sollten eigenständig durchlaufen können.
 Es muss ein Push basiertes Konzept entwickelt werden um Events ordnungsgemäß auslösen zu können.
-Das bedeutet, dass die Funktion nicht selbst entscheiden soll in welchem Umfang sie eine Anfrage abarbeiten soll und ohne Benutzereingaben auskommen muss.
+Das bedeutet, dass die Funktion nicht selbst entscheiden soll wann sie eine Anfrage abarbeiten soll.
+Zudem muss sie ohne Benutzereingaben auskommen.
 
 Der Code muss schnell ausführbar sein und dem Single-Responsibility-Prinzip folgen.
 Laut dem Single-Responsibility-Prinzip darf eine Klasse oder Funktion immer nur eine einzige Verantwortung haben.
-Es darf nie mehr als einen Grund geben eine Funktion auszuführen.
+Es darf nie mehr als ein Ziel geben eine Funktion auszuführen.
 Verwendet wird das Prinzip um übersichtlichen und leicht erweiterbaren Code zu schaffen.
 Je nach Cloud-Provider gibt es bei Funktionen häufig eine maximale Ausführungszeit.
 AWS erlaubt seinem Lambda-Dienst eine maximale Zeit von 15 Minuten.
@@ -56,7 +57,7 @@ Wird die Zeit oder der Speicherverbrauch überschritten, terminiert die Ausführ
 
 \subsubsection{Vor- und Nachteile}
 Serverless Architektur ermöglicht Entwicklern eine schnellere und einfachere Bereitstellung von Diensten in der Cloud.
-Viele Anforderungen werden bereits vom Cloud Provider übernommen und müssen nicht beachtet werden.
+Viele Anforderungen werden bereits vom Cloud Provider übernommen und müssen nicht selbst umgesetzt werden.
 Dazu gehört das Verwalten und Administrieren von virtuellen Maschinen, Hochverfügbarkeit oder Fehlertoleranz.
 Zudem gibt es keine Investitionskosten(Capex), sondern nur operative Kosten(Opex).
 Die operativen Kosten lassen sich jedoch jederzeit steuern und auf Wunsch auch gänzlich beseitigen, zum Beispiel, falls das Projekt eingestellt wird.
@@ -64,7 +65,7 @@ Im Vorhinein ist es nicht notwendig Kapazitäten zu berechnen oder große finanz
 
 Dadurch, dass bereits viele technische Voraussetzungen vom Cloud Provider übernommen werden, ist die Einstiegshürde bis zum Entwickeln geringer.
 Weiter gibt es weniger Abhängigkeiten zu anderen Abteilungen, da jeder einzelne die gesamte Anwendung selbst erstellen und verwalten kann.
-Die Realisierung von Projekten mithilfe von Serverless Architektur unterstützt dabei die DevOps-Philosophie und sorgt für schnellere Reaktionen auf Änderungswünsche.
+Die Realisierung von Projekten mithilfe von Serverless Architektur unterstützt dabei das DevOps-Konzept und sorgt für schnellere Reaktionen auf Änderungswünsche.
 DevOps setzt sich aus den Begriffen Development und Operations zusammen und hat mehrere Ansätze und Bedeutungen.
 Eine mögliche Variante steht für das Zu­sam­men­schmel­zen von Entwicklung, Betrieb und den operativen Aufgaben einer Anwendung.
 Das Ziel ist eine effektivere Zusammenarbeit aller Teilbereiche und eine erhöhte Qualität der Anwendung.

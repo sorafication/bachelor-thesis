@@ -44,7 +44,7 @@ Zuerst ist es wichtig die Organisationsstruktur der AWS Accounts innerhalb der M
 Zum einem ist es notwendig, da entschieden werden muss in welchem AWS Account die Webanwendung umgesetzt wird.
 Zum anderen benötigt die Lambda-Funktion ebenfalls Zugriff auf den Dienst AWS Organizations.
 
-Wie bereits in der Einleitung erwähnt besitzt die Mediengruppe RTL über 150 AWS Accounts.
+Wie bereits in der Einleitung erwähnt besitzt die Mediengruppe RTL über 160 AWS Accounts.
 Dafür gibt es mehrere Gründe.
 Eine potenzielle Sicherheitslücke eines Accounts hat keinen Einfluss auf einen anderen Account, da alle Ressourcen voneinander isoliert sind.
 Zusätzlich ist eine Kostenzuweisung deutlich einfacher, da pro Account eine eigene Kostenstelle angegeben werden kann.
@@ -75,6 +75,7 @@ Wird die Anwendung in Zukunft produktiv genutzt, kann sie ohne viel Aufwand in e
 Bevor mit der Amplify CLI gearbeitet werden kann, muss sichergestellt sein, dass alle benötigten Pakete installiert sind und ein Zugang zu dem AWS Account \verb+Cbc-Clouds-Sandbox+ existiert.
 Für die Verwendung von Amplify müssen die Pakete \verb+Node.js+ (Version \verb+>+ 10.x), \verb+npm+\footnote{Npm steht für Node Package Manager und ist ein Paketmanager für NodeJS. Mithilfe von npm können weitere Pakete installiert werden.} (Version \verb+>+ 5.x) und \verb+git+ (Version \verb+>+ 2.14.1) installiert werden.
 Mithilfe von \verb+npm+ kann im Anschluss mit folgendem Befehl \verb+npm install -g @aws-amplify/cli+ die Amplify-CLI installiert werden.
+\verb+npm+ gehört zu \verb+npm+ und ermöglicht einen leichteren Umgang mit zusätzlichen Paketen.
 
 Um den Zugang auf den AWS Account \verb+Cbc-Clouds-Sandbox+ zu realisieren, muss ein AWS IAM-User mit Zugangsdaten angelegt werden.
 Diesen Prozess kann Amplify übernehmen.
@@ -139,9 +140,9 @@ Die darauffolgenden Pfade und Befehle sind nicht geändert worden.
 Des Weiteren wird der, in \textit{\ref{EinrichtungAmplify} \nameref{EinrichtungAmplify}} erstellte, IAM-User angegeben.
 Nach kurzer Zeit ist das Amplify Projekt bereits in der Cloud erstellt worden und verfügbar.
 
-Wie im Code ersichtlich, benutzt Amplify den Dienst AWS Cloudformation, sodass die gesamte Konfiguration in einem Template festgehalten wird.
+Wie im Code ersichtlich, benutzt Amplify den Dienst AWS CloudFormation, sodass die gesamte Konfiguration in einem Template festgehalten wird.
 Mit AWS CloudFormation ist möglich Templates zur Modellierung und Bereitstellung von AWS-Ressourcen zu erstellen.
-Die Templates unterstützen JSON und YAML.
+Die Templates unterstützen die Auszeichnungssprachen JSON und YAML.
 Amplify übersetzt alle Befehle in ein Cloudformation Template und startet es.
 Da die gesamte Konfiguration der Cloudformation-Templates von Amplify übernommen wird, spielt es im Rahmen der Bachelorarbeit eine untergeordnete Rolle.
 

@@ -34,7 +34,7 @@ GET /AccountNames/456
 POST /Accounts/1
 \end{lstlisting}
 
-Mithilfe desrersten \verb+GET+ Anfrage kann eine Liste von Accounts abgerufen werden, die zweite \verb+GET+ Anfrage liefert nur die Informationen für den Eintrag \glqq 123\grqq{}  der Accountnamen.
+Mithilfe der ersten \verb+GET+ Anfrage kann eine Liste von Accounts abgerufen werden, die zweite \verb+GET+ Anfrage liefert nur die Informationen für den Eintrag \glqq 123\grqq{}  der Accountnamen.
 Um nur zwei Namen zu erhalten, sind dementsprechend auch zwei Abfragen notwendig, da sie separate Ressourcen sind.
 Eine alternative Option wäre alle Accountnamen zu erhalten und nur die benötigten heraus zu filtern.
 Die \verb+POST+ Abfrage erlaubt es einen neuen Account anzulegen.
@@ -43,16 +43,16 @@ Dank der Zustandslosigkeit wird eine leichtere Skalierung ermöglicht.
 Anfragen können durch einen Loadbalancer auf mehrere Server verteilt und bearbeitet werden.
 
 Auch eine Cache-Implementierung ist mithilfe von REST leicht umsetzbar.
-Dank Caching werden häufig abgerufene Daten zwischengespeichert.
+Durch Caching werden häufig abgerufene Daten zwischengespeichert.
 Ziel ist es die Performance zu steigern und damit gleichzeitig die Anzahl der Abfragen an den Ursprungsserver zu reduzieren.
 Stellt zum Beispiel ein Browser eine Anfrage, wird zuerst geschaut, ob sich die benötigten Daten im Cache befinden.
 Falls ja werden sie aus dem Cache geliefert und der Server wird nicht kontaktiert.
 Fehlen die Daten im Cache werden sie von dem Server abgefragt und anschließend dem Client zurückgegeben und zusätzlich im Cache gespeichert, sodass jede weitere Anfrage direkt aus dem Cache ausgeliefert werden kann.
 Der Client stellt seine Anfrage dabei normal an den Zielserver, für ihn ist der Cache nicht direkt sichtbar.
 Beim HTTP-Caching entscheidet der \verb+Cache-Control+ Header\footnote{Ein HTTP-Header ist eine Zusatzinformation die zwischen Client und Server ausgetauscht werden kann.} ob und wie lange ein Datensatz als gültig gilt.
-Ein gesetzter Header mit dem Wert \verb+Cache-Control: max-age=3600+ teilt dem Client etwa mit, dass die Datei eine Stunde gültig ist, und in diesem Zeitraum nicht erneut abgerufen werden muss. \cite[]{Cache}
+Ein gesetzter Header mit dem Wert \verb+Cache-Control: max-age=3600+ teilt dem Client etwa mit, dass die Datei eine Stunde gültig ist, und in diesem Zeitraum nicht erneut abgerufen werden muss. \cite[Seite 21]{Cache}
 
-Wächst eine Applikation immer weiter entstehen auch immer neue API Endpunkte.
+Wächst eine Applikation immer weiter entstehen auch meist neue API Endpunkte.
 Besteht die Anforderung alle Daten abzufragen, wären mehrere separate Anfragen notwendig.
 Es ist zudem nicht möglich die angeforderten Daten genauer zu spezifizieren.
 Mittels \verb+GET+ Abfrage erhält man immer alle Daten die die API zurückgibt, egal wie viel man tatsächlich davon benötigt.
@@ -101,13 +101,14 @@ Diese zwei Typen definieren den Einstiegspunkt jeder GraphQL Anfrage.
 Die HTTP-Methode \verb+GET+ ähnelt dabei Queries und \verb+POST+ Mutationen. \cite[]{GraphQL1}
 
 Eine Query ist eine einfache Abfrage der Daten, eine Mutation ermöglicht eine Veränderung der Daten.
+Die Mutation vereint das Ändern, Hinzufügen oder Löschen von Datensätzen.
 GraphQL erlaubt, anders als REST, nur bestimmte Daten in einer Abfrage abzurufen. Ein Over- bzw. Under-fetching gibt es hier nicht.
 Im Vergleich zu REST ist GraphQL flexibler und benötigt weniger Änderungen im Backend.
 Der Client hat mehr Möglichkeiten mit der API zu kommunizieren, da er selbst entscheiden kann, wie er Daten abfragt.
 Ein Vorteil der stark definierten Typen ist eine geringere Fehlkommunikation zwischen Server und Client.
 Der Server kann die Anfragen automatisch auf Korrektheit prüfen und fehlerhafte Anfragen bereits zu Beginn der Transaktion ablehnen.
 
-Um Datenobjekte in einem Schema zu erzeugen kann man folgende Struktur nutzen:
+Um Datenobjekte zu erzeugen muss das Schema mit der GraphQL Schema Definition Language folgendermaßen beschrieben werden:
 \begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 type Account {
   id: ID!
@@ -149,15 +150,17 @@ query MyQuery {
 
 Hierbei ist es unwichtig, ob alle oder nur ein Feld mit angegeben wird.
 Wird zum Beispiel die Email nicht benötigt, lässt man das Feld weg und die Information wird nicht mehr an den Client übertragen.\cite[]{GraphQL1}
-Eine HTTP-Abfrage könnte folgenermaßen aussehen\cite[]{GraphQLHTTP}:
+Eine HTTP-Abfrage könnte folgenermaßen aussehen.
+Die Query mit dem Namen \glqq queryname \grqq{} gibt das Feld \glqq fieldname \grqq{} zurück.
+
+\cite[]{GraphQLHTTP}
 
 \begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
-GET http://meineapi.com/graphql?query={me{name}}
+GET http://meineapi.com/graphql?query={queryname{fieldname}}
 
 \end{lstlisting}
 
-
-Zum Hinzufügen eines neuen Eintrags wäre folgender Mutations-Typ notwendig.
+Ähnlich wie bei den Queries muss für eine Mutation ebenfalls ein Mutations-Typ in dem Schema erzeugt werden.
 Zusätzlich werden mögliche Felder für die Eingabe benötigt.
 
 
@@ -197,7 +200,7 @@ vom Server angelegte ID abfragen und überprüfen.\cite[]{GraphQL1}
 
 Neben den bisher genannten Funktion bietet GraphQL noch Subscriptions an.
 Diese ermöglichen dem Client Echtzeitbenachrichtigungen zu erhalten, sobald dem Backend neue Daten hinzugefügt worden sind.
-Subscriptions werden durch Mutationen ausgelöst, wobei das AWS AppSync SDK sich um die Verwaltung dieser kümmert.
+Subscriptions werden durch Mutationen ausgelöst, wobei das AWS AppSync SDK diese verwaltet.
 Realisiert wird die Echtzeitverarbeitung mithilfe von Websockets\footnote{Unter WebSockets versteht man ein Protokoll, dass eine bidirektionale Kommunikation zwischen Client und Server ermöglicht. Nachdem ein Client eine initiale Anfrage gesendet hat, kann die Verbindung offen bleiben und so der Server selbstständig Informationen verschicken. \cite[]{Websockets}}
 oder dem MQTT-Protokoll\footnote{MQTT steht für Message Queue Telemetry Transport und dient zum zuverlässigen Nachrichtenaustausch. Abgebrochene Verbindungen können wieder aufgebaut werden und verlorene Nachrichten erneut ausgeliefert. \cite[]{MQTT} } in Kombination mit WebSockets. \cite[]{GraphQLSubs}
 Dadurch dass GraphQL, anders als REST, nur einen einzelnen Endpunkt anbietet, ist eine Cache Implementierung problematischer.
@@ -233,8 +236,7 @@ Darüber hinaus ist es möglich auch eigene Resolver zu erstellen, falls dies be
 
 Zusätzlich kann AppSync eine Autorisierung mit dem Dienst AWS Cognito (siehe \textit{\ref{Cognito} \nameref{Cognito}}) ermöglichen.
 Die Autorisierung von Clients ist mit API Keys\footnote{Der API Key ist ein Authentifizierungsschlüssel und wird bei jeder Anfrage übertragen. AWS empfiehlt ihn bei AppSync nur für Entwicklungsumgebungen,
-da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermöglicht.}
-, AWS IAM Credentials \footnote{
+da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermöglicht.}, AWS IAM Credentials \footnote{
     AWS IAM steht für Identity Access Management und beschreibt Amazons Dienst zur Identität- und Benutzerverwaltung. Der Dienst erlaubt es Nutzer anzulegen und
     ihnen Berechtigungen zu zuzuweisen.},
     OIDC Tokens \footnote{OIDC steht für OpenID Connect und basiert auf dem OAuth 2.0 Protokoll zur Authentifizierung.
@@ -280,7 +282,7 @@ Da bisher nur bekannt ist welche Daten benötigt werden, jedoch nicht in welchem
 Auf Wunsch kann die Query jederzeit flexibel angepasst werden.
 
 Außerdem wird einem der Aufwand zur Erstellung der Datenbank und des benötigten Resolvers übernommen, sofern DynamoDB genutzt wird.
-Das Erstellen aller Queries, Mutationen und Subscriptions nimmt einem der Dienst ebenfalls ab, was einen schnellen Einstieg zur Folge hat.
+Das Erstellen aller Queries, Mutationen und Subscriptions übernimmt einem der Dienst ebenfalls, was einen schnellen Einstieg zur Folge hat.
 Sobald ein Schema mit Datenstrukturen definiert wurde generiert AppSync automatisch alle möglichen Operationen.
 Diese Operationen können dann im Anschluss direkt im Frontend verwendet werden.
 
@@ -293,9 +295,9 @@ Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden ke
 
 
 \subsection{Datenbanksystem}
-Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationale und nicht relationale Datenbanken.
+Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationale und nicht-relationale Datenbanken.
 Sie variieren in vielen Aspekten und haben andere Anwendungsfälle.
-Amazon bietet für beide Technologien eigene Dienste an, die im Folgenden genauer betrachtet und verglichen werden sollen.
+Amazon bietet für beide Technologien eigene Dienste an, die im Folgenden genauer betrachtet und verglichen werden.
 
 \subsubsection{Relationale Datenbanken: AWS RDS}
 
@@ -318,10 +320,10 @@ Man erhält keinen direkten Zugang auf die zugrundeliegende Hardware, sondern ei
 Im Falle von MySQL würde man etwa nach Erstellen einen Endpunkt erhalten, auf den man sich per
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
   mysql -h <Endpunkt> -u <User> -p <Passwort>
-    \end{lstlisting} Befehl sich anmelden kann. SSH-Zugang oder Ähnliches ist bei RDS nicht vorgesehen.
+    \end{lstlisting} Befehl anmelden kann. SSH-Zugang oder Ähnliches ist bei RDS nicht vorgesehen.
     Das angegebene Beispiel ist typisch für einen Plattform as a Service Dienst.
 
-Eine Hochverfügbarkeit ist möglich, indem man den Punkt Multi-Availability Zone auswählt und so eine Standby-Instanz in einer anderen Availability Zone bereitsteht.
+Eine Hochverfügbarkeit ist möglich, indem man die Option Multi-Availability Zone auswählt und so eine Standby-Instanz in einer anderen Availability Zone bereitsteht.
 Hierdurch steigt jedoch auch der Preis. Software-Patches können von dem Dienst automatisch eingespielt werden.
 Anders als bei DynamoDB gibt es keine direkte Integration von RDS Datenbanken mit Serverless Anwendungen bei AWS.
 AWS stellt keine direkte Verknüpfung zwischen GraphQL API und RDS zur Verfügung. Eine Implementierung mittels REST bzw. API Gateway würde eine zusätzliche Lambda-Funktion voraussetzen, welche
@@ -331,10 +333,10 @@ Der Dienstleister Airbnb nutzt RDS zum Beispiel für automatisierte Replikatione
 Die günstigste RDS Instanz \glqq db.t3.micro\grqq{} mit 1 Kern, 1 GB Arbeitsspeicher und der Open Source Engine MariaDB kostet in Frankfurt mit einer ausgewählten Hochverfügbarkeit 0,04 USD pro Stunde. \cite[]{RDS}
 
 
-\subsubsection{Nicht relationale Datenbanken: AWS DynamoDB}
+\subsubsection{Nicht-relationale Datenbanken: AWS DynamoDB}
 \label{DynamoDB}
 
-AWS DynamoDB ist ein serverloser Dienst zur Erstellung und Verwaltung nicht relationaler Datenbanken.
+AWS DynamoDB ist ein serverloser Dienst zur Erstellung und Verwaltung nicht-relationaler Datenbanken.
 Bei dieser Art von NoSQL(not only SQL)-Datenbanken werden Daten als Key/Value Paare aufgebaut. Daneben gibt es noch weitere Modelle, etwa Graphdatenbanken oder dokumentenorientierte
 Datenbanken.
 
@@ -420,14 +422,14 @@ Das Framework stellt SDKs für alle gängigen mobilen Plattformen sowie JavaScri
 Ein Vergleich der Javascript-Frameworks befindet sich im Abschnitt \textit{\ref{FrontendFramework} \nameref{FrontendFramework}}.
 Es soll möglich sein, mit wenig Code die eigene Anwendung mit Cognito zu verknüpfen, und bei Bedarf die Oberfläche anzupassen.
 Der Dienst ist vollständig Serverless aufgebaut und bietet die Option \glqq Hunderte von Millionen Benutzern\grqq{} zu verwalten,
-\glqq ohne dass Server-Infrastruktur aufgestellt werden muss\grqq{} \cite[]{CognitoUebersicht}. \cite[]{Cognito2}
+\glqq ohne dass Server-Infrastruktur aufgestellt werden muss.\grqq \cite[]{CognitoUebersicht} \cite[]{Cognito2}
 
 Cognito besteht aus den Komponenten Benutzerpools und Identitäten-Pools.
 Ein Benutzerpool ist ein Verzeichnis durch den Benutzer angelegt und verwaltet werden können.
 Hier können Attribute konfiguriert werden, z.B. mit welcher Information sich Benutzer anmelden können.
 Zur Option stehen ein Username, die E-Mail Adresse oder eine Telefonnummer.
-Außerdem ist es möglich weitere Attribute zu setzen, wie etwa das Geschlecht, der Wohnort, das Geburtsdatum und noch viele weitere.
-Eine MFA-Verifizierung ist ebenfalls im Dienst implementiert.
+Außerdem ist es möglich weitere Attribute zu setzen, wie etwa das Geschlecht, der Wohnort, das Geburtsdatum.
+Eine Verifizierung mit einem zweiten Faktor ist ebenfalls im Dienst implementiert.
 Über den Benutzerpool können ebenfalls App-Clients erstellt werden.
 Ein App-Client wird genutzt um nicht authentifizierte Operationen durchführen zu können.
 Dazu gehört das Registrieren, Anmelden und die Passwortwiederherstellung.
@@ -473,9 +475,9 @@ Dieser Prozess muss regelmäßig ausgeführt werden, da ständig neue AWS Accoun
 Bestenfalls wird der Prozess direkt nach der Erstellung eines neuen Accounts initiiert.
 
 Zur Bewältigung dieser Aufgabe sind die meisten AWS Dienste potenziell einsetzbar, jedoch nicht wirklich geeignet.
-Eine EC2 Instanz mit Linux Betriebssystem und Programmcode könnte theoretisch die Datenverarbeitung durchführen, es entspricht jedoch nicht der Serverless Architektur und benötigt signifikant mehr Aufwand in der Implementierung und Wartung.
+Eine EC2 Instanz mit Linux Betriebssystem und Programmcode könnte theoretisch die Datenverarbeitung durchführen, es entspricht jedoch nicht der Serverless Architektur und benötigt signifikant mehr Aufwand in der Umsetzung und Wartung.
 Auch eine Docker-basierte Lösung benötigt merklich mehr Arbeit, da die Laufzeitumgebung und Datenverarbeitung weiterhin im Verantwortungsbereich des Nutzers liegt.
-Außerdem müsste bei beiden zuvor genannten Optionen mindestens 1 Server bzw. Container dauerhaft laufen um Anfragen annehmen zu können.
+Außerdem müsste bei beiden zuvor genannten Optionen mindestens ein Server bzw. Container dauerhaft laufen um Anfragen annehmen zu können.
 Beide Varianten sind keine valide Option für eine Serverlose Umsetzung.
 
 Möchte man Code mit einem Minimum an Administrationsaufwand in der Cloud ausführen eignet sich der Dienst AWS Lambda, der im folgenden Abschnitt ausführlicher erläutert wird.
@@ -491,20 +493,19 @@ NodeJS und Python Code können direkt in der Webkonsole geschrieben und getestet
 Weiterhin besteht die Möglichkeit den Code mithilfe einer ZIP-Datei oder über die lokale Entwicklungsumgebungen hochzuladen.\cite[]{LambdaFAQ}
 
 Wie bereits im Abschnitt \textit{\ref{FaaS} \nameref{FaaS}} erwähnt arbeitet Lambda eventbasiert und kann sowohl von anderen AWS-Diensten, als auch durch einen manuellen Aufruf ausgelöst werden.
-Ingsesamt gibt es unterschiedliche Varianten eine Lambda-Funktion zu starten.
 Zum einem kann Lambda direkt Daten aus Services lesen, welche einen Datenstrom oder eine Warteschlange erzeugen.
 So ist es möglich jedes Mal eine Lambda-Funktion auszulösen, sobald eine DynamoDB-Tabelle aktualisiert wird.
 Hierbei liest Lambda die Datensätze selbst und benötigt dementsprechend auch Berechtigungen auf die DynamoDB-Tabelle.\cite[]{LambdaDynamo}
-Die zweite Variante ermöglicht es bestimmten AWS Diensten eine Lambda-Funktion aufzurufen.
+Eine zweite Variante ermöglicht es bestimmten AWS Diensten eine Lambda-Funktion aufzurufen.
 Dienste wie Cognito oder API Gateway können bei Ereignissen die Lambda-Funktion auslösen und warten bis sie eine Antwort erhalten.
 Hier findet ein synchroner Aufruf statt.
-Anders bei den Diensten Amazon S3 oder Amazon SES\footnote{SES steht für Simple E-Mail Service und ist ein Dienst zum Versenden und Empfangen von Mails.}. Da es sich um asynchrone Aufrufe handelt warten die Dienste nicht auf eine erfolgreiche Antwort.
-Die Dienste erfahren nur, dass Lambda das Ereignis in eine Warteschlange übergeben hat.
-Falls bei der Verarbeitung Fehler auftreten, kann die Funktion erneut ausgeführt werden.
+Anders als bei den Diensten Amazon S3 oder Amazon SES\footnote{SES steht für Simple E-Mail Service und ist ein Dienst zum Versenden und Empfangen von Mails.} findet ein asynchroner Aufruf statt, und die Dienste warten nicht auf eine erfolgreiche Antwort.
+Sie erfahren nur, dass Lambda das Ereignis in eine Warteschlange übergeben hat.
+Falls bei der Übergabe Fehler auftreten, kann die Funktion erneut ausgeführt werden.
 Alle Informationen zur Lambda-Funktion, auch potenzielle Fehler im Code, werden automatisch protokolliert und in Amazon CloudWatch Logs gespeichert.
 \cite[]{LambdaDienste}
 
-Sobald eine Lambda-Funktion ausgelöst wird, startet die Codeausführung am Handler.
+Sobald eine Lambda-Funktion ausgelöst wird, startet die Codeausführung am sog. Handler.
 Der Handler ist eine spezielle Methode innerhalb des Lambda-Codes der Ereignisse verarbeitet.
 Je nach Programmiersprache existieren unterschiedliche Voraussetzungen für den Handler.
 Innerhalb des Handlers können weitere Funktionen und Methoden aufgerufen werden die zur Bearbeitung notwendig sind.
@@ -512,7 +513,7 @@ Wenn der Handler mit der Ausführung des Codes fertig ist, steht er für weitere
 Werden mehrere Events ausgelöst starten auch gleichzeitig mehrere Kopien der Funktion.
 Nach dem Fertigstellen skaliert Lambda automatisch bis keine Ressourcen im Leerlauf übrig bleiben.
 Um eine fehlerfreie Ausführung von beliebig vielen Funktionen sicherzustellen, ist die Zustandslosigkeit somit essentiell.
-Dies bedingt ebenfalls, dass der Speicherplatz nicht persistent ist und auf 500 MB eingeschränkt ist.\cite[Seitenzahl 5-7]{AWSWhitepaper}
+Dies bedingt ebenfalls, dass der Speicherplatz nicht persistent ist und auf 500 MB eingeschränkt ist.\cite[Seite 5f]{AWSWhitepaper}
 
 Während der Erstellung einer Funktion wird zusätzlich eine Lambda-Ausführungsrolle mit Berechtigungen definiert.
 Diese Ausführungsrolle gewährt der Funktion Zugriff auf Dienste und Ressourcen die angegeben worden sind.
@@ -546,14 +547,14 @@ Alle Komponenten dieses Projektes werden in einem separaten Account erzeugt, der
 Da das Frontend mit einem JavaScript-Framework erzeugt wird, bietet es sich an für Lambda NodeJS als Programmiersprache zu verwenden.
 So wird vermieden zwei unterschiedliche Syntaxstrukturen und Funktionsweisen lernen zu müssen.
 AWS bietet für NodeJS eine AWS Organizations API an, um exakt diesen Aufruf tätigen zu können.
-Der Zugriff auf AWS Organizations sowie die Accountstruktur der Mediengruppe RTL werden im Abschnitt (\ref{Accountstruktur} \nameref{Accountstruktur}) genauer erläutert.
+Der Zugriff auf AWS Organizations sowie die Accountstruktur der Mediengruppe RTL werden im Abschnitt \textit{\ref{Accountstruktur} \nameref{Accountstruktur}} genauer erläutert.
 \cite[]{SDKListAccounts}
 
 \subsection{Frontend Framework}
 \label{FrontendFramework}
 Die bisher ausgewählten Dienste Cognito und AppSync unterstützten die gängigsten JavaScript-Frameworks.
 Auch im Zusammenspiel mit Amplify gibt es keine Einschränkungen.
-Zur Auswahl für das Web-Frontend stehen React, React Native, Vue oder Angular.
+Zur Auswahl für das Web-Frontend wurden React, React Native, Vue und Angular betrachtet.
 React Native eignet sich nicht zur Umsetzung, da es hauptsächlich für die native Entwicklung von iOS und Android Apps genutzt wird.
 Mit allen drei restlichen Frameworks lässt sich das Frontend mit einem ähnlichen Aufwand aufbauen.
 Die Entscheidung erfolgt anhand von Aspekten wie Syntax, Popularität und Performance.
@@ -572,11 +573,11 @@ In den letzten Jahren ist Vue zunehmend populärer geworden und mittlerweile exi
 Besonders in China ist Vue sehr verbreitet.\cite[Abschnitt: Comparing Adoption \& Popularity]{JavascriptFrameworks}
 Code wird mithilfe von JavaScript und HTML geschrieben und dabei strikt voneinander getrennt.
 Der HTML Code befindet sich im \verb+<template>+ Bereich und JavaScript Code ist im \verb+<script>+ Bereich erlaubt.
-Hinsichtlich der geringeren Verbreitung im englischsprachigen Raum und dem Aspekt, dass weniger auf AWS-Dienste spezialisierte Anleitungen auffindbar sind, wird Vue nicht für die Realisierung verwendet.
+Hinsichtlich der geringeren Verbreitung im englischsprachigen Raum und dem geringeren Reifegrad der AWS-Integration im Internet, wird Vue nicht für die Realisierung verwendet.
 
 React wurde 2013 von Facebook veröffentlicht und wird zusammen mit der Community weiterentwickelt.
 Anders als bei Vue, wird in React kein Code getrennt.
-React arbeitet, wie die meisten JavaScript-Frameworks, komponentenbasiert und trennt Einheiten auf falls möglich.
+React arbeitet, wie die meisten JavaScript-Frameworks, komponentenbasiert und versucht die Komponenten separat zu strukturieren.
 Zum Rendern von HTML Elementen nutzt React die JavaScript-Erweiterung JSX, welche JavaScript und HTML Syntax kombiniert.
 Der JSX Code wird vor dem Start der Anwendung in normalen Javascript-Code übersetzt.
 Innerhalb von geschweiften Klammern wird alles als Javascript Code behandelt.
