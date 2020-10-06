@@ -51,7 +51,7 @@ Verwendet wird das Prinzip um übersichtlichen und leicht erweiterbaren Code zu 
 Je nach Cloud-Provider gibt es bei Funktionen häufig eine maximale Ausführungszeit.
 AWS erlaubt seinem Lambda-Dienst eine maximale Zeit von 15 Minuten.
 Auch der Speicherverbrauch wird bei AWS auf 3 GB RAM limitiert.
-Wird die Zeit oder der Speicherverbrauch überschritten, terminiert die Ausführung der Funktion sofort.\cite[]{LambdaPreise}
+Wird die Zeit oder der Speicherverbrauch überschritten, terminiert die Ausführung der Funktion sofort.\cite{LambdaPreise}
 
 
 
@@ -73,17 +73,17 @@ Neben der Realisierung ist auch eine Anpassung an den Markt erleichtert.
 Folglich reduziert sich die Dauer bis zur Veröffentlichung von Testumgebungen oder sogar des gesamten Projektes, auch als Time-To-Market bekannt.
 Nachdem eine Version abgeschlossen wird, startet daraufhin direkt die nächste Iteration.
 Der Entwicklungsprozess ist kreisförmig anstatt linear.
-\cite[]{DevOps}
+\cite{DevOps}
 
 Dadurch, dass das Backend nur für einzelne Anforderungen genutzt wird, beinhaltet das Frontend bei Serverless Applikationen in der Regel mehr Funktionen und Logik.
-Zum Beispiel kann direkt mit Drittanbieter APIs kommuniziert werden ohne das Backend nutzen zu müssen.
+Zum Beispiel kann direkt mit Drittanbieter-APIs kommuniziert werden ohne das Backend nutzen zu müssen.
 Das führt zu einem schnelleren Feedback für den Anwender und somit zu einer verbesserten Benutzererfahrung.
 
 Da die Serverless Architektur noch nicht so lange im Einsatz ist wie die bewährten Alternativen, gibt es zum Beispiel noch nicht viele Security Tools oder Frameworks die diese Architektur voll unterstützen.
 Das auf Security spezialisierte Unternehmen Checkpoint hat erst im Jahr 2019, durch Zukauf des Firma Protego, ein Tool angeboten.
-Protego selbst wurde 2017 gegründet und spezialisiert sich auf Function as a Service Dienste wie AWS Lambda oder Azure Functions. \cite[]{Checkpoint}
+Protego selbst wurde 2017 gegründet und spezialisiert sich auf Function as a Service Dienste wie AWS Lambda oder Azure Functions. \cite{Checkpoint}
 
-Neben Protego gibt es zwar noch weitere Security Tools die mit Serverless Diensten umgehen können, jedoch unterstützen sie entweder noch nicht alle Cloud Provider oder sind in den Funktionalitäten eingeschränkt. \cite[]{Security}
+Neben Protego gibt es zwar noch weitere Security Tools die mit Serverless Diensten umgehen können, jedoch unterstützen sie entweder noch nicht alle Cloud Provider oder sind in den Funktionalitäten eingeschränkt. \cite{Security}
 
 Weiterhin ist es oft mit großem Aufwand verbunden eine bereits bestehende Applikation zu einer Serverless Architekur zu migrieren.
 Oft muss der gesamte Ansatz neu konzipiert und umgesetzt werden, da die meisten bestehenden Anwendungen weder eventbasiert noch zustandslos sind.
@@ -101,7 +101,7 @@ Insgesamt können Serverless Anwendungen erhebliche Vorteile im Vergleich zu kla
 Vor allem bei größeren, bereits bestehenden Anwendung lohnt es sich nicht immer die Architektur zu wechseln, bei neuen und webbasierten Anwendungen kann die Architektur ihre Vorteile voll und ganz ausspielen.
 
 \subsection{Eignung für die Bachelorarbeit}
-Wie bereits im Abschnitt \textit{\ref{Motivation} \nameref{Motivation}} erwähnt wurde beschäftigt sich die Abteilung Datacenter and Clouds seit längerem mit Cloud Computing und hat auch schon Projekte mit unterschiedlichen Servicemodellen realisiert.
+Wie bereits im Abschnitt \textit{\ref{Motivation} \nameref{Motivation}} erwähnt, beschäftigt sich die Abteilung Datacenter and Clouds seit längerem mit Cloud Computing und hat auch schon Projekte mit unterschiedlichen Servicemodellen realisiert.
 Function as a Service wurde ebenfalls verwendet, jedoch bisher nicht im Rahmen einer Webanwendung mit einem eigenen Frontend.
 
 Es besteht der Wunsch nach einer Webanwendung, die bestimmte Daten der unterschiedlichen Cloud Provider sammelt und in einem übersichtlichen Frontend anzeigt.
@@ -116,14 +116,14 @@ Der Umfang einer Funktion wäre etwa das Sammeln einer Kostenübersicht bei AWS.
 Die gesammelten Daten würden in einer Datenbank gespeichert werden und anschließend von einem Frontend dargestellt.
 Die Datenbank sollte im besten Falle, wie der Rest der Applikation, vom Cloud Provider verwaltet werden und erforderliche Kapazitäten selbst anpassen können.
 Da es keine Bestandsdaten gibt, kann die Anwendung auf die Serverless Architektur ohne Probleme optimiert werden.
-Für das Frontend stehen viele moderne Frameworks zur Verfügung die ohne langjährige Erfahrung genutzt werden können.
+Für das Frontend stehen viele moderne Frameworks zur Verfügung, die ohne langjährige Erfahrung genutzt werden können.
 Desweiteren ist es nicht notwendig die Authentifizierung komplett selbstständig zu schreiben, da bereits passende Dienste und Komponenten existieren.
 
 Auch aus Kostensicht ist die Anwendung bestens geeignet für eine Architektur ohne Serververwaltung.
 Es gibt keine konstante Auslastung und bei Nichtnutzung fallen auch keine Kosten an.
 
 
-Durch die Architektur ist man selbst in der Lage jeden einzelnen Schritt selbst zu entwerfen und umzusetzen, ohne Experte mit Tiefenwissen in allen Gebieten zu sein.
+Durch die Architektur ist man selbst in der Lage jeden einzelnen Schritt selbst zu entwerfen und umzusetzen, ohne dass Tiefenwissen in allen Gebieten vorausgesetzt wird.
 Viele mühselige Aufgaben werden durch den Cloud Provider übernommen und man kann sich vollumfänglich auf die Anwendung selbst konzentrieren.
 
 Mit welchen Diensten die Anwendung realisiert wird und wie genau die Komponenten konstruiert werden, beschreiben die nächsten Kapitel.

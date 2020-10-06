@@ -1,0 +1,34 @@
+(function(w, d) {
+  try {
+    d = w.top.document || d; w = w.top.document ? w.top : w;
+  } catch (e) {}
+  var ttag = function() {
+    w.teads.page(86789).placement(94014, {slider: {allow_corner_position: false, allow_top_position: false}, "css":"margin: 0px 0px 18px;","format":"inread","slot":{"selector":".inread","minimum":1}}).passback(function passback() {var _slot_ = ".inread";
+var _min_ = 0;
+var d = window.document;
+try {
+	d = window.top.document;
+} catch (e) {}
+var adFrame = d.createElement("iframe");
+adFrame.width = 1;
+adFrame.height = 1;
+adFrame.border = 0;
+adFrame.style.border = "0";
+adFrame.frameBorder = 0;
+adFrame.style = "display: block; margin: 12px auto;";
+var content = "<html><head><style>body{margin:0;padding:0;border:0}<\/style><\/head>" + "<body><script src='//www.googletagservices.com/tag/js/gpt.js'>" + "googletag.pubads().definePassback('/6514/www.heise.de/passback/teads', [[695, 343], [695, 165], [300, 250], 'fluid']).display(); googletag.pubads().addEventListener('slotRenderEnded', (event) => { try { var creativeWidth = event.size[0]; var creativeHeight = event.size[1]; var thisFrame = window.frameElement; thisFrame.style.width = creativeWidth + 'px'; thisFrame.style.height = creativeHeight + 'px'; } catch (e) {} }); " + "<\/script>" + "<\/body>" + "<\/html>";
+var passbackSlot = d.querySelectorAll(_slot_)[_min_];
+passbackSlot.appendChild(adFrame);
+adFrame.contentWindow.document.open("text/html");
+adFrame.contentWindow.document.write(content);
+adFrame.contentWindow.document.close();}).serve();
+  };
+  if (w.teads && w.teads.page) { ttag(); }
+  else if (!w.teadsscript) {
+    var s = document.createElement('script');
+    s.src = 'https://s8t.teads.tv/media/format/v3/teads-format.min.js';
+    s.async = true; s.onload = ttag; w.teadsscript = d.getElementsByTagName('head')[0].appendChild(s);
+  } else {
+    w.teadsscript.addEventListener('load', ttag);
+  }
+})(window, document);

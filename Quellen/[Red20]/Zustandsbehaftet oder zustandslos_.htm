@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless -->
+<html lang="de" class=" js js flexbox"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" id="www-widgetapi-script" src="./Zustandsbehaftet oder zustandslos__files/www-widgetapi.js" async=""></script><script async="" src="./Zustandsbehaftet oder zustandslos__files/js"></script><script async="" src="./Zustandsbehaftet oder zustandslos__files/elqCfg.min.js"></script><style>body {transition: opacity ease-in 0.2s; } 
+body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
+</style>
+    <!--[if IE]><![endif]-->
+<script async="" src="./Zustandsbehaftet oder zustandslos__files/uwt.js"></script><script type="text/javascript" async="" src="./Zustandsbehaftet oder zustandslos__files/insight.min.js"></script><script type="text/javascript" async="" src="./Zustandsbehaftet oder zustandslos__files/tag.aspx"></script><script async="" src="./Zustandsbehaftet oder zustandslos__files/fbevents.js"></script><script async="" id="demandbase_js_lib" src="./Zustandsbehaftet oder zustandslos__files/X4PVAXm1.min.js"></script><script type="text/javascript" async="" src="./Zustandsbehaftet oder zustandslos__files/pkebsuhdupai.js"></script><script id="trustarc" type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/trustarc.js"></script><script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/notice"></script>
+<script id="ddo" type="text/javascript">
+<!--//--><![CDATA[//><!--
+    var digitalData = {"cart":[],"event":[],"listing":{"browseFilter":"","query":"","queryMethod":"","refinementType":"","refinementValue":"","resultCount":"","searchType":""},"page":{"attributes":{"queryParameters":"","referringSearchEngine":"","analyticsTitle":"article | stateful vs stateless","taxonomyPageSubType":["27551"],"taxonomyBusinessChallenge":["131"],"taxonomyProductLine":["861"],"taxonomySolution":["1081"],"taxonomyTopic":["27001","9011","9001","27031","8391","27101","27111"],"taxonomyMetaHreflang":["29051"]},"category":{"contentType":"","keyPage":"false","keyPageType":"","pageType":"pattern_template","primaryCategory":"topics","subCategories":["cloud-native-apps","stateful-vs-stateless"]},"pageInfo":{"cms":"RH CMS 2020.12.0","contentFindingMethod":"","contentID":"449661","contentPortal":"","destinationURL":"https:\/\/www.redhat.com\/de\/topics\/cloud-native-apps\/stateful-vs-stateless","errorMessage":"","errorType":"","language":"de","pageName":"","referringDomain":"","referringURL":"","sysEnv":"","template":"","title":"Zustandsbehaftet oder zustandslos?"}},"product":[],"user":[{"profile":[{"profileInfo":{"daysSinceLastPurchase":"","demandbaseSID":"","eloquaGUID":"","lastLoginDate":"","lastPurchaseDate":"","loggedIn":"false","profileID":"","subscriptionFrequency":"","subscriptionLevel":""}}]}]};
+    !function(a,b,c){"use strict";function d(a){var c="; "+b.cookie,d=c.split("; "+a+"=");if(2===d.length)return d.pop().split(";").shift()}if(b.referrer){var e=b.createElement("a");e.href=b.referrer,c.page.pageInfo.referringDomain=e.hostname,c.page.pageInfo.referringURL=e.href}c.page.pageInfo.sysEnv=a.innerWidth<=768?"tablet":"desktop";var f=c.user[0].profile[0].profileInfo,g=d("rh_elqCustomerGUID");g&&(f.eloquaGUID=g);var h=d("rh_user");if(h){var i=h.split("\\|");i[0]&&(f.loggedIn="true")}var j=d("s_dmdbase");j&&(f.demandbaseSID=j)}(window,document,digitalData);
+//--><!]]>
+</script>
+<script id="dpal" type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/dtm.js"></script><script src="./Zustandsbehaftet oder zustandslos__files/AppMeasurement.min.js" async=""></script><script src="./Zustandsbehaftet oder zustandslos__files/AppMeasurement_Module_ActivityMap.min.js" async=""></script><script src="./Zustandsbehaftet oder zustandslos__files/AppMeasurement_Module_AudienceManagement.min.js" async=""></script><script src="./Zustandsbehaftet oder zustandslos__files/rh.mktg.js"></script><script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/ud.ashx"></script><style id="at-makers-style" class="at-flicker-control">
+.mboxDefault {visibility: hidden;}
+</style><script>_satellite["_runScript1"](function(event, target, Promise) {
+_satellite.setVar("AT Product Affinity", ""); 
+if(typeof window.adobe != "undefined" && 
+  typeof window.adobe.target != "undefined" &&
+  typeof window.adobe.target.event != "undefined" &&
+  typeof window.adobe.target.event.REQUEST_SUCCEEDED != "undefined"){
+  window.document.addEventListener(window.adobe.target.event.REQUEST_SUCCEEDED, function(e) {     
+    if(typeof e != "undefined" && 
+      typeof e.detail != "undefined" &&
+      typeof e.detail.responseTokens != "undefined" &&
+      typeof  e.detail.responseTokens[0] != "undefined" && 
+      typeof  e.detail.responseTokens[0]["profile.productAffinity"] != "undefined"){
+    _satellite.logger.info("Product Affinity = ", e.detail.responseTokens[0]["profile.productAffinity"] || "No Affinity Found"); 
+    _satellite.setVar("AT Product Affinity",e.detail.responseTokens[0]["profile.productAffinity"] || ""); 
+    }
+  });
+}
+});</script>
+<meta name="taxonomy-topic" content="Cloud">
+<meta name="taxonomy-topic" content="APIs">
+<meta name="taxonomy-topic" content="Container">
+<meta name="taxonomy-topic" content="Entwicklung">
+<meta name="taxonomy-page-sub-type-tid" content="27551">
+<meta name="taxonomy-solution-tid" content="1081">
+<meta name="taxonomy-product-line" content="Cloud Computing">
+<meta name="taxonomy-business-challenge-tid" content="131">
+<meta name="taxonomy-product-line-tid" content="861">
+<meta name="taxonomy-solution" content="Anwendungsintegration und -entwicklung">
+<meta name="taxonomy-topic" content="DevOps">
+<meta name="taxonomy-page-sub-type" content="Article page">
+<meta name="taxonomy-topic" content="Virtualisierung">
+<meta name="taxonomy-topic-tid" content="27101">
+<meta name="taxonomy-topic-tid" content="8391">
+<meta name="taxonomy-topic-tid" content="27111">
+<meta name="taxonomy-meta-hreflang" content="en">
+<meta name="taxonomy-meta-hreflang-tid" content="29051">
+<meta name="taxonomy-topic-tid" content="27031">
+<meta name="taxonomy-topic-tid" content="9001">
+<meta name="taxonomy-business-challenge" content="Cloudnative Anwendungsentwicklung">
+<link rel="shortcut icon" href="https://www.redhat.com/misc/favicon.ico" type="image/x-icon">
+<meta property="og:description" content="Ob etwas zustandsbehaftet oder zustandslos ist, hängt davon ab, wie lange der Zustand der Interaktion erfasst wird und wie diese Informationen gespeichert werden müssen.">
+<meta name="taxonomy-topic-tid" content="27001">
+<meta name="taxonomy-topic-tid" content="9011">
+<meta name="taxonomy-topic" content="Storage">
+<meta name="node-type" content="pattern_template">
+<link href="https://www.redhat.com/ko/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="ko">
+<link href="https://www.redhat.com/ja/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="ja">
+<link href="https://www.redhat.com/it/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="it">
+<link href="https://www.redhat.com/pt-br/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="pt-br">
+<meta name="rhdc_key" content="918603c51562b4bfda49edac6b1974cb">
+<link rel="prefetch" href="https://www.redhat.com/de/redhat_www_menu/ajax/menus-nav2">
+<link href="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="de">
+<link href="https://www.redhat.com/fr/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="fr">
+<meta name="last-publish-date" content="Sat, 28 Mar 2020 04:00:00 GMT">
+<meta name="source" content="rhdc_drupal">
+<meta http-equiv="content-language" content="de">
+<link href="https://www.redhat.com/zh/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="zh">
+<link href="https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="en">
+<link href="https://www.redhat.com/es/topics/cloud-native-apps/stateful-vs-stateless" rel="alternate" hreflang="es">
+<meta name="description" content="Ob etwas zustandsbehaftet oder zustandslos ist, hängt davon ab, wie lange der Zustand der Interaktion erfasst wird und wie diese Informationen gespeichert werden müssen.">
+<meta name="generator" content="Drupal 7 (http://drupal.org)">
+<link rel="image_src" href="https://www.redhat.com/profiles/rh/themes/redhatdotcom/img/red-hat-social-share.jpg">
+<link rel="canonical" href="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless">
+<meta property="og:title" content="Zustandsbehaftet oder zustandslos?">
+<meta property="og:image" content="https://www.redhat.com/profiles/rh/themes/redhatdotcom/img/red-hat-social-share.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Zustandsbehaftet oder zustandslos?">
+<meta name="twitter:image" content="https://www.redhat.com/profiles/rh/themes/redhatdotcom/img/red-hat-social-share.jpg">
+    <title>Zustandsbehaftet oder zustandslos?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="dns-prefetch" href="https://static.redhat.com/">
+    <link rel="preload" href="https://www.redhat.com/sites/all/libraries/rh_iconfont/dist/fonts/web_icon/rh-web-iconfont.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatText/RedHatText-Regular.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatText/RedHatText-Medium.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatDisplay/RedHatDisplay-Regular.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatDisplay/RedHatDisplay-Medium.woff" as="font" type="font/woff" crossorigin="">
+    <link rel="preload" href="https://static.redhat.com/libs/redhat/redhat-font/2/webfonts/RedHatDisplay/RedHatDisplay-Bold.woff" as="font" type="font/woff" crossorigin="">
+    <link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/css__HWVHW9b95R1RqyBRl5AP9eJDDvrJnZlrYxdldEeTbRs__lxVvQj7ZLTo6Mv3CyAOZ4JVcywDBC7nCqpiFE1ykzHo__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/webrh.webcomponents.min.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/webrh.min.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/css__vl437z1noPDHb7Z3FrfT5oZKHT3EtmwsxNOP7e-Em-I__jvsf8aicvgsOPFmBcdxrz-KlsyzPM5kz0PW6PJl9ngU__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/css__wpajrf8pWA19ifT2xQXPB3J1TByoCXqZVtt6kXfl4Ow__bJnHfwPEwhfRUlDjqRDA3BmUQGPSp-h7p92xlind3o0__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.css" media="print">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/advanced-theme.css" media="all">
+<link type="text/css" rel="stylesheet" href="./Zustandsbehaftet oder zustandslos__files/red-hat-font.css" media="all">
+    <!--[if lt IE 9]>
+      <script src="/profiles/rh/themes/redhatdotcom/js/selectivizr-min.js" type="text/javascript"></script>
+      <script src="/profiles/rh/themes/redhatdotcom/js/nwmatcher-min.js" type="text/javascript"></script>
+      <script src="/profiles/rh/themes/redhatdotcom/js/respond.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/js__wNlHEsLALTzEeRd_J9pulEt9uCxu8YHllP4b4mAWT2M__ShOlrFV-yrfo5P33yPouJsZy9x5O1CLZZd726Dd7GMY__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.js"></script>
+<script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/webrh.vendor.min.js"></script>
+<script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/webrh.webcomponents.min.js"></script>
+<script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/webrh.min.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+document.createElement( "picture" );
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+window.rh.drupalTrustArcLoaded = true;
+//--><!]]>
+</script>
+<script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/js__kXJvFb4w2ns3w0q8NJBrGeviEhoRmI5H6rUatIkVZfA__OEvoH0VY_MNzUd8mwCdW9KyePDvR2CTs-PAAdHyUH9I__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"de\/","ajaxPageState":{"theme":"redhatdotcom","theme_token":"wHOVcvptqDCm5xecZ9MNMzYUZkdkJkyFRWKr4qprvcc","css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"https:\/\/static.redhat.com\/libs\/redhat\/redhat-theme\/5\/advanced-theme.css":1,"https:\/\/static.redhat.com\/libs\/redhat\/redhat-font\/2\/webfonts\/red-hat-font.css":1,"modules\/locale\/locale.css":1,"sites\/all\/libraries\/webrh\/dist\/css\/webrh.webcomponents.min.css":1,"sites\/all\/libraries\/webrh\/dist\/css\/webrh.min.css":1,"sites\/all\/libraries\/rh_iconfont\/dist\/files\/rh-iconfont.css":1,"sites\/all\/libraries\/rh_iconfont\/dist\/files\/rh-web-iconfont.css":1,"profiles\/rh\/themes\/redhatdotcom\/css\/chrome.css":1,"profiles\/rh\/themes\/redhatdotcom\/css\/overpass.css":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.selectBoxIt\/jquery.selectBoxIt.css":1,"profiles\/rh\/themes\/redhatdotcom\/css\/print.css":1},"js":{"sites\/all\/modules\/picture\/picturefill2\/picturefill.min.js":1,"sites\/all\/modules\/picture\/picture.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/jquery\/1.10\/jquery.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"profiles\/rh\/modules\/redhat_www_ddo\/dist\/post-jquery.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/libraries\/webrh\/dist\/js\/webrh.vendor.min.js":1,"sites\/all\/libraries\/webrh\/dist\/js\/webrh.webcomponents.min.js":1,"sites\/all\/libraries\/webrh\/dist\/js\/webrh.min.js":1,"public:\/\/languages\/de_7H3LX1V8ovdl3iI6mRDDjIWrUtwiWQCRc5KzuAakrNM.js":1,"profiles\/rh\/modules\/redhat_www_menu\/js\/rh_nav.js":1,"profiles\/rh\/modules\/redhat_www_share\/js\/rh_share.js":1,"profiles\/rh\/modules\/redhat_www_utility\/js\/redhat_www_utility.js":1,"sites\/all\/libraries\/jquery-cookie\/jquery.cookie-1.4.1.min.js":1,"profiles\/rh\/modules\/redhat_www_solr\/js\/rh_solr.js":1,"profiles\/rh\/modules\/redhat_www_solr\/js\/redhat_www_solr_suggestions.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/modernizr.min.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.pushmenu.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery-scrolltofixed.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/waypoints.min.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/rh-chrome.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.fitvids.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.switchIt.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.selectBoxIt\/jquery.selectBoxIt.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/jquery.viewport\/jquery.viewport.min.js":1,"profiles\/rh\/themes\/redhatdotcom\/js\/sass-bootstrap.min.js":1}},"redhat_www_menu":{"path":"node\/449661"},"rh_analytics_enabled":false,"urlIsAjaxTrusted":{"\/de\/search\/node":true}});
+//--><!]]>
+</script>
+    <noscript>
+        <link href="/sites/all/libraries/webrh/dist/css/webrh.webcomponents.noscript.min.css" rel="stylesheet" >
+    </noscript>
+  <script async="" src="./Zustandsbehaftet oder zustandslos__files/hotjar-1712492.js"></script><script src="./Zustandsbehaftet oder zustandslos__files/RCcffc00aee8084ff4859f284ed5b1cc5c-source.min.js" async=""></script><script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/oct.js"></script><script src="./Zustandsbehaftet oder zustandslos__files/RCe407fa25daae4843aa41c364bd6ef61f-source.min.js" async=""></script><script src="./Zustandsbehaftet oder zustandslos__files/RC58d0cd0f483548eaa038aa9d7b0ed6ad-source.min.js" async=""></script><script src="./Zustandsbehaftet oder zustandslos__files/RCb423489cc0f6474c8e2b86ee3165a34e-source.min.js" async=""></script><script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/iframe_api"></script></head>
+  <body class="bands-index html not-front not-logged-in no-sidebars page-node page-node- page-node-449661 node-type-pattern-template i18n-de  redhat_www_menu-processed redhat_www_solr_suggestions-processed" style="--pfe-navigation--Height--actual:80px;">
+    <div class="page">
+            <!-- Legacy migrated page support with body.migrated-page-hero -->
+<div class="header-background-image fts-migrated-bg">
+</div>
+
+  <div id="main-content">
+                      <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+      
+  <article class="node-449661 node node-pattern-template clearfix">
+
+  
+    
+
+
+
+    
+
+<div class="header-background-image"></div>
+<style>
+body[unresolved] pfe-navigation {display: none;}.no-js body pfe-navigation,body:not(unresolved) pfe-navigation {display: block;}.no-js #main-menu{background:#000!important;padding:10px}[unresolved] pfe-navigation{background:#000!important;color:#fff;display:block;width:100%}[unresolved] pfe-navigation [slot=logo],[unresolved] pfe-navigation [slot=skip],[unresolved] pfe-navigation ul li,[unresolved] pfe-navigation-item,[unresolved] pfe-navigation-main{padding:0 7px 6px;display:inline-block}[unresolved] pfe-navigation [slot=skip] a{font-size:0}[unresolved] pfe-navigation [slot=skip] a:focus{font-size:14px}[unresolved] pfe-navigation [slot=logo]{vertical-align:middle}[unresolved] pfe-navigation a{font-size:14px;color:#fff}[unresolved] pfe-navigation-item [slot]>a:focus{outline-offset:1px;outline-style:dotted;outline-width:1px;outline-color:#d2d3d4}
+</style>
+<pfe-navigation id="main-menu" class="main-header PFElement pfe-sticky" pfe-sticky="" pfe-close-on-click="external" pfe-menu-label="Menü" pfelement="" has_skip="" has_logo="" has_search="" has_mobile-search="" has_main="" has_language="" has_mobile-language="" has_login="" has_mobile-login="" has_site-switcher="">
+ 
+  <!-- Skip navigation -->
+  <div slot="skip">
+    <ul>
+      <li><a href="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless#rh-main-content">Skip to content</a></li>
+    </ul>
+  </div>
+
+  <!-- Site logo -->
+  <p slot="logo">
+    <a href="https://www.redhat.com/de" title="Red Hat">
+      <img class="redhat-logo" src="./Zustandsbehaftet oder zustandslos__files/logo--200.png" alt="" aria-hidden="true" style="margin:0;width: 135px;">
+    </a>
+  </p>
+
+  <!-- Search -->
+  <pfe-navigation-item slot="search" pfe-icon="web-search" id="utility-search" class="PFElement" pfelement="" has_trigger="" has_tray="">
+    <div slot="trigger">
+      <a href="https://www.redhat.com/de/search" data-analytics-region="utility" data-analytics="Search" data-analytics-label="Search" tabindex="-1">Suche</a>    </div>
+    <div slot="tray" hidden="">
+      <div class="pfe-navigation-item__tray--container">
+        <form class="search-form" autocomplete="off" action="https://www.redhat.com/de/search/node" method="post" id="redhat-www-solr-search-box" accept-charset="UTF-8"><div><div class="container-inline form-wrapper" id="edit-basic"><div class="form-item form-type-textfield form-item-keys">
+  <label class="element-invisible" for="edit-keys">Enter your keywords </label>
+ <input maxlength="128" size="15" placeholder="Suchbegriff eingeben" type="text" id="edit-keys" name="keys" value="" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Suche" class="form-submit"></div><div class="search-autocomplete__container"></div></div><input type="hidden" name="form_build_id" value="form-Cez8KkIdDxVUUT92EVEgEjAzuuN5scP4Wp6TKuGYlws">
+<input type="hidden" name="form_id" value="redhat_www_solr_search_box">
+</div></form>      <div class="search-autocomplete__overlay"></div></div>
+    </div>
+  </pfe-navigation-item>
+  <form class="search-form" autocomplete="off" slot="mobile-search" hidden="" action="https://www.redhat.com/de/search/node" method="post" id="redhat-www-solr-search-box--2" accept-charset="UTF-8"><div><div class="container-inline form-wrapper" id="edit-basic--2"><div class="form-item form-type-textfield form-item-keys">
+  <label class="element-invisible" for="edit-keys--2">Enter your keywords </label>
+ <input maxlength="128" size="15" placeholder="Suchbegriff eingeben" type="text" id="edit-keys--2" name="keys" value="" class="form-text">
+</div>
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit--2" name="op" value="Suche" class="form-submit"></div></div><input type="hidden" name="form_build_id" value="form-SeB4idChWeAZqY5RKcp1JjF9etonDFBKnbqa6xweBXQ">
+<input type="hidden" name="form_id" value="redhat_www_solr_search_box">
+</div></form>
+  <!-- Main navigation -->
+  <pfe-navigation-main class="PFElement" pfelement="" role="navigation" aria-label="Main" show_content="">
+    <ul>
+              <li>
+          <pfe-navigation-item class="PFElement" pfelement="" has_trigger="" has_tray="" is_nested="" first="" parent_hidden="">
+            <div slot="trigger">
+              <a href="https://www.redhat.com/de/technologies" data-analytics-region="nav" data-analytics="Products" data-analytics-label="Products" data-analytics-level="1" tabindex="-1">Produkte</a>
+            </div>
+            <div slot="tray" data-column="10311" hidden="">
+            </div>
+          </pfe-navigation-item>
+        </li>        <li>
+          <pfe-navigation-item class="PFElement" pfelement="" has_trigger="" has_tray="" is_nested="" parent_hidden="">
+            <div slot="trigger">
+              <a href="https://www.redhat.com/de/solutions" data-analytics-region="nav" data-analytics="Solutions" data-analytics-label="Solutions" data-analytics-level="1" tabindex="-1">Lösungen</a>
+            </div>
+            <div slot="tray" data-column="10331" hidden="">
+            </div>
+          </pfe-navigation-item>
+        </li>        <li>
+          <pfe-navigation-item class="PFElement" pfelement="" has_trigger="" has_tray="" is_nested="" parent_hidden="">
+            <div slot="trigger">
+              <a href="https://www.redhat.com/de/services" data-analytics-region="nav" data-analytics="Learning &amp; support" data-analytics-label="Learning &amp; support" data-analytics-level="1" tabindex="-1"> Wissen &amp; Support</a>
+            </div>
+            <div slot="tray" data-column="138281" hidden="">
+            </div>
+          </pfe-navigation-item>
+        </li>        <li>
+          <pfe-navigation-item class="PFElement" pfelement="" has_trigger="" has_tray="" is_nested="" parent_hidden="">
+            <div slot="trigger">
+              <a href="https://www.redhat.com/de/resources" data-analytics-region="nav" data-analytics="Resources" data-analytics-label="Resources" data-analytics-level="1" tabindex="-1">Ressourcen</a>
+            </div>
+            <div slot="tray" data-column="169591" hidden="">
+            </div>
+          </pfe-navigation-item>
+        </li>        <li>
+          <pfe-navigation-item class="PFElement" pfelement="" has_trigger="" has_tray="" is_nested="" last="" parent_hidden="">
+            <div slot="trigger">
+              <a href="https://www.redhat.com/de/about" data-analytics-region="nav" data-analytics="Red Hat &amp; open source" data-analytics-label="Red Hat &amp; open source" data-analytics-level="1" tabindex="-1">Red Hat &amp; Open Source</a>
+            </div>
+            <div slot="tray" data-column="10351" hidden="">
+            </div>
+          </pfe-navigation-item>
+        </li>    </ul>
+  </pfe-navigation-main>
+
+  <!-- Language -->
+  <pfe-navigation-item slot="language" pfe-icon="web-globe" id="utility-globe" class="PFElement" pfelement="" has_trigger="" has_tray="">
+    <div slot="trigger">
+      <a href="https://www.redhat.com/de/w%C3%A4hle-eine-sprache" data-analytics-region="utility" data-analytics="Language" data-analytics-label="Language" tabindex="-1">Deutsch</a>    </div>
+    <div slot="tray" hidden="">
+      <div class="pfe-navigation-item__tray--container">
+        <div class="language-picker">
+  <h3 class="pfe-headline-2">Wählen Sie eine Sprache</h3>
+  <ul><li class="pfe-headline-5"><a href="https://www.redhat.com/zh/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="zh" hreflang="zh" title="article | Stateful vs stateless" aria-current="page">简体中文</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="en" hreflang="en" title="article | Stateful vs stateless" aria-current="page">English</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/fr/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="fr" hreflang="fr" title="article | Stateful vs stateless" aria-current="page">Français</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless" class="language-link active" xml:lang="de" hreflang="de" title="article | Stateful vs stateless" aria-current="page">Deutsch</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/it/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="it" hreflang="it" title="article | Stateful vs stateless" aria-current="page">Italiano</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/ja/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="ja" hreflang="ja" title="article | Stateful vs stateless" aria-current="page">日本語</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/ko/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="ko" hreflang="ko" title="article | Stateful vs stateless" aria-current="page">한국어</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/pt-br/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="pt-br" hreflang="pt-br" title="article | Stateful vs stateless" aria-current="page">Português</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/es/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="es" hreflang="es" title="article | Stateful vs stateless" aria-current="page">Español</a></li></ul></div>      </div>
+    </div>
+  </pfe-navigation-item>
+  <div slot="mobile-language" pfe-icon="web-globe" data-analytics-region="utility" data-analytics="Language" data-analytics-label="Language" hidden=""><a id="pfe-modal--trigger" tabindex="0">Deutsch</a></div>
+  <!-- Log in -->
+  <pfe-navigation-item slot="login" pfe-icon="web-user" id="utility-account" class="PFElement" pfelement="" has_trigger="" has_tray="">
+    <div slot="trigger">
+      <a href="https://sso.redhat.com/auth/realms/redhat-external/protocol/saml/clients/legacy-idp-servlets" class="rh-user-loggedout" data-analytics-region="utility" data-analytics="login" data-analytics-label="login" tabindex="-1">Anmelden</a>          </div>
+    <div slot="tray" hidden="">
+      <div class="pfe-navigation-item__tray--container">
+        <section class="account-tray">
+  <header>
+    <div class="container">
+              
+                    <p class="rh-login-heading rh-user-loggedout">Beim Red&nbsp;Hat Konto anmelden</p>
+          </div>
+  </header>
+  <div class="content">
+    <div class="container">
+      <section class="account-login rh-user-loggedout">
+        <div class="account-login-wrapper">
+                      <a href="https://sso.redhat.com/auth/realms/redhat-external/protocol/saml/clients/legacy-idp-servlets" id="redhat-account-login-link" class="account-login-link utility-user-login-link" data-analytics-region="utility" data-analytics="Log in" data-analytics-label="Log in">Anmelden</a>                                <p>Über Ihr Red&nbsp;Hat Konto können Sie auf Ihr Benutzerprofil, Ihre Einstellungen und die folgenden Services abhängig von Ihrem Kundenstatus zugreifen:</p>
+                                <div class="utility-user-additional-links"><div class="item-list"><ul><li class="first">Customer Portal</li>
+<li class="last">Red Hat Connect für Geschäftspartner</li>
+</ul></div><div class="item-list"><ul><li class="first">Benutzerverwaltung</li>
+<li class="last">Certification Central</li>
+</ul></div></div>                  </div>
+        <div class="account-register-wrapper">
+                      <a href="https://www.redhat.com/wapps/ugc/register.html" class="account-register-link" data-analytics-region="utility" data-analytics="Register now" data-analytics-label="Register now">Jetzt registrieren</a>                                <p class="account-register-heading">Noch nicht registriert? Folgende Gründe sprechen dafür, dass Sie es sein sollten:</p><div class="item-list"><ul><li class="first">Greifen Sie auf Artikel in unserer Knowledgebase zu, verwalten Sie Ihre Supportfälle und Subskriptionen, laden Sie Updates herunter, und nutzen Sie viele weitere Funktionen über eine zentrale Schnittstelle.</li>
+<li>Lassen Sie sich die Benutzer aus Ihrem Unternehmen anzeigen, und bearbeiten Sie deren Kontoinformationen, Einstellungen und Berechtigungen.</li>
+<li class="last">Verwalten Sie Ihre Red&nbsp;Hat Zertifizierungen, sehen Sie Ihre Prüfungsübersicht ein, und laden Sie Logos und Dokumente zum Thema Zertifizierung herunter.</li>
+</ul></div>                  </div>
+      </section>
+      
+    </div>
+  </div>
+</section>
+      </div>
+    </div>
+  </pfe-navigation-item>
+  <a href="https://sso.redhat.com/auth/realms/redhat-external/protocol/saml/clients/legacy-idp-servlets" class="rh-user-loggedout" slot="mobile-login" pfe-icon="web-user" tabindex="-1" hidden="">Anmelden / Registrieren</a>  
+  <!-- Site switcher -->
+  <pfe-navigation-item slot="site-switcher" pfe-icon="web-grid-3x3" id="site-switcher" class="PFElement" pfelement="" has_trigger="" has_tray="">
+    <div slot="trigger">
+      <a href="https://www.redhat.com/de/cms/ajax/site-switcher" id="358731" data-analytics-region="utility" data-analytics="Websites" data-analytics-label="Websites" tabindex="-1">Websites</a>    </div>
+    <div slot="tray" hidden="">
+      <div class="pfe-navigation-item__tray--container">
+        <!-- Added via JS -->
+              </div>
+    </div>
+  </pfe-navigation-item>
+</pfe-navigation>
+
+<!-- Language switcher modal, must be outside the navigation component -->
+<pfe-modal class="language-picker PFElement" id="language-picker" hidden="" pfelement="" has_body="" pfe-type="container">
+  <h3 class="pfe-headline-2" id="pfe-tc7oj58ga">Wählen Sie eine Sprache</h3>
+  <ul><li class="pfe-headline-5"><a href="https://www.redhat.com/zh/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="zh" hreflang="zh" title="article | Stateful vs stateless" aria-current="page">简体中文</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/en/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="en" hreflang="en" title="article | Stateful vs stateless" aria-current="page">English</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/fr/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="fr" hreflang="fr" title="article | Stateful vs stateless" aria-current="page">Français</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless" class="language-link active" xml:lang="de" hreflang="de" title="article | Stateful vs stateless" aria-current="page">Deutsch</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/it/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="it" hreflang="it" title="article | Stateful vs stateless" aria-current="page">Italiano</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/ja/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="ja" hreflang="ja" title="article | Stateful vs stateless" aria-current="page">日本語</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/ko/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="ko" hreflang="ko" title="article | Stateful vs stateless" aria-current="page">한국어</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/pt-br/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="pt-br" hreflang="pt-br" title="article | Stateful vs stateless" aria-current="page">Português</a></li><li class="pfe-headline-5"><a href="https://www.redhat.com/es/topics/cloud-native-apps/stateful-vs-stateless" class="language-link" xml:lang="es" hreflang="es" title="article | Stateful vs stateless" aria-current="page">Español</a></li></ul></pfe-modal><span id="rh-main-content"></span>
+
+        
+<div class="rh-band-group--layout" data-rh-group-size="content" data-rh-unique-id="2081951">
+                    <div class="rh-band-group-wrapper">
+                <div class="rh-band-group-background" data-rh-background-align="left-center" data-rh-background="rich-black"></div><div class="rh-band-group-body"><!-- Pattern | hero_header -->
+<div class="rh-band--layout" data-rh-background="transparent"><div class="rh-band-container" data-rh-layout="stacked"><section class="rh-band-main" data-rh-layout="stacked"><div class="rh-band-content" data-rh-theme="dark "><div class="rh-band-header--component"><p class="rh-band-header-title">Cloudnative Anwendungen</p><h1 class="rh-band-header-hero-headline">Zustandsbehaftet oder zustandslos?</h1></div></div></section></div></div></div></div></div><!-- Pattern | secondary_nav_bar -->
+
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+  <!-- Pattern | long_form_article -->
+
+    <div class="rh-band--layout" data-rh-unique-id="2081881" data-rh-background="white"><div class="rh-band-container" data-rh-layout="stacked"><section class="rh-band-main" data-rh-layout="stacked"><div class="rh-band-content" data-rh-layout="aside-right"><div class="rh-band-content-container" data-rh-layout="stacked"><!-- Subpattern | standard_text --><!-- Group layout --><div class="rh-group--layout" data-rh-layout="stacked" data-eq-pts="xxs-group: 0, xs-group: 220, sm-group: 320, md-group: 420, lg-group: 620" data-eq-state="xxs-group xs-group sm-group md-group lg-group"><div class="rh-group-body" data-rh-layout="min-stacked"><div class="rh-generic--component" data-eq-pts="xxs-hr: 0, lg-hr: 450" data-rh-align="left" data-eq-state="xxs-hr lg-hr"><p>Der Zustand einer Anwendung (oder eines anderen Objekts) ist ihr Status oder ihre Qualität zu einem bestimmten Zeitpunkt. Ob etwas zustandsbehaftet oder zustandslos ist, hängt davon ab, wie lange der Zustand der Interaktion erfasst wird und wie diese Informationen gespeichert werden müssen.&nbsp;</p><hr><h3>Zustandslos</h3><p>Ein zustandsloser Prozess oder eine zustandslose Anwendung kann als isoliert verstanden werden. Es gibt keine gespeicherten Kenntnisse oder Verweise auf vergangene Transaktionen. Jede Transaktion wird wie zum ersten Mal von Grund auf neu durchgeführt. Zustandslose Anwendungen bieten einen einzelnen Service oder eine Funktion und verwenden CDN-(Content Delivery Network-), Web- oder Druckserver, um diese kurzfristigen Anforderungen zu verarbeiten.&nbsp;</p><p>Ein Beispiel für eine zustandslose Transaktion wäre eine Online-Suche, die eine spontane Frage von Ihnen beantwortet. Sie geben Ihre Frage in eine Suchmaschine ein und drücken die Eingabetaste. Wenn Ihre Transaktion versehentlich unterbrochen oder geschlossen wird, starten Sie einfach eine neue. Stellen Sie sich eine zustandslose Transaktion als eine Art Verkaufsautomat vor: eine Anfrage ergibt eine Antwort.&nbsp;</p><hr><h3>Zustandsbehaftet</h3><p>Im Gegensatz dazu kann auf Anwendungen und Prozesse, die ihren Zustand behalten oder zustandsbehaftet sind, mehrfach zugegriffen werden, wie beim Online-Banking oder bei E-Mails. Sie werden im Kontext vorangegangener Transaktionen ausgeführt, und die aktuelle Transaktion kann von deren Ablauf beeinflusst werden. Aus diesen Gründen verwenden zustandsbehaftete Apps jedes Mal dieselben Server, wenn sie eine Anforderung eines Nutzers verarbeiten.&nbsp;&nbsp;</p><p>Wenn eine zustandsbehaftete Transaktion unterbrochen wird, wurden der Kontext und die Historie gespeichert, sodass Sie mehr oder weniger dort weitermachen können, wo Sie aufgehört haben. Zustandsbehaftete Apps erfassen Dinge wie bevorzugte Einstellungen, die Fensterposition und die letzten Aktivitäten. Sie können sich zustandsbehaftete Transaktionen als ein fortlaufendes Gespräch mit derselben Person vorstellen.</p><p>Die meisten Anwendungen, die wir täglich verwenden, sind zustandsbehaftet. Doch mit fortschreitender Technologie erleichtern Microservices und Container das Erstellen und Bereitstellen von Anwendungen in der Cloud.&nbsp;</p><hr><h3>Container und Zustände</h3><p>Mit der zunehmenden Beliebtheit von <a href="https://www.redhat.com/en/topics/cloud">Cloud Computing</a> und <a href="https://www.redhat.com/en/topics/microservices">Microservices</a> nimmt auch die Containerisierung von Anwendungen zu, ob zustandsbehaftet oder zustandslos. <a href="https://www.redhat.com/en/topics/containers">Container</a> sind Codeeinheiten für eine Anwendung, die zusammen mit ihren Libraries und Abhängigkeiten paketiert sind, sodass sie problemlos verschoben und in jeder Umgebung ausgeführt werden können, sei es auf einem Desktop, in einer herkömmlichen IT-Infrastruktur oder in einer Cloud.&nbsp;</p><p>Ursprünglich wurden Container so programmiert, dass sie zustandslos waren, was ihrer portierbaren, flexiblen Natur entsprach. Mit zunehmender Verbreitung von Containern begann man jedoch, vorhandene zustandsbehaftete Apps zu „containerisieren" (also von Grund auf für eine Ausführung in Containern zu programmieren und zu paketieren). Dadurch wurden diese Apps flexibel und schnell genug für die Containerausführung und verfügten gleichzeitig über die Storage- und Kontextfunktionen zustandsbehafteter Apps.</p><p>Zustandsbehaftete Apps können daher zustandslosen Apps sehr ähnlich sein. So können Sie beispielsweise eine App haben, die zwar zustandslos ist und keinen Langzeit-<a href="https://www.redhat.com/en/topics/data-storage">Storage</a> benötigt, es dem Server jedoch ermöglicht, Anforderungen von einem bestimmten Client mithilfe von Cookies zu verfolgen.&nbsp;</p><hr><h3>Verwaltung zustandsloser und zustandsbehafteter Container</h3><p>Mit der zunehmenden Beliebtheit von Containern begannen Unternehmen, Möglichkeiten zur Verwaltung sowohl zustandsloser als auch zustandsbehafteter Container mithilfe von Data Storage, <a href="https://www.redhat.com/en/topics/containers/what-is-kubernetes">Kubernetes</a> und StatefulSets bereitzustellen. Zustandsbehaftung ist heute ein <a href="https://www.redhat.com/en/blog/struggling-containerize-stateful-applications-cloud-heres-how">wesentliches Merkmal</a> des <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift-container-storage">Container-Storage</a>. Es geht daher nicht mehr darum, ob, sondern nur wann zustandsbehaftete Container verwendet werden.&nbsp;</p><p>Ob Sie zustandsbehaftete oder zustandslose Container verwenden sollten oder nicht, hängt davon ab, welche Art von App Sie erstellen und was die App tun muss. Zustandslosigkeit ist der richtige Weg, wenn Sie nur vorübergehend und schnell Informationen benötigen. Wenn Ihre App mehr Informationen von einer Sitzung zur nächsten speichern soll, sind zustandsbehaftete Container möglicherweise der bessere Weg.</p><hr><h3>Zustandsbehaftet oder zustandslos – auf jeden Fall mit Red&nbsp;Hat</h3><p>Ganz gleich, ob es um zustandsbehaftete oder zustandslose Apps geht: <a href="https://www.redhat.com/en/topics/containers/why-choose-red-hat-containers">Red&nbsp;Hat hat, was Sie brauchen</a>. Ob Sie zustandsbehaftete Container auf <a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red&nbsp;Hat OpenShift Container Platform</a>, unserer unternehmensfähigen Kubernetes-Plattform, orchestrieren oder mit <a href="https://www.redhat.com/en/products/integration">Red Hat Integration</a> eine einheitliche Umgebung für die Anwendungsentwicklung erstellen möchten – Sie erhalten Unterstützung durch unseren vielfach ausgezeichneten Support und unser großes Partnernetzwerk.&nbsp;</p><p>Erfahren Sie, wie Sie mit allen unseren Produkten Lösungen entwickeln, die Entwicklerproduktivität verbessern und Innovationen fördern können – mit <a href="https://www.redhat.com/en/about/development-model">Open&nbsp;Source-Software</a>.</p></div></div><div class="rh-group-footer"><div class="rh-cta--component" data-rh-align="left" data-rh-cta-type="secondary"><a class="rh-cta-link" href="https://www.redhat.com/en/blog/struggling-containerize-stateful-applications-cloud-heres-how">Mehr erfahren über die Containerisierung von zustandsbehafteten Apps in der Cloud</a></div></div></div></div><aside class="rh-band-aside" data-rh-layout="stacked"><!-- Subpattern | standard_text --><div class="rh-card--layout" data-rh-background="white" data-rh-theme="light" data-rh-bg-align="cover" data-rh-layout="stacked" data-eq-pts="xxs-box: 0, xs-box: 202, sm-box: 302, md-box: 402, lg-box: 502, xl-box: 602, xxl-box: 702, box-edges: 262" data-rh-justify="justify" data-eq-state="xxs-box xs-box box-edges"><div class="rh-card-content" data-rh-layout="min-stacked"><div class="rh-generic--component" data-eq-pts="xxs-hr: 0, lg-hr: 450" data-rh-align="left" data-eq-state="xxs-hr"><h5>AUSGEWÄHLTE RESSOURCE</h5><h3>Vier Schritte zur Container-Einführung</h3><p>Mithilfe von Containern sind Sie in der Lage, das perfekte Gleichgewicht zwischen Effizienz und Effektivität zu finden. Vermeiden Sie die üblichen Fallstricke der Container-Implementierung, indem Sie überlegen, wozu Sie Ihre Plattform brauchen: zur Nutzung einer Hybrid Cloud, zur Unterstützung von DevOps, zur Einführung von Innovationen oder zur Optimierung Ihrer vorhandenen IT. </p></div></div><footer class="rh-card-footer"><div class="rh-cta--component" data-rh-align="left" data-rh-cta-type="secondary"><a class="rh-cta-link" href="https://go.redhat.com/containers-executive-checklist-20180919?intcmp=701f2000001OMH6AAO" title="SOLP: Vier Schritte zur Container-Einführung">Zur Checkliste</a></div></footer></div><!-- Subpattern | standard_text --><!-- Group layout --><div class="rh-group--layout" data-rh-layout="stacked" data-eq-pts="xxs-group: 0, xs-group: 220, sm-group: 320, md-group: 420, lg-group: 620" data-eq-state="xxs-group xs-group"><div class="rh-group-body" data-rh-layout="min-stacked"><div class="rh-generic--component" data-eq-pts="xxs-hr: 0, lg-hr: 450" data-rh-align="left" data-eq-state="xxs-hr"><h4>Mehr erfahren</h4><ul><li><a href="https://www.redhat.com/en/topics/microservices/why-choose-openshift-serverless">Was für Red Hat OpenShift Serverless spricht</a></li><li><a href="https://www.redhat.com/en/topics/containers/whats-a-linux-container">Was ist ein Linux-Container?</a></li><li><a href="https://www.redhat.com/en/topics/containers/why-choose-red-hat-containers">Warum Red&nbsp;Hat für Container?</a></li><li><a href="https://www.redhat.com/en/topics/security/container-security">Was ist Container-Sicherheit?</a></li><li><a href="https://www.redhat.com/en/topics/microservices/why-choose-red-hat-microservices">Warum Red&nbsp;Hat für Microservices?</a></li><li><a href="https://www.redhat.com/en/blog/red-hat-openshift-container-storage-whats-next">Blog-Beitrag: Red&nbsp;Hat OpenShift Container Storage – What's next?</a></li></ul></div></div></div></aside></div></section></div></div>  <!-- Pattern | multi_cta_band -->
+<div class="rh-band--layout" data-rh-unique-id="2081921" data-rh-band-collapse=" " data-rh-background="gray"><div class="rh-band-container" data-rh-layout="stacked"><section class="rh-band-main" data-rh-layout="stacked"><header class="rh-band-header" data-rh-theme=""><div class="rh-band-header--component" data-rh-align="center"><h3 class="rh-band-header-headline">Mehr über Red&nbsp;Hat OpenShift Container Platform erfahren</h3></div></header><div class="rh-band-content" data-rh-layout="gallery-flex"><!-- Subpattern | simple_cta --><div class="rh-cta--component" data-rh-align="left" data-rh-cta-type="ghost"><a class="rh-cta-link" href="https://blog.openshift.com/">Blog lesen</a></div><!-- Subpattern | simple_cta --><div class="rh-cta--component" data-rh-align="left" data-rh-cta-type="primary"><a class="rh-cta-link" href="https://www.redhat.com/en/contact" title="Info | Kontakt">Sprechen Sie mit Red&nbsp;Hat</a></div></div></section></div></div>
+  
+  
+</article>
+
+</div>
+  </div>
+        
+  </div>
+
+  <footer>
+      <section class="rc-footer-menu" data-rc-toggle-id="footer-extended">
+      <div class="container rc-footer-menu-container">
+        <nav class="row rc-footer-menu-about-items"><div class="rc-footer-menu-about-col foot-about foot-about"><div class="rc-footer-menu-list-header"><h3 class="rc-footer-menu-list-header-title">Info</h3></div><p class="rc-footer-menu-about-description">Red Hat ist der weltweit führende Anbieter von Open Source-IT-Lösungen für Unternehmen. Dank unseres vorhersehbaren, erschwinglichen Subskriptionsmodells erhalten unsere Kunden zuverlässige und leistungsstarke Technologien in den Bereichen Cloud, Linux, Management, Middleware, Mobile, Storage und Virtualisierung. Darüber hinaus bieten wir vielfach ausgezeichnete Support-, Trainings- und Consulting-Services.</p><ul class="rc-footer-menu-about-list"><li><a href="https://www.redhat.com/de/about/company">Unternehmensinformation</a></li>
+<li><a href="https://www.redhat.com/de/jobs-overview">Jobs bei Red Hat</a></li>
+<li><a href="https://www.redhat.com/de/about/office-locations">Standorte</a></li>
+<li><a href="https://www.redhat.com/de/about/development-model">Entwicklungsmodell</a></li>
+<li><a href="https://www.redhat.com/de/events">Veranstaltungen</a></li>
+<li><a href="https://www.redhat.com/de/about/newsroom">News</a></li>
+<li><a href="https://www.redhat.com/de/blog">Blog</a></li>
+<li><a href="https://redhat.corpmerchandise.com/">Cool Stuff Store</a></li>
+</ul><div class="rc-footer-menu-social-links"><nav id="foot-social"><ul><li class="first leaf"><a href="http://www.linkedin.com/company/red-hat" class="icon-linkedin-sign"></a></li>
+<li class="leaf"><a href="http://www.youtube.com/user/RedHatVideos" class="icon-youtube"></a></li>
+<li class="leaf"><a href="https://www.facebook.com/redhatinc" class="icon-facebook"></a></li>
+<li class="last leaf"><a href="https://twitter.com/RedHat" class="icon-twitter"></a></li>
+</ul></nav></div></div>
+</nav>        <nav class="row rc-footer-menu-items"><div class="rc-footer-menu-col foot-products"><div class="rc-footer-menu-list-header" data-rc-state="open" data-rc-toggle-visuals="xxs xs sm " aria-expanded="true" tabindex="0"><span class="rc-footer-menu-list-header-indicator" data-rc-indicator-symbol="plus" data-rc-hidden-at="lg "></span><h3 class="rc-footer-menu-list-header-title">Produkte</h3></div><ul class="rc-footer-menu-list" data-rc-toggle-target="xxs xs sm" data-rc-state="open" data-rc-toggle="hide" aria-expanded="true"><li><a href="https://www.redhat.com/de/technologies/management/ansible">Red Hat Ansible Automation Platform</a></li>
+<li><a href="https://www.redhat.com/de/technologies/linux-platforms/enterprise-linux">Red Hat Enterprise Linux</a></li>
+<li><a href="https://www.redhat.com/de/technologies/cloud-computing/openshift">Red Hat OpenShift</a></li>
+<li><a href="https://www.redhat.com/de/technologies/cloud-computing/openshift-container-storage">Red Hat OpenShift Container Storage</a></li>
+<li><a href="https://www.redhat.com/de/technologies/linux-platforms/openstack-platform">Red Hat  OpenStack Platform</a></li>
+<li><a href="https://www.redhat.com/de/technologies/all-products">Alle Produkte anzeigen</a></li>
+</ul></div>
+<div class="rc-footer-menu-col foot-tools"><div class="rc-footer-menu-list-header" data-rc-state="open" data-rc-toggle-visuals="xxs xs sm " aria-expanded="true" tabindex="0"><span class="rc-footer-menu-list-header-indicator" data-rc-indicator-symbol="plus" data-rc-hidden-at="lg "></span><h3 class="rc-footer-menu-list-header-title">Tools</h3></div><ul class="rc-footer-menu-list" data-rc-toggle-target="xxs xs sm" data-rc-state="open" data-rc-toggle="hide" aria-expanded="true"><li><a href="https://sso.redhat.com/">Eigenes Konto</a></li>
+<li><a href="https://access.redhat.com/">Kundensupport</a></li>
+<li><a href="https://connect.redhat.com/">Für Partner</a></li>
+<li><a href="https://developers.redhat.com/">Für Entwickler</a></li>
+<li><a href="https://www.redhat.com/de/services/training-and-certification">Training &amp; Zertifizierung</a></li>
+<li><a href="https://catalog.redhat.com/">Red Hat Ecosystem Katalog</a></li>
+<li><a href="https://www.redhat.com/de/resources">Bibliothek</a></li>
+</ul></div>
+<div class="rc-footer-menu-col foot-try-buy-sell"><div class="rc-footer-menu-list-header" data-rc-state="open" data-rc-toggle-visuals="xxs xs sm " aria-expanded="true" tabindex="0"><span class="rc-footer-menu-list-header-indicator" data-rc-indicator-symbol="plus" data-rc-hidden-at="lg "></span><h3 class="rc-footer-menu-list-header-title">Testen, kaufen, verkaufen</h3></div><ul class="rc-footer-menu-list" data-rc-toggle-target="xxs xs sm" data-rc-state="open" data-rc-toggle="hide" aria-expanded="true"><li><a href="https://www.redhat.com/en/store">Red Hat Store</a></li>
+<li><a href="https://www.redhat.com/de/about/japan-buy">Online kaufen (Japan)</a></li>
+<li><a href="https://www.redhat.com/de/contact">Vertrieb kontaktieren</a></li>
+<li><a href="https://www.redhat.com/de/services/training-and-certification/contact-us">Schulungsteam kontaktieren</a></li>
+<li><a href="https://www.redhat.com/de/services/consulting-overview#contact-form">Consulting kontaktieren</a></li>
+<li><a href="http://redhat.force.com/finder/">Partner finden</a></li>
+<li><a href="https://marketplace.redhat.com/">Red Hat Marketplace</a></li>
+</ul></div>
+<div class="rc-footer-menu-col foot-communicate"><div class="rc-footer-menu-list-header" data-rc-state="open" data-rc-toggle-visuals="xxs xs sm " aria-expanded="true" tabindex="0"><span class="rc-footer-menu-list-header-indicator" data-rc-indicator-symbol="plus" data-rc-hidden-at="lg "></span><h3 class="rc-footer-menu-list-header-title">Kommunizieren</h3></div><ul class="rc-footer-menu-list" data-rc-toggle-target="xxs xs sm" data-rc-state="open" data-rc-toggle="hide" aria-expanded="true"><li><a href="https://www.redhat.com/de/contact">Kontaktieren Sie uns</a></li>
+<li><a href="https://www.redhat.com/de/about/feedback">Feedback</a></li>
+<li><a href="https://www.redhat.com/de/about/social">Soziale Netzwerke</a></li>
+<li><a href="https://engage.redhat.com/Global-Preference-Center?newsletter=RH-Shares&amp;intcmp=7016000000154xCAAQ">Red Hat Newsletter</a></li>
+</ul></div>
+<div class="rc-footer-menu-col foot-about"><div class="rc-footer-menu-list-header" data-rc-state="open" data-rc-toggle-visuals="xxs xs sm " aria-expanded="true" tabindex="0"><span class="rc-footer-menu-list-header-indicator" data-rc-indicator-symbol="plus" data-rc-hidden-at="lg "></span><h3 class="rc-footer-menu-list-header-title">Info</h3></div><ul class="rc-footer-menu-list" data-rc-toggle-target="xxs xs sm" data-rc-state="open" data-rc-toggle="hide" aria-expanded="true"><li><a href="https://www.redhat.com/de/about/newsroom">News</a></li>
+<li><a href="https://www.redhat.com/de/events">Veranstaltungen</a></li>
+<li><a href="https://www.redhat.com/de/all-blogs">Blogs</a></li>
+<li><a href="https://www.redhat.com/de/about/videos">Videos</a></li>
+<li><a href="https://www.redhat.com/de/about/around-the-world">Red Hat weltweit</a></li>
+<li><a href="https://investors.redhat.com/">Investor Relations</a></li>
+<li><a href="https://www.redhat.com/de/jobs-overview">Jobs bei Red Hat (English)</a></li>
+<li><a href="http://www.redhat.corpmerchandise.com/">Cool Stuff Store</a></li>
+</ul></div>
+</nav>      </div>
+    </section>
+        <section class="rc-footer-traditional">
+      <div class="container rc-footer-traditional-container">
+        <section class="rc-footer-traditional-section">
+          <div class="rc-footer-traditional-logo">
+            <div class="row">
+              <a href="https://www.redhat.com/de">
+                <img src="./Zustandsbehaftet oder zustandslos__files/logo.svg" class="screen" title="Red Hat">
+                </a>
+            </div>
+          </div>
+          <div id="legal" class="rc-footer-traditional-legal">
+            <div class="row">
+              <div class="copyright">Copyright ©2020 Red Hat, Inc.</div>
+              <div>
+                <ul class="menu"><li class="first leaf"><a href="https://www.redhat.com/de/about/privacy-policy">Datenschutzerklärung</a></li>
+<li class="leaf"><a href="https://www.redhat.com/de/about/terms-use">Nutzungsbedingungen</a></li>
+<li class="leaf"><a href="https://www.redhat.com/de/about/all-policies-guidelines">Alle Richtlinien und Leitlinien</a></li>
+<li class="leaf"><a href="https://www.redhat.com/de/impressum">Impressum</a></li>
+<li class="last leaf"><span id="teconsent" class="nolink">|</span></li>
+</ul>              </div>
+            </div>
+                      </div>
+          <div class="rc-footer-traditional-event-logo">
+            <div id="block-block-5" class="block block-block block-footer-promote">
+
+      
+  <a href="https://www.redhat.com/summit"><img src="./Zustandsbehaftet oder zustandslos__files/Logo-Red_Hat-Summit-A-Standard-RGB-02_0.svg" alt="Red Hat Summit" style="float: right;" width="72px"></a>
+</div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </footer>
+        <script type="text/javascript" src="./Zustandsbehaftet oder zustandslos__files/js__Dx87WVqe4v5JxdO5NQXWuqi4N2DXrrivAJ5F7KUcBCY__qAl84FcCv2jyN22yFGS5Oc85cjd9zKX6p_cFNLGhe-M__2nyZewDMvp77kHmr9EMV6UTIEgvEf65DtkvzGagzB8k.js" async="async"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+  if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+      _satellite.pageBottom();
+  }
+//--><!]]>
+</script>
+    </div><div id="consent_blackbar" style="position: fixed;bottom: 0;width: 100%;z-index: 5;padding: 10px;"></div>
+  
+
+<img id="doubleclick_990030321" src="./Zustandsbehaftet oder zustandslos__files/saved_resource" style="display: none !important;" hidden=""><img id="f8558dd0fe" src="./Zustandsbehaftet oder zustandslos__files/mintigo-pixel.png" style="display: none;"><div id="drift-widget-container" style="position: absolute; z-index: 2147483647;"><iframe id="drift-widget" src="./Zustandsbehaftet oder zustandslos__files/index.html" title="Drift Messenger" role="complementary" class="drift-widget-hidden" style="border: none; display: block; height: 0px !important; width: 0px !important; position: fixed; top: auto; left: auto; bottom: 0px; right: 0px; visibility: hidden; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1; pointer-events: auto; touch-action: auto;"></iframe></div></body></html>

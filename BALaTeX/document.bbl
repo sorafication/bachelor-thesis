@@ -75,7 +75,7 @@
 
 \bibitem[{Ama}20n]{SDKListAccounts}
 \bysame, \emph{Class: Aws.organizations},
-  \url{https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Organizations.html#listAccounts-property},
+  \url{https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Organizations.html},
   2020, [Abgerufen am 06.10.2020].
 
 \bibitem[{Ama}20o]{ServiceObject}
@@ -135,7 +135,7 @@
 
 \bibitem[{Amp}20a]{ImpAuth}
 {Amplify supported by Amazon Web Services}, \emph{Add authentication},
-  \url{https://docs.amplify.aws/start/getting-started/auth/q/integration/react#create-login-ui},
+  \url{https://docs.amplify.aws/start/getting-started/auth/q/integration/react},
   2020, [Abgerufen am 06.10.2020].
 
 \bibitem[{Amp}20b]{AmplifyAPI}
@@ -182,15 +182,20 @@
   \url{https://reactjs.org/docs/create-a-new-react-app.html}, 2020, [Abgerufen
   am 06.10.2020].
 
+\bibitem[{Fac}20c]{Stackoverflow}
+{Facundo Victor}, \emph{using profile that assume role in aws-sdk (aws
+  javascript sdk)},
+  \url{https://stackoverflow.com/questions/45989042/using-profile-that-assume-role-in-aws-sdk-aws-javascript-sdk},
+  2020, [Abgerufen am 06.10.2020].
+
 \bibitem[{Fie}20]{Cache}
 {Fielding, et al.}, \emph{Hypertext transfer protocol (http/1.1): Caching},
   \url{https://tools.ietf.org/html/rfc7234#section-5.2}, 2020, [Abgerufen am
   06.10.2020].
 
-\bibitem[{htt}20]{MaterialTable}
-{https://material-table.com/}, \emph{React data table component that is based
-  on material-ui},
-  \url{https://reactjs.org/docs/react-component.html#componentdidmount}, 2020,
+\bibitem[{Mat}20]{MaterialTable}
+{Material-table.com}, \emph{React data table component that is based on
+  material-ui}, \url{https://material-table.com/#/docs/all-props}, 2020,
   [Abgerufen am 06.10.2020].
 
 \bibitem[{Max}20]{JavascriptFrameworks}
@@ -236,8 +241,8 @@
 
 \bibitem[{Moz}20b]{Websockets}
 \bysame, \emph{Websockets},
-  \url{https://developer.mozilla.org/de/docs/WebSockets#Documentation}, 2020,
-  [Abgerufen am 06.10.2020].
+  \url{https://developer.mozilla.org/de/docs/WebSockets}, 2020, [Abgerufen am
+  06.10.2020].
 
 \bibitem[{Red}20]{Zustandslos}
 {Red Hat, Inc.}, \emph{Zustandsbehaftet oder zustandslos?},

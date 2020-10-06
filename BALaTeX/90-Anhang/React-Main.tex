@@ -1,45 +1,46 @@
 
 \input{99-Format/JavaScript/JSStyle}
 \begin{lstlisting}[caption={React Main Render Funktion index.js },
-label=lst:Beispielcode 1,basicstyle=\ttfamily\small ] Lambda-Code {
-
-    import React from 'react';
-    import ReactDOM from 'react-dom';
-    import './index.css';
-    import App from './App'
-    import {AWSAccountLists} from './Oki'
-    import AWSAccountListsMaterial from './AccountListMaterial'
-    import { Greeting } from './Greeting'
-    import * as serviceWorker from './serviceWorker';
-    import Amplify from "aws-amplify";
-    import awsExports from "./aws-exports";
-
-    Amplify.configure(awsExports);
+label=lst:Beispielcode 1,basicstyle=\ttfamily\small ] React-Code {
+  import React from 'react';
+  import ReactDOM from 'react-dom';
+  import './index.css';
+  import AWSAccountListsMaterial from './AccountListMaterial'
+  import { Greeting } from './Greeting'
+  import * as serviceWorker from './serviceWorker';
+  import Amplify from "aws-amplify";
+  import awsExports from "./aws-exports";
 
 
-    // Main Render Function
+  Amplify.configure(awsExports);
 
-    ReactDOM.render(
-      <React.StrictMode>
+  // Main Render Function
 
-        {/* Greeting Component with Header and additional Information */}
-        <Greeting name="Oktavius Wiesner" />
-
-        {/* Greeting Component with Header and additional Information */}
-        < AWSAccountListsMaterial />
+  ReactDOM.render(
+    <React.StrictMode>
 
 
-      </React.StrictMode>,
 
-    //<App /> in React.StrictMode reinpacken.
+      {/* Greeting Component with Header and additional Information */}
+      <Greeting name="Oktavius Wiesner" />
 
-      document.getElementById('root')
-    );
+      {/* Main Component with Table Data */}
+      < AWSAccountListsMaterial />
+
+    </React.StrictMode>,
 
 
-    // If you want your app to work offline and load faster, you can change
-    // unregister() to register() below. Note this comes with some pitfalls.
-    // Learn more about service workers: https://bit.ly/CRA-PWA
-    serviceWorker.unregister();
+
+  //<App /> in React.StrictMode reinpacken.
+
+    document.getElementById('root')
+  );
+
+
+  // If you want your app to work offline and load faster, you can change
+  // unregister() to register() below. Note this comes with some pitfalls.
+  // Learn more about service workers: https://bit.ly/CRA-PWA
+
+  serviceWorker.unregister();
 
 \end{lstlisting}

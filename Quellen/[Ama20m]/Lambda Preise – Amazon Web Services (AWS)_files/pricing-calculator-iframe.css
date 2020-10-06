@@ -1,0 +1,15 @@
+@keyframes pricing-calculator-fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.m-pricing-calculator-iframe {
+  border: 1px solid #d5dbdb;
+  height: 0;
+  opacity: 0;
+  margin: 0 auto;
+  width: 100%; }
+  .m-pricing-calculator-iframe.m-pricing-calculator-iframe-loaded {
+    animation: pricing-calculator-fadein 3000ms;
+    opacity: 1; }

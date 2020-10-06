@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://www.elektronik-kompendium.de/sites/net/2204051.htm -->
+<html lang="de-DE"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./MQTT - Message Queue Telemetry Transport_files/style.css" type="text/css" media="all">
+<script type="text/javascript" async="" src="./MQTT - Message Queue Telemetry Transport_files/ga.js"></script><script type="text/javascript" src="./MQTT - Message Queue Telemetry Transport_files/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="./MQTT - Message Queue Telemetry Transport_files/bootstrap.min.js"></script>
+<title>MQTT - Message Queue Telemetry Transport</title>
+</head>
+<body class="page">
+
+<div id="page" class="hfeed site">
+
+<div class="container header-area">
+<header id="masthead" class="site-header col-sm-12" role="banner">
+
+<div class="site-branding col-md-4">
+<div id="logo"><a href="https://www.elektronik-kompendium.de/"><img src="./MQTT - Message Queue Telemetry Transport_files/logo.png" height="86" width="275"></a></div>
+<div class="hidden-lg hidden-md">
+<form method="get" action="https://www.elektronik-kompendium.de/service/suchen/suchen.php" target="_top" name="suchen"><input type="text" name="q" maxlength="255" placeholder="Suchen"><button type="submit" name="sa" class="btn" aria-label="Left Align"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></form>
+</div>
+</div>
+
+<div class="site-search col-md-4 hidden-xs hidden-sm">
+<form method="get" action="https://www.elektronik-kompendium.de/service/suchen/suchen.php" target="_top" name="suchen" class="form-inline"><input type="text" name="q" maxlength="255" placeholder="Suchen"> <button type="submit" name="sa" class="btn" aria-label="Left Align"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></form>
+</div>
+
+<div class="social-header col-md-4 hidden-xs hidden-sm">
+</div>
+
+</header>
+</div><!-- header-area -->
+
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
+<div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+
+<div class="collapse navbar-collapse navbar-ex1-collapse"><ul class="nav navbar-nav">
+<li><a href="https://www.elektronik-kompendium.de/" title="Startseite">Startseite</a></li>
+<li class="dropdown"><a href="https://www.elektronik-kompendium.de/sites/net/2204051.htm#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Themen <span class="caret"></span></a>
+<ul class="dropdown-menu" role="menu">
+<li><a href="https://www.elektronik-kompendium.de/sites/grd/index.htm">Elektronik Grundlagen</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/bau/index.htm">Bauelemente</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/slt/index.htm">Schaltungstechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/public/schaerer/index.htm">Elektronik Minikurse</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/praxis/index.htm">Elektronik Praxis</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/dig/index.htm">Digitaltechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/com/index.htm">Computertechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/kom/index.htm">Kommunikationstechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/net/index.htm">Netzwerktechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/sic/index.htm">Sicherheitstechnik</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/raspberry-pi/index.htm">Raspberry Pi</a></li>
+</ul></li>
+<li><a href="https://www.elektronik-kompendium.de/news/" title="News">News</a></li>
+<li><a href="https://www.elektronik-kompendium.de/forum/" title="Forum">Forum</a></li>
+<li><a href="https://www.elektronik-kompendium.de/shop/" title="Online-Shop">Online-Shop</a></li>
+<li><a href="https://www.elektronik-kompendium.de/ebooks/" title="eBooks">eBooks</a></li>
+</ul></div>
+
+</div>
+</nav><!-- navigation -->
+
+<div id="content" class="site-content container">
+<div class="row">
+
+<div id="primary" class="content-area col-sm-12 col-md-8">
+<main id="main" class="site-main" role="main">
+
+<!-- google_ad_section_start -->
+
+
+<h1>MQTT - Message Queue Telemetry Transport</h1>
+<p>Message Queue Telemetry Transport, kurz MQTT, ist ein äußerst einfach aufgebautes binäres Publish-Subscribe-Protokoll. Es eignet sich für den Nachrichtenaustausch zwischen Geräten mit geringer Funktionalität und für die Übertragung über unzuverlässige Netze mit geringer Bandbreite und hoher Latenz. Mit diesen Eigenschaften spielt MQTT eine wichtige Rolle für das Internet der Dinge (IoT) und in der M2M-Kommunikation.</p>
+<p>Typischerweise lassen sich mit MQTT Sensordaten, wie Temperatur oder Füllstände, übertragen. Aber auch klassische Nachrichten, wie Aktienkurse oder Kurzmitteilungen. Facebook nutzt MQTT für seine Mobile-Apps.</p>
+<p>MQTT wurde ursprünglich von IBM und Eurotech um die Jahrtausendwende konzipiert, um Telemetriedaten zwischen Sensoren und Servern über unzuverlässige Datenverbindungen zu übertragen. Alte Namen wie SCADA, MQIsdp (MQ Integrator SCADA Device Protocol) oder WebSphere MQTT (WMQTT) sind heute nicht mehr in Gebrauch. Seit 2013 wird die Standardisierung des MQTT-Protokolls von der OASIS (Organization for the Advancement of Structured Information Standards) weitergeführt.</p>
+<p>MQTT kann besonders bei der Nachrichtenübertragung in unzuverlässigen Netzwerken seine Stärken entfalten. Auf Protokollebene existiert eine Funktion zum Wiederverbinden und erneutes Ausliefern von Nachrichten. Somit wird bei der Datenübermittlung eine hohe Zuverlässigkeit erreicht.<br>
+  Der Bedarf an Netzwerk-Bandbreite ist beim MQTT-Protokoll minimal und gleichzeitig stellt es nur geringe Anforderungen an die Geräte. Somit braucht es vergleichsweise wenig Energie, was wichtig ist, wenn die Energieversorgung über eine Batterie erfolgt.</p>
+<div class="row" id="adalt1">
+<div class="col-md-4 col-sm-6"><a href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel"><img src="./MQTT - Message Queue Telemetry Transport_files/buch-nfibel.jpg" border="0"></a></div>
+<div class="col-md-8 col-sm-6">
+<h4>Alles was Sie über Netzwerke wissen müssen.</h4>
+<h5>Netzwerktechnik-Fibel</h5>
+<p>Die Netzwerktechnik-Fibel ist ein Buch über die Grundlagen der Netzwerktechnik, Übertragungstechnik, TCP/IP, Dienste, Anwendungen und Netzwerk-Sicherheit.</p>
+<p><a href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel" class="btn btn-success">Das will ich haben!</a></p>
+</div>
+</div><h3>Zusammenfassung</h3>
+<ul>
+  <li> Leichtgewichtiges Protokoll bei dem kaum Overhead entsteht.</li>
+  <li>Abgebrochene Verbindungen können wieder aufgenommen und fortgesetzt werden.</li>
+  <li>Unterschiedliche QoS-Level mit verschiedenen Zuverlässigkeitsstufen für die Nachrichten-Zustellung.</li>
+</ul>
+<p>Somit eignet sich MQTT für den Einsatz in instabilen Netzwerken und für den Einsatz in der M2M-Kommunikation und im Internet der Dinge.</p>
+<ul>
+  <li> Internet der Dinge</li>
+  <li>M2M-Kommunikation</li>
+</ul>
+<h3>MQTT-Architektur</h3>
+<p><img src="./MQTT - Message Queue Telemetry Transport_files/22040511.gif" alt="MQTT-Architektur" hspace="5" vspace="5"></p>
+<p>Die Struktur bzw. der Aufbau in dem das MQTT-Protokoll arbeitet entspricht dem Publish-Subscriber-Modell, -Prinzip oder auch -Architektur.<br>
+  Das Publish-Subscriber-Modell besteht aus einer Datenquelle, die als Publisher bezeichnet wird, und einer Datensenke, die als Subscriber bezeichnet wird. Dazwischen befindet sich ein Message-Broker, der für die Kommunikationssteuerung sorgt.</p>
+<p>Diese Konstruktion hat den Vorteil, dass Sender und Empfänger einer Nachricht voneinander entkoppelt und unabhängig sind. Eine direkte Kommunikation zwischen Sender und Empfänger ist nicht möglich. Die Idee dabei ist, dass der Broker eine Nachricht an alle weiterleitet, die eine Nachricht von einer bestimmten Quelle bekommen wollen.</p>
+<p>Geht ein Empfänger offline oder die Verbindung bricht ab, dann speichert der Broker alle Nachrichten für diesen Empfänger und stellt sie dann zu, sobald die Verbindung wieder hergestellt ist.</p>
+<h3>Message-Broker (MQTT-Server)</h3>
+<p>Der Message-Broker ist ein zentraler Server, der Nachrichten von einem oder mehreren Publishern entgegennimmt und an einen oder mehrere Subscriber weiterleitet. Jeder Broker kann dabei die Gegenstelle von tausenden oder gar hunderttausenden Publishern sein und Daten übermitteln bzw. entgegennehmen.<br>
+  Für den Betrieb eines Brokers stehen zahlreiche Produkte zur Auswahl. Die verfügbaren Produkte unterscheiden sich dabei teilweise deutlich in der Unterstützung der Protokollfähigkeiten (verschiedene MQTT-Versionen).</p>
+<h3>Publisher und Subscriber (Sensoren und Aktoren)</h3>
+<p>Typischerweise wäre ein Publisher ein Sensor, der etwas detektiert und das an einen Subscriber, also Aktor, zum Schalten übermitteln soll. Der Publisher sendet seine Nachricht aber nicht an den Subscriber direkt, sondern an den Message-Broker.<br>
+  Der Publisher muss aber kein Sensor sein. Es kann sich dabei auch um eine Schaltfläche handeln, die in einem Webbrowser dargestellt wird. Das ist nichts anderes als ein Sensor, der von einem Anwender ausgelöst wird. Das heißt, das Rollenverständnis von Publisher und Subscriber muss man etwas weiter fassen.<br>
+  Der Subscriber könnte ein Aktor sein, der Aufgrund einer Nachricht von einem Publisher und dem darin enthaltenen Wert etwas auslöst oder schaltet. Damit der Subscriber die Nachrichten von einem Publisher erhält, muss er diese bei einem Message-Broker abonnieren.</p>
+<h3>Wie finden Publisher und Subscriber mit MQTT zueinander?</h3>
+<p><img src="./MQTT - Message Queue Telemetry Transport_files/22040512.gif" vspace="5" hspace="5"></p>
+<p>Dem Message-Broker liegt eine Liste mit Subscribern vor, die eine bestimmte Nachricht bekommen sollen. Diese Nachrichten sind in sogenannten Topics organisiert, die von den Subscribern abonniert werden. Dem Absender einer Nachricht (Publisher) obliegt die Aufgabe, Inhalt und Topic beim Versand der Nachricht festzulegen. Der Broker kümmert sich dann darum, dass die Subscriber die Nachrichten von den abonnierten Topics bekommen.</p>
+<p>Die Topics folgen einem definierten Schema. Sie ähneln einem Verzeichnispfad und bilden eine semantische Hierarchie ab.</p>
+<h3>QoS - Quality of Service</h3>
+<p>MQTT verfügt über unterschiedliche QoS-Level mit verschiedenen Zuverlässigkeitsstufen für die Zustellung. Hierzu definiert MQTT drei Stufen der Verlässlichkeit, die sich für jede Nachricht individuell einstellen lassen.</p>
+<ul>
+  <li> QoS-Level 0: "at most once, unreliable oder fire and forget": Das bedeutet, dass MQTT die Zustellung nicht garantiert. Praktisch gar keine Zuverlässigkeit.</li>
+  <li>QoS-Level 1: "at least once": Das bedeutet, die Nachricht kommt garantiert mindestens einmal oder auch mehrfach beim Broker an.</li>
+  <li>QoS-Level 2: "exactly once": Das bedeutet, die Nachricht kommt garantiert nur einmal beim Broker an.</li>
+</ul>
+<p>Der QoS-Level 2 ist die verlässlichste Variante. Allerdings ist das in Bezug auf Performance und Netzlast mit Abstand die aufwendigste, langsamste und teuerste Variante. Für batteriebetriebene Geräte bedeutet das eine höhere CPU-Belastung und damit eben auch eine niedrigere Batterie-Laufzeit.</p>
+<h3><a id="wiesicherist"></a>Wie sicher ist MQTT?</h3>
+<p>Grundsätzlich ist die Kommunikation über MQTT genauso unsicher wie beispielsweise bei HTTP. Publisher und Subscriber kommunizieren über MQTT mit dem Broker ohne Verschlüsselung und Authentifizierung. Ein Angreifer kann nicht nur mitlesen, sondern auch die Daten manipulieren.</p>
+<p>Das Problem dabei ist aber nicht, dass MQTT unsicher ist, sondern die MQTT-Broker von ihren Betreibern nicht ordentlich konfiguriert und öffentlich im Internet erreichbar sind. Das bedeutet, dass jeder ohne Benutzername und Passwort an den Broker Nachrichten schicken und von ihm empfangen kann. Die Betreiber verzichten also auf Authentifizierung, was in gewisser Weise nur mit Unwissenheit oder Bequemlichkeit der Betrieber zu erklären ist.</p>
+<p>Zu finden sind die MQTT-Broker über die Suchmaschine für das Internet der Dinge "Shodan.io" oder mit dem NMAP-Scanner (Port 1883/tcp oder 8883/tcp). Hier lassen sich unter Umständen Publisher finden, die sich in kritischen Infrastrukturen befinden und ungeschützt über das Netz kommunizieren. Um sich mit einem der öffentlichen MQTT-Broker zu verbinden, genügt ein eigener Client wie MQTT.fx, der per Hashtag (#) alle vom Broker organisierten Topics abonniert.</p>
+<p>Das Problem dabei ist nicht, dass sich die Nachrichten lesen lassen, sondern, dass Message-Broker beliebige Nachrichten von Publishern entgegennehmen und an beliebige Subscriber weiterleiten. Auf diese Weisen lassen sich Subscriber durch falsche Nachrichten manipulieren. Das heißt, ein Angreifer schickt als Publisher eine Nachricht mit Topic und Inhalt an den Broker, der diese Nachricht ungeprüft an die Subscriber weiterleitet.</p>
+<p>Abhilfe schafft nur die Kommunikation mit SSL/TLS zu verschlüsseln und die Authentifizierung von Publishern und Subscribern mit Benutzername und Passwort. Außerdem sollten die Broker nicht frei zugänglich sein. Ein zusätzlicher Schutz kann sein, nur Verbindungen von bestimmten Publishern zuzulassen.</p>
+
+
+<h3>Weitere verwandte Themen:</h3>
+<ul>
+  <li><a href="https://www.elektronik-kompendium.de/sites/kom/2203011.htm">Internet der Dinge / Internet of Things (IoT)</a></li>
+  <li><a href="https://www.elektronik-kompendium.de/sites/kom/2203021.htm">Industrie 4.0 / Industrial Internet</a></li>
+  <li><a href="https://www.elektronik-kompendium.de/sites/kom/2203181.htm">IoT-Funksysteme</a></li>
+<li><a href="https://www.elektronik-kompendium.de/sites/net/0902231.htm">HTTP - Hypertext Transfer Protocol</a></li>
+</ul>
+
+
+
+<h3>Teilen</h3>
+<div id="sharing">
+<ul class="nav nav-pills">
+<noscript>
+<li role="presentation"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.elektronik-kompendium.de"><span class="fa fa-facebook fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="https://twitter.com/share?text=Elektronik-Kompendium.de&url=https%3A%2F%2Fwww.elektronik-kompendium.de/&hashtags=Elektronik"><span class="fa fa-twitter fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="mailto:?&subject=Link-Tipp:+Elektronik-Kompendium.de&body=https%3A%2F%2Fwww.elektronik-kompendium.de/"><span class="fa fa-envelope fa-2x"></span></a></li>
+</noscript>
+<script>document.write ('<li role="presentation"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=' + location.href + '"><span class="fa fa-facebook fa-2x"></span></a></li>');</script><li role="presentation"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.elektronik-kompendium.de/sites/net/2204051.htm"><span class="fa fa-facebook fa-2x"></span></a></li>
+<script>document.write ('<li role="presentation"><a target="_blank" href="https://twitter.com/share?text=' + document.title + '&url=' + location.href + '"><span class="fa fa-twitter fa-2x"></span></a></li>');</script><li role="presentation"><a target="_blank" href="https://twitter.com/share?text=MQTT%20-%20Message%20Queue%20Telemetry%20Transport&amp;url=https://www.elektronik-kompendium.de/sites/net/2204051.htm"><span class="fa fa-twitter fa-2x"></span></a></li>
+<script>document.write ('<li role="presentation"><a target="_blank" href="mailto:?&subject=Link-Tipp: ' + document.title + '&body=' + location.href + '"><span class="fa fa-envelope fa-2x"></span></a></li>');</script><li role="presentation"><a target="_blank" href="mailto:?&amp;subject=Link-Tipp:%20MQTT%20-%20Message%20Queue%20Telemetry%20Transport&amp;body=https://www.elektronik-kompendium.de/sites/net/2204051.htm"><span class="fa fa-envelope fa-2x"></span></a></li>
+<script>if (navigator.userAgent.match(/iPhone|Android/i)) { document.write ('<li role="presentation"><a href="watsapp://send?text=Link-Tipp: ' + document.title + ' ' + location.href + '"><span class="fa fa-whatsapp fa-2x"></span></a></li>') };</script>
+</ul>
+</div>
+
+<h3>Produktempfehlungen</h3>
+<div class="row" id="ada1">
+<div class="col-md-4 col-sm-4 col-xs-6">
+<p align="center"><a href="https://www.amazon.de/Computer-Netzwerke-Grundlagen-Funktionsweisen-Anwendung-Ausbildung/dp/3836264994?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3836264994" title="Computer-Netzwerke: Grundlagen, Funktionsweisen, Anwendung. FÃ¼r Studium, Ausbildung und Beruf. Inkl. OpenWRT" target="_blank" rel="nofollow"><img src="./MQTT - Message Queue Telemetry Transport_files/51MTVVBIRzL._SL160_.jpg" srcset="https://images-eu.ssl-images-amazon.com/images/I/51MTVVBIRzL.jpg" alt="Computer-Netzwerke: Grundlagen, Funktionsweisen, Anwendung. FÃ¼r Studium, Ausbildung und Beruf. Inkl. OpenWRT" width="50%"></a></p>
+<h5><a href="https://www.amazon.de/Computer-Netzwerke-Grundlagen-Funktionsweisen-Anwendung-Ausbildung/dp/3836264994?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3836264994" title="Computer-Netzwerke: Grundlagen, Funktionsweisen, Anwendung. Für Studium, Ausbildung und Beruf. Inkl. OpenWRT" target="_blank" rel="nofollow">Computer-Netzwerke: Für Studium, Ausbildung und Beruf</a></h5>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6">
+<p align="center"><a href="https://www.amazon.de/PC-Netzwerke-umfassende-Handbuch-Einsteiger-Netzwerktechnik/dp/383623680X?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=383623680X" title="PC-Netzwerke: Das umfassende Handbuch fÃ¼r Einsteiger in die Netzwerktechnik. FÃ¼r BÃ¼ro und Zuhause." target="_blank" rel="nofollow"><img src="./MQTT - Message Queue Telemetry Transport_files/51N+aFeibPL._SL160_.jpg" srcset="https://images-eu.ssl-images-amazon.com/images/I/51N%2BaFeibPL.jpg" alt="PC-Netzwerke: Das umfassende Handbuch fÃ¼r Einsteiger in die Netzwerktechnik. FÃ¼r BÃ¼ro und Zuhause." width="50%"></a></p>
+<h5><a href="https://www.amazon.de/PC-Netzwerke-umfassende-Handbuch-Einsteiger-Netzwerktechnik/dp/383623680X?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=383623680X" title="PC-Netzwerke: Das umfassende Handbuch fÃ¼r Einsteiger in die Netzwerktechnik. FÃ¼r BÃ¼ro und Zuhause." target="_blank" rel="nofollow">PC-Netzwerke: Das umfassende Handbuch für Einsteiger in die Netzwerktechnik</a></h5>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-6">
+<p align="center"><a href="https://www.amazon.de/Computernetzwerke-Pearson-Studium-Andrew-Tanenbaum/dp/3827370469?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3827370469" title="Computernetzwerke (Pearson Studium - IT)" target="_blank" rel="nofollow"><img src="./MQTT - Message Queue Telemetry Transport_files/517AGZvjpuL._SL160_.jpg" srcset="https://images-eu.ssl-images-amazon.com/images/I/517AGZvjpuL.jpg" alt="Computernetzwerke (Pearson Studium - IT)" width="50%"></a></p>
+<h5><a href="https://www.amazon.de/Computernetzwerke-Pearson-Studium-Andrew-Tanenbaum/dp/3827370469?SubscriptionId=AKIAJSD6R24JXZCAKM2Q&amp;tag=eonline&amp;linkCode=alb&amp;camp=2025&amp;creative=165953&amp;creativeASIN=3827370469" title="Computernetzwerke (Pearson Studium - IT)" target="_blank" rel="nofollow">Computernetzwerke: Umfassendes Standardwerk von Andrew S. Tanenbaum</a></h5>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="row" id="adalt2">
+<div class="col-md-4 col-sm-6"><a href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel"><img src="./MQTT - Message Queue Telemetry Transport_files/buch-nfibel.jpg" border="0"></a></div>
+<div class="col-md-8 col-sm-6">
+<h4>Alles was Sie über Netzwerke wissen müssen.</h4>
+<h5>Netzwerktechnik-Fibel</h5>
+<p>Die Netzwerktechnik-Fibel ist ein Buch über die Grundlagen der Netzwerktechnik, Übertragungstechnik, TCP/IP, Dienste, Anwendungen und Netzwerk-Sicherheit.</p>
+<p><a href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel" class="btn btn-success">Das will ich haben!</a></p>
+</div>
+</div>
+
+<script type="text/javascript">
+$('#adg1').insertBefore(document.getElementsByTagName('h3')[0]);
+
+window.setTimeout(function(){
+  if(adsbygoogle instanceof Array) {
+    $('#adg1').remove();
+		$('#adg2').remove();
+	  $('#adalt1').insertBefore(document.getElementsByTagName('h3')[0]);
+  }
+	else {
+	  $('#adalt2').remove();
+	}
+}, 2000);
+</script>
+
+
+<!-- google_ad_section_end -->
+
+<p id="dateedit"><script language="JavaScript"><!--
+var date = new Date(Date.parse(document.lastModified));
+var day = date.getDate();
+var year = date.getFullYear();
+var month = date.getMonth()+1;
+if (day<10) day = "0"+day;
+if (month<10) month = "0"+month;
+document.write("Letzte &Auml;nderung: " + day + "." + month + "." + year);
+// --></script>Letzte Änderung: 06.10.2020</p>
+
+</main><!-- #main -->
+</div><!-- #primary -->
+
+<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+
+<aside class="widget">
+<h3 class="widget-title">Folge uns</h3>
+<ul class="nav nav-pills">
+<li role="presentation"><a target="_blank" href="https://www.facebook.com/ElektronikKompendium"><span class="fa fa-facebook fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="https://www.instagram.com/elektronikkompendium/"><span class="fa fa-instagram fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="https://www.twitter.com/dasELKO"><span class="fa fa-twitter fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="https://www.elektronik-kompendium.de/news/feed/"><span class="fa fa-rss fa-2x"></span></a></li>
+<li role="presentation"><a target="_blank" href="https://www.elektronik-kompendium.de/service/newsletter/index.htm"><span class="fa fa-envelope fa-2x"></span></a></li>
+</ul>
+</aside>
+
+<aside class="widget">
+<h3 class="widget-title">Das Buch zu dieser Webseite</h3>
+<h4 class="text-center">Netzwerktechnik-Fibel</h4>
+<p class="text-center"><a href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel"><img src="./MQTT - Message Queue Telemetry Transport_files/buch-nfibel2.jpg" alt="Die Netzwerktechnik-Fibel" vspace="3" border="0" title="Die Netzwerktechnik-Fibel"></a></p>
+<p><strong>Kundenmeinung:</strong><br><img src="./MQTT - Message Queue Telemetry Transport_files/kunde10.jpg" alt="Käufer der Netzwerktechnik-Fibel" title="Käufer der Netzwerktechnik-Fibel" border="0" vspace="3" hspace="5" align="left">
+<i>"Da Bücher, die einfach zu verstehen sind, schwer zu finden sind, habe ich die Investition in die Netzwerktechnik-Fibel nicht bereut."</i></p>
+<p class="text-center"><a class="btn btn-success" href="https://www.elektronik-kompendium.de/shop/buecher/netzwerktechnik-fibel">Netzwerktechnik-Fibel jetzt bestellen!</a></p>
+<p class="text-center"><a target="_blank" href="https://itunes.apple.com/de/book/netzwerktechnik-fibel/id587746690?mt=11"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_apple.png" alt="Die Netzwerktechnik-Fibel ist im iBookstore erhältlich"></a></p>
+<p class="text-center"><a target="_blank" href="https://www.amazon.de/gp/product/B00AO19SYY/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B00AO19SYY&amp;linkCode=as2&amp;tag=eonline"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_amazon.png" alt="Die Netzwerktechnik-Fibel für Amazon Kindle erhältlich"></a></p>
+<p class="text-center"><a target="_blank" href="https://play.google.com/store/books/details/Patrick_Schnabel_Netzwerktechnik_Fibel?id=HTAyCwAAQBAJ"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_google.png" alt="Die Netzwerktechnik-Fibel bei Google Play erhältlich"></a></p>
+<p class="text-center"><a target="_blank" href="https://www.elektronik-kompendium.de/ebooks/netzwerktechnik-fibel/"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_pdf.png" alt="Netzwerktechnik-Fibel als PDF-Datei ohne DRM"></a></p>
+</aside>
+
+<aside class="widget">
+<h3 class="widget-title">Das Buch zu dieser Webseite</h3>
+<h4 class="text-center">Kommunikationstechnik-Fibel</h4>
+<p class="text-center"><a href="https://www.elektronik-kompendium.de/shop/buecher/kommunikationstechnik-fibel"><img src="./MQTT - Message Queue Telemetry Transport_files/buch-kfibel2.jpg" alt="Die Kommunikationstechnik-Fibel" vspace="3" border="0" title="Die Kommunikationstechnik-Fibel"></a></p>
+<p><strong>Kundenmeinung:</strong><br><img src="./MQTT - Message Queue Telemetry Transport_files/kunde5.jpg" alt="Käufer der Kommunikationstechnik-Fibel" title="Käufer der Kommunikationstechnik-Fibel" border="0" vspace="3" hspace="5" align="left">
+<i>"Die Kommunikationstechnik-Fibel ist sehr informativ und verständlich. Genau das habe ich schon seit langem gesucht. Endlich mal ein Buch, das kurz und bündig die moderne Informationstechnik beleuchtet."</i></p>
+<p class="text-center"><a class="btn btn-success" href="https://www.elektronik-kompendium.de/shop/buecher/kommunikationstechnik-fibel">Kommunikationstechnik-Fibel jetzt bestellen!</a></p>
+<p class="text-center"><a target="_blank" href="https://itunes.apple.com/de/book/kommunikationstechnik-fibel/id583021041?mt=11"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_apple.png" alt="Die Kommunikationstechnik-Fibel ist im iBookstore erhältlich"></a></p>
+<p class="text-center"><a target="_blank" href="https://www.amazon.de/gp/product/B00AFCYUXG/ref=as_li_ss_tl?ie=UTF8&amp;camp=1638&amp;creative=19454&amp;creativeASIN=B00AFCYUXG&amp;linkCode=as2&amp;tag=eonline"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_amazon.png" alt="Die Kommunikationstechnik-Fibel für Amazon Kindle erhältlich"></a></p>
+<p class="text-center"><a target="_blank" href="https://play.google.com/store/books/details/Patrick_Schnabel_Kommunikationstechnik_Fibel?id=t57nCgAAQBAJ"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_google.png" alt="Kommunikationstechnik-Fibel als eBook von Google Play Store"></a></p>
+<p class="text-center"><a target="_blank" href="https://www.elektronik-kompendium.de/ebooks/kommunikationstechnik-fibel/"><img src="./MQTT - Message Queue Telemetry Transport_files/button_ebook_pdf.png" alt="Kommunikationstechnik-Fibel als PDF-Datei ohne DRM"></a></p>
+</aside>
+
+</div><!-- #secondary -->
+
+</div><!-- row -->
+
+</div><!-- #content -->
+
+
+<footer id="colophon" class="site-footer" role="contentinfo">
+<div class="site-info container">
+
+<div class="row">
+<div class="copyright col-md-6">Elektronik-Kompendium.de</div>
+<nav role="navigation" class="col-md-6"><ul class="nav footer-nav clearfix">
+<li><a href="https://www.elektronik-kompendium.de/service/impressum.htm">Impressum</a></li>
+<li><a href="https://www.elektronik-kompendium.de/service/datenschutz.htm">Datenschutz</a></li>
+</ul></nav>
+</div>
+
+</div><!-- .site-info -->
+</footer><!-- #colophon -->
+
+</div><!-- #page -->
+
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><span class="fa fa-2x fa-arrow-circle-up"></span></span></div>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-533288-1']);
+_gaq.push(['_gat._anonymizeIp']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+
+</body></html>

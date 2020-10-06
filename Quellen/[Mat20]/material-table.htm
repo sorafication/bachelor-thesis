@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://material-table.com/#/docs/all-props -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link type="image/png" href="https://material-table.com/assets/favicon.ico" rel="shortcut icon">
+<style>
+html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    #root {
+      height: 100%;
+    }
+</style>
+<link rel="stylesheet" href="./material-table_files/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<title>material-table</title>
+<link rel="stylesheet" href="./material-table_files/icon">
+<script async="" src="./material-table_files/js"></script>
+<script data-ad-client="ca-pub-8092948888041153" async="" src="./material-table_files/f.txt"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-137083079-2');
+</script>
+<style data-jss="" data-meta="MuiPaper">
+.MuiPaper-root {
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fff;
+}
+.MuiPaper-rounded {
+  border-radius: 4px;
+}
+.MuiPaper-elevation0 {
+  box-shadow: none;
+}
+.MuiPaper-elevation1 {
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation2 {
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation3 {
+  box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation4 {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation5 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 5px 8px 0px rgba(0,0,0,0.14),0px 1px 14px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation6 {
+  box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation7 {
+  box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.2),0px 7px 10px 1px rgba(0,0,0,0.14),0px 2px 16px 1px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation8 {
+  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),0px 8px 10px 1px rgba(0,0,0,0.14),0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation9 {
+  box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.2),0px 9px 12px 1px rgba(0,0,0,0.14),0px 3px 16px 2px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation10 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation11 {
+  box-shadow: 0px 6px 7px -4px rgba(0,0,0,0.2),0px 11px 15px 1px rgba(0,0,0,0.14),0px 4px 20px 3px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation12 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation13 {
+  box-shadow: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation14 {
+  box-shadow: 0px 7px 9px -4px rgba(0,0,0,0.2),0px 14px 21px 2px rgba(0,0,0,0.14),0px 5px 26px 4px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation15 {
+  box-shadow: 0px 8px 9px -5px rgba(0,0,0,0.2),0px 15px 22px 2px rgba(0,0,0,0.14),0px 6px 28px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation16 {
+  box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2),0px 16px 24px 2px rgba(0,0,0,0.14),0px 6px 30px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation17 {
+  box-shadow: 0px 8px 11px -5px rgba(0,0,0,0.2),0px 17px 26px 2px rgba(0,0,0,0.14),0px 6px 32px 5px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation18 {
+  box-shadow: 0px 9px 11px -5px rgba(0,0,0,0.2),0px 18px 28px 2px rgba(0,0,0,0.14),0px 7px 34px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation19 {
+  box-shadow: 0px 9px 12px -6px rgba(0,0,0,0.2),0px 19px 29px 2px rgba(0,0,0,0.14),0px 7px 36px 6px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation20 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 20px 31px 3px rgba(0,0,0,0.14),0px 8px 38px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation21 {
+  box-shadow: 0px 10px 13px -6px rgba(0,0,0,0.2),0px 21px 33px 3px rgba(0,0,0,0.14),0px 8px 40px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation22 {
+  box-shadow: 0px 10px 14px -6px rgba(0,0,0,0.2),0px 22px 35px 3px rgba(0,0,0,0.14),0px 8px 42px 7px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation23 {
+  box-shadow: 0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12);
+}
+.MuiPaper-elevation24 {
+  box-shadow: 0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12);
+}
+</style><style data-jss="" data-meta="MuiAppBar">
+.MuiAppBar-root {
+  width: 100%;
+  display: flex;
+  z-index: 1100;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+.MuiAppBar-positionFixed {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: fixed;
+}
+.MuiAppBar-positionAbsolute {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: absolute;
+}
+.MuiAppBar-positionSticky {
+  top: 0;
+  left: auto;
+  right: 0;
+  position: sticky;
+}
+.MuiAppBar-positionStatic {
+  position: static;
+  transform: translateZ(0);
+}
+.MuiAppBar-positionRelative {
+  position: relative;
+}
+.MuiAppBar-colorDefault {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #f5f5f5;
+}
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #3f51b5;
+}
+.MuiAppBar-colorSecondary {
+  color: #fff;
+  background-color: #f50057;
+}
+</style><style data-jss="" data-meta="MuiTouchRipple">
+.MuiTouchRipple-root {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.MuiTouchRipple-ripple {
+  opacity: 0;
+  position: absolute;
+}
+.MuiTouchRipple-rippleVisible {
+  opacity: 0.3;
+  animation: MuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(1);
+}
+.MuiTouchRipple-ripplePulsate {
+  animation-duration: 200ms;
+}
+.MuiTouchRipple-child {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 1;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+.MuiTouchRipple-childLeaving {
+  opacity: 0;
+  animation: MuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiTouchRipple-childPulsate {
+  top: 0;
+  left: 0;
+  position: absolute;
+  animation: MuiTouchRipple-keyframes-pulsate 2500ms cubic-bezier(0.4, 0, 0.2, 1) 200ms infinite;
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-enter {
+  0% {
+    opacity: 0.1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-exit {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes MuiTouchRipple-keyframes-pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style><style data-jss="" data-meta="MuiButtonBase">
+.MuiButtonBase-root {
+  color: inherit;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  outline: 0;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  border-radius: 0;
+  vertical-align: middle;
+  -moz-appearance: none;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.MuiButtonBase-root::-moz-focus-inner {
+  border-style: none;
+}
+.MuiButtonBase-root.Mui-disabled {
+  cursor: default;
+  pointer-events: none;
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  color: red;
+  margin: 0;
+}
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.MuiTypography-h1 {
+  font-size: 6rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01562em;
+}
+.MuiTypography-h2 {
+  font-size: 3.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.00833em;
+}
+.MuiTypography-h3 {
+  font-size: 3rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0em;
+}
+.MuiTypography-h4 {
+  font-size: 2.125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.00735em;
+}
+.MuiTypography-h5 {
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0em;
+}
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #3f51b5;
+}
+.MuiTypography-colorSecondary {
+  color: #f50057;
+}
+.MuiTypography-colorTextPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError {
+  color: #f44336;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiSvgIcon">
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiSvgIcon-colorPrimary {
+  color: #3f51b5;
+}
+.MuiSvgIcon-colorSecondary {
+  color: #f50057;
+}
+.MuiSvgIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiSvgIcon-colorError {
+  color: #f44336;
+}
+.MuiSvgIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiSvgIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiSvgIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiSvgIcon-fontSizeLarge {
+  font-size: 2.1875rem;
+}
+</style><style data-jss="" data-meta="MuiIconButton">
+.MuiIconButton-root {
+  flex: 0 0 auto;
+  color: rgba(0, 0, 0, 0.54);
+  padding: 12px;
+  overflow: visible;
+  font-size: 1.5rem;
+  text-align: center;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-radius: 50%;
+}
+.MuiIconButton-root:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiIconButton-root.Mui-disabled {
+  color: rgba(0, 0, 0, 0.26);
+  background-color: transparent;
+}
+@media (hover: none) {
+  .MuiIconButton-root:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-edgeStart {
+  margin-left: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
+  margin-left: -3px;
+}
+.MuiIconButton-edgeEnd {
+  margin-right: -12px;
+}
+.MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
+  margin-right: -3px;
+}
+.MuiIconButton-colorInherit {
+  color: inherit;
+}
+.MuiIconButton-colorPrimary {
+  color: #3f51b5;
+}
+.MuiIconButton-colorPrimary:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+}
+@media (hover: none) {
+  .MuiIconButton-colorPrimary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-colorSecondary {
+  color: #f50057;
+}
+.MuiIconButton-colorSecondary:hover {
+  background-color: rgba(245, 0, 87, 0.08);
+}
+@media (hover: none) {
+  .MuiIconButton-colorSecondary:hover {
+    background-color: transparent;
+  }
+}
+.MuiIconButton-sizeSmall {
+  padding: 3px;
+  font-size: 1.125rem;
+}
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+}
+</style><style data-jss="" data-meta="MuiCollapse">
+.MuiCollapse-container {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiCollapse-entered {
+  height: auto;
+  overflow: visible;
+}
+.MuiCollapse-hidden {
+  visibility: hidden;
+}
+.MuiCollapse-wrapper {
+  display: flex;
+}
+.MuiCollapse-wrapperInner {
+  width: 100%;
+}
+</style><style data-jss="" data-meta="MuiIcon">
+.MuiIcon-root {
+  color: #65819D;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+.MuiIcon-colorPrimary {
+  color: #3f51b5;
+}
+.MuiIcon-colorSecondary {
+  color: #f50057;
+}
+.MuiIcon-colorAction {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiIcon-colorError {
+  color: #f44336;
+}
+.MuiIcon-colorDisabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+.MuiIcon-fontSizeInherit {
+  font-size: inherit;
+}
+.MuiIcon-fontSizeSmall {
+  font-size: 1.25rem;
+}
+.MuiIcon-fontSizeLarge {
+  font-size: 2.25rem;
+}
+</style><style data-jss="" data-meta="MuiList">
+.MuiList-root {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+}
+.MuiList-padding {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.MuiList-subheader {
+  padding-top: 0;
+}
+</style><style data-jss="" data-meta="MuiListItem">
+.MuiListItem-root {
+  width: 100%;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: flex-start;
+  text-decoration: none;
+}
+.MuiListItem-root.Mui-focusVisible {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.MuiListItem-root.Mui-selected, .MuiListItem-root.Mui-selected:hover {
+  background-color: rgba(0, 0, 0, 0.14);
+}
+.MuiListItem-root.Mui-disabled {
+  opacity: 0.5;
+}
+.MuiListItem-container {
+  position: relative;
+}
+.MuiListItem-dense {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+.MuiListItem-alignItemsFlexStart {
+  align-items: flex-start;
+}
+.MuiListItem-divider {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-clip: padding-box;
+}
+.MuiListItem-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.MuiListItem-button {
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.MuiListItem-button:hover {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+@media (hover: none) {
+  .MuiListItem-button:hover {
+    background-color: transparent;
+  }
+}
+.MuiListItem-secondaryAction {
+  padding-right: 48px;
+}
+</style><style data-jss="" data-meta="MuiListItemText">
+.MuiListItemText-root {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.MuiListItemText-multiline {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+.MuiListItemText-inset {
+  padding-left: 56px;
+}
+</style><style data-jss="" data-meta="MuiToolbar">
+.MuiToolbar-root {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.MuiToolbar-gutters {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media (min-width:600px) {
+  .MuiToolbar-gutters {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+.MuiToolbar-regular {
+  min-height: 56px;
+}
+@media (min-width:0px) and (orientation: landscape) {
+  .MuiToolbar-regular {
+    min-height: 48px;
+  }
+}
+@media (min-width:600px) {
+  .MuiToolbar-regular {
+    min-height: 64px;
+  }
+}
+.MuiToolbar-dense {
+  min-height: 48px;
+}
+</style><style data-jss="" data-meta="MuiTooltip">
+.MuiTooltip-popper {
+  flip: false;
+  z-index: 1500;
+  pointer-events: none;
+}
+.MuiTooltip-popperInteractive {
+  pointer-events: auto;
+}
+.MuiTooltip-tooltip {
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 0.625rem;
+  max-width: 300px;
+  word-wrap: break-word;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.4em;
+  border-radius: 4px;
+  background-color: rgba(97, 97, 97, 0.9);
+}
+.MuiTooltip-touch {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.14286em;
+}
+.MuiTooltip-tooltipPlacementLeft {
+  margin: 0 24px ;
+  transform-origin: right center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementLeft {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementRight {
+  margin: 0 24px;
+  transform-origin: left center;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementRight {
+    margin: 0 14px;
+  }
+}
+.MuiTooltip-tooltipPlacementTop {
+  margin: 24px 0;
+  transform-origin: center bottom;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementTop {
+    margin: 14px 0;
+  }
+}
+.MuiTooltip-tooltipPlacementBottom {
+  margin: 24px 0;
+  transform-origin: center top;
+}
+@media (min-width:600px) {
+  .MuiTooltip-tooltipPlacementBottom {
+    margin: 14px 0;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss5 {
+  width: 100%;
+}
+.jss6 {
+  flex-grow: 1;
+}
+.jss7 {
+  margin-left: -12px;
+  margin-right: 20px;
+}
+.jss8 {
+  display: none;
+}
+@media (min-width:600px) {
+  .jss8 {
+    display: block;
+  }
+}
+.jss9 {
+  width: 100%;
+  position: relative;
+  margin-left: 0;
+  margin-right: 16px;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.jss9:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+@media (min-width:600px) {
+  .jss9 {
+    width: auto;
+    margin-left: 24px;
+  }
+}
+.jss10 {
+  width: 72px;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+}
+.jss11 {
+  color: inherit;
+  width: 100%;
+}
+.jss12 {
+  width: 100%;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding-top: 8px;
+  padding-left: 80px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+}
+@media (min-width:960px) {
+  .jss12 {
+    width: 200px;
+  }
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss114 {
+  margin-right: 0;
+}
+.jss115 {
+  color: #65819D;
+  border-radius: 5px;
+  border-bottom-color: #fff;
+}
+.jss115:hover {
+  background-color: rgb(231, 234, 246);
+}
+</style><style data-jss="" data-meta="makeStyles">
+.jss112 {
+  width: 240px;
+  height: calc(100% - 40px);
+  margin: 20px 0px 20px 0px;
+  overflow: hidden;
+  transition: all ease 300ms;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background-color: white;
+}
+.jss113 {
+  flex: 1 0 auto;
+  height: calc(100% - 40px);
+  margin: auto;
+  padding: 0px 20px;
+  max-width: 960px;
+  flex-shrink: inherit;
+}
+.jss113 @media screen and (max-width: 767px) {
+  padding: 0px 5px;
+}
+</style><style data-jss="" data-meta="withRouter()">
+.jss1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.jss2 {
+  flex: 1 0 auto;
+}
+.jss3 {
+  height: calc(100% - 48px);
+  display: inline-flex;
+  min-width: 100%;
+  margin-bottom: 30px;
+  flex-direction: row;
+  background-color: #e8eaf5;
+}
+.jss4 {
+  padding: 15px;
+  flex-shrink: 0;
+  background-color: #2b3e50;
+}
+</style></head>
+<body>
+<div id="root"><div class="jss1"><div class="jss2"><div class="jss5"><header class="MuiPaper-root MuiPaper-elevation0 MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary"><div class="MuiToolbar-root MuiToolbar-dense MuiToolbar-gutters"><button class="MuiButtonBase-root MuiIconButton-root jss7 MuiIconButton-colorInherit" tabindex="0" type="button" aria-label="Open drawer"><span class="MuiIconButton-label"><svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="presentation"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></span><span class="MuiTouchRipple-root"></span></button><a href="https://material-table.com/#/" style="text-decoration: none; color: white;"><h6 class="MuiTypography-root jss8 MuiTypography-h6 MuiTypography-noWrap" style="color: white;">material-table</h6></a><div class="jss6"></div><div><a class="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit" tabindex="0" aria-disabled="false" href="https://github.com/mbrn/material-table" title="Github Repository"><span class="MuiIconButton-label"><i class="fab fa-github"></i></span><span class="MuiTouchRipple-root"></span></a></div></div></header></div><div class="jss3"><div class="jss112" style="width: 240px; margin-left: 20px;"><nav class="MuiList-root MuiList-dense" style="padding: 5px;"><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-get-started" href="https://material-table.com/#/docs/get-started" style="padding-left: 10px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div style="">Get Started</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-install" href="https://material-table.com/#/docs/install" style="padding-left: 10px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Install</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-all-props" href="https://material-table.com/#/docs/all-props" style="padding-left: 10px; background-color: rgb(231, 234, 246);"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div style="font-weight: 600; color: rgb(63, 81, 181);">All Props</div></span></div><span class="MuiTouchRipple-root"></span></a><div class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-features" style="padding-left: 10px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);">Features</span></div><span class="material-icons MuiIcon-root" aria-hidden="true">expand_less</span><span class="MuiTouchRipple-root"></span></div><div class="MuiCollapse-container MuiCollapse-entered" style="min-height: 0px; height: auto; transition-duration: 379ms;"><div class="MuiCollapse-wrapper"><div class="MuiCollapse-wrapperInner"><ul class="MuiList-root MuiList-dense"><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-actions" href="https://material-table.com/#/docs/features/actions" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Actions</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-component-overriding" href="https://material-table.com/#/docs/features/component-overriding" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div style="">Component Overriding</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-custom-column-rendering" href="https://material-table.com/#/docs/features/custom-column-rendering" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Custom Column Rendering</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-detail-panel" href="https://material-table.com/#/docs/features/detail-panel" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Detail Panel</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-editable" href="https://material-table.com/#/docs/features/editable" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div style="">Editable</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-export" href="https://material-table.com/#/docs/features/export" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Export</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-filtering" href="https://material-table.com/#/docs/features/filtering" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Filtering</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-fixed-columns" href="https://material-table.com/#/docs/features/fixed-columns" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Fixed Columns</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-grouping" href="https://material-table.com/#/docs/features/grouping" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Grouping</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-localization" href="https://material-table.com/#/docs/features/localization" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Localization</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-remote-data" href="https://material-table.com/#/docs/features/remote-data" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Remote Data</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-search" href="https://material-table.com/#/docs/features/search" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Search</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-selection" href="https://material-table.com/#/docs/features/selection" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Selection</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-sorting" href="https://material-table.com/#/docs/features/sorting" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Sorting</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-styling" href="https://material-table.com/#/docs/features/styling" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Styling</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-tree-data" href="https://material-table.com/#/docs/features/tree-data" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Tree Data</div></span></div><span class="MuiTouchRipple-root"></span></a><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-validation" href="https://material-table.com/#/docs/features/validation" style="padding-left: 30px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Validation</div></span></div><span class="MuiTouchRipple-root"></span></a></ul></div></div></div><a class="MuiButtonBase-root MuiListItem-root jss115 MuiListItem-dense MuiListItem-gutters MuiListItem-button" tabindex="0" role="button" aria-disabled="false" id="menu-item-support" href="https://material-table.com/#/docs/support" style="padding-left: 10px;"><div class="MuiListItemText-root MuiListItemText-dense"><span class="MuiTypography-root MuiListItemText-primary MuiTypography-body2" style="color: rgb(101, 129, 157);"><div>Support</div></span></div><span class="MuiTouchRipple-root"></span></a></nav></div><div class="jss113"><div><h4 class="MuiTypography-root MuiTypography-h4" theme="[object Object]" style="color: rgb(101, 129, 157);">All Props</h4><div style="width: 50px; border-bottom: 4px solid rgb(63, 81, 181); border-radius: 4px;"></div><br></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Property</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">actions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Array</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Action list. An icon button will be rendered for each actions</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">columns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Array</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Column definitions</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">components</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Component customization</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">data</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Array or func for remote data</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Data to be rendered</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">detailPanel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func or array of detailPanel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Component(s) to be rendered on detail panel</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">editable</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object for add, update and delete functions</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">icons</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Icons customization</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">isLoading</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for loading animation</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">localization</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">All text for localization</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onChangePage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle page changes (page)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onChangeRowsPerPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle rows per page changes (pageSize)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onChangeColumnHidden</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle column show/hidden changes (column, hidden)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onColumnDragged</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle column drag and drops (sourceIndex, destinationIndex)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onGroupRemoved</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle column group removed (groupedColumn, index)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onOrderChange</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle order changes (orderedColumnId, orderDirection)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onRowClick</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle row click (event, rowData)</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onSelectionChange</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle selection changes</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onTreeExpandChange</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle tree data rows expand changes</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onSearchChange</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To handle search changes</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">options</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">All options of table</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">parentChildData</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Func that makes table parent-child table</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">style</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Css style</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Style would be applied to Container of table</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">tableRef</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">any</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Could be use to pass ref over withStyles</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">title</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string or ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'Table Title'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Table Title (only render if toolbar option is true</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">actions</h6></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">disabled</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Button enabled/disabled</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">hidden</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Button hidden flag</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">icon</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string or () =&gt; ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Icon of button from material icons or custom component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">iconProps</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Props for icon as IconProps from <a href="https://material-ui.com/api/icon/" style="color: rgb(63, 81, 181); text-decoration: none; font-weight: 600;">https://material-ui.com/api/icon/</a></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">isFreeAction</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Independent actions that will not on row' actions section</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">onClick</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">This event will be fired when button clicked. Parameters are <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">event</code> and <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">row or rows</code></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">tooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Tooltip for button</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">columns</h6></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">align</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'center' or 'inherit' or 'justify' or 'left' or 'right';</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">The cell alignment</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">cellStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object or func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Cell cellStyle</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">currencySetting</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">This field can be used when column type is currency.</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">customFilterAndSearch</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">This field can be used for overriding filter and search algorithm</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">customSort</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">This field can be used for overriding sort algorithm</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">defaultFilter</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">any</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Default Filter value for filtering column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">defaultGroupOrder</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Default grouped column by order</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">defaultGroupSort</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'asc' or 'desc'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'asc'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Default grouped sort direction</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">defaultSort</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'asc' or 'desc'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Sorting direction: 'asc', 'desc'</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">dateSetting</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{ locale: string}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">The locale used to format the displayed date/time</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">disableClick</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Disable the 'onRowClick' event for this cell</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">editable</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'always' 'never' 'onUpdate' 'onAdd'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'always'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Editable custom component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">editComponent</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Editable custom component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">emptyValue</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string or ReactElement or () =&gt; ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">When data is empty or undefined, string value, ReactElement or function result can be set as default value</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">export</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for make column exportable or not</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">field</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Field name of data row</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filtering</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to activate or disable filtering feature of column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filterCellStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter cell style</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filterComponent</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Custom component for filtering</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filterPlaceholder</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter textbox placeholder</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">grouping</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to activate or disable grouping feature of column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">headerStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Header cell style</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">hidden</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for hide column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">hiddenByColumnsButton</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for showing columns marked as 'hidden' equal to <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">true</code>, in the selector under columnsButton</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">initialEditValue</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">any</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Initial value on add new row</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">lookup</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for lookup render data from</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">readonly</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to make column readonly when editing, the column will still be editable when adding a row</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">removable</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for column that could be removed with columnsButton or not</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">render</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Render a custom node for cell. Parameter is <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">rowData</code> and return value must be ReactElement</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchable</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">undefined</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">If true, includes the column when performing a search</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">sorting</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to activate or disable sorting feature of column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">title</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Header text</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">type</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Data type: 'boolean', 'numeric', 'date', 'datetime', 'time', 'currency'</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">components</h6></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Action</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableAction</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Action component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Actions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableActions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Actions component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Body</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableBody</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Body component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Cell</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableCell</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Cell component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Container</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Paper</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Container that everything renders in</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">EditField</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableEditField</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">EditField component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">EditRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableEditRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">EditRow component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">FilterRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableFilterRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">FilterRow component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Groupbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableGroupbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">FilterRow component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Header</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableHeader</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Header component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">OverlayLoading</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">CircularProgress</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Overlay loading component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Pagination</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTablePagination</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Pagination component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Row</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableBodyRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Row component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Toolbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">React.Element</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">MTableToolbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Toolbar component</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">detailPanel</h6></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">disabled</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for button disabled or enabled</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">icon</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string or ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Icon of button from material icons or custom component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">openIcon</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string or ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Icon of button when detailPanel is open</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">tooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Tooltip for button</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">iconProps</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Props for icon as IconProps from <a href="https://material-ui.com/api/icon/" style="color: rgb(63, 81, 181); text-decoration: none; font-weight: 600;">https://material-ui.com/api/icon/</a></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">isFreeAction</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Independent actions that will not on row' actions section</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">render</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">render result of detail panel according rowData</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">icons</h6></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Add</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'add'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Add icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Check</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'check'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Check icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Clear</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'clear'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Clear icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Delete</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'delete_outline'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Delete icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">DetailPanel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'chevron_right'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">DetailPanel icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Edit</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'edit'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Edit icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Export</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'save_alt'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Export icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'filter_list'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">FirstPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'first_page'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">FirstPage icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">LastPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'last_page'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">LastPage icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">NextPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'chevron_right'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">NextPage icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">PreviousPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'chevron_left'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">PreviousPage icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ResetSearch</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'clear'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ResetSearch icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'search'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">SortArrow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'arrow_upward'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">SortArrow icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ThirdStateCheck</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'remove'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ThirdStateCheck icon</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ViewColumn</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ReactElement</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">material icons 'view_column'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">ViewColumn icon</h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">data</h6></div><div><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Data must be array of objects which has fields defined in columns. For example:</h6><br></div><pre><div style="position: relative; text-align: left; box-sizing: border-box; padding: 0px; overflow: hidden; white-space: pre; font-family: monospace; background-color: rgb(43, 62, 80); border-radius: 5px; caret-color: white;"><textarea class="npm__react-simple-code-editor__textarea" disabled="" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" data-gramm="false" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; resize: none; color: inherit; overflow: hidden; -webkit-font-smoothing: antialiased; -webkit-text-fill-color: transparent; padding: 10px;">const data = [
+    {name: 'Mehmet', surname: 'Baran', birthYear: 1987, birthCity: 63},
+    {name: 'Zerya Betül', surname: 'Baran', birthYear: 2017, birthCity: 34},
+]</textarea><pre aria-hidden="true" style="margin: 0px; border: 0px; background: none; box-sizing: inherit; display: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-ligatures: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; tab-size: inherit; text-indent: inherit; text-rendering: inherit; text-transform: inherit; white-space: pre-wrap; word-break: keep-all; overflow-wrap: break-word; position: relative; pointer-events: none; padding: 10px;"><div class="token-line" style="color: rgb(197, 200, 198);"><span class="token keyword" style="color: rgb(209, 148, 158);">const</span><span class="token plain"> data </span><span class="token operator" style="color: rgb(245, 184, 61);">=</span><span class="token plain"> </span><span class="token punctuation" style="opacity: 0.7;">[</span><span class="token plain"></span></div><div class="token-line" style="color: rgb(197, 200, 198);"><span class="token plain">    </span><span class="token punctuation" style="opacity: 0.7;">{</span><span class="token plain">name</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(245, 184, 61);">'Mehmet'</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> surname</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(245, 184, 61);">'Baran'</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> birthYear</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token number" style="color: rgb(209, 148, 158);">1987</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> birthCity</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token number" style="color: rgb(209, 148, 158);">63</span><span class="token punctuation" style="opacity: 0.7;">}</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"></span></div><div class="token-line" style="color: rgb(197, 200, 198);"><span class="token plain">    </span><span class="token punctuation" style="opacity: 0.7;">{</span><span class="token plain">name</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(245, 184, 61);">'Zerya Betül'</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> surname</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(245, 184, 61);">'Baran'</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> birthYear</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token number" style="color: rgb(209, 148, 158);">2017</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"> birthCity</span><span class="token punctuation" style="opacity: 0.7;">:</span><span class="token plain"> </span><span class="token number" style="color: rgb(209, 148, 158);">34</span><span class="token punctuation" style="opacity: 0.7;">}</span><span class="token punctuation" style="opacity: 0.7;">,</span><span class="token plain"></span></div><div class="token-line" style="color: rgb(197, 200, 198);"><span class="token plain"></span><span class="token punctuation" style="opacity: 0.7;">]</span></div></pre><style type="text/css">
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></pre><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">localization</h6></div><div><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Localization settings could be used to change/translate default texts of datatable.</h6><br></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize body component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.emptyDataSourceMessage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">No records to display</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.addTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Add</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.deleteTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Delete</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.editTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Edit</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.filterRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize filter row component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.filterRow.filterPlaceHolder</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">''</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.filterRow.filterTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.editRow</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize edit row component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.editRow.deleteText</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Are you sure delete this row?</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.editRow.cancelTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Cancel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">body.editRow.saveTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Save</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">grouping</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize grouping component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">grouping.placeholder</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Drag headers ...</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">grouping.groupedBy</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Grouped By:</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">header</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize header component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">header.actions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Actions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize pagination component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.labelDisplayedRows</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{from}-{to} of {count}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.labelRowsSelect</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">rows</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.labelRowsPerPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Rows per page:</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.firstAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">First Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.firstTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">First Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.previousAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Previous Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.previousTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Previous Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.nextAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Next Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.nextTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Next Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.lastAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Last Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pagination.lastTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Last Page</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Key value pair for localize toolbar component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.addRemoveColumns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Add or remove columns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.nRowsSelected</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{0} row(s) selected</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.showColumnsTitle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Show Columns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.showColumnsAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Show Columns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.exportTitle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Export</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.exportAriaLabel</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Export</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.exportName</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Export as CSV</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.searchTooltip</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar.searchPlaceholder</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td></tr></tbody></table></div><br><div><h6 class="MuiTypography-root MuiTypography-h6" style="color: rgb(101, 129, 157);">options</h6></div><div><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Options property could be given to component as <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">options</code> property. You can change behaviour of grid.</h6><br></div><div style="width: 100%; display: grid;"><table style="max-width: 100%; display: block; overflow: auto;"><thead style="background-color: white;"><tr><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Field</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Type</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Default</h6></th><th style="padding: 10px;"><h6 class="MuiTypography-root MuiTypography-subtitle1" style="color: rgb(101, 129, 157);">Description</h6></th></tr></thead><tbody style="background-color: rgba(249, 249, 249, 0.6);"><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">actionsCellStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Actions cell style</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">actionsColumnIndex</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">0</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Order of actions column</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">addRowPosition</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">first</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">last</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">last</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Position of add row</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">columnsButton</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for columns button that controls which column could be rendered</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">cspNonce</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">cspNonce for react-beautiful-dnd context</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">debounceInterval</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">200</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">debounce interval for search and filter</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">detailPanelColumnAlignment</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">left</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">right</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">left</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Detail panel column alignment.</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">detailPanelType</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">single</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">multiple</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">multiple</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Detail panel visibility type.</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">doubleHorizontalScroll</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for double scroll bar for long tables</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">emptyRowsWhenPaging</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for rendering rows to complete page size</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">exportAllData</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for export all data instead of rendered data</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">exportButton</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for export button that render export buttons</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">exportDelimiter</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">,</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Delimiter to use in exported CSV file</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">exportFileName</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Title</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Exported file name</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">exportCsv</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Function to create a custom CSV file</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filtering</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for filtering row</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">filterCellStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Filter cell style for all filter cells</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">fixedColumns</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Please check fixed columns examples</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">grouping</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for groupbar visibility</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">header</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for header visibility</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">headerStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Header cell style for all headers</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">loadingType</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">overlay</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">linear</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">overlay</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Loading animation type</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">maxBodyHeight</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number or string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Max body height</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">minBodyHeight</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number or string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Min body height</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">initialPage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">number</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">0</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Initial Page Number</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">padding</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">default</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">dense</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">default</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Padding of cells and rows</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">paging</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for paging feature</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pageSize</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">numeric</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">5</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Number of rows that would be rendered on every page</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">pageSizeOptions</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">array</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">[5, 10, 20]</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Page size options that could be selected by user</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">paginationType</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">normal</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">stepped</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">normal</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for pagination type</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">rowStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object or func</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Css style to be applied rows</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">showEmptyDataSourceMessage</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for showing message if there is no data in table</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">showFirstLastPageButtons</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for showing first and last page buttons on pagination component</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">showSelectAllCheckbox</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for showing select all checkbox</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">showTextRowsSelected</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for showing selected rows text on toolbar</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">search</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for search feature</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchAutoFocus</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Initialize search field focused</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchFieldAlignment</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'right'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Alignment for search text field in toolbar</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchFieldStyle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">object</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search field css style</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchFieldVariant</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'standard'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Search field variant</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">searchText</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">string</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Initialize search field before table was render</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">selection</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">false</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for selection feature</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">selectionProps</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">object</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">func</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">{}</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Selection checkbox props</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">sorting</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to activate or disable sorting feature of table</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">tableLayout</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">auto</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">fixed</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">auto</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">To make columns width algorithm auto or fixed</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbar</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for toolbar</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">showTitle</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for title</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">toolbarButtonAlignment</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);"><code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">left</code> or <code style="background-color: rgb(239, 242, 247); padding: 3px 5px; color: indianred; border-radius: 3px;">right</code></h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">'right'</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Alignment for buttons in toolbar</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">draggable</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag for drag and drop headers</h6></td></tr><tr><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">thirdSortClick</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">boolean</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">true</h6></td><td style="padding: 5px;"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgb(101, 129, 157);">Flag to allow unsorted state on third header click</h6></td></tr></tbody></table></div><br></div></div></div><footer class="jss4"><h6 class="MuiTypography-root MuiTypography-subtitle2" style="color: rgba(101, 129, 157, 0.667);">This documentation developed by <a href="https://github.com/mbrn/libzy" target="_blank" style="color: rgb(185, 198, 210); text-decoration: none;">libzy</a></h6></footer></div></div>
+<script type="text/javascript" src="./material-table_files/main.76b9c451312886bff0c5.js"></script>
+</body></html>

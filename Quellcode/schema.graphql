@@ -1,0 +1,11 @@
+
+type Account @model {
+  id: ID!
+  accountid: String!
+  name: String!
+  email: String!
+  num: Int!
+  status: String!
+
+
+}

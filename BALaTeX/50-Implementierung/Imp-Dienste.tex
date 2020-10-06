@@ -20,7 +20,7 @@ Single object with fields (e.g., Todo with ID, name, description)
 Do you want to edit the schema now?(*@ \textrm{Yes} @*)
 \end{lstlisting}
 
-Im Rahmen der Bachelorarbeit wird nur ein Objekttyp mit dem Namen Account benötigt.
+Im Rahmen der Bachelorarbeit wird nur ein Objekttyp mit dem Namen \spverb+Account+ benötigt.
 Es werden weiterhin alle verfügbaren Felder angegeben.
 Werden in Zukunft neue Felder oder weitere Typen benötigt, kann die Datei \verb+schema.graphql+ jederzeit angepasst werden.
 \\
@@ -116,7 +116,7 @@ writeAllDynamoDBItems()
 \end{lstlisting}
 
 
-Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ haben den Zweck temporären Zugriff auf den Account \spverb+Cbc-Master+ zu ermöglichen.
+Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ haben den Zweck temporären Zugriff auf den Account \spverb+Cbc-Master+ zu ermöglichen. \cite[Letzter Absatz]{Stackoverflow}
 \spverb+listAllAccounts()+ liest anschließend alle Daten und \spverb+writeAllDynamoDBItems()+ schreibt diese in die DynamoDB-Tabelle.
 Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen, eine weitere die korrekte Abarbeitung der Funktion sicherzustellen.
 In den folgenden Abschnitten werden diese beiden Hürden genauer erläutert.
@@ -158,7 +158,7 @@ Es wird ein neues AWS Service-Objekt für den Dienst AWS Organizations erstellt 
 Ein Service-Objekt wird benötigt, um auf Service-Funktionen zugreifen zu können.
 Die meisten AWS-Dienste bieten mindestens ein passendes Service-Objekt an.
 In der Lambda-Funktion muss dementsprechend ein Service-Objekt für die Dienste AWS Organizations, DynamoDB und für die Hilfsfunktion AWS STS \footnote{STS steht für Security Token Service und ermöglicht die Bereitstellung von temporären Anmeldeinformationen.} erstellt werden.
-\cite[]{ServiceObject}
+\cite{ServiceObject}
 
 Für DynamoDB reicht etwa folgender Befehl aus, um eine passendes Service-Objekt zu erstellen.
 Die Lambda-Funktion und die DynamoDB-Tabelle befinden sich im selben Account.
@@ -209,7 +209,7 @@ Das immer tiefere verschachteln von Funktionsaufrufen wird auch als \glqq Callba
 
 Promises ermöglichen dieselbe Funktionalität wie Callbacks, nur ohne die Ver­schach­telung.
 \glqq Ein Promise ist ein Objekt, das die finale Beendigung einer asynchronen Operation repräsentiert.
-Je nachdem, ob die Operation erfolgreich oder fehlerhaft beendet wurde, wird das Promise entsprechend gekennzeichnet. \grqq{} \cite[]{Promises}
+Je nachdem, ob die Operation erfolgreich oder fehlerhaft beendet wurde, wird das Promise entsprechend gekennzeichnet. \grqq{} \cite{Promises}
 Mit der Option \verb+.then()+ kann sichergestellt werden, dass die Operation beendet sein muss bevor der nächste Codeblock beginnt.
 
 Die letzte Möglichkeit ist die Verwendung von \verb+async/await+, welche auf Promises basiert jedoch eine verständlichere Syntax ermöglicht.
@@ -261,7 +261,7 @@ Nach dem Befehl \verb+amplify push+ wird ein Cognito User Pool inklusive App Cli
 
 Für die Einbindung in das React-Frontend bietet das Amplify-Framework die Komponente \verb+withAuthenticator+ an.
 Diese muss um die Hauptkomponente umhüllt werden.
-Dafür wird beim Exportieren der Hauptkomponente \verb+withAuthenticator+ mitangegeben. \cite[]{ImpAuth}
+Dafür wird beim Exportieren der Hauptkomponente \verb+withAuthenticator+ mitangegeben. \cite{ImpAuth}
 Die React-Komponente \verb+AWSAccountListsMaterial+ beinhaltet den Code zum Abfragen der Daten aus der DynamoDB-Tabelle und zum Rendern der Übersicht.
 
 Mehr Details zu der Komponente befinden sich im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}}.
@@ -279,8 +279,8 @@ export default withAuthenticator(AWSAccountListsMaterial, true)
 
 Startet man den lokalen Webserver im Anschluss und ruft die Anwendung auf, erscheint eine voll funktionsfähige Login-Maske.
 Diese Ansicht lässt sich auf Wunsch auch anpassen.
-Damit nicht jede Person einen Account erstellen kann, ist der Punkt \glqq Allow users to sign themselves up\grqq{} in der Webkonsole deaktiviert und der Punkt \glqq Only allow administrators to create users\grqq{} aktiviert worden.
-Wird über \glqq Create Account\grqq{} versucht einen neuen Benutzer zu erstellen, erscheint
+Damit nicht jede Person einen Account erstellen kann, ist die Option \glqq Allow users to sign themselves up\grqq{} in der Webkonsole deaktiviert und die Option \glqq Only allow administrators to create users\grqq{} aktiviert worden.
+Wird über \glqq Create Account\grqq{} versucht einen neuen Benutzer zu erstellen, erscheint die Meldung \glqq SignUp is not permitted for this user pool\grqq{}.
 Ohne Cognito und Amplify wäre die Implementierung einer sicheren und funktionierenden Authentifizierungsmethode deutlich aufwändiger.
 Dank der vorgefertigten Module ist es mit Amplify jedoch schnell umsetzbar.
 
@@ -307,7 +307,7 @@ Die Anmeldung zu allen drei Cloud Providern erfolgt etwa über die gemeinsame Id
 Cognito bietet eine Unterstützung mit Unternehmens-Identitätsanbietern über SAML an.
 Dafür müssen Konfigurationen in AzureAD und AWS Cognito getätigt werden.
 Während des Vorgangs ist schließlich die Entscheidung gefallen, dass es keine geeignete Implementierung in Zusammenspiel mit Amplify gibt.
-Im Internet existieren mehrere Anleitungen zur Verbindung von AzureAD mit Cognito, jedoch ohne Amplify im Einsatz bei dem Frontend.
+Im Internet existieren mehrere Anleitungen zur Verbindung von AzureAD mit Cognito, jedoch ohne Amplify.
 Der Cognito Dienst wurde dabei mit einer \glqq Azure Enterprise Application\grqq{} verknüpft.
 Bei \glqq Azure Enterprise Application\grqq{} handelt es sich um einen Dienst, der zur Verwaltung von Identitäten genutzt wird.
 Nach der Einrichtung sind leider Fehlermeldungen aufgetreten.
@@ -365,9 +365,9 @@ Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Feld
 
 Auch hier muss eine asynchrone Abarbeitung sichergestellt werden.
 Die Daten müssen zur Verfügung stehen, bevor sie gerendert werden können.
-React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite[]{ReactComp}
+React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite{ReactComp}
 Innerhalb der Funktion \verb+componentDidMount()+ wird eine weitere Funktion \verb+queryAccounts()+ gestartet.
-Diese Funktion führt mithilfe von AppSync die Query aus und speichert sie in die State Variable.\cite[]{AmplifyAPI}
+Diese Funktion führt mithilfe von AppSync die Query aus und speichert sie in die State Variable.\cite{AmplifyAPI}
 State kann alle internen Daten einer Komponente beinhalten.
 Wird die State Variable mithilfe von \verb+setState()+ geändert, ruft React automatisch die Renderfunktion erneut auf und aktualisiert die Seite.
 
@@ -391,7 +391,7 @@ Hierfür eignet sich eine tabellarische Ansicht am meisten.
 Zuerst wurde mit JSX ein HTML \verb+<table>+ Element erstellt und die einzelnen Daten korrekt hinzugefügt.
 Da hierbei jedoch weitere Funktionalitäten manuell entwickelt werden müssten, wurde letztendlich die frei zugängliche Komponente \glqq material-table\grqq{} genutzt.
 Diese Komponente ermöglicht das Erstellen einer übersichtlichen Tabelle mit den wichtigsten Features, etwa einer Suche oder einer Sortierfunktion.
-Zudem ist nahezu jeder Aspekt frei konfigurierbar, etwa die Anzahl an Elementen pro Seite.\cite[]{MaterialTable}
+Zudem ist nahezu jeder Aspekt frei konfigurierbar, etwa die Anzahl an Elementen pro Seite.\cite{MaterialTable}
 Innerhalb der \verb+<AWSAccountListsMaterial>+ wird also die externe Komponente \verb+<MaterialTable>+ eingebeut.
 Hier werden die Spalten konfiguriert, sowie dem Feld \glqq data\grqq{} die Daten aus der State Variable übergeben.
 
@@ -411,6 +411,7 @@ columns={[
 
 
  Das folgende Bild zeigt das Ergebnis nach der Implementierung des Codes.
+ Sollte aus irgendwelchen Gründen der Abruf der Daten fehlschlagen, zeigt React nur eine leere Tabelle an.
  Zum gegebenen Zeitpunkt existierten 162 Einträge, wovon jeweils 30 pro Seite angezeigt wurden.
  Die Implementierung aller Dienste wurde erfolgreich durchgeführt.
 
@@ -449,7 +450,8 @@ dev                https://dev.drjgagjbys8gs.amplifyapp.com
 Auf Wunsch kann eine eigene Domäne hinzugefügt werden, sodass die \spverb+.amplifyapp.com+ Domäne nicht zwingend genutzt werden muss.
 In dem Account \spverb+Cbc-Clouds-Sandbox+ ist bereits die Domäne \spverb+sandboxzone.aws-cbc.cloud+ registriert.
 Somit kann direkt über dem Menüpunkt \glqq Domain Management\grqq{} eine Subdomäne für die Webanwendung konfiguriert werden.
-Falls die Domain über AWS registirert wurde, kümmert sich Amplify automatisch um das Erstellen des SSL Zertifikates und Setzen des CNAMEs.
+Falls die Domain über AWS registirert wurde, kümmert sich Amplify automatisch um das Erstellen des SSL-Zertifikates\footnote{SSL steht für Secure Sockets Layer und ist ein Protokoll zum eindeutigen Identitätsnachweis. Heutzutage werden SSL-Zertifikate mit TLS(Transport Layer Security) verschlüsselt. Ein Zertifikat enthählt viele Informationen, etwa den Namen des Ausstellers, und wird von einer Zertifizierungsstelle ausgestellt.} und Setzen des CNAMEs.
+
 
 \begin{figure}[htbp]
     \centering

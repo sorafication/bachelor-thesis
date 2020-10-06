@@ -36,6 +36,7 @@ Im letzten Schritt kann die lokale Anwendung, sofern sie ordnungsgemäß funktio
 
 
 In den folgenden Abschnitten werden alle einzelnen Schritte im Detail erläutert sowie auf potenzielle Probleme bei der Umsetzung hingewiesen.
+Die bisher erwähnten Kosten der einzelnen Dienste werden im Abschnitt \textit{\ref{Kosten} \nameref{Kosten}} zusammengefasst.
 
 \subsection{AWS Accountstruktur }
 \label{Accountstruktur}
@@ -83,7 +84,7 @@ Die Konfiguration wird mit dem Befehl \spverb+amplify configure+ gestartet.
 Es wird nach der gewünschten Region sowie Benutzernamen gefragt.
 Anschließend öffnet sich ein neues Browserfenster und der Vorgang kann fortgesetzt werden.
 In Browser wird das Erstellen des Benutzers mit passenden Berechtigungen bestätigt.
-Die im Browser angezeigten IAM Zugangsschlüssel werden im Terminal eingegeben und der Vorgang ist abgeschlossen.\cite[]{ImpVoraus}
+Die im Browser angezeigten IAM Zugangsschlüssel werden im Terminal eingegeben und der Vorgang ist abgeschlossen.\cite{ImpVoraus}
 
 Hinweis: Der interne Name des Projektes lautet Amplify-Kumo.
 Kumo ist die japanische Bezeichnung für \glqq Cloud\grqq.
@@ -118,7 +119,7 @@ Successfully set up the new user.
 
 Eine weitere Voraussetzung für Amplify ist die Erstellung eines neuen React-Projektes.
 Dafür bieten die Entwickler von React den Befehl \verb+npx create-react-app+ an, welcher eine fertige Entwicklungsumgebung aufsetzt.
-Dabei werden Aspekte wie die Ordnerstruktur, benötigte JavaScript-Pakete oder auch die Konfiguration eines Webservers übernommen.\cite[]{ReactNew}
+Dabei werden Aspekte wie die Ordnerstruktur, benötigte JavaScript-Pakete oder auch die Konfiguration eines Webservers übernommen.\cite{ReactNew}
 Nachdem das Projekt erstellt wurde, kann der Webserver unter der Adresse \verb+http://localhost:3000+ gestartet werden.
 Eine Testseite von React wird angezeigt.
 \\
@@ -141,7 +142,7 @@ Des Weiteren wird der, in \textit{\ref{EinrichtungAmplify} \nameref{EinrichtungA
 Nach kurzer Zeit ist das Amplify Projekt bereits in der Cloud erstellt worden und verfügbar.
 
 Wie im Code ersichtlich, benutzt Amplify den Dienst AWS CloudFormation, sodass die gesamte Konfiguration in einem Template festgehalten wird.
-Mit AWS CloudFormation ist möglich Templates zur Modellierung und Bereitstellung von AWS-Ressourcen zu erstellen.
+Mit AWS CloudFormation ist es möglich Templates zur Modellierung und Bereitstellung von AWS-Ressourcen zu erstellen.
 Die Templates unterstützen die Auszeichnungssprachen JSON und YAML.
 Amplify übersetzt alle Befehle in ein Cloudformation Template und startet es.
 Da die gesamte Konfiguration der Cloudformation-Templates von Amplify übernommen wird, spielt es im Rahmen der Bachelorarbeit eine untergeordnete Rolle.

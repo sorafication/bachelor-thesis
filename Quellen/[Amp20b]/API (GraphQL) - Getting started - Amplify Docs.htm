@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js -->
+<html dir="ltr" lang="en" class="hydrated"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+    :root {
+      /* Typography */
+      --amplify-font-family: 'Amazon Ember', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+      --amplify-text-xxs: 0.75rem;
+      --amplify-text-xs: 0.81rem;
+      --amplify-text-sm: 0.875rem;
+      --amplify-text-md: 1rem;
+      --amplify-text-md-sub: 1.15rem;
+      --amplify-text-lg: 1.5rem;
+      --amplify-text-xl: 2rem;
+      --amplify-text-xxl: 2.5rem;
+
+      /* Colors */
+      --amplify-primary-color: #ff9900;
+      --amplify-primary-contrast: var(--amplify-white);
+      --amplify-primary-tint: #ffac31;
+      --amplify-primary-shade: #e88b01;
+
+      --amplify-secondary-color: #152939;
+      --amplify-secondary-contrast: var(--amplify-white);
+      --amplify-secondary-tint: #31465f;
+      --amplify-secondary-shade: #1F2A37;
+
+      --amplify-tertiary-color: #5d8aff;
+      --amplify-tertiary-contrast: var(--amplify-white);
+      --amplify-tertiary-tint: #7da1ff;
+      --amplify-tertiary-shade: #537BE5;
+
+      --amplify-background-color: var(--amplify-white);
+
+      /* Neutral */
+      --amplify-grey: #828282;
+      --amplify-light-grey: #c4c4c4;
+      --amplify-white: #ffffff;
+      --amplify-smoke-white: #f5f5f5;
+      --amplify-red: #dd3f5b;
+      --amplify-blue: #099ac8;
+    }
+  </style><style>:root {
+      /* Typography */
+      --amplify-font-family: 'Amazon Ember', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+      --amplify-text-xxs: 0.75rem;
+      --amplify-text-xs: 0.81rem;
+      --amplify-text-sm: 0.875rem;
+      --amplify-text-md: 1rem;
+      --amplify-text-md-sub: 1.15rem;
+      --amplify-text-lg: 1.5rem;
+      --amplify-text-xl: 2rem;
+      --amplify-text-xxl: 2.5rem;
+
+      /* Colors */
+      --amplify-primary-color: #ff9900;
+      --amplify-primary-contrast: var(--amplify-white);
+      --amplify-primary-tint: #ffac31;
+      --amplify-primary-shade: #e88b01;
+
+      --amplify-secondary-color: #152939;
+      --amplify-secondary-contrast: var(--amplify-white);
+      --amplify-secondary-tint: #31465f;
+      --amplify-secondary-shade: #1F2A37;
+
+      --amplify-tertiary-color: #5d8aff;
+      --amplify-tertiary-contrast: var(--amplify-white);
+      --amplify-tertiary-tint: #7da1ff;
+      --amplify-tertiary-shade: #537BE5;
+
+      --amplify-background-color: var(--amplify-white);
+
+      /* Neutral */
+      --amplify-grey: #828282;
+      --amplify-light-grey: #c4c4c4;
+      --amplify-white: #ffffff;
+      --amplify-smoke-white: #f5f5f5;
+      --amplify-red: #dd3f5b;
+      --amplify-blue: #099ac8;
+    }</style>
+<title>API (GraphQL) - Getting started - Amplify Docs</title>
+<style data-styles="">amplify-icon,amplify-section,amplify-button,docs-component-playground,docs-page,amplify-federated-sign-in,amplify-select-mfa-type,amplify-phone-field,amplify-picker,amplify-photo-picker,amplify-s3-image-picker,amplify-chatbot,amplify-code-field,amplify-email-field,amplify-feature-flags,amplify-greetings,amplify-password-field,amplify-s3-album,amplify-s3-text-picker,docs-landing-hero-cta,docs-choose-anchor,docs-choose-integration-anchor,amplify-icon-button,docs-link-banner,ui-component-props,amplify-block-switcher,amplify-form-field,amplify-hint,amplify-input,amplify-label,amplify-username-field,amplify-checkbox,amplify-block,amplify-callout,amplify-code-block,amplify-container,amplify-link,amplify-lorem,docs-404-page,docs-hero,stencil-async-content,stencil-route-title,stencil-router-prompt,stencil-router-redirect,amplify-authenticator,amplify-feature-flag-values,context-consumer,amplify-feature-flag-summary,amplify-country-dial-code,amplify-s3-image,amplify-s3-text,amplify-tooltip,amplify-sign-out,amplify-nav,amplify-select,docs-search-bar,docs-router,stencil-route,stencil-route-switch,stencil-router,docs-internal-link-button,docs-card,amplify-responsive-grid,amplify-radio-button,docs-in-page-link,docs-container,amplify-external-link,amplify-sign-in-button,docs-internal-link,stencil-route-link,docs-menu-group,docs-version-switch,docs-select-anchor,docs-feedback-callout,docs-repo-actions,docs-menu,docs-footer,docs-four-o-four,docs-universal-nav,docs-next-previous,amplify-toc,docs-secondary-nav,amplify-sidebar-layout,amplify-sidebar-layout-main,amplify-sidebar-layout-sidebar,amplify-sidebar-layout-toggle,amplify-toc-contents,amplify-toc-provider,docs-chat-button,amplify-federated-buttons,amplify-amazon-button,amplify-auth0-button,amplify-facebook-button,amplify-google-button,amplify-oauth-button,amplify-auth-fields,amplify-form-section,amplify-loading-spinner,amplify-sign-in,amplify-verify-contact,amplify-confirm-sign-in,amplify-confirm-sign-up,amplify-forgot-password,amplify-require-new-password,amplify-sign-up,amplify-totp-setup,amplify-toast,amplify-strike{visibility:hidden}.hydrated{visibility:inherit}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#16161d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta property="mobile-web-app-capable" content="yes">
+<meta http-equiv="x-ua-compatible" content="IE=Edge">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Amplify Framework Documentation">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/assets/icon/ms-icon-144x144.png">
+<style>stencil-route.inactive{display:none}</style><link rel="apple-touch-icon" sizes="57x57" href="https://docs.amplify.aws/assets/icon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://docs.amplify.aws/assets/icon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://docs.amplify.aws/assets/icon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://docs.amplify.aws/assets/icon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://docs.amplify.aws/assets/icon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://docs.amplify.aws/assets/icon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://docs.amplify.aws/assets/icon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://docs.amplify.aws/assets/icon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://docs.amplify.aws/assets/icon/apple-icon-180x180.png">
+<link rel="apple-touch-icon" href="https://docs.amplify.aws/assets/icon/apple-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://docs.amplify.aws/assets/icon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://docs.amplify.aws/assets/icon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://docs.amplify.aws/assets/icon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://docs.amplify.aws/assets/icon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="https://docs.amplify.aws/assets/icon/icon.png">
+<link rel="icon" type="image/x-icon" href="https://docs.amplify.aws/assets/icon/favicon.ico">
+<link crossorigin="use-credentials" rel="manifest" href="https://docs.amplify.aws/manifest.json">
+<link rel="manifest" href="https://docs.amplify.aws/manifest.json">
+<link rel="stylesheet" href="./API (GraphQL) - Getting started - Amplify Docs_files/p-4db70111.css">
+<link rel="modulepreload" href="./API (GraphQL) - Getting started - Amplify Docs_files/p-be56a2f1.js">
+<link rel="modulepreload" href="https://docs.amplify.aws/build/p-6fd18a3a.js">
+<link rel="modulepreload" href="https://docs.amplify.aws/build/p-972a99e3.js">
+<link rel="modulepreload" href="https://docs.amplify.aws/build/p-a109d2b1.js">
+<link rel="modulepreload" href="https://docs.amplify.aws/build/p-e25cd6f9.js">
+<script>if (global === undefined) {
+        var global = window;
+      }</script>
+<script type="module" src="./API (GraphQL) - Getting started - Amplify Docs_files/p-be56a2f1.js" data-stencil="" data-resources-url="/build/" data-stencil-namespace="app"></script>
+<script nomodule="" src="./API (GraphQL) - Getting started - Amplify Docs_files/app.js" data-stencil=""></script>
+<style data-emotion="css">.css-6d0h3e{display:block;margin-bottom:1.5rem;background-color:white;border:0.0625rem solid var(--border-color);border-radius:0.25rem;}
+.css-6d0h3e > pre{display:none;}
+.css-6d0h3e amplify-code-block{margin-top:0;}
+.css-18ssisc{font-weight:700;border-bottom:0.25rem solid var(--amplify-primary-color);}
+.css-si1pwq{border-top-right-radius:0.25rem;border-top-left-radius:0.25rem;height:100%;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;padding:0.75rem 1rem 0.5rem;cursor:pointer;font-size:0.875rem;}
+.css-13kxqe8{border-top-right-radius:0.25rem;border-top-left-radius:0.25rem;border-bottom:0.0625rem solid var(--border-color);}
+.css-1fwr3l6{padding:1rem;border-bottom-right-radius:0.25rem;border-bottom-left-radius:0.25rem;}
+.css-1fwr3l6 > amplify-block{display:none;}
+.css-1fwr3l6 > amplify-block > pre:last-child{margin-bottom:0;}
+.css-xtlbgq{display:block;padding-left:0.75rem;margin-bottom:1rem;}
+.css-xtlbgq > div{padding:1rem;background-color:rgba(255,255,255,0.75);}
+.css-xtlbgq p{margin-bottom:0;margin-top:1rem;}
+.css-xtlbgq p:first-child{margin-top:0;}
+.css-wt2bt2{background-color:var(--color-ink-hv);}
+.css-181dr8j{background-color:var(--color-orange-hv);}
+.css-1lj8awz{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;background-color:var(--code-bg-color);overflow-x:auto;border-radius:0.25rem;padding:1rem 0;width:100%;color:var(--code-font-color);margin-top:1rem;}
+.css-1lj8awz .highlight{padding:0 1rem 0 0;overflow:auto;}
+.css-1ujgc69{position:-webkit-sticky;position:sticky;left:0;background-color:var(--code-bg-color);color:var(--code-line-numbers-color);text-align:center;padding:0 1rem;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.8;}
+.css-1ujgc69 > div{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}
+.css-75wbz6{padding-left:1rem;}
+.css-16vr62x{position:-webkit-sticky;position:sticky;height:1rem;top:0.25rem;right:0.5rem;opacity:0.75;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+.css-16vr62x span{position:relative;top:-1rem;color:var(--color-white);cursor:pointer;}
+.css-16vr62x:hover{opacity:1;}
+.css-khgmir{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex:1;-ms-flex:1;flex:1;}
+.css-khgmir pre[class*="language-"],.css-khgmir code[class*="language-"]{color:#d4d4d4;font-size:0.8125rem;text-shadow:none;font-family:Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;direction:ltr;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;line-height:1.5;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;}
+.css-khgmir pre[class*="language-"]::selection,.css-khgmir code[class*="language-"]::selection{text-shadow:none;background:#b3d4fc;}
+@media print{.css-khgmir pre[class*="language-"],.css-khgmir code[class*="language-"]{text-shadow:none;}}
+.css-khgmir pre[class*="language-"]{padding:1em;margin:0.5em 0;overflow:auto;background:#1e1e1e;}
+.css-khgmir:not(pre) > code[class*="language-"]{padding:0.1em 0.3em;border-radius:0.3em;color:#db4c69;background:#f9f2f4;}
+.css-khgmir .namespace{opacity:0.7;}
+.css-khgmir .token.comment,.css-khgmir .token.prolog,.css-khgmir .token.doctype,.css-khgmir .token.cdata{color:#6a9955;}
+.css-khgmir .token.punctuation{color:#d4d4d4;}
+.css-khgmir .token.property,.css-khgmir .token.tag,.css-khgmir .token.boolean,.css-khgmir .token.number,.css-khgmir .token.constant,.css-khgmir .token.symbol,.css-khgmir .token.deleted{color:#ce9178;}
+.css-khgmir .token.selector,.css-khgmir .token.attr-name,.css-khgmir .token.string,.css-khgmir .token.char,.css-khgmir .token.builtin,.css-khgmir .token.inserted{color:#b5cea8;}
+.css-khgmir .token.operator,.css-khgmir .token.entity,.css-khgmir .token.url,.css-khgmir .language-css .token.string,.css-khgmir .style .token.string{color:#d4d4d4;background:#1e1e1e;}
+.css-khgmir .token.atrule,.css-khgmir .token.attr-value,.css-khgmir .token.keyword{color:#c586c0;}
+.css-khgmir .token.function{color:#dcdcaa;}
+.css-khgmir .token.regex,.css-khgmir .token.important,.css-khgmir .token.variable{color:#d16969;}
+.css-khgmir .token.important,.css-khgmir .token.bold{font-weight:bold;}
+.css-khgmir .token.italic{font-style:italic;}
+.css-khgmir .token.constant{color:#9cdcfe;}
+.css-khgmir .token.class-name{color:#4ec9b0;}
+.css-khgmir .token.parameter{color:#9cdcfe;}
+.css-khgmir .token.interpolation{color:#9cdcfe;}
+.css-khgmir .token.punctuation.interpolation-punctuation{color:#569cd6;}
+.css-khgmir .token.boolean{color:#569cd6;}
+.css-khgmir .token.property{color:#9cdcfe;}
+.css-khgmir .token.selector{color:#d7ba7d;}
+.css-khgmir .token.tag{color:#569cd6;}
+.css-khgmir .token.attr-name{color:#9cdcfe;}
+.css-khgmir .token.attr-value{color:#ce9178;}
+.css-khgmir .token.entity{color:#4ec9b0;cursor:unset;}
+.css-khgmir .token.namespace{color:#4ec9b0;}
+.css-khgmir pre[class*="language-javascript"],.css-khgmir code[class*="language-javascript"]{color:#4ec9b0;}
+.css-khgmir pre[class*="language-css"],.css-khgmir code[class*="language-css"]{color:#ce9178;}
+.css-khgmir pre[class*="language-html"],.css-khgmir code[class*="language-html"]{color:#d4d4d4;}
+.css-khgmir .language-html .token.punctuation{color:#808080;}
+.css-khgmir pre[data-line]{position:relative;}
+.css-khgmir pre[class*="language-"] > code[class*="language-"]{position:relative;z-index:1;}
+.css-khgmir .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:#f7ebc6;box-shadow:inset 0.3125rem 0 0 #f7d87c;z-index:0;pointer-events:none;line-height:inherit;white-space:pre;}
+.css-1hbw5z0{display:block;width:100%;}
+.css-1hbw5z0 > div{max-width:90rem;margin:0px auto;}
+.css-q4acy3{display:inline;position:relative;}
+.css-1kpwzqq{margin-left:0.25rem;height:0.5rem;}
+.css-b9wf8u amplify-feature-flags{margin-top:0;}
+.css-1foymwk{overflow-x:auto;margin-bottom:1rem;}
+.css-hv25j9{text-align:center;width:100%;}
+.css-hv25j9 thead tr{background-color:var(--bg-color-tertiary);}
+.css-hv25j9 tbody tr th{width:5rem;}
+.css-15ao077{font-size:1rem;margin:0.75rem 0;}
+.css-10mg8gf th{min-width:16%;width:16%;}
+.css-r871sp{min-width:9rem;width:9rem;}
+.css-xd87ek{text-align:left;}
+.css-120afdx{min-width:6rem;width:6rem;}
+.css-10cn7mn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:inherit;}
+.css-osvdcc{display:grid;width:100%;-ms-grid-columns:1fr 1fr 1fr 1fr;grid-template-columns:repeat(1,1fr);}</style>
+<style data-emotion="css"></style><meta property="og:title" content="API (GraphQL) - Getting started - Amplify Docs"><meta property="og:description" content="Learn more about how to get started with Amplify&#39;s API category"><meta property="og:url" content="https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js"><meta property="og:image" content="https://docs.amplify.aws/assets/ogp.jpg"><meta name="description" content="Learn more about how to get started with Amplify&#39;s API category"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="API (GraphQL) - Getting started - Amplify Docs"><meta name="twitter:description" content="Learn more about how to get started with Amplify&#39;s API category"><meta name="twitter:image" content="https://docs.amplify.aws/assets/ogp.jpg"></head>
+<body> <docs-router class="hydrated"><stencil-router class="hydrated"><!--content-ref (host=stencil-router)--><!--org-location for <stencil-route-switch> (host=DOCS-ROUTER)--><!--<slot> (host=stencil-router)--><stencil-route-switch group="2114-0888-7380-0026" class="hydrated"><!--content-ref (host=stencil-route-switch)--><!--org-location for <stencil-route> (host=DOCS-ROUTER)--><!--<slot> (host=stencil-route-switch)--><stencil-route group="2114-0888-7380-0026" class="hydrated"><docs-page class="css-ntiofr hydrated"><docs-universal-nav brand-icon="/assets/logo-light.svg" brand-icon-blend="/assets/logo-dark.svg" class="css-1c42ddj hydrated"><docs-container class="background-color-orange-hv css-1hbw5z0 hydrated"><!--content-ref (host=docs-container)--><!--org-location for <div> (host=DOCS-UNIVERSAL-NAV)--><div class=""><!--<slot> (host=docs-container)--><div class="css-sx2vr3"><stencil-route-link class="css-11aid50 hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for <img> (host=DOCS-UNIVERSAL-NAV)--><!--org-location for <span> (host=DOCS-UNIVERSAL-NAV)--><a class="link-active" href="https://docs.amplify.aws/" title="Amplify Docs"><!--<slot> (host=stencil-route-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/logo-light.svg"><span>Amplify Docs</span></a></stencil-route-link><docs-search-bar class="css-fbz3bc css-j5bz1e hydrated"><div><div><span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input id="amplify-docs-search-input" class="three-dee-effect ds-input" type="search" placeholder="Search" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-label="search input" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: &quot;Amazon Ember&quot;, -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; font-size: 13.3333px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="ds-dropdown-menu" role="listbox" id="algolia-autocomplete-listbox-0" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;"><div class="ds-dataset-1"></div></span></span><img src="./API (GraphQL) - Getting started - Amplify Docs_files/search.svg" alt="search"></div></div></docs-search-bar><div class="css-14o8hhr"><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <span> (host=DOCS-UNIVERSAL-NAV)--><a class="css-q4acy3" href="https://amplify.aws/community" title="Amplify Community" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><span>Community</span></a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <span> (host=DOCS-UNIVERSAL-NAV)--><a class="css-q4acy3" target="_blank" href="https://aws.amazon.com/amplify/framework/" title="AWS Amplify Homepage" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><span>About<span class="css-ecbrz7"> Amplify</span></span><img class="css-1kpwzqq" src="./API (GraphQL) - Getting started - Amplify Docs_files/external-link-white.svg"></a></amplify-external-link></div></div></div></docs-container></docs-universal-nav><docs-secondary-nav class="css-ay160a hydrated" id="secondary-nav"><docs-container class="css-1hbw5z0 hydrated"><!--content-ref (host=docs-container)--><!--org-location for <div> (host=DOCS-SECONDARY-NAV)--><div class=""><!--<slot> (host=docs-container)--><div class="css-16891c2"><div><div><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/start/q/integration/react"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><span>Getting Started</span></a></stencil-route-link></docs-internal-link><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><stencil-route-link class="css-pnqqcs hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><span>Libraries</span></a></stencil-route-link></docs-internal-link><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/ui/q/framework/react"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><span>UI Components</span></a></stencil-route-link></docs-internal-link><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><span>CLI</span></a></stencil-route-link></docs-internal-link><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/guides/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><span>Guides</span></a></stencil-route-link></docs-internal-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><a class="css-q4acy3" target="_blank" href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><span>Console</span><img class="css-1kpwzqq" src="./API (GraphQL) - Getting started - Amplify Docs_files/external-link-black.svg"></a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <span> (host=DOCS-SECONDARY-NAV)--><a class="css-q4acy3" target="_blank" href="https://aws-amplify.github.io/amplify-js/api/" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><span>API Reference</span><img class="css-1kpwzqq" src="./API (GraphQL) - Getting started - Amplify Docs_files/external-link-black.svg"></a></amplify-external-link><div class="css-1r4lk6l"></div></div></div></div></div></docs-container></docs-secondary-nav><div class="css-hj6f3l"><amplify-toc-provider class="hydrated"><!--content-ref (host=amplify-toc-provider)--><!--org-location for <amplify-sidebar-layout> (host=DOCS-PAGE)--><!--<slot> (host=amplify-toc-provider)--><amplify-sidebar-layout class="hydrated"><!--content-ref (host=amplify-sidebar-layout)--><!--org-location for <amplify-sidebar-layout-sidebar> (host=DOCS-PAGE)--><!--org-location for <amplify-sidebar-layout-main> (host=DOCS-PAGE)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1oqiadb"><!--<slot name="sidebar"> (host=amplify-sidebar-layout)--><amplify-sidebar-layout-sidebar slot="sidebar" class="css-1t54n9a hydrated"><!--content-ref (host=amplify-sidebar-layout-sidebar)--><!--org-location for <docs-menu> (host=DOCS-PAGE)--><div><div style="top: 3.375rem;"><!--<slot> (host=amplify-sidebar-layout-sidebar)--><docs-menu class="css-1y9ngo4 hydrated"><docs-select-anchor class="css-slcsz9 hydrated"><div class="css-1jm9hm7"><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for <img> (host=DOCS-SELECT-ANCHOR)--><!--org-location for <span> (host=DOCS-SELECT-ANCHOR)--><a class="link-active"><!--<slot> (host=stencil-route-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/js.svg" alt="JavaScript Logo"><span>JavaScript</span></a></stencil-route-link></div><div class="css-ciwew8"><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for <img> (host=DOCS-SELECT-ANCHOR)--><!--org-location for <span> (host=DOCS-SELECT-ANCHOR)--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/android"><!--<slot> (host=stencil-route-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/android.svg" alt="Android Logo"><span>Android</span></a></stencil-route-link><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for <img> (host=DOCS-SELECT-ANCHOR)--><!--org-location for <span> (host=DOCS-SELECT-ANCHOR)--><a class="" href="https://docs.amplify.aws/lib/q/platform/flutter"><!--<slot> (host=stencil-route-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/flutter.svg" alt="Flutter (Preview) Logo"><span>Flutter (Preview)</span></a></stencil-route-link><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for <img> (host=DOCS-SELECT-ANCHOR)--><!--org-location for <span> (host=DOCS-SELECT-ANCHOR)--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/ios"><!--<slot> (host=stencil-route-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/ios.svg" alt="iOS Logo"><span>iOS</span></a></stencil-route-link></div></docs-select-anchor><docs-internal-link class="css-9srxhf hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Amplify Libraries]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Amplify Libraries</a></stencil-route-link></docs-internal-link><div class="css-1iyoj2o"><docs-menu-group class="hydrated"></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Analytics</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>API (GraphQL)</h4><i class="css-h4470r css-1byxedo"></i></button><div class="css-vsyrnf"><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Getting started]--><stencil-route-link class="css-dafd2i hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="link-active" href="https://docs.amplify.aws/lib/graphqlapi/getting-started/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Getting started</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Concepts]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/concepts/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Concepts</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Create or re-use existing backend]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/create-or-re-use-existing-backend/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Create or re-use existing backend</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Configure authorization modes]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/authz/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Configure authorization modes</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Create or update data]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/mutate-data/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Create or update data</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Fetch data]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Fetch data</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Subscribe to data]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/subscribe-data/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Subscribe to data</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Cancel API requests]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/cancel-request/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Cancel API requests</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Offline scenarios]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/offline/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Offline scenarios</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [GraphQL from NodeJS]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/graphql-from-nodejs/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->GraphQL from NodeJS</a></stencil-route-link></docs-internal-link><docs-internal-link class="css-9koitx hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Advanced Workflows]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/advanced-workflows/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Advanced Workflows</a></stencil-route-link></docs-internal-link></div></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>API (REST)</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Authentication</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>DataStore</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Interactions</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Predictions</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>PubSub</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Push Notifications</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Storage</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>XR</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Utilities</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Client configuration</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group><docs-menu-group class="hydrated"></docs-menu-group><docs-menu-group class="hydrated"><button class="css-1w67ud0"><h4>Server-Side Rendering</h4><i class="css-h4470r css-15currk"></i></button></docs-menu-group></div><hr class="css-7zkaum"><docs-repo-actions class="css-1bbh6oj hydrated"><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-REPO-ACTIONS)--><!--org-location for [Feedback]--><a class="css-q4acy3" target="_blank" href="https://github.com/aws-amplify/docs/issues/new?title=[Feedback]FEEDBACK_TITLE_HERE&amp;labels=JavaScript&amp;body=**Page**%3A%20%5B%60%2Flib%2Fgraphqlapi%2Fgetting-started%2Fq%2Fplatform%2Fjs%60%5D(https%3A%2F%2Fdocs.amplify.aws%2Flib%2Fgraphqlapi%2Fgetting-started%2Fq%2Fplatform%2Fjs)%0A%0A**Feedback**%3A%0A%0A%3C!--%20your%20feedback%20here%20--%3E" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/flag.svg" alt="Feedback">Feedback</a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-REPO-ACTIONS)--><!--org-location for [Edit]--><a class="css-q4acy3" target="_blank" href="https://github.com/aws-amplify/docs/edit/master/docs/lib/graphqlapi/getting-started.md" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/github.svg" alt="Edit">Edit</a></amplify-external-link></docs-repo-actions><docs-feedback-callout class="css-k0t1az css-1i82ydo hydrated"><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <span> (host=DOCS-FEEDBACK-CALLOUT)--><a class="css-q4acy3" target="_blank" href="https://github.com/aws-amplify/docs/issues/new?title=[Feedback]FEEDBACK_TITLE_HERE&amp;labels=JavaScript&amp;body=**Page**%3A%20%5B%60%2Flib%2Fgraphqlapi%2Fgetting-started%2Fq%2Fplatform%2Fjs%60%5D(https%3A%2F%2Fdocs.amplify.aws%2Flib%2Fgraphqlapi%2Fgetting-started%2Fq%2Fplatform%2Fjs)%0A%0A**Feedback**%3A%0A%0A%3C!--%20your%20feedback%20here%20--%3E" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><span class="css-9e4xma"><i class="css-354oya css-1byxedo"></i><span class="text">We'd love your feedback</span></span></a></amplify-external-link><button class="css-nt7bpa"><img src="./API (GraphQL) - Getting started - Amplify Docs_files/close.svg"></button></docs-feedback-callout></docs-menu></div></div></amplify-sidebar-layout-sidebar><!--<slot name="main"> (host=amplify-sidebar-layout)--><amplify-sidebar-layout-main slot="main" class="css-1j9n6qe css-h51tzz hydrated"><!--content-ref (host=amplify-sidebar-layout-main)--><!--org-location for <amplify-toc-contents> (host=DOCS-PAGE)--><!--org-location for <amplify-sidebar-layout-toggle> (host=DOCS-PAGE)--><div><!--<slot> (host=amplify-sidebar-layout-main)--><amplify-toc-contents class="hydrated"><!--content-ref (host=amplify-toc-contents)--><!--org-location for <h1> (host=DOCS-PAGE)--><!--org-location for <h1> (host=DOCS-PAGE)--><!--org-location for <p> (host=DOCS-PAGE)--><!--org-location for [
+]--><!--org-location for <docs-next-previous> (host=DOCS-PAGE)--><!--<slot> (host=amplify-toc-contents)--><h1 class="css-6tygts category-heading">API (GraphQL)</h1><h1 class="page-heading">Getting started</h1><p>
+
+<div><blockquote>
+<p>Prerequisite: <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Install, configure and init an Amplify project]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/start/install"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Install, configure and init an Amplify project</a></stencil-route-link></docs-internal-link> with Amplify CLI</p>
+</blockquote>
+<p>In this section, you’ll learn how to deploy an AWS AppSync GraphQL API and connect to it from a JavaScript client application.</p>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h2> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h2 id="create-the-graphql-api">Create the GraphQL API</h2></a></docs-in-page-link>
+<p>To create a GraphQL API, use the Amplify <code>add</code> command:</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify add api</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify <span class="token function">add</span> api</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<pre><code class="language-console"><p class="searchable-code">? Please select from one of the below mentioned services: GraphQL
+? Provide API name: myapi
+? Choose the default authorization type for the API: API Key
+? Enter a description for the API key: demo
+? After how many days from now the API key should expire: 7 (or your preferred expiration)
+? Do you want to configure advanced settings for the GraphQL API: No
+? Do you have an annotated GraphQL schema? No
+? Do you want a guided schema creation? Yes
+? What best describes your project: Single object with fields
+? Do you want to edit the schema now?  Yes</p><amplify-code-block line-count="10" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-console">? Please select from one of the below mentioned services: GraphQL
+? Provide API name: myapi
+? Choose the default authorization type for the API: API Key
+? Enter a description for the API key: demo
+? After how many days from now the API key should expire: 7 (or your preferred expiration)
+? Do you want to configure advanced settings for the GraphQL API: No
+? Do you have an annotated GraphQL schema? No
+? Do you want a guided schema creation? Yes
+? What best describes your project: Single object with fields
+? Do you want to edit the schema now?  Yes</div></div></amplify-code-block></code></pre>
+<p>The CLI should open this GraphQL schema in your text editor.</p>
+<p><strong>amplify/backend/api/myapi/schema.graphql</strong></p>
+<pre><code class="language-graphql"><p class="searchable-code">type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}</p><amplify-code-block line-count="5" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-graphql"><span class="token keyword">type</span> <span class="token class-name">Todo</span> <span class="token directive function">@model</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> ID<span class="token operator">!</span>
+  <span class="token attr-name">name</span><span class="token punctuation">:</span> String<span class="token operator">!</span>
+  <span class="token attr-name">description</span><span class="token punctuation">:</span> String
+<span class="token punctuation">}</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>To deploy the API, you can use the Amplify <code>push</code> command:</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify push</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify push</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<pre><code class="language-console"><p class="searchable-code">? Are you sure you want to continue? Y
+
+? Do you want to generate code for your newly created GraphQL API? Y
+? Choose the code generation language target: javascript (or your preferred language target)
+? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y
+? Enter maximum statement depth [increase from default if your schema is deeply nested]: 2</p><amplify-code-block line-count="7" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-console">? Are you sure you want to continue? Y
+
+? Do you want to generate code for your newly created GraphQL API? Y
+? Choose the code generation language target: javascript (or your preferred language target)
+? Enter the file name pattern of graphql queries, mutations and subscriptions src/graphql/**/*.js
+? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions? Y
+? Enter maximum statement depth [increase from default if your schema is deeply nested]: 2</div></div></amplify-code-block></code></pre>
+<p>Now the API has been deployed and you can start using it.</p>
+<p>Because the <code>Todo</code> type was decorated with an <code>@model</code> directive of the <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [GraphQL Transform]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/graphql-transformer/directives"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->GraphQL Transform</a></stencil-route-link></docs-internal-link> library, the CLI created the additional schema and resolvers for queries, mutations, and subscriptions as well as a DynamoDB table to hold the Todos.</p>
+<p>To view the deployed services in your project at any time, go to Amplify Console by running the Amplify <code>console</code> command:</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify console</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify console</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h2> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h2 id="configure-your-application">Configure your application</h2></a></docs-in-page-link>
+<p>Add Amplify to your app with <code>yarn</code> or <code>npm</code>:</p>
+<pre><code class="language-bash"><p class="searchable-code">npm install aws-amplify</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash"><span class="token function">npm</span> <span class="token function">install</span> aws-amplify</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>In your app’s entry point i.e. App.js, import and load the configuration file:</p>
+<pre><code class="language-javascript"><p class="searchable-code">import Amplify, { API, graphqlOperation } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);</p><amplify-code-block line-count="3" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-javascript"><span class="token keyword">import</span> Amplify<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token constant">API</span><span class="token punctuation">,</span> graphqlOperation <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'aws-amplify'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> awsconfig <span class="token keyword">from</span> <span class="token string">'./aws-exports'</span><span class="token punctuation">;</span>
+Amplify<span class="token punctuation">.</span><span class="token function">configure</span><span class="token punctuation">(</span>awsconfig<span class="token punctuation">)</span><span class="token punctuation">;</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h2> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h2 id="enable-queries-mutations-and-subscriptions">Enable queries, mutations, and subscriptions</h2></a></docs-in-page-link>
+<p>Now that the GraphQL API has deployed, it’s time to learn how to interact with it from a JavaScript client application. With GraphQL, you typically have the following types of operations:</p>
+<ul>
+<li><strong>Mutations</strong> - write data to the API (create, update, delete operations)</li>
+</ul>
+<pre><code class="language-js"><p class="searchable-code">import { API } from 'aws-amplify';
+import { createTodo, updateTodo, deleteTodo } from './graphql/mutations';
+
+const todo = { name: "My first todo", description: "Hello world!" };
+
+/* create a todo */
+await API.graphql(graphqlOperation(createTodo, {input: todo}));
+
+/* update a todo */
+await API.graphql(graphqlOperation(updateTodo, { input: { id: todoId, name: "Updated todo info" }}));
+
+/* delete a todo */
+await API.graphql(graphqlOperation(deleteTodo, { input: { id: todoId }}));</p><amplify-code-block line-count="13" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'aws-amplify'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createTodo<span class="token punctuation">,</span> updateTodo<span class="token punctuation">,</span> deleteTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./graphql/mutations'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> todo <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"My first todo"</span><span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">"Hello world!"</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* create a todo */</span>
+<span class="token keyword">await</span> <span class="token constant">API</span><span class="token punctuation">.</span><span class="token function">graphql</span><span class="token punctuation">(</span><span class="token function">graphqlOperation</span><span class="token punctuation">(</span>createTodo<span class="token punctuation">,</span> <span class="token punctuation">{</span>input<span class="token operator">:</span> todo<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* update a todo */</span>
+<span class="token keyword">await</span> <span class="token constant">API</span><span class="token punctuation">.</span><span class="token function">graphql</span><span class="token punctuation">(</span><span class="token function">graphqlOperation</span><span class="token punctuation">(</span>updateTodo<span class="token punctuation">,</span> <span class="token punctuation">{</span> input<span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> todoId<span class="token punctuation">,</span> name<span class="token operator">:</span> <span class="token string">"Updated todo info"</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* delete a todo */</span>
+<span class="token keyword">await</span> <span class="token constant">API</span><span class="token punctuation">.</span><span class="token function">graphql</span><span class="token punctuation">(</span><span class="token function">graphqlOperation</span><span class="token punctuation">(</span>deleteTodo<span class="token punctuation">,</span> <span class="token punctuation">{</span> input<span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> todoId <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<ul>
+<li><strong>Queries</strong> - read data from the API (list, get operations)</li>
+</ul>
+<pre><code class="language-js"><p class="searchable-code">import { API } from 'aws-amplify';
+import { listTodos } from './graphql/queries';
+
+const todos = await API.graphql(graphqlOperation(listTodos));</p><amplify-code-block line-count="4" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'aws-amplify'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> listTodos <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./graphql/queries'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> todos <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token constant">API</span><span class="token punctuation">.</span><span class="token function">graphql</span><span class="token punctuation">(</span><span class="token function">graphqlOperation</span><span class="token punctuation">(</span>listTodos<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<ul>
+<li><strong>Subscriptions</strong> - subscribe to changes in data for real-time functionality (onCreate, onUpdate, onDelete)</li>
+</ul>
+<pre><code class="language-js"><p class="searchable-code">import { API } from 'aws-amplify';
+import { onCreateTodo } from './graphql/subscriptions';
+
+// Subscribe to creation of Todo
+const subscription = API.graphql(
+    graphqlOperation(onCreateTodo)
+).subscribe({
+    next: (todoData) =&gt; {
+      console.log(todoData);
+      // Do something with the data
+    }
+});
+
+// Stop receiving data updates from the subscription
+subscription.unsubscribe();</p><amplify-code-block line-count="15" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-js"><span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">API</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'aws-amplify'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> onCreateTodo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./graphql/subscriptions'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Subscribe to creation of Todo</span>
+<span class="token keyword">const</span> subscription <span class="token operator">=</span> <span class="token constant">API</span><span class="token punctuation">.</span><span class="token function">graphql</span><span class="token punctuation">(</span>
+    <span class="token function">graphqlOperation</span><span class="token punctuation">(</span>onCreateTodo<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token function-variable function">next</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">todoData</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>todoData<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment">// Do something with the data</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Stop receiving data updates from the subscription</span>
+subscription<span class="token punctuation">.</span><span class="token function">unsubscribe</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h3> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h3 id="updating-your-graphql-schema">Updating Your GraphQL Schema</h3></a></docs-in-page-link>
+<p>When you create a GraphQL backend with the CLI, the schema definition for your backend data structure is saved in one of two places:</p>
+<ol>
+<li>By default, schemas are saved in <em>amplify/backend/api/YOUR-API-NAME/schema.graphql</em>. If the <code>schema.graphql</code> file exists, it will take precedence over option 2.</li>
+<li>Optionally, schemas may be saved as a set of <code>.graphql</code> files stored in the <em>amplify/backend/api/YOUR-API-NAME/schema/</em> directory. E.g. you might have files <code>Query.graphql</code>, <code>User.graphql</code>, and <code>Post.graphql</code>.</li>
+</ol>
+<p>Once your API is deployed, updating the schema is easy with the CLI. You can edit the schema file(s) and run <em>amplify push</em> command to update your GraphQL backend.</p>
+<p>For example, a sample GraphQL schema will look like this:</p>
+<pre><code class="language-graphql"><p class="searchable-code">type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+}</p><amplify-code-block line-count="5" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-graphql"><span class="token keyword">type</span> <span class="token class-name">Todo</span> <span class="token directive function">@model</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> ID<span class="token operator">!</span>
+  <span class="token attr-name">name</span><span class="token punctuation">:</span> String<span class="token operator">!</span>
+  <span class="token attr-name">description</span><span class="token punctuation">:</span> String
+<span class="token punctuation">}</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>Add a <em>priority</em> field to your Todo type:</p>
+<pre><code class="language-graphql"><p class="searchable-code">type Todo @model {
+  id: ID!
+  name: String!
+  description: String
+  priority: String
+}</p><amplify-code-block line-count="6" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-graphql"><span class="token keyword">type</span> <span class="token class-name">Todo</span> <span class="token directive function">@model</span> <span class="token punctuation">{</span>
+  <span class="token attr-name">id</span><span class="token punctuation">:</span> ID<span class="token operator">!</span>
+  <span class="token attr-name">name</span><span class="token punctuation">:</span> String<span class="token operator">!</span>
+  <span class="token attr-name">description</span><span class="token punctuation">:</span> String
+  <span class="token attr-name">priority</span><span class="token punctuation">:</span> String
+<span class="token punctuation">}</span></div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>Save your schema file and update your GraphQL backend:</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify push</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify push</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>When you run the <em>push</em> command, you will notice that your schema change is automatically detected, and your backend will be updated respectively. </p>
+<pre><code class="language-console"><p class="searchable-code">| Category | Resource name   | Operation | Provider plugin   |
+| -------- | --------------- | --------- | ----------------- |
+| Api      | myapi           | Update    | awscloudformation |</p><amplify-code-block line-count="3" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-console">| Category | Resource name   | Operation | Provider plugin   |
+| -------- | --------------- | --------- | ----------------- |
+| Api      | myapi           | Update    | awscloudformation |</div></div></amplify-code-block></code></pre>
+<p>When the update is complete, you can see the changes to your backend by running the following command and select GraphQL option.</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify api console
+? Please select from one of the below mentioned services: (Use arrow keys)
+❯ GraphQL 
+  REST </p><amplify-code-block line-count="4" class="css-1lj8awz hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-1ujgc69"><div><span>1</span><span>2</span><span>3</span><span>4</span></div></div><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify api console
+? Please <span class="token keyword">select</span> from one of the below mentioned services: <span class="token punctuation">(</span>Use arrow keys<span class="token punctuation">)</span>
+❯ GraphQL 
+  REST </div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h3> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h3 id="using-graphql-transformers">Using GraphQL Transformers</h3></a></docs-in-page-link>
+<p>As you can notice in the sample schema file above, the schema has a <code>@model</code> directive. The <code>@model</code> directive leverages a set of libraries that can help simplify the process of bootstrapping highly scalable, serverless GraphQL APIs on AWS. The <code>@model</code> directive tells the GraphQL Transform that we would like to store Todo objects in an Amazon DynamoDB table and configure CRUD operations for it. When you create or update your backend with <em>push</em> command, the CLI will automatically create and configure a new DynamoDB table that works with your AppSync API. The <code>@model</code> directive is just one of multiple transformers that can be used by annotating your <em>schema.graphql</em>. </p>
+<p>The following directives are available to be used when defining your schema:  </p>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@model on Object</td>
+<td>Store objects in DynamoDB and configure CRUD resolvers.</td>
+</tr>
+<tr>
+<td>@auth on Object</td>
+<td>Define authorization strategies for your API.</td>
+</tr>
+<tr>
+<td>@connection on Field</td>
+<td>Specify relationships between @model object types.</td>
+</tr>
+<tr>
+<td>@searchable on Object</td>
+<td>Stream data of an @model object type to Amazon Elasticsearch Service.</td>
+</tr>
+<tr>
+<td>@versioned on Object</td>
+<td>Add object versioning and conflict detection to a @model.</td>
+</tr>
+</tbody></table></div>
+<p>You may also write your own transformers to implement reproducible patterns that you find useful. To learn more about the GraphQL Transform libraries see <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [GraphQL Transform Documentation]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/graphql-transformer/directives"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->GraphQL Transform Documentation</a></stencil-route-link></docs-internal-link>.</p>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h3> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h3 id="mocking-and-local-testing">Mocking and Local Testing</h3></a></docs-in-page-link>
+<p>Amplify supports running a local mock server for testing your application with AWS AppSync, including debugging of resolvers, before pushing to the cloud. Please see the <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [CLI Toolchain documentation]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/usage/mock"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->CLI Toolchain documentation</a></stencil-route-link></docs-internal-link> for more details.</p>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h3> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h3 id="generate-client-types-from-a-graphql-schema">Generate client types from a GraphQL schema</h3></a></docs-in-page-link>
+<p>When working with GraphQL data it is useful to import types from your schema for type safety. You can do this with the Amplify CLI’s automated code generation feature. The CLI automatically downloads GraphQL Introspection Schemas from the defined GraphQL endpoint and generates TypeScript or Flow classes for you. Every time you push your GraphQL API, the CLI will provide you the option to generate types and statements.</p>
+<p>If you want to generate your GraphQL statements and types, run:</p>
+<pre><code class="language-bash"><p class="searchable-code">amplify codegen</p><amplify-code-block line-count="1" class="css-1lj8awz css-75wbz6 hydrated"><!--content-ref (host=amplify-code-block)--><!--org-location for <div> (host=DOCS-PAGE)--><div class="css-khgmir"><!--<slot name="content"> (host=amplify-code-block)--><div slot="content" class="highlight highlight-source-bash">amplify codegen</div></div><button class="css-16vr62x"><span>copy</span></button></amplify-code-block></code></pre>
+<p>A TypeScript or Flow type definition file will be generated in your target folder.  </p>
+<docs-in-page-link class="hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <h3> (host=DOCS-PAGE)--><a><!--<slot> (host=docs-in-page-link)--><h3 id="api-configuration-in-the-amplify-folder">API configuration in the amplify folder</h3></a></docs-in-page-link>
+<p>The Amplify CLI will create an <code>amplify/backend/api</code> folder that will hold the existing GraphQL schema, resolvers, and additional configuration around the API. To learn more about how the CLI manages this configuration, check out the documentation <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [here]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/graphql-transformer/overview"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->here</a></stencil-route-link></docs-internal-link>. To learn how to configure custom GraphQL resolvers, check out the documentation <docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [here]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/cli/graphql-transformer/resolvers"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->here</a></stencil-route-link></docs-internal-link>.</p>
+</div></p>
+<docs-next-previous class="css-20cstw hydrated"><div></div><docs-internal-link class="css-1uu4wt0 hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for <div> (host=DOCS-NEXT-PREVIOUS)--><!--org-location for <img> (host=DOCS-NEXT-PREVIOUS)--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/lib/graphqlapi/concepts/q/platform/js"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)--><div class="css-1vaows2 css-15p3d4c"><span>next</span><h4>Concepts</h4></div><img src="./API (GraphQL) - Getting started - Amplify Docs_files/arrow-right.svg" alt="Next Page"></a></stencil-route-link></docs-internal-link></docs-next-previous></amplify-toc-contents><amplify-sidebar-layout-toggle in-view-class="in-view" class="three-dee-effect css-4whoga css-124v1ot hydrated"><!--content-ref (host=amplify-sidebar-layout-toggle)--><!--org-location for <img> (host=DOCS-PAGE)--><!--org-location for <img> (host=DOCS-PAGE)--><!--<slot> (host=amplify-sidebar-layout-toggle)--><img class="burger-graphic" src="./API (GraphQL) - Getting started - Amplify Docs_files/burger.svg"><img class="ex-graphic" src="./API (GraphQL) - Getting started - Amplify Docs_files/close.svg"></amplify-sidebar-layout-toggle></div></amplify-sidebar-layout-main><!--<slot name="toc"> (host=amplify-sidebar-layout)--><div slot="toc" class="css-1wv0zgd"><div><amplify-toc class="hydrated css-m0ulp5"><div><h4 class="css-1tgmbmb">Getting started</h4><docs-in-page-link class="css-aswsc1 hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Create the GraphQL API</div></a></docs-in-page-link><docs-in-page-link class="css-aswsc1 hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Configure your application</div></a></docs-in-page-link><docs-in-page-link class="css-aswsc1 hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Enable queries, mutations, and subscriptions</div></a></docs-in-page-link><docs-in-page-link class="css-uqxlbg hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Updating Your GraphQL Schema</div></a></docs-in-page-link><docs-in-page-link class="css-uqxlbg hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Using GraphQL Transformers</div></a></docs-in-page-link><docs-in-page-link class="css-uqxlbg hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Mocking and Local Testing</div></a></docs-in-page-link><docs-in-page-link class="css-uqxlbg hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>Generate client types from a GraphQL schema</div></a></docs-in-page-link><docs-in-page-link class="css-uqxlbg hydrated"><!--content-ref (host=docs-in-page-link)--><!--org-location for <div> (host=AMPLIFY-TOC)--><a><!--<slot> (host=docs-in-page-link)--><div>API configuration in the amplify folder</div></a></docs-in-page-link></div></amplify-toc></div></div></div></amplify-sidebar-layout></amplify-toc-provider></div><docs-footer class="hydrated"><docs-container class="css-y7udmp css-1hbw5z0 hydrated"><!--content-ref (host=docs-container)--><!--org-location for <div> (host=DOCS-FOOTER)--><div class=""><!--<slot> (host=docs-container)--><div class="css-ens8oe"><div class="css-1yxcpri"><img src="./API (GraphQL) - Getting started - Amplify Docs_files/logo-light.svg"><div><h3>Amplify</h3><docs-internal-link class="hydrated"><!--content-ref (host=docs-internal-link)--><!--org-location for [Getting Started]--><stencil-route-link class="hydrated"><!--content-ref (host=stencil-route-link)--><!--org-location for [<slot> (host=docs-internal-link)]--><a class="" href="https://docs.amplify.aws/start/q/integration/react"><!--<slot> (host=stencil-route-link)--><!--<slot> (host=docs-internal-link)-->Getting Started</a></stencil-route-link></docs-internal-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [Support]--><a class="css-q4acy3" target="_blank" href="https://discord.gg/jWVbPfC" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->Support</a></amplify-external-link></div><div><h3>Community</h3><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [Events]--><a class="css-q4acy3" target="_blank" href="https://amplify.aws/community/events" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->Events</a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [Posts]--><a class="css-q4acy3" target="_blank" href="https://amplify.aws/community/posts" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->Posts</a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [Members]--><a class="css-q4acy3" target="_blank" href="https://amplify.aws/community/contributors" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->Members</a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [Newsletters]--><a class="css-q4acy3" target="_blank" href="https://amplify.aws/community/newsletters" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->Newsletters</a></amplify-external-link></div></div><div class="css-1aoccyr"><div class="css-y1qw85"><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-FOOTER)--><a class="css-q4acy3" target="_blank" href="https://twitter.com/AWSAmplify" title="Twitter" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/twitter.svg"></a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-FOOTER)--><a class="css-q4acy3" target="_blank" href="https://discord.gg/jWVbPfC" title="Discord" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img alt="Discord Logo" src="./API (GraphQL) - Getting started - Amplify Docs_files/discord-white.svg"></a></amplify-external-link><amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-FOOTER)--><a class="css-q4acy3" target="_blank" href="https://github.com/aws-amplify" title="GitHub" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img src="./API (GraphQL) - Getting started - Amplify Docs_files/github-light.svg"></a></amplify-external-link></div><div class="css-19lbeye"><span><img src="./API (GraphQL) - Getting started - Amplify Docs_files/aws.svg">Amplify open source, documentation and community are supported
+                by Amazon Web Services © 2020, Amazon Web Services, Inc. and its
+                affiliates. All rights reserved. View the <amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [site terms]--><a class="css-q4acy3" target="_blank" href="https://aws.amazon.com/terms/" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->site terms</a></amplify-external-link> and <amplify-external-link class="hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for [privacy policy]--><a class="css-q4acy3" target="_blank" href="https://aws.amazon.com/privacy/" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)-->privacy policy</a></amplify-external-link>.<ul></ul>Flutter and the related logo are trademarks of Google LLC. We are not endorsed by or affiliated with Google LLC.</span></div></div></div></div></docs-container></docs-footer><docs-chat-button class="hydrated"><amplify-external-link class="css-swyh7p hydrated"><!--content-ref (host=amplify-external-link)--><!--org-location for <img> (host=DOCS-CHAT-BUTTON)--><!--org-location for [Open Chat]--><a class="css-q4acy3" target="_blank" href="https://discord.gg/jWVbPfC" rel="noopener noreferrer"><!--<slot> (host=amplify-external-link)--><img class="css-dp2ecj" alt="Discord Logo" src="./API (GraphQL) - Getting started - Amplify Docs_files/discord-white.svg">Open Chat<img class="css-1kpwzqq" src="./API (GraphQL) - Getting started - Amplify Docs_files/external-link-white.svg"></a></amplify-external-link></docs-chat-button></docs-page></stencil-route></stencil-route-switch></stencil-router></docs-router> <script src="./API (GraphQL) - Getting started - Amplify Docs_files/docsearch.min.js"></script>
+ <noscript>This website requires your browser to execute JavaScript.</noscript> <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+  if (registration) {
+    registration.unregister().then(function() { location.reload(true) });
+  }
+  });
+}</script>
+
+</body></html>

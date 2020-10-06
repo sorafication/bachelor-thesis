@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.2)  5 OCT 2020 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.7.2)  6 OCT 2020 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -486,7 +486,7 @@ LaTeX Warning: Label `fig:meine-grafik' multiply defined.
 LaTeX Warning: Label `fig:meine-grafik' multiply defined.
 
 
-LaTeX Warning: Label `fig:meine-grafik' multiply defined.
+LaTeX Warning: Label `lst:React Greeting' multiply defined.
 
 )
 \openout1 = `document.aux'.
@@ -646,7 +646,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 ] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/CBC.tex) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/20-Einleitung/Gliederung.tex) [2] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/30-Serverless-Theorie/CloudComputing.tex [3
 
 ]
-<30-Serverless-Theorie/ServiceModelle.png, id=464, 1335.99126pt x 934.49126pt>
+<30-Serverless-Theorie/ServiceModelle.png, id=470, 1335.99126pt x 934.49126pt>
 File: 30-Serverless-Theorie/ServiceModelle.png Graphic file (type png)
 <use 30-Serverless-Theorie/ServiceModelle.png>
 Package pdftex.def Info: 30-Serverless-Theorie/ServiceModelle.png  used on input line 37.
@@ -660,16 +660,16 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [11
 
 ] [12] [13] [14] [15]
-<40-AWS/Appsync.png, id=658, 978.65625pt x 422.07687pt>
+<40-AWS/Appsync.png, id=664, 978.65625pt x 422.07687pt>
 File: 40-AWS/Appsync.png Graphic file (type png)
 <use 40-AWS/Appsync.png>
-Package pdftex.def Info: 40-AWS/Appsync.png  used on input line 220.
+Package pdftex.def Info: 40-AWS/Appsync.png  used on input line 218.
 (pdftex.def)             Requested size: 455.24411pt x 196.34099pt.
  [16 </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/40-AWS/Appsync.png (PNG copy)>] [17] [18] [19] [20] [21]
 Underfull \vbox (badness 1092) has occurred while \output is active []
 
  [22] [23] [24] [25] [26]) [27] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Imp-Allgemein.tex
-<50-Implementierung/Architektur.png, id=819, 884.30376pt x 692.5875pt>
+<50-Implementierung/Architektur.png, id=825, 884.30376pt x 692.5875pt>
 File: 50-Implementierung/Architektur.png Graphic file (type png)
 <use 50-Implementierung/Architektur.png>
 Package pdftex.def Info: 50-Implementierung/Architektur.png  used on input line 9.
@@ -677,12 +677,12 @@ Package pdftex.def Info: 50-Implementierung/Architektur.png  used on input line 
  [28
 
  </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Architektur.png>] [29]
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
 
  []
 
 [30]
-Underfull \hbox (badness 10000) in paragraph at lines 119--125
+Underfull \hbox (badness 10000) in paragraph at lines 120--126
 
  []
 
@@ -700,7 +700,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--45
 
  []
 
-<50-Implementierung/AppSync-DynamoDB.png, id=929, 979.66pt x 319.1925pt>
+<50-Implementierung/AppSync-DynamoDB.png, id=937, 979.66pt x 319.1925pt>
 File: 50-Implementierung/AppSync-DynamoDB.png Graphic file (type png)
 <use 50-Implementierung/AppSync-DynamoDB.png>
 Package pdftex.def Info: 50-Implementierung/AppSync-DynamoDB.png  used on input line 69.
@@ -718,14 +718,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--110
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 119--123
-[]\OT1/ptm/m/n/12 schreibt die-se in die DynamoDB-Tabelle. Ei-ne Schwie-rig-keit war es, ei-ne Iden-tit[]at im
+Underfull \hbox (badness 3635) in paragraph at lines 119--123
+[]\OT1/ptm/m/n/12 ha-ben den Zweck tem-por[]aren Zu-griff auf den Ac-count [][]\OT1/pcr/m/n/12 Cbc-Master []\OT1/ptm/m/n/12 zu erm[]ogli-
  []
 
 [35
 
 ]
-<50-Implementierung/IAM-Rolle.png, id=1001, 1057.9525pt x 618.31pt>
+<50-Implementierung/IAM-Rolle.png, id=1012, 1057.9525pt x 618.31pt>
 File: 50-Implementierung/IAM-Rolle.png Graphic file (type png)
 <use 50-Implementierung/IAM-Rolle.png>
 Package pdftex.def Info: 50-Implementierung/IAM-Rolle.png  used on input line 146.
@@ -738,7 +738,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--167
 [36
 
  </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/IAM-Rolle.png>] [37]
-<50-Implementierung/DynamoWeb.png, id=1033, 1251.67625pt x 483.8075pt>
+<50-Implementierung/DynamoWeb.png, id=1043, 1251.67625pt x 483.8075pt>
 File: 50-Implementierung/DynamoWeb.png Graphic file (type png)
 <use 50-Implementierung/DynamoWeb.png>
 Package pdftex.def Info: 50-Implementierung/DynamoWeb.png  used on input line 247.
@@ -753,7 +753,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 267--269
 
  []
 
-<50-Implementierung/Login.png, id=1055, 485.815pt x 462.72874pt>
+<50-Implementierung/Login.png, id=1065, 485.815pt x 462.72874pt>
 File: 50-Implementierung/Login.png Graphic file (type png)
 <use 50-Implementierung/Login.png>
 Package pdftex.def Info: 50-Implementierung/Login.png  used on input line 289.
@@ -764,50 +764,50 @@ Underfull \hbox (badness 4846) in paragraph at lines 366--373
  []
 
 [41]
-<50-Implementierung/Webanwendung.png, id=1117, 1525.7pt x 840.13875pt>
+<50-Implementierung/Webanwendung.png, id=1130, 1525.7pt x 840.13875pt>
 File: 50-Implementierung/Webanwendung.png Graphic file (type png)
 <use 50-Implementierung/Webanwendung.png>
-Package pdftex.def Info: 50-Implementierung/Webanwendung.png  used on input line 419.
+Package pdftex.def Info: 50-Implementierung/Webanwendung.png  used on input line 420.
 (pdftex.def)             Requested size: 455.24411pt x 250.68471pt.
 
-Underfull \hbox (badness 6110) in paragraph at lines 426--434
+Underfull \hbox (badness 6110) in paragraph at lines 427--435
 \OT1/ptm/m/n/12 Da al-le Kom-po-nen-ten er-folg-reich im-ple-men-tiert wor-den sind und die We-ban-wen-
  []
 
 
-Underfull \hbox (badness 2418) in paragraph at lines 426--434
+Underfull \hbox (badness 2418) in paragraph at lines 427--435
 \OT1/ptm/m/n/12 dung al-le ge-for-der-ten Auf-ga-ben erf[]ullt, kann sie ver[]offent-licht wer-den. Mit-hil-fe von
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 426--434
+Underfull \hbox (badness 10000) in paragraph at lines 427--435
 
  []
 
 [42 </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Webanwendung.png>]
-<50-Implementierung/SSL.png, id=1137, 1399.2275pt x 703.62875pt>
+<50-Implementierung/SSL.png, id=1150, 1399.2275pt x 703.62875pt>
 File: 50-Implementierung/SSL.png Graphic file (type png)
 <use 50-Implementierung/SSL.png>
-Package pdftex.def Info: 50-Implementierung/SSL.png  used on input line 456.
+Package pdftex.def Info: 50-Implementierung/SSL.png  used on input line 458.
 (pdftex.def)             Requested size: 455.24411pt x 228.92357pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--464
+Underfull \hbox (badness 10000) in paragraph at lines 463--466
 
  []
 
-) [43 </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/SSL.png>] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Zusammenfassung.tex [44
+[43 </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/SSL.png>]) [44] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Zusammenfassung.tex [45
 
 ]
-<50-Implementierung/Kosten.png, id=1163, 1119.18124pt x 322.20375pt>
+<50-Implementierung/Kosten.png, id=1181, 1119.18124pt x 322.20375pt>
 File: 50-Implementierung/Kosten.png Graphic file (type png)
 <use 50-Implementierung/Kosten.png>
-Package pdftex.def Info: 50-Implementierung/Kosten.png  used on input line 46.
+Package pdftex.def Info: 50-Implementierung/Kosten.png  used on input line 55.
 (pdftex.def)             Requested size: 455.24411pt x 131.0621pt.
- [45
+ [46
 
- </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Kosten.png>]) [46
+ </Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/50-Implementierung/Kosten.png>]) [47
 
-] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Ausblick.tex) [47] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.bbl
+] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/80-Ende/Ausblick.tex) [48] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.bbl
 Underfull \hbox (badness 4634) in paragraph at lines 11--15
 []\OT1/ptm/m/n/12 Alexander Lapp / Ni-co Lit-zel, \OT1/ptm/m/it/12 Big da-ta, sql und nos-ql { ei-ne kur-ze
  []
@@ -844,17 +844,12 @@ Underfull \hbox (badness 1642) in paragraph at lines 49--51
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 77--80
-[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Class: Aws.organizations\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
+[][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Class: Aws.organizations\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / docs\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--80
-\OT1/pcr/m/n/12 docs\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / AWSJavaScriptSDK / latest / AWS /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--80
-\OT1/pcr/m/n/12 Organizations\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 html#listAccounts -[] property$[][]\OT1/ptm/m/n/12 , 2020, [Ab-ge-ru-fen
+Underfull \hbox (badness 2644) in paragraph at lines 77--80
+\OT1/pcr/m/n/12 AWSJavaScriptSDK / latest / AWS / Organizations\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 html$[][]\OT1/ptm/m/n/12 , 2020, [Ab-
  []
 
 
@@ -872,7 +867,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--85
 \OT1/pcr/m/n/12 v2 / developer -[] guide / creating -[] and -[] calling -[] service -[]
  []
 
-[48]
+[49]
 Underfull \hbox (badness 10000) in paragraph at lines 92--95
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 In-te-gra-ti-on von ama-zon co-gni-to in web- und mo-bi-le ap-
  []
@@ -953,11 +948,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--140
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--140
-\OT1/pcr/m/n/12 q / integration / react#create -[] login -[] ui$[][]\OT1/ptm/m/n/12 , 2020, [Ab-ge-ru-fen am
- []
-
-
 Underfull \hbox (badness 2173) in paragraph at lines 147--150
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Pre-re-qui-si-tes\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / docs\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amplify\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 aws / start / getting -[]
  []
@@ -972,12 +962,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--155
 \OT1/pcr/m/n/12 docs / apollo -[] server / performance / caching/$[][]\OT1/ptm/m/n/12 , 2020, [Ab-ge-ru-fen
  []
 
-[49]
+
 Underfull \hbox (badness 10000) in paragraph at lines 157--160
 []\OT1/ptm/m/n/12 Back4App, \OT1/ptm/m/it/12 Gra-ph-ql vs rest\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / medium\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / @back4apps /
  []
 
-
+[50]
 Underfull \hbox (badness 1546) in paragraph at lines 166--169
 []\OT1/ptm/m/n/12 Chandan Ku-mar, \OT1/ptm/m/it/12 5 best ser-ver-less se-cu-ri-ty plat-form for your ap-p-li-ca-ti-ons\OT1/ptm/m/n/12 ,
  []
@@ -998,141 +988,146 @@ Underfull \hbox (badness 3407) in paragraph at lines 176--179
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 186--189
+Underfull \hbox (badness 1546) in paragraph at lines 186--190
+[]\OT1/ptm/m/n/12 Facundo Vic-tor, \OT1/ptm/m/it/12 using pro-fi-le that as-su-me ro-le in aws-sdk (aws ja-vas-cript
+ []
+
+
+Underfull \hbox (badness 5622) in paragraph at lines 186--190
+\OT1/ptm/m/it/12 sdk)\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / stackoverflow\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / questions / 45989042 / using -[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--190
+\OT1/pcr/m/n/12 profile -[] that -[] assume -[] role -[] in -[] aws -[] sdk -[] aws -[] javascript -[] sdk$[][]\OT1/ptm/m/n/12 ,
+ []
+
+
+Underfull \hbox (badness 3179) in paragraph at lines 192--195
 []\OT1/ptm/m/n/12 Fielding, et al., \OT1/ptm/m/it/12 Hy-per-text trans-fer pro-to-col (htt-p/1.1): Ca-ching\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
-[]\OT1/ptm/m/n/12 https://material-table.com/, \OT1/ptm/m/it/12 Re-act da-ta ta-ble com-po-nent that is ba-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
-\OT1/ptm/m/it/12 sed on material-ui\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / reactjs\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / docs / react -[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
 []\OT1/ptm/m/n/12 Maximilian Schwarz-mu-el-ler, \OT1/ptm/m/it/12 An-gu-lar vs re-act vs vue [2020 up-da-te]\OT1/ptm/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 202--205
 [][]$\OT1/pcr/m/n/12 https : / / academind\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / learn / angular / angular -[] vs -[] react -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--206
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
 \OT1/ptm/m/it/12 cloud\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 crn\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / news / security / check -[] point -[] to -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--206
+Underfull \hbox (badness 10000) in paragraph at lines 207--211
 \OT1/pcr/m/n/12 buy -[] serverless -[] security -[] firm -[] protego -[] to -[] protect -[] cloud$[][]\OT1/ptm/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
 []\OT1/ptm/m/n/12 Microsoft Azu-re, \OT1/ptm/m/it/12 Was ist cloud com-pu-ting?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
 \OT1/pcr/m/n/12 azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de / overview / what -[] is -[] cloud -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--211
+Underfull \hbox (badness 10000) in paragraph at lines 213--216
 \OT1/pcr/m/n/12 computing / #cloud -[] deployment -[] types$[][]\OT1/ptm/m/n/12 , 2020, [Ab-ge-ru-fen am
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--216
+Underfull \hbox (badness 10000) in paragraph at lines 218--221
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist de-vops?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Was ist saas? saas (software-as-a-service)\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
+Underfull \hbox (badness 10000) in paragraph at lines 228--231
 \OT1/pcr/m/n/12 azure\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 microsoft\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de -[] de / overview / what -[] is -[] saas/$[][]\OT1/ptm/m/n/12 , 2020,
  []
 
-[50]
-Underfull \hbox (badness 7613) in paragraph at lines 228--231
+[51]
+Underfull \hbox (badness 7613) in paragraph at lines 233--236
 []\OT1/ptm/m/n/12 Moritz St[]uck-ler, \OT1/ptm/m/it/12 Was ist ei-gent-lich github?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / t3n\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 de / news /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
 []\OT1/ptm/m/n/12 Mozilla and in-di-vi-du-al con-tri-bu-tors, \OT1/ptm/m/it/12 Pro-mi-ses be-nut-zen\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
+Underfull \hbox (badness 10000) in paragraph at lines 238--241
 \OT1/pcr/m/n/12 / / developer\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 mozilla\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / de / docs / Web / JavaScript / Guide /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Web-sockets\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / developer\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 mozilla\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / de / docs /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--246
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
 []\OT1/ptm/m/n/12 Red Hat, Inc., \OT1/ptm/m/it/12 Zu-stands-be-haf-tet oder zu-stands-los?\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--246
+Underfull \hbox (badness 10000) in paragraph at lines 248--251
 \OT1/pcr/m/n/12 www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 redhat\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / topics / cloud -[] native -[] apps / stateful -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--256
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
 [][]$\OT1/pcr/m/n/12 https : / / aws\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 amazon\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / de / blogs / architecture / things -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--256
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
 \OT1/pcr/m/n/12 to -[] consider -[] when -[] you -[] build -[] a -[] graphql -[] api -[] with -[] aws -[]
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 262--265
+Underfull \hbox (badness 3058) in paragraph at lines 267--270
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Sche-mas and ty-pes\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / graphql\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / learn / schema /
  []
 
 
-Underfull \hbox (badness 3148) in paragraph at lines 267--270
+Underfull \hbox (badness 3148) in paragraph at lines 272--275
 [][]\OT1/ptm/m/n/12 , \OT1/ptm/m/it/12 Ser-ving over http\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / graphql\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 org / learn / serving -[]
  []
 
 
-Underfull \hbox (badness 4886) in paragraph at lines 272--276
+Underfull \hbox (badness 4886) in paragraph at lines 277--281
 []\OT1/ptm/m/n/12 Tilman Wit-ten-horst, \OT1/ptm/m/it/12 Bun-des-po-li-zei spei-chert bodycam-aufnahmen in ama-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
 \OT1/ptm/m/it/12 z-ons aws-cloud\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 heise\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 de / newsticker / meldung /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--276
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
 \OT1/pcr/m/n/12 Bundespolizei -[] speichert -[] Bodycam -[] Aufnahmen -[] in -[] Amazons -[]
  []
 
 
-Underfull \hbox (badness 4981) in paragraph at lines 278--281
+Underfull \hbox (badness 4981) in paragraph at lines 283--286
 []\OT1/ptm/m/n/12 W3Schools, \OT1/ptm/m/it/12 Re-act jsx\OT1/ptm/m/n/12 , [][]$\OT1/pcr/m/n/12 https : / / www\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 w3schools\OML/ztmcm/m/it/12 :\OT1/pcr/m/n/12 com / react / react _
  []
 
-) [51] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/Lambda.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
+) [52] (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/Lambda.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
 
 Package Listings Warning: Text dropped after begin of listing on input line 4.
 
@@ -1143,7 +1138,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 [0
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 78.
+LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 80.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
@@ -1152,12 +1147,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]
-Overfull \hbox (307.82533pt too wide) in paragraph at lines 163--164
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/React-Main.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
+ [2]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/React-Main.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
@@ -1178,15 +1168,22 @@ Package Listings Warning: Text dropped after begin of listing on input line 4.
 [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 275.
+ [6]) (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/90-Anhang/GraphQL-Schema.tex (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/99-Format/JavaScript/JSStyle.tex)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 275.
+
+Package Listings Warning: Text dropped after begin of listing on input line 4.
+
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
  (/Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 275.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 275.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 07E2323C5014B2259B9ED24FB84FCAEE;4871.
+(rerunfilecheck)             Checksum: 00F46720F560DD71681F320151B0B318;4946.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1194,21 +1191,21 @@ LaTeX Warning: There were multiply-defined labels.
  )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 369 ({)
+### simple group (level 1) entered at line 367 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 12877 strings out of 480608
- 198368 string characters out of 5903631
- 605626 words of memory out of 5000000
- 27540 multiletter control sequences out of 15000+600000
+ 12911 strings out of 480608
+ 199080 string characters out of 5903631
+ 605285 words of memory out of 5000000
+ 27550 multiletter control sequences out of 15000+600000
  580081 words of font info for 128 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,78p,1255b,2462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,12n,78p,1255b,2464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.pdf (65 pages, 1117836 bytes).
+Output written on /Users/wieczorek/Documents/Github/bachelor-thesis/BALaTeX/document.pdf (67 pages, 1122341 bytes).
 PDF statistics:
- 1900 PDF objects out of 2073 (max. 8388607)
- 1789 compressed objects within 18 object streams
- 836 named destinations out of 1000 (max. 500000)
- 579 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1943 PDF objects out of 2073 (max. 8388607)
+ 1828 compressed objects within 19 object streams
+ 855 named destinations out of 1000 (max. 500000)
+ 587 words of extra memory for PDF output out of 10000 (max. 10000000)
 

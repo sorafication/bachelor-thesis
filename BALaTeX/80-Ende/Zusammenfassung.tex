@@ -13,19 +13,22 @@ Da die meisten Dienste nach benötigten Anforderungen abgerechnet werden, könne
 Diese Ziele wurden erreicht. Die genaue Übersicht der Kosten folgt im nächsten Abschnitt.
 
 Eine Integration mit Unternehmensidentäten war zum Zeitpunkt leider nicht umsetzbar.
-Zum einem ist der Aufwand zu groß, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Wünschen.
+Zum einem würde der Aufwand den gesetzten Rahmen für die Bachelorarbeit deutlich überschreiten, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Wünschen.
 
 Die gründliche Auseinandersetzung mit den einzelnen Diensten stellte sich als äußerst nützlich dar.
 Durch die Abstraktion von Amplify ist nicht jeder Prozess im Detail ersichtlich und es kann schwerfallen den genauen Zusammenhang zu verstehen.
-Dank der intensiven Beschäftigung des Designs ist es leichter die optimalen Anwendungsfälle zu erörtern, sowie auch außerhalb von Amplify mit den Diensten arbeiten zu können.
+Dank der intensiven Prüfung im dritten Kapitel ist es leichter die Methodik der einzelnen Technologien zu begreifen.
+Zugleich ermöglichst es die Verwendung der Dienste ohne Amplify, da genügend Verständnis geschaffen wurde.
+Das erlangte Wissen über die Serverless Architektur kann als Vorlage für weitere Projekte genutzt werden.
 
-Die Entwicklung der Anwendung mit Amplify stellte sich als problemlos dar.
+Der Einsatz von Amplify ermöglichte eine bequemere und übersichtlichere Realisierung.
 Viele Vorgänge wurden merklich beschleunigt.
 Zudem war es so möglich innerhalb von kurzer Zeit eine vollständige serverlose Webanwendung mit den essentiellsten Funktionen zu entwickeln, die keine Wartung oder Administration benötigt.
 \clearpage
 
 \subsection{Kosten}
-Neben dem minimalen Aufwands zählen die Kosten ebenfalls zu den Vorteilen der Serverless Architektur.
+\label{Kosten}
+Neben dem minimalen Aufwand zählen die Kosten ebenfalls zu den Vorteilen der Serverless Architektur.
 Während des gesamten dritten Kapitels wurden Informationen zur Abrechnung der einzelnen Dienste aufgestellt.
 Viele Dienste bieten kostenlose Kontingente an.
 Dies führt vor allem zu extrem geringen Kosten während der Entwicklungsphase.
@@ -35,17 +38,23 @@ In den Monaten August und September sind nur Kosten für die Dienste AppSync und
 Lambda, Amplify und Cognito sind während des Zeitraums ohne Kosten genutzt worden.
 Die Kosten für September belaufen sich auf 0.12 USD für AppSync und 0.02 USD für DynamoDB.
 Im August sind die Kosten vergleichbar.
-Sobald die Anwendung produktiv genutzt wird, und die kostenlosen Kontingente aufgebraucht sind, werden die Kosten höher ansteigen.
+Sobald die Anwendung produktiv genutzt wird, und die kostenlosen Kontingente aufgebraucht sind, steigen die Kosten.
 
 Zur Zeit kann der Eindruck bestätigt werden, dass die Kosten mit Serverless Diensten gering gehalten werden können.
-Eine vergleichbare Anwendung für ca. 0.15 USD pro Monat ist nur sehr schwer bis gar nicht realisierbar.
+Eine vergleichbare Anwendung für ca. 0.15 USD pro Monat ist ohne den Einsatz der Serverless Architektur nur sehr schwer bis gar nicht realisierbar.
 Wie sich die Kosten bei intensiver Nutzung verhalten muss zu einem späteren Zeitpunkt erneut evaluiert werden.
+Eine exakte Prognose ist schwierig.
+Bis auf einen Anstieg der Kosten bei AppSync reichen vermutlich die meisten kostenlosen Kontingente auch während der Anfangszeit aus.
+Das Kontingent von Cognito mit 50.000 Nutzern wird mit großer Wahrscheinlichkeit nie aufgebraucht.
+Sobald eine Anmeldung mit Unternehmens-Identitätsanbieter möglich ist, kann die Anzahl der Nutzer jedoch schnell über das deutliche kleinere Kontingent von 50 Nutzern überschritten werden.
+Auch bei Lambda und DynamoDB wird, sofern keine weitere Funktionalität implementiert wird, kein großer Anstieg erwartet.
+Geht man von eine Millionen API-Aufrufen pro Monat aus, würden die Kosten für AppSync bei 4,00 USD liegen.
 \\
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/Kosten.png}
     \caption{Kostenaufstellung der letzten zwei Monate}
-    \label{fig:meine-grafik}
+    \label{fig:kosten}
 \end{figure}
 \clearpage
 
@@ -58,7 +67,7 @@ Um eine qualifizierte Aussage zu einer Implementierung mit Serverless Diensten g
 Im Anschluss wurde die Serverless Architektur auf ihre Eignung geprüft und bestätigt.
 Die Umsetzung sollte möglichst von nur einer Person erfolgen, ohne Expertenwissen in jedem Fachgebiet zu erfordern.
 
-Da es mehrere mögliche Ansätze zur Umsetzung gibt, ist es besonders wichtig sich mit den einzelnen Möglichkeiten auseinanderzusetzen.
+Da es mehrere mögliche Ansätze zur Umsetzung gibt, ist es besonders wichtig die einzelnen Möglichkeiten zu vergleichen.
 Aus diesem Grund wurden im Rahmen der Bachelorarbeit einzelne Dienste des Cloud Providers AWS untersucht und miteinander verglichen.
 Nachdem die zugrundeliegende Technologie des Dienstes und der Funktionsumfang des Dienstes geprüft wurden, konnte schließlich eine Entscheidung gefällt werden.
 Die einzelnen zu prüfenden Bereiche beschäftigten sich mit den Themen API, Datenbanken, Backend-Logik und Authentifizierung.
@@ -77,7 +86,7 @@ Auf diese Daten greift das Frontend über die API zu, und erstellt mithilfe von 
 Da die gesamte Webanwendung im Internet erreichbar ist, wurde mit AWS Cognito eine Authentifizierung sichergestellt.
 Registrierte Nutzer können die Webanwendung nutzen und auf die Daten zugreifen.
 
-Während der Entwicklung wurde darauf geachtet eine möglichst einheitliche Programmiersprache inklusive Syntax zu verwenden.
+Während der Entwicklung wurde darauf geachtet eine möglichst einheitliche Programmiersprache zu verwenden.
 Aufgrunddessen können andere Kollegen der Abteilung Datacenter and Clouds, ohne viel Einarbeitung, an dieser Webanwendung weiterentwickeln.
 Zudem ist dank Anbindung an den Dienst GitHub eine gemeinsame Bearbeitung mühelos möglich.
 Die Versionsverwaltung ermöglicht es zudem leicht Änderungen nachzuvollziehen.

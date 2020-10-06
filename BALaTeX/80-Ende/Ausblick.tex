@@ -8,8 +8,11 @@ Insgesamt gibt es mehrere Bereiche, in denen die Webanwendung ausgebaut werden k
 Für den Cloud Anbieter AWS stehen API und grundlegenden Funktionalitäten bereits zur Verfügung.
 Allen interessierten Mitarbeiter kann Zugriff zur Anwendung gewährt werden.
 Da die Kosten der einzelnen AWS Accounts für die einzelnen Abteilungen interessant sind, könnte die Lambda-Funktion um diese Aufgabe erweitert werden.
+
 Jeder AWS Account zeigt eine detaillierte Übersicht der Kosten im AWS CostExplorer an.
-Mithilfe des CostExplorer SDKs können beispielsweise die Gesamtkosten der letzten Monate abgerufen werden.
+CostExplorer ist ein Dienst, der es ermöglicht detaillierte Berichte zu allen AWS-Kosten zu erstellen und analysieren.
+Die Abbildung \textit{\ref{fig:kosten} \nameref{fig:kosten}} ist beispielsweise über die Webansicht des Dienstes generiert worden.
+Mithilfe des CostExplorer SDKs können beispielsweise die Gesamtkosten der letzten Monate in einer Lambda-Funktion abgerufen werden.
 Zur Realisierung wäre es notwendig in jedem einzelnen AWS Account eine IAM-Rolle mit einer Vertrauensstellung zur Lambda-Funktion zu erstellen.
 Die Lambda-Funktion müsste anschließend die IAM-Rolle in jedem Account annehmen und die Abfragen gegen den CostExplorer Dienst ausführen.
 Zusätzlich müssten sowohl Datenbank als auch das Frontend angepasst werden.

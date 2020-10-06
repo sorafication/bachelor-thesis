@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/ -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+<meta name="charset" content="utf-8">
+<meta name="description" content="Die Begriffe Big Data, SQL und NoSQL, relationale oder objektorientierte Datenbanken werden häufig in einen Topf geworfen und in beliebigen Querverbindungen miteinander verglichen. Tatsächlich hat das eine mit dem anderen zwangsweise nichts zu tun. Woher kommt dann diese Denkweise und wie kann man die Themen korrekt einordnen?">
+<meta name="language" content="de">
+<meta name="robots" content="INDEX,FOLLOW,NOODP">
+<meta property="og:url" content="https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Big Data, SQL und NoSQL – eine kurze Übersicht">
+<meta property="og:type" content="article">
+<meta property="og:description" content="Die Begriffe Big Data, SQL und NoSQL, relationale oder objektorientierte Datenbanken werden häufig in einen Topf geworfen und in beliebigen Querverbindungen miteinander verglichen. Tatsächlich hat das eine mit dem anderen zwangsweise nichts zu tun. Woher kommt dann diese Denkweise und wie kann man die Themen korrekt einordnen?">
+<meta property="twitter:title" content="Big Data, SQL und NoSQL – eine kurze Übersicht">
+<meta property="twitter:description" content="Die Begriffe Big Data, SQL und NoSQL, relationale oder objektorientierte Datenbanken werden häufig in einen Topf geworfen und in beliebigen Querverbindungen miteinander verglichen. Tatsächlich hat das eine mit dem anderen zwangsweise nichts zu tun. Woher kommt dann diese Denkweise und wie kann man die Themen korrekt einordnen?">
+<meta property="og:image" content="https://cdn1.vogel.de/FDSgmKPxZ7a6ntU9xubzKwVEdCQ=/fit-in/1200x630/filters:format(png):quality(90)/images.vogel.de/vogelonline/bdb/1219500/1219521/original.jpg">
+<meta property="og:image:type" content="image/png">
+<meta property="twitter:image" content="https://cdn1.vogel.de/FDSgmKPxZ7a6ntU9xubzKwVEdCQ=/fit-in/1200x630/filters:format(png):quality(90)/images.vogel.de/vogelonline/bdb/1219500/1219521/original.jpg">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+<meta name="msapplication-square150x150logo" content="/mstile-150x150.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="apple-mobile-web-app-title" content="BigData-Insider">
+<meta name="application-name" content="BigData-Insider"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+<title>Big Data, SQL und NoSQL – eine kurze Übersicht</title>
+<link href="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/basic.css" media="screen,print" rel="stylesheet" type="text/css">
+<link href="https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/" rel="canonical">
+<link href="https://www.bigdata-insider.de/amp/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/" rel="amphtml">
+<link href="https://cdn1.vogel.de/FDSgmKPxZ7a6ntU9xubzKwVEdCQ=/fit-in/1200x630/filters:format(png):quality(90)/images.vogel.de/vogelonline/bdb/1219500/1219521/original.jpg" rel="images_src">
+	<link rel="preconnect" href="https://cdn1.vogel.de/" crossorigin="">
+	<link rel="dns-prefetch" href="https://cdn1.vogel.de/">
+	<link rel="preconnect" href="https://cdn2.vogel.de/" crossorigin="">
+	<link rel="dns-prefetch" href="https://cdn2.vogel.de/">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.bigdata-insider.de/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.bigdata-insider.de/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="150x150" href="https://www.bigdata-insider.de/mstile-150x150.png">
+<link rel="icon" type="image/png" sizes="144x144" href="https://www.bigdata-insider.de/mstile-144x144.png">
+<link rel="icon" type="image/png" sizes="70x70" href="https://www.bigdata-insider.de/mstile-70x70.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.bigdata-insider.de/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.bigdata-insider.de/favicon-16x16.png">
+<link rel="mask-icon" color="#ffffff" href="https://www.bigdata-insider.de/safari-pinned-tab.svg">
+<link rel="manifest" href="https://www.bigdata-insider.de/manifest.json">
+<link rel="shortcut icon" type="image/x-icon" href="https://www.bigdata-insider.de/favicon.ico">
+<link rel="icon" type="image/x-icon" href="https://www.bigdata-insider.de/favicon.ico">
+<link rel="alternate" href="https://www.bigdata-insider.de/rss/news.xml" type="application/rss+xml" title="RSS-Feed News">
+<link rel="alternate" href="https://www.bigdata-insider.de/atom/news.xml" type="application/atom+xml" title="ATOM-Feed News">
+
+<script async="" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/gtm.js"></script><script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/jquery-3.5.1.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/menu.js"></script>
+<script defer="defer" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/custom.js"></script>
+<script defer="defer" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/jquery.fitvids.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/vue@2.6.11.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/axios.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/moment-with-locales.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/nodebb_comments.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/iam.js"></script>
+<script type="application/ld+json">
+    {"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":"https:\/\/www.bigdata-insider.de\/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249\/","headline":"Big Data, SQL und NoSQL \u2013 eine kurze \u00dcbersicht","description":"Die Begriffe Big Data, SQL und NoSQL, relationale oder objektorientierte Datenbanken werden h\u00e4ufig in einen Topf geworfen und in beliebigen Querverbindungen miteinander verglichen. Tats\u00e4chlich hat das eine mit dem anderen zwangsweise nichts zu tun. Woher kommt dann diese Denkweise und wie kann man die Themen korrekt einordnen?","datePublished":"2017-05-24T07:00:00+02:00","dateModified":"2017-04-24T11:22:06+02:00","author":{"@type":"Person","name":"Nico Litzel"},"publisher":{"@type":"Organization","name":"BigData-Insider","logo":{"@type":"ImageObject","height":"60px","width":"600px","url":"https:\/\/www.bigdata-insider.de\/applications\/49\/img\/amp-logo.png"}},"image":["https:\/\/cdn1.vogel.de\/FDSgmKPxZ7a6ntU9xubzKwVEdCQ=\/fit-in\/1200x630\/filters:format(png):quality(90)\/images.vogel.de\/vogelonline\/bdb\/1219500\/1219521\/original.jpg"]}
+</script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/gpt.js"></script>
+<script>
+    //<!--
+    var googletag = googletag || {}; 
+	googletag.cmd = googletag.cmd || [];
+    //-->
+</script>
+<script defer="defer">
+    //<!--
+    
+	        function adsBlocked(callback)
+			{
+
+				var OBJ_request = new Request(
+					"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+					{
+						method: 'HEAD',
+						mode: 'no-cors'
+					}
+				);
+
+				fetch(OBJ_request).then(function (response)
+				{
+					return response;
+				}).then(function (OBJ_response)
+				{
+					callback(false);
+				}).catch(function (OBJ_e)
+				{
+					callback(true);
+				});
+			}
+			
+            var BOO_adblocker = false;
+			adsBlocked(function (blocked)
+			{
+				BOO_adblocker = !!blocked;
+			});
+    //-->
+</script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/jquery.hoverintent.min.js"></script>
+<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/jquery.responsiveiframe.js"></script>
+<script async="async" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/lazysizes.min.js"></script>
+<script async="async" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/ls.print.min.js"></script>
+<!--[if lt IE 9]>
+<script>document.createElement("video");
+document.createElement("header");
+document.createElement("section");
+document.createElement("article");
+document.createElement("footer");</script>
+<![endif]-->
+
+
+			<!-- GPT -->
+		<script>
+
+			try
+			{
+				// Array anlegen fuer spaetere Speicherung
+				var ARR_unknown_slots = [];
+				
+				googletag.cmd.push(function ()
+				{
+
+					// Client
+					var STR_client = "/2686/bdi.vogel.de/infrastruktur";
+
+					// Groessen
+					var ARR_sizes = [
+						{
+							"type": "slot",
+							"size": [[960, 252], [980, 90], [728, 90], [468, 60], [1, 1]],
+							"mappings": [[[0, 0], [1, 1]], [[1025, 0], [[960, 252], [980, 90], [728, 90], [468, 60], [1, 1]]]],
+							"id": "advertisement_01"
+						},
+						{
+							"type": "slot",
+							"size": [[420, 600], [300, 600], [160, 600], [1, 1]],
+							"mappings": [[[0, 0], [1, 1]], [[1025, 0], [[420, 600], [300, 600], [160, 600], [1, 1]]]],
+							"id": "advertisement_02"
+						},
+						{
+							"type": "slot",
+							"size": [[161, 600], [121, 600], [1, 1]],
+							"mappings": [[[0, 0], [1, 1]], [[1025, 0], [[161, 600], [121, 600], [1, 1]]]],
+							"id": "advertisement_03"
+						},
+						{
+							"type": "slot",
+							"size": [[960, 250], [728, 91], [301, 630], [301, 330], [301, 280], [301, 180]],
+							"mappings": [[[0, 0], [[301, 630], [301, 330], [301, 280], [301, 180], [1, 1]]], [[1025, 0], [[960, 250], [728, 91], [1, 1]]]],
+							"id": "advertisement_04"
+						},
+						{
+							"type": "slot",
+							"size": [[960, 251], [728, 92], [1, 1]],
+							"mappings": [[[0, 0], [1, 1]], [[1025, 0], [[960, 251], [728, 92], [1, 1]]]],
+							"id": "advertisement_05"
+						},
+						{
+							"type": "slot",
+							"size": [[300, 631], [300, 630], [300, 331], [300, 330], [300, 281], [300, 280], [1, 1]],
+							"mappings": [[[0, 0], [[300, 631], [300, 630], [300, 331], [300, 330], [300, 281], [300, 280], [1, 1]]]],
+							"id": "advertisement_06"
+						},
+						{
+							"type": "slot",
+							"size": [[300, 632], [300, 630], [300, 332], [300, 330], [300, 282], [300, 280], [1, 1]],
+							"mappings": [[[0, 0], [[300, 632], [300, 630], [300, 332], [300, 330], [300, 282], [300, 280], [1, 1]]]],
+							"id": "advertisement_07"
+						},
+						{
+							// fluid NativeAd (in Arbeit)
+							"type": "slot",
+							"size": [1, 1],
+							"mappings": [[[0, 0], [1, 1]]],
+							"id": "advertisement_08"
+						},
+						{
+							"type": "slot",
+							"size": [[800, 500], [800, 350], [800, 250], [560, 330], [300, 631], [300, 630], [300, 331], [300, 330], [300, 281], [300, 280], [1, 1]],
+							"mappings": [[[0, 0], [[800, 500], [300, 631], [300, 630], [300, 331], [300, 330], [300, 281], [300, 280], [1, 1]]], [[1025, 0], [[800, 350], [800, 250], [800, 500], [560, 330], [300, 631], [300, 630], [300, 331], [300, 330], [300, 281], [300, 280], [1, 1]]]],
+							"id": "advertisement_09"
+						},
+						{
+							"type": "slot",
+							"size": [[300, 633], [300, 333], [300, 283], [300, 120], [1, 1]],
+							"mappings": [[[0, 0], [[300, 633], [300, 333], [300, 283], [300, 120], [1, 1]]]],
+							"id": "advertisement_10"
+						},
+						{
+							"type": "slot",
+                            "size": [[300, 121], [1, 1]],
+                            "mappings": [[[0, 0], [[300, 121], [1, 1]]]],
+							"id": "advertisement_11"
+						},
+						{
+							"type": "slot",
+							"size": [[300, 150], [1, 1]],
+							"mappings": [[[0, 0], [[300, 150], [1, 1]]]],
+							"id": "advertisement_12"
+						},
+						{
+							"type": "slot",
+							"size": [[300, 284], [300, 334], [300, 634], [1, 1]],
+							"mappings": [[[0, 0], [[300, 284], [300, 334], [300, 634], [1, 1]]]],
+							"id": "advertisement_13"
+						},
+					];
+
+					// Groessen durchlaufen
+					for (var INT_i = 0; INT_i < ARR_sizes.length; INT_i++)
+					{
+
+						// Mapping vorhanden
+						if (ARR_sizes[INT_i].mappings)
+						{
+
+							// Mappings durchlaufen
+							var OBJ_size_mapping = googletag.sizeMapping();
+							for (var INT_j = 0; INT_j < ARR_sizes[INT_i].mappings.length; INT_j++)
+							{
+								OBJ_size_mapping.addSize(ARR_sizes[INT_i].mappings[INT_j][0], ARR_sizes[INT_i].mappings[INT_j][1]);
+							} // end for
+
+						} // end if
+
+						// Typen
+						switch (ARR_sizes[INT_i].type)
+						{
+
+							// Slot:
+							case "slot":
+								googletag
+									.defineSlot(STR_client, ARR_sizes[INT_i].size, ARR_sizes[INT_i].id)
+									.defineSizeMapping(OBJ_size_mapping.build())
+									.setCollapseEmptyDiv(true, true)
+									.addService(googletag.pubads());
+								console.debug("Ad Slot " + ARR_sizes[INT_i].id + " created");
+								break;
+
+							// CompanionSlot
+							case "companionslot":
+								googletag
+									.defineSlot(STR_client, ARR_sizes[INT_i].size, ARR_sizes[INT_i].id)
+									.defineSizeMapping(OBJ_size_mapping.build())
+									.addService(googletag.companionAds())
+									.addService(googletag.pubads());
+								console.debug("Ad Slot " + ARR_sizes[INT_i].id + " created");
+								break;
+
+							// OutOfPageSlot
+							case "outofpageslot":
+								googletag
+									.defineOutOfPageSlot(STR_client, ARR_sizes[INT_i].id)
+									.addService(googletag.pubads());
+								console.debug("Ad Slot " + ARR_sizes[INT_i].id + " created");
+								break;
+
+							default:
+								console.debug("Ad Slot unknown");
+
+						} // end switch
+
+					} // end for
+
+					// Banner aktivieren
+					googletag.pubads().setTargeting("kw", ['wallpaper','Absint_346568','MCM_339933','IBM_329105','Schmolz_328320','Akka_341132','Heilind_331562_E','Eigenwerbung_Mac_LMS19','323656_001','Akka_341132_2','BDI_KuenstlicheIntelligenz','twin','University4Industry_2018','IBM_330463','Siemens_318087','326965_USVSystem','Dropbox_327328','OpenMind_342583','Intel_326885','VMWare_347037','CAE_331851','Mesago_332965','DocuSign_346794_CCI','DocuSignDigitalDay-2020_Web2','entco_332526','DriveLock_314670_2','DAT_323618','Fachbuch_Bionik_2018','eigenwerbung_mac_2b2_marktingdays_2019','Megware_342394','SchneiderElectric_322966','MackBrooks_328249']);
+					/*googletag.pubads().enableSyncRendering();/* Entfernen fuer Async */
+					googletag.pubads().enableAsyncRendering();/* Aktivieren fuer Async */
+					/*googletag.pubads().enableLazyLoad();/* Wegen Zaehlpixel deaktiviert lassen */
+					googletag.pubads().addEventListener("slotRequested", function (event)
+					{
+						// Nachricht in Konsole
+						console.debug("Ad Slot " + event.slot.getSlotElementId() + " requested");
+					});
+					googletag.pubads().addEventListener("slotResponseReceived", function (event)
+					{
+						// Nachricht in Konsole
+						console.debug("Ad Slot " + event.slot.getSlotElementId() + " response received");
+					});
+					googletag.pubads().addEventListener("slotRenderEnded", function (event)
+					{
+
+						try
+						{
+
+							// Creative geladen
+							if (
+								//typeof event.creativeId !== "undefined" && event.creativeId !== null &&
+								typeof event.slot !== "undefined"
+							)
+							{
+
+								// Slot nicht leer
+								if (!event.isEmpty)
+								{
+
+									// Nachricht in Konsole
+									console.debug("Ad Slot " + event.slot.getSlotElementId() + " rendered");
+
+									// Slot als jQuery Objekt speichern
+									var OBJ_slot = $("div#" + event.slot.getSlotElementId());
+
+									// Slot einblenden (falls ausgeblendet)
+									OBJ_slot.show();
+
+									// Eigene Slots durchlaufen (keine Manipulation von z.B. BusinessAd)
+									var BOO_found = false;
+									for (var INT_i = 0; INT_i < ARR_sizes.length; INT_i++)
+									{
+
+										// Slot bekannt
+										if (event.slot.getSlotElementId() === ARR_sizes[INT_i].id)
+										{
+
+											// Element gefunden
+											BOO_found = true;
+
+											// iFrame
+											var OBJ_iframe = OBJ_slot.find("iframe");
+
+
+											// Kein iFrame, aber Tracking-Pixel
+											if (
+												OBJ_slot.find("ins>ins").length > 0 &&
+												OBJ_slot.find("ins>ins").height() === 1
+											)
+											{
+
+												// Slot ausblenden
+												OBJ_slot.hide();
+
+												// Nachricht in Konsole
+												console.debug("Ad Slot " + event.slot.getSlotElementId() +
+													" hidden (ins)");
+
+											}
+											// iFrame vorhanden
+											else if (OBJ_iframe.length > 0)
+											{
+
+												// iFrame
+												var OBJ_iframe_content = OBJ_iframe.contents();
+
+												// Tracking-Pixel nicht vorhanden
+												if (
+													(
+														OBJ_iframe_content.find("body>img").length === 0 ||
+														OBJ_iframe_content.find("body>img").height() > 1
+													) &&
+													(
+														OBJ_iframe_content.find("body>div>img").length ===
+														0 ||
+														OBJ_iframe_content.find("body>div>img").height() >
+														1
+													) &&
+													OBJ_iframe_content.find("body>div>amp-pixel").length ===
+													0 &&
+													OBJ_iframe_content.find("body>amp-pixel").length === 0
+												)
+												{
+
+													// CSS-Klasse der Buchung nach aussen uebertragen (nur div)
+													/*OBJ_slot.find("div:first").addClass(
+													 OBJ_iframe_content.find("body>div:not(#whitespace_click)").attr("class")
+													 );*/
+													OBJ_slot.find("div:first").addClass(
+														OBJ_iframe_content.find("body>div>div:not(#whitespace_click)").attr("class")
+													);
+													//OBJ_iframe_content.find("body>div:not(#whitespace_click)").attr("class", "");
+													OBJ_iframe_content.find("body>div>div:not(#whitespace_click)").attr("class", "");
+													OBJ_slot.find("div:first").addClass(
+														OBJ_iframe_content.find("body>div>article:not(#whitespace_click)").attr("class")
+													);
+													OBJ_slot.find("div:first").addClass(
+														OBJ_iframe_content.find("body>article:not(#whitespace_click)").attr("class")
+													);
+													OBJ_iframe_content.find("body>div>article:not(#whitespace_click)").attr("class", "");
+													OBJ_iframe_content.find("body>article:not(#whitespace_click)").attr("class", "");
+
+													// Style und whitespace_click muss mit raus fuer brandgate
+													OBJ_iframe_content.find("body>style:first").insertBefore(OBJ_slot.find("div:first"));
+													OBJ_iframe_content.find("div#whitespace_click").css('height', '100%');
+													OBJ_iframe_content.find("div#whitespace_click").insertBefore(OBJ_slot.find("div:first"));
+
+													// Background transparent im iFrame
+													OBJ_iframe_content.find("head").append('<style type="text/css">body{background: transparent !important;}</style>');
+
+													// Stylesheet ebenfalls in iFrame kopieren
+													var STR_stylesheet = window.location.origin +
+														"/scss/basic.css";
+													OBJ_iframe_content.find("head").append($("<link/>", {
+														rel: "stylesheet",
+														href: STR_stylesheet,
+														type: "text/css"
+													}));
+
+													// Nachricht in Konsole
+													console.debug("Ad Slot " + event.slot.getSlotElementId() +
+														" manipulated");
+
+												}
+												else
+												{
+
+													// Slot ausblenden
+													OBJ_iframe.hide();
+
+													// Nachricht in Konsole
+													console.debug("Ad Slot " + event.slot.getSlotElementId() +
+														" hidden (iframe img/amp-pixel)");
+
+												} // end if
+
+											}
+											// Kein iFrame, aber Tracking-Pixel
+											else if (OBJ_slot.find("img").height() === 1)
+											{
+
+												// Slot ausblenden
+												OBJ_slot.hide();
+
+												// Nachricht in Konsole
+												console.debug("Ad Slot " + event.slot.getSlotElementId() +
+													" hidden (img)");
+
+											} // end if
+
+										} // end if
+
+									} // end for
+
+									// Slot nicht gefunden
+									if (!BOO_found)
+									{
+										
+										// Slot merken, ausblenden und Nachrichten in Konsole
+										var STR_ba_id = event.slot.getSlotElementId();
+
+										setTimeout(function(){
+											if (
+												$("#" + STR_ba_id).is(":visible") === false ||
+												$("#" + STR_ba_id).is(":hidden") === true
+											)
+											{
+												ARR_unknown_slots.push(STR_ba_id);
+												console.debug("Ad Slot " + STR_ba_id + " unknown empty");
+											}
+											else
+											{
+												console.debug("Ad Slot " + STR_ba_id + " unkown");
+											}
+										}, 500);
+										
+									} // end if
+
+								}
+								else
+								{
+									// Nachricht in Konsole
+									console.debug("Ad Slot " + event.slot.getSlotElementId() + " empty");
+								} // end if
+
+							} // end if
+
+						}
+						catch (OBJ_err)
+						{
+							console.debug(OBJ_err);
+						}
+
+					});
+					googletag.enableServices();
+
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Error - define /2686/bdi.vogel.de/infrastruktur");
+			} // end try
+
+
+        </script>
+
+		<!-- No BusinessAd: Data missing -->
+		<!-- GTM Vars -->
+	<script>
+		var dataLayer = [
+			{
+				"environment": "production", // Umgebung
+				"id": "49", // App-ID
+								"dimension1": "bdi:artikel:602249 big-data-sql-und-nosql-eine-kurze-uebersicht", // Shortcut:Type:ID
+								"dimension2": "bdi:themen:infrastruktur", // Shortcut:"themen":Channel
+				"dimension4": "602249", // Content-ID
+				"dimension7": "/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/", // URL
+				"dimension11": "934651,936774", // Ad-Views Article
+												"dimension13": "272941,279998,283961", // Ad-Views Companies
+				
+			}
+		];
+	</script>
+</head>
+<body data-infinity-id="default" data-infinity-type="layout">
+	<!-- GTM Code -->
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N3V3B8W"
+		        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript>
+	<!-- Automatisches Blockieren vom CMP vermeiden -->
+	<script data-cmp-ab="1">(function (w, d, s, l, i)
+		{
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-N3V3B8W');
+	</script>
+	<!-- GA Code: no config found -->
+
+		<div id="advertisement_01" class="inf-leaderboard gpt" data-ad-id="advertisement_01" data-infinity-type="ad" data-infinity-id="v1/advertisement_01">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_01);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_01");
+			} // end try
+
+		</script>
+
+	</div>
+	    		<div id="advertisement_02" class=" gpt" data-ad-id="advertisement_02" data-infinity-type="ad" data-infinity-id="v1/advertisement_02">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_02);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_02");
+			} // end try
+
+		</script>
+
+	</div>
+		    	<div id="advertisement_03" class=" gpt" data-ad-id="advertisement_03" data-infinity-type="ad" data-infinity-id="v1/advertisement_03">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_03);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_03");
+			} // end try
+
+		</script>
+
+	</div>
+	    <div class="inf-website">
+	<div id="mainwrapper" class="inf-wrapper">
+		<section class="inf-mainheader" data-hj-ignore-attributes="">
+	<div class="inf-mainheader__wrapper-fixed">
+		<div class="inf-icon inf-icon--menu inf-mainheader__menu-icon"></div>
+
+		<div class="inf-mobile-menu">
+			<img alt="Mobile-Menu" title="Mobile Menu" class="inf-mobile-menu__dropdown-arrow" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/arrow_dropdown.svg">
+
+			<div id="service-menu" class="inf-usermenu">
+				<div class="inf-btn inf-btn--mobile-menu inf-usermenu__button-account inf-icon--arrow-dropdown">
+					<div class="inf-icon inf-icon--account inf-usermenu__image"></div>
+					<span class="inf-usermenu__label">My Account</span>
+				</div>
+				<div class="inf-btn inf-btn--mobile-menu inf-usermenu__button-search inf-icon--arrow-dropdown">
+					<div class="inf-icon inf-icon--search inf-usermenu__image"></div>
+					<span class="inf-usermenu__label">Suchen</span>
+				</div>
+			</div>
+			
+						
+
+<div class="inf-mainheader__form inf-mainheader__form--userlogin inf-mainheader__form--login inf-mobile-submenu--usermenu">
+	
+	<ul class="inf-mobile-subnav" style="display:block;">
+		<li class="inf-mobile-subnav__item inf-mobile-submenu--usermenu__item">
+			<a class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/login/">Login</a>
+		</li>
+
+		<li class="inf-mobile-subnav__item inf-mobile-submenu--usermenu__item">
+			<a class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/registrierung/">Registrierung</a>
+		</li>
+
+	</ul>
+	
+</div>
+			<form action="https://www.bigdata-insider.de/suche/" method="get" class="inf-mainheader__form inf-mainheader__form--search inf-mobile-submenu--searchmenu">
+				<label> <input type="text" placeholder="Suchbegriff eingeben" class="inf-form__input-text inf-search-header__input-text" name="k"> </label>
+				<button type="submit" id="search_submit_header-mobile" class="inf-btn inf-btn--info inf-search-header__btn">Suchen				</button>
+			</form>
+			
+			<ul class="inf-mobile-menu__content">
+				<li class="inf-mobile-menu__item					" id="home-mobile">
+				
+				<a id="menu-home-mobile" title="BigData-Insider - das Fachportal für Big Data, Business Intelligence, Datawarehouse, künstliche Intelligenz und Machine Learning" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/"></a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_5e961f4d0333b-mobile">
+				
+				<a id="menu-page_5e961f4d0333b-mobile" title="Willkommen beim Readers&#39; Choice Portal-Insider AWARD 2020" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/award/">IT Awards</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					 inf-mobile-menu__item--active" id="page_silver_49_page_0-mobile">
+				
+				<a id="menu-page_silver_49_page_0-mobile" title="Infrastruktur für Big Data – Hadoop, Server, Storage, Netzwerktechnik| Bigdata-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/infrastruktur/">Infrastruktur</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_9F7AB7E8-CBAC-42C0-B3528D9E97D98465-mobile">
+				
+				<a id="menu-page_9F7AB7E8-CBAC-42C0-B3528D9E97D98465-mobile" title="Data Sourcing – Datenerhebung, Internet of Things, Metering &amp; Smart Meter | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/data-sourcing/">Data Sourcing</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_03342347-2509-4832-84DED02C1E53DFA4-mobile">
+				
+				<a id="menu-page_03342347-2509-4832-84DED02C1E53DFA4-mobile" title="Analytics mit Big Data – Predictive Analytics und Business Intelligence | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/analytics/">Analytics</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_48431C4E-1628-41DE-B545224F9899B36A-mobile">
+				
+				<a id="menu-page_48431C4E-1628-41DE-B545224F9899B36A-mobile" title="Best Practices für Big Data - Anwenderstudien und Praxisbeispiele | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/best_practices/">Best Practices</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_88A5E71B-BA67-4323-AF8B073319EA3B06-mobile">
+				
+				<a id="menu-page_88A5E71B-BA67-4323-AF8B073319EA3B06-mobile" title="Industrie 4.0 – Big Data in der Produktion | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/industrie40/">Industrie 4.0</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_E728C093-1A8E-46DB-B0417FE4C6F94D6D-mobile">
+				
+				<a id="menu-page_E728C093-1A8E-46DB-B0417FE4C6F94D6D-mobile" title="Recht &amp; Sicherheit – rechtliche Aspekte, Datensicherheit und Datenschutz | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/recht-sicherheit/">Recht &amp; Sicherheit</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_D1D0881B-4C85-43AC-8E54263F7A9F48B3-mobile">
+				
+				<a id="menu-page_D1D0881B-4C85-43AC-8E54263F7A9F48B3-mobile" title="Künstliche Intelligenz und Cognitive Computing | BigData-Insider.de" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/ki/">Künstliche Intelligenz</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_AD790388-3FA8-4747-94F066E2DFA02ACE-mobile">
+				
+				<a id="menu-page_AD790388-3FA8-4747-94F066E2DFA02ACE-mobile" title="Big Data Definitionen" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/specials/definitionen/">Definitionen</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item inf-relative					" id="page_5e9616a300b24-mobile">
+				
+				<a id="menu-page_5e9616a300b24-mobile" title="Mediathek" class="inf-mobile-mainnav__link inf-mobile-mainnav__link--with-subnav" href="https://www.bigdata-insider.de/mediathek/">Mediathek</a>				
+													
+										<a href="https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/#" class="inf-icon--subnav-item inf-toggle inf-icon--arrow-dropdown"></a>
+					
+										<ul class="inf-mobile-subnav">
+	
+				<li class="inf-mobile-subnav__item" id="page_5e96197cb0de6-mobile">
+								<a id="menu-page_5e96197cb0de6-mobile" title="Whitepaper" class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/whitepaper/">Whitepaper</a>			</li>
+		
+					<li class="inf-mobile-subnav__item" id="page_5e9619c98ceda-mobile">
+								<a id="menu-page_5e9619c98ceda-mobile" title="Webinare" class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/webinare/">Webinare</a>			</li>
+		
+					<li class="inf-mobile-subnav__item" id="page_5e961a86959ea-mobile">
+								<a id="menu-page_5e961a86959ea-mobile" title="Firmen" class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/firmen/">Firmen</a>			</li>
+		
+					<li class="inf-mobile-subnav__item" id="page_5e961a1ceb79c-mobile">
+								<a id="menu-page_5e961a1ceb79c-mobile" title="Bilder" class="inf-mobile-subnav__link" href="https://www.bigdata-insider.de/bilder/">Bilder</a>			</li>
+		
+		
+</ul>				
+				
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_5ea6f7f5afa67-mobile">
+				
+				<a id="menu-page_5ea6f7f5afa67-mobile" title="eBooks" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/ebooks/">eBooks</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_5ea6f849e7e6b-mobile">
+				
+				<a id="menu-page_5ea6f849e7e6b-mobile" title="CIO Briefing" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/cio/">CIO Briefing</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_5e9d49e5f0413-mobile">
+				
+				<a id="menu-page_5e9d49e5f0413-mobile" title="Forum | Bigdata Insider" class="inf-mobile-mainnav__link" href="https://www.bigdata-insider.de/community/">Forum</a>				
+								
+			</li>
+					<li class="inf-mobile-menu__item					" id="page_5ea00c5a7a817-mobile">
+				
+				<a id="menu-page_5ea00c5a7a817-mobile" class="inf-mobile-mainnav__link" href="https://www.akademie.vogel-it.de/" target="_blank">Akademie</a>				
+								
+			</li>
+		</ul>
+		</div>
+
+
+		<div class="inf-mainheader__wrapper-logo">
+			<a class="inf-mainheader__wrapper-logolink" href="https://www.bigdata-insider.de/">
+				<img class="inf-mainheader__logo" id="exit--header-logo" alt="Logo" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/logo.svg">
+				<img class="inf-mainheader__logo--mini" alt="Logo" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/logo_mini.svg"> </a>
+		</div>
+		
+				
+		<ul class="inf-mainnav" style="opacity: 1;">
+				<li class="inf-mainnav__item" id="home">
+				
+								<a id="menu-home" title="BigData-Insider - das Fachportal für Big Data, Business Intelligence, Datawarehouse, künstliche Intelligenz und Machine Learning" class="inf-mainnav__link" href="https://www.bigdata-insider.de/"></a>				
+											</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_5e961f4d0333b">
+				
+								<a id="menu-page_5e961f4d0333b" title="Willkommen beim Readers&#39; Choice Portal-Insider AWARD 2020" class="inf-mainnav__link" href="https://www.bigdata-insider.de/award/">IT Awards</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"IT Awards"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/das-sind-die-gewinner-der-it-awards-2019-a-875822/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/3_XlZ0vRJlV2YN8CUr-jwDD1YQs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1631500/1631552/original.jpg 288w, https://cdn1.vogel.de/_vnAC_g_bazaYLH3FWh7CQ6o49U=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1631500/1631552/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/AAeLiS6cPe92aamzsKTYWNrqJn4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1631500/1631552/original.jpg 288w, https://cdn1.vogel.de/IGqdkzhaHzYMdBHHg70UAEc4Mpk=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1631500/1631552/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/AAeLiS6cPe92aamzsKTYWNrqJn4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1631500/1631552/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="BigData-Insider AWARDS 2019" alt="BigData-Insider AWARDS 2019">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								IT-Awards 2019							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/das-sind-die-gewinner-der-it-awards-2019-a-875822/">
+								Das sind die Gewinner der IT-Awards 2019							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/festliche-verleihung-der-it-awards-2019-a-871728/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/dmsXicql2lgs-lQK682T4iRxBls=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1625800/1625893/original.jpg 288w, https://cdn1.vogel.de/RJ7KblJEaT_eLy8nXbQtebfiNms=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1625800/1625893/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/5mcCCmuBM12hlIEhOAj4igE5n1g=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1625800/1625893/original.jpg 288w, https://cdn1.vogel.de/zjiz9UfrlrrugFRf-oI8b6kgH5g=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1625800/1625893/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/5mcCCmuBM12hlIEhOAj4igE5n1g=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1625800/1625893/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Award-Logo BigData-Insider" alt="Award-Logo BigData-Insider">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								5. Jubiläum unserer großen Leserwahl							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/festliche-verleihung-der-it-awards-2019-a-871728/">
+								Festliche Verleihung der IT-Awards 2019							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/abstimmen-und-eines-von-drei-microsoft-surface-go-64gb-s-gewinnen-a-831168/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/aJfKZq95EyjVmRWfewdn9szphB8=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1568800/1568883/original.jpg 288w, https://cdn1.vogel.de/dtb8IbrhsSsqkhVwA3rdh293RP8=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1568800/1568883/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/07pECZB_oyDAn3pQfGiUg-ZLyh8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1568800/1568883/original.jpg 288w, https://cdn1.vogel.de/8Wr7TIb8XqB1AZDqFAbqmhOEqsE=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1568800/1568883/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/07pECZB_oyDAn3pQfGiUg-ZLyh8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1568800/1568883/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Abstimmen beim BigData-Insider Award 2019!" alt="Abstimmen beim BigData-Insider Award 2019!">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								BigData-Insider Award 2019							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/abstimmen-und-eines-von-drei-microsoft-surface-go-64gb-s-gewinnen-a-831168/">
+								Abstimmen und eines von drei Microsoft Surface Go 64GB S gewinnen							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/das-sind-die-gewinner-der-it-awards-2018-a-765168/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/XZE7cfX-ddkeIuuZaPK2IDKD1zI=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1469100/1469167/original.jpg 288w, https://cdn1.vogel.de/y6KnDqpTzHhOs0-TGNoBTUfoGs8=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1469100/1469167/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/btaOfUR2u3ohSbdAGb5eIpbdFvI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1469100/1469167/original.jpg 288w, https://cdn1.vogel.de/_MOz8bMxAenhRAlDZ8Ugj_l3ouU=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1469100/1469167/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/btaOfUR2u3ohSbdAGb5eIpbdFvI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1469100/1469167/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die Gewinner der sechs BigData-Insider Readers&#39; Choice Awards 2018 im Rahmen der Abendgala der IT-Awards." alt="Die Gewinner der sechs BigData-Insider Readers&#39; Choice Awards 2018 im Rahmen der Abendgala der IT-Awards.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								IT-Awards 2018							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/das-sind-die-gewinner-der-it-awards-2018-a-765168/">
+								Das sind die Gewinner der IT-Awards 2018							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--active inf-mainnav__item--with-flyout" id="page_silver_49_page_0">
+				
+								<a id="menu-page_silver_49_page_0" title="Infrastruktur für Big Data – Hadoop, Server, Storage, Netzwerktechnik| Bigdata-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/infrastruktur/">Infrastruktur</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Infrastruktur"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/sap-s4hana-umstieg-alles-was-sie-zu-hana-on-power-wissen-muessen-a-968775/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/W84R-4NBgGOFax1TZo83gY--8r8=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752939/original.jpg 288w, https://cdn1.vogel.de/KIYjUZ-zueiiPG0M7AFftBRk-jQ=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752939/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/chDrbP1Lcbgz5ETIZFqiU-uIMYs=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752939/original.jpg 288w, https://cdn1.vogel.de/A8CVMi72T9qozeKsJPFIxJ5LJ38=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752939/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/chDrbP1Lcbgz5ETIZFqiU-uIMYs=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752939/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="SAP S/4HANA Umstieg: Alles, was Sie zu HANA on Power wissen müssen, ein Interview von Oliver Schonschek, Insider Research, mit Martin Reinecke und Michael Kappler von PROFI Engineering Systems AG." alt="SAP S/4HANA Umstieg: Alles, was Sie zu HANA on Power wissen müssen, ein Interview von Oliver Schonschek, Insider Research, mit Martin Reinecke und Michael Kappler von PROFI Engineering Systems AG.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+													<span class="inf-text--caps inf-teaser__flag inf-teaser__flag--subnav">#gesponsert</span>
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Insider Research im Gespräch							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/sap-s4hana-umstieg-alles-was-sie-zu-hana-on-power-wissen-muessen-a-968775/">
+								SAP S/4HANA Umstieg: Alles, was Sie zu HANA on Power wissen müssen							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-2-a-965777/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/PFB7Sx4uUF4e_wQbXPqPNSjD5-I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/6J_2s0h8TtcX17LLbu43HM0NuPY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/2QziD9yfVxKtNlDxT9LR8_mEZCs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services" alt="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Kommentar von Constantin Gonzalez, Amazon Web Services							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-2-a-965777/">
+								Aufbau automatisierter Prognose-Fähigkeiten mit AWS Lake Formation und Amazon Forecast, Teil 2							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/bringt-der-ania-chip-den-durchbruch-a-966615/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/fGNuUZzUZtS0fShISRkOmGJs6Rs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750062/original.jpg 288w, https://cdn1.vogel.de/gwiTsYbly0NQMAXCaMAd-UXFTzE=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750062/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/7w3sluaRAKTTY2FKsCS4nv5bWss=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750062/original.jpg 288w, https://cdn1.vogel.de/iSbU4kyMCyPe6Tp4AmWalkK2nIg=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750062/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/7w3sluaRAKTTY2FKsCS4nv5bWss=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750062/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Besser analog: Imecs AnIA-Chip berechnet Deep-Neural-Networks analog direkt in den SRAM-Speicherzellen – und soll so eine extrem gute Energieeffizienz erreichen." alt="Besser analog: Imecs AnIA-Chip berechnet Deep-Neural-Networks analog direkt in den SRAM-Speicherzellen – und soll so eine extrem gute Energieeffizienz erreichen.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								KI-Inferenz am Edge							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/bringt-der-ania-chip-den-durchbruch-a-966615/">
+								Bringt der AnIA-Chip den Durchbruch?							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-1-a-965353/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/PFB7Sx4uUF4e_wQbXPqPNSjD5-I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/6J_2s0h8TtcX17LLbu43HM0NuPY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/2QziD9yfVxKtNlDxT9LR8_mEZCs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services" alt="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Kommentar von Constantin Gonzalez, Amazon Web Services							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-1-a-965353/">
+								Aufbau automatisierter Prognose-Fähigkeiten mit AWS Lake Formation und Amazon Forecast, Teil 1							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_9F7AB7E8-CBAC-42C0-B3528D9E97D98465">
+				
+								<a id="menu-page_9F7AB7E8-CBAC-42C0-B3528D9E97D98465" title="Data Sourcing – Datenerhebung, Internet of Things, Metering &amp; Smart Meter | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/data-sourcing/">Data Sourcing</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Data Sourcing"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/organisatorische-probleme-behindern-effizientes-datenmanagement-a-967640/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/jup7d7cWhRrv7N-dLrc6rJNAoH0=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751378/original.jpg 288w, https://cdn1.vogel.de/nzZJ2aK89dNWoSzYVs8AqLcIzX4=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751378/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/kLiXlsjWk9qChQ168CcM14A8DPI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751378/original.jpg 288w, https://cdn1.vogel.de/A02EEXyu2frRUohZ3FOqBLFnSkc=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751378/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/kLiXlsjWk9qChQ168CcM14A8DPI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751378/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Hersteller von Datenmanagement-Tools decken bereits Themen ab, die bei Anwendern noch nicht aktuell sind." alt="Hersteller von Datenmanagement-Tools decken bereits Themen ab, die bei Anwendern noch nicht aktuell sind.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Studie des BARC							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/organisatorische-probleme-behindern-effizientes-datenmanagement-a-967640/">
+								Organisatorische Probleme behindern effizientes Datenmanagement							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/confluent-platform-60-steht-in-den-startloechern-a-964662/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/tmoXiNcdeq1JpyW2Bry3Cut7Wb8=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747200/1747279/original.jpg 288w, https://cdn1.vogel.de/hMZ2mNFBmqjhdMJSjKSv6NrAb6M=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747200/1747279/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/OExG4sdeX8aPA7Pe6NfFfwU8jFs=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747200/1747279/original.jpg 288w, https://cdn1.vogel.de/O7Gi_hQRnSjSLbSZwrlWVVyR2gw=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747200/1747279/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/OExG4sdeX8aPA7Pe6NfFfwU8jFs=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747200/1747279/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Jay Kreps, Mitbegründer und CEO von Confluent" alt="Jay Kreps, Mitbegründer und CEO von Confluent">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Update für Event-Streaming-Plattform							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/confluent-platform-60-steht-in-den-startloechern-a-964662/">
+								Confluent Platform 6.0 steht in den Startlöchern							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/deutschland-immer-staerker-vernetzt-a-962346/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/tjd9fm2uocCmB9e33ItkN_P4hT0=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1744100/1744191/original.jpg 288w, https://cdn1.vogel.de/z2iQKeCDGDuo_7wLmIExtjseDnE=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1744100/1744191/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/Uj5lyqJ4YuCSgCcKI7VBDsDZUnE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744100/1744191/original.jpg 288w, https://cdn1.vogel.de/C3uMjIO4OjbxiI_zA5caGJ2Yxzg=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744100/1744191/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/Uj5lyqJ4YuCSgCcKI7VBDsDZUnE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744100/1744191/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Cisco zufolge wird es 2023 in Deutschland rund 47 Mio. Geräte, die mit 5G angesteuert werden, sowie 477 Mio. M2M- und IoT-Geräte geben." alt="Cisco zufolge wird es 2023 in Deutschland rund 47 Mio. Geräte, die mit 5G angesteuert werden, sowie 477 Mio. M2M- und IoT-Geräte geben.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								5G, Wi-Fi&nbsp;6 und M2M							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/deutschland-immer-staerker-vernetzt-a-962346/">
+								Deutschland – immer stärker vernetzt							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/splunk-veroeffentlicht-studie-zum-datenzeitalter-a-962782/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/NvKUCoPyRNb-bYn_5nhWBTKmMY0=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1744700/1744737/original.jpg 288w, https://cdn1.vogel.de/T4a7Y5m4lq2DkpxN-3SGuFPlGX0=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1744700/1744737/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/PI_wNo1faW7EknsP5WdhWqyi4d4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744700/1744737/original.jpg 288w, https://cdn1.vogel.de/vurs-W5ikbTWE6RUOP_3SpHCnHI=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744700/1744737/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/PI_wNo1faW7EknsP5WdhWqyi4d4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1744700/1744737/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Dark Data bleibt ein Hindernis für Zukunftstechnologien." alt="Dark Data bleibt ein Hindernis für Zukunftstechnologien.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Herausforderung Dark Data							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/splunk-veroeffentlicht-studie-zum-datenzeitalter-a-962782/">
+								Splunk veröffentlicht Studie zum Datenzeitalter							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_03342347-2509-4832-84DED02C1E53DFA4">
+				
+								<a id="menu-page_03342347-2509-4832-84DED02C1E53DFA4" title="Analytics mit Big Data – Predictive Analytics und Business Intelligence | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/analytics/">Analytics</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Analytics"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/board-optimiert-vertriebssteuerung-bei-basf-a-969048/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/tYBx-och4vesLEXiJ3nhVIUTBYs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1753500/1753546/original.jpg 288w, https://cdn1.vogel.de/UpPuHBSKiI4KHBrTXrl151B2PdE=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1753500/1753546/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/uykjPY7q9zcx29woUKeKiHd3pm4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1753500/1753546/original.jpg 288w, https://cdn1.vogel.de/xp1hI2XHgFo45aGmUUiOQElPH7A=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1753500/1753546/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/uykjPY7q9zcx29woUKeKiHd3pm4=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1753500/1753546/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Board kooperiert ab sofort mit BASF Agricultural Solutions." alt="Board kooperiert ab sofort mit BASF Agricultural Solutions.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Kooperation vereinbart							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/board-optimiert-vertriebssteuerung-bei-basf-a-969048/">
+								Board optimiert Vertriebssteuerung bei BASF							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/alteryx-adapt-mit-mehr-als-10000-teilnehmern-a-968165/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/K_--eO6vurCGwZN7o8fDWQXVSZs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 288w, https://cdn1.vogel.de/TPRQpgs2DNQkEWpmTxLZCsY2U84=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/RdFA2P4C4fv0S4uLKPCS1HVCa3Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 288w, https://cdn1.vogel.de/dAN-e59mtF-fUgyzN4Mx7p4MOkI=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/RdFA2P4C4fv0S4uLKPCS1HVCa3Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Alteryx-CEO und -Mitgründer Dean Stoecker" alt="Alteryx-CEO und -Mitgründer Dean Stoecker">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Initiative für Data Worker							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/alteryx-adapt-mit-mehr-als-10000-teilnehmern-a-968165/">
+								Alteryx ADAPT mit mehr als 10.000 Teilnehmern							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/enterprise-knowledge-graphen-verzeichnen-steigende-nachfrage-a-966586/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/nAsJLLc_PNU2dwGupDHQbwt5D2A=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750030/original.jpg 288w, https://cdn1.vogel.de/j6kE3T3-YYHAYfmZjGnVO7G5xx4=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750030/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/MJk4tRXLk_zZ5dgSwvNyQQOjrtI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750030/original.jpg 288w, https://cdn1.vogel.de/x6d0475DHHOVM4ZCF8qjqb9Qx5E=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750030/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/MJk4tRXLk_zZ5dgSwvNyQQOjrtI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750030/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Eine Neo4j-Umfrage zeigt hohen Bedarf an Knowledge Graphs." alt="Eine Neo4j-Umfrage zeigt hohen Bedarf an Knowledge Graphs.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Umfrage von Neo4j							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/enterprise-knowledge-graphen-verzeichnen-steigende-nachfrage-a-966586/">
+								Enterprise-Knowledge-Graphen verzeichnen steigende Nachfrage							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/data-analytics-in-der-hybriden-cloud-welt-a-966584/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/N1bVUnIpXaM9-E78aVNQZVRQe7c=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750023/original.jpg 288w, https://cdn1.vogel.de/ZQmSoZNt9uaTV1SefNyftghB64o=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750023/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/QHv6ojyHqG6nyL2GXtT3aAZ_cmM=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750023/original.jpg 288w, https://cdn1.vogel.de/gK-0FpuPEI7T773Qweba1CO4ccI=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750023/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/QHv6ojyHqG6nyL2GXtT3aAZ_cmM=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750023/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Data Analytics in der hybriden Cloud-Welt, ein Interview von Oliver Schonschek, Insider Research, mit Sabrina Corazza von Vertica und Martin Maier von Pure Storage." alt="Data Analytics in der hybriden Cloud-Welt, ein Interview von Oliver Schonschek, Insider Research, mit Sabrina Corazza von Vertica und Martin Maier von Pure Storage.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+													<span class="inf-text--caps inf-teaser__flag inf-teaser__flag--subnav">#gesponsert</span>
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Insider Research im Gespräch							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/data-analytics-in-der-hybriden-cloud-welt-a-966584/">
+								Data Analytics in der hybriden Cloud-Welt							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_48431C4E-1628-41DE-B545224F9899B36A">
+				
+								<a id="menu-page_48431C4E-1628-41DE-B545224F9899B36A" title="Best Practices für Big Data - Anwenderstudien und Praxisbeispiele | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/best_practices/">Best Practices</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Best Practices"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/wie-big-data-die-musikindustrie-transformiert-a-967844/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/SIKv6HxMUlivLArWCV-8qoeTiyk=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 288w, https://cdn1.vogel.de/iXq0OZtPlPiIs-fRWhvxScgLNwY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/gVHyEJFqZvKoJ3dWItHNyZIsFUE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 288w, https://cdn1.vogel.de/WcadClk6kMui-Ed-_icJA0Vkwg4=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/gVHyEJFqZvKoJ3dWItHNyZIsFUE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die Musikinduustrie setzt auf Big Data: In der milliardenschweren Branche fällt keine relevante Entscheidung mehr ausschließlich nach dem Bauchgefühl." alt="Die Musikinduustrie setzt auf Big Data: In der milliardenschweren Branche fällt keine relevante Entscheidung mehr ausschließlich nach dem Bauchgefühl.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Mit KPIs zum nächsten Hit							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/wie-big-data-die-musikindustrie-transformiert-a-967844/">
+								Wie Big Data die Musikindustrie transformiert							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/alteryx-adapt-mit-mehr-als-10000-teilnehmern-a-968165/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/K_--eO6vurCGwZN7o8fDWQXVSZs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 288w, https://cdn1.vogel.de/TPRQpgs2DNQkEWpmTxLZCsY2U84=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/RdFA2P4C4fv0S4uLKPCS1HVCa3Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 288w, https://cdn1.vogel.de/dAN-e59mtF-fUgyzN4Mx7p4MOkI=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/RdFA2P4C4fv0S4uLKPCS1HVCa3Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752100/1752117/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Alteryx-CEO und -Mitgründer Dean Stoecker" alt="Alteryx-CEO und -Mitgründer Dean Stoecker">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Initiative für Data Worker							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/alteryx-adapt-mit-mehr-als-10000-teilnehmern-a-968165/">
+								Alteryx ADAPT mit mehr als 10.000 Teilnehmern							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-2-a-965777/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/PFB7Sx4uUF4e_wQbXPqPNSjD5-I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/6J_2s0h8TtcX17LLbu43HM0NuPY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/2QziD9yfVxKtNlDxT9LR8_mEZCs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services" alt="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Kommentar von Constantin Gonzalez, Amazon Web Services							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-2-a-965777/">
+								Aufbau automatisierter Prognose-Fähigkeiten mit AWS Lake Formation und Amazon Forecast, Teil 2							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-1-a-965353/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/PFB7Sx4uUF4e_wQbXPqPNSjD5-I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/6J_2s0h8TtcX17LLbu43HM0NuPY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 288w, https://cdn1.vogel.de/2QziD9yfVxKtNlDxT9LR8_mEZCs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/h42Z4cV771HYMuZBdfluuEjau90=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1747800/1747816/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services" alt="Der Autor: Constantin Gonzalez ist Principal Solutions Architect bei Amazon Web Services">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Kommentar von Constantin Gonzalez, Amazon Web Services							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/aufbau-automatisierter-prognose-faehigkeiten-mit-aws-lake-formation-und-amazon-forecast-teil-1-a-965353/">
+								Aufbau automatisierter Prognose-Fähigkeiten mit AWS Lake Formation und Amazon Forecast, Teil 1							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_88A5E71B-BA67-4323-AF8B073319EA3B06">
+				
+								<a id="menu-page_88A5E71B-BA67-4323-AF8B073319EA3B06" title="Industrie 4.0 – Big Data in der Produktion | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/industrie40/">Industrie 4.0</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Industrie 4.0"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/fir-und-center-smart-services-starten-benchmarking-projekt-a-968742/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/0UUP2sb2mVnS3QxVLjk26VZHTIo=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752922/original.jpg 288w, https://cdn1.vogel.de/5C-b5klJ9FNfb5-6XlmP7gPNFCk=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752922/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/yLMPOk9QzAJR_qdVq4i-oO93tW8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752922/original.jpg 288w, https://cdn1.vogel.de/135SLfvBfXgag-pBijQOxmDFnPM=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752922/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/yLMPOk9QzAJR_qdVq4i-oO93tW8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1752900/1752922/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Gemeinsam mit dem Center Smart Services hat das FIR ein Benchmarking-Projekt zum Thema &quot;Intelligente Produkte&quot; gestartet." alt="Gemeinsam mit dem Center Smart Services hat das FIR ein Benchmarking-Projekt zum Thema &quot;Intelligente Produkte&quot; gestartet.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Nutzungsdaten und Mehrwertdienste							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/fir-und-center-smart-services-starten-benchmarking-projekt-a-968742/">
+								FIR und Center Smart Services starten Benchmarking-Projekt							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/digital-twins-stecken-noch-in-der-konzeptionierungsphase-a-967616/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/Ie9f33RlSRtmEXohO6tL8heHnmY=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751361/original.jpg 288w, https://cdn1.vogel.de/cwJf7-NYglB1Sqa7CGnnIf2DC7w=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751361/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/Hlgz0dsGahUGhxatTuVZoxKYCac=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751361/original.jpg 288w, https://cdn1.vogel.de/fBtcGcyNROEgJFP3Rw1W7vSNAyM=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751361/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/Hlgz0dsGahUGhxatTuVZoxKYCac=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751300/1751361/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="In Sachen Digital Twins gibt es beim Reifegrad noch Luft nach oben." alt="In Sachen Digital Twins gibt es beim Reifegrad noch Luft nach oben.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Studie von msg und Fraunhofer IPK							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/digital-twins-stecken-noch-in-der-konzeptionierungsphase-a-967616/">
+								Digital Twins stecken noch in der Konzeptionierungsphase							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/iot-echtzeitanalyse-a-966828/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/xe9Urh6CNGd3VoMgv6iCK1CgnmQ=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750200/1750293/original.jpg 288w, https://cdn1.vogel.de/u9ZN_IAQ6IvAMoJYr58Wy3elPkc=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750200/1750293/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/f_QLLP-NVLYm_jTMTjWYDw-mo2M=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750200/1750293/original.jpg 288w, https://cdn1.vogel.de/ggay2ongR9coffTAmEzN2kOX_A8=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750200/1750293/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/f_QLLP-NVLYm_jTMTjWYDw-mo2M=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750200/1750293/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Ab sofort steht das E-Book „IoT-Echtzeitanalyse“ kostenlos zum Download bereit. " alt="Ab sofort steht das E-Book „IoT-Echtzeitanalyse“ kostenlos zum Download bereit. ">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								E-Book von BigData-Insider							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/iot-echtzeitanalyse-a-966828/">
+								IoT-Echtzeitanalyse							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/kuenstliche-intelligenz-fuer-flexible-roboter-a-966220/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/jXo5jLQ2lEhMiYa3NWdSauJ8cBo=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1749400/1749469/original.jpg 288w, https://cdn1.vogel.de/PNKoG7ZzaCbRrnwUFVY96aw1GFE=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1749400/1749469/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/_zwHODNL_mHSHrcgm9rfmCvA3bQ=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1749400/1749469/original.jpg 288w, https://cdn1.vogel.de/-IvGQJnvO2MtUPRPZyivXsHATXo=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1749400/1749469/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/_zwHODNL_mHSHrcgm9rfmCvA3bQ=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1749400/1749469/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Das Projekt &quot;AssemblySkills&quot; soll es möglich machen, dass sich Roboter mittels maschniellem Lernen auch komplexe Aufgaben aneignen können." alt="Das Projekt &quot;AssemblySkills&quot; soll es möglich machen, dass sich Roboter mittels maschniellem Lernen auch komplexe Aufgaben aneignen können.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Proof of Concept							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/kuenstliche-intelligenz-fuer-flexible-roboter-a-966220/">
+								Künstliche Intelligenz für flexible Roboter							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout" id="page_E728C093-1A8E-46DB-B0417FE4C6F94D6D">
+				
+								<a id="menu-page_E728C093-1A8E-46DB-B0417FE4C6F94D6D" title="Recht &amp; Sicherheit – rechtliche Aspekte, Datensicherheit und Datenschutz | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/recht-sicherheit/">Recht &amp; Sicherheit</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Recht &amp; Sicherheit"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/fortschritt-fuer-ki-basierte-cybersicherheit-a-966607/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/F65dxm2XKvwuCbZuNwuEbw3A5h8=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750056/original.jpg 288w, https://cdn1.vogel.de/IYDt7QlSbeXCS2c61Lba7gQnetY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750056/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/h4K4zDids9st04PKCyVZBDxK5eA=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750056/original.jpg 288w, https://cdn1.vogel.de/6ETbJNzAqBvtwwVG8IhOZgNBBRM=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750056/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/h4K4zDids9st04PKCyVZBDxK5eA=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1750000/1750056/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die »Eberbacher Gespräche« des Fraunhofer SIT bieten ein Dialog-Forum für Experten aus Wissenschaft, Wirtschaft und Verwaltung." alt="Die »Eberbacher Gespräche« des Fraunhofer SIT bieten ein Dialog-Forum für Experten aus Wissenschaft, Wirtschaft und Verwaltung.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Eberbacher Gespräch zu KI, Security und Privacy							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/fortschritt-fuer-ki-basierte-cybersicherheit-a-966607/">
+								Fortschritt für KI-basierte Cybersicherheit							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/grundlagen-der-iot-sicherheit-a-960821/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/2jSdHsdnzuwgJA76D6LjdZE-XCs=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1742100/1742124/original.jpg 288w, https://cdn1.vogel.de/2zHO6LKE2EXUetw0VmEj23tTLLg=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1742100/1742124/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/IXZ2AvaLUZmrwGRzUJ2G299mb6I=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1742100/1742124/original.jpg 288w, https://cdn1.vogel.de/WbgLvmW5UeU4q2QBpq-lY29J8IE=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1742100/1742124/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/IXZ2AvaLUZmrwGRzUJ2G299mb6I=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1742100/1742124/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Ganzheitlich: IoT-Security erfordert einen breiten Ansatz, der neben der Endgerätesicherheit auch Netzwerkauthentifizierung, Konnektivität, Clouds und mehr umfasst." alt="Ganzheitlich: IoT-Security erfordert einen breiten Ansatz, der neben der Endgerätesicherheit auch Netzwerkauthentifizierung, Konnektivität, Clouds und mehr umfasst.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Internet of Things							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/grundlagen-der-iot-sicherheit-a-960821/">
+								Grundlagen der IoT-Sicherheit							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/wenn-die-digitale-haushaltshilfe-zum-spion-wird-a-959544/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/jQPCzwb69lqYJH4NieNPCN2VzwQ=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1740200/1740254/original.jpg 288w, https://cdn1.vogel.de/LrSbEP3AXGedAMa44SLfXjuRTJA=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1740200/1740254/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/oWxztxZBK5C773LKNc-VxQ8hK-Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1740200/1740254/original.jpg 288w, https://cdn1.vogel.de/hxaOFaSdCsCHh19bdUZvDq4BlTs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1740200/1740254/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/oWxztxZBK5C773LKNc-VxQ8hK-Q=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1740200/1740254/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die Zahl intelligenter Geräte im privaten und beruflichen Umfeld nimmt rasant zu und damit auch das Risiko. Hersteller dürfen deshalb keine Abstriche bei der Absicherung ihrer Produkte machen. " alt="Die Zahl intelligenter Geräte im privaten und beruflichen Umfeld nimmt rasant zu und damit auch das Risiko. Hersteller dürfen deshalb keine Abstriche bei der Absicherung ihrer Produkte machen. ">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Smarte Helfer mit lückenhafter API-Security							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/wenn-die-digitale-haushaltshilfe-zum-spion-wird-a-959544/">
+								Wenn die digitale Haushaltshilfe zum Spion wird							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/mit-einem-reifegradmodell-mehr-sicherheit-im-iot-schaffen-a-959052/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/L1LNJrDWgr-0pXnyx6rQH9YKiLI=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1739600/1739635/original.jpg 288w, https://cdn1.vogel.de/aNVT34jDpoDtS-dMV9lVC0LpIP0=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1739600/1739635/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/Q3jhd-iPk2TKZeMQQz50f9-Ed2k=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1739600/1739635/original.jpg 288w, https://cdn1.vogel.de/pK80OrzFNfvECAKH6_cNbjZkDkI=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1739600/1739635/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/Q3jhd-iPk2TKZeMQQz50f9-Ed2k=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1739600/1739635/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die Ausarbeitung einer geschlossenen Strategie zum Schutz vor Cybergefahren ist in Zusammenhang mit dem Internet der Dinge eine echte Herausforderung." alt="Die Ausarbeitung einer geschlossenen Strategie zum Schutz vor Cybergefahren ist in Zusammenhang mit dem Internet der Dinge eine echte Herausforderung.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Smart, aber schutzlos							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/mit-einem-reifegradmodell-mehr-sicherheit-im-iot-schaffen-a-959052/">
+								Mit einem Reifegradmodell mehr Sicherheit im IoT schaffen							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout inf-mainnav__item--hidden" id="page_D1D0881B-4C85-43AC-8E54263F7A9F48B3" style="display: none;">
+				
+								<a id="menu-page_D1D0881B-4C85-43AC-8E54263F7A9F48B3" title="Künstliche Intelligenz und Cognitive Computing | BigData-Insider.de" class="inf-mainnav__link" href="https://www.bigdata-insider.de/ki/">Künstliche Intelligenz</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Künstliche Intelligenz"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/wie-big-data-die-musikindustrie-transformiert-a-967844/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/SIKv6HxMUlivLArWCV-8qoeTiyk=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 288w, https://cdn1.vogel.de/iXq0OZtPlPiIs-fRWhvxScgLNwY=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/gVHyEJFqZvKoJ3dWItHNyZIsFUE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 288w, https://cdn1.vogel.de/WcadClk6kMui-Ed-_icJA0Vkwg4=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/gVHyEJFqZvKoJ3dWItHNyZIsFUE=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751500/1751529/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Die Musikinduustrie setzt auf Big Data: In der milliardenschweren Branche fällt keine relevante Entscheidung mehr ausschließlich nach dem Bauchgefühl." alt="Die Musikinduustrie setzt auf Big Data: In der milliardenschweren Branche fällt keine relevante Entscheidung mehr ausschließlich nach dem Bauchgefühl.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Mit KPIs zum nächsten Hit							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/wie-big-data-die-musikindustrie-transformiert-a-967844/">
+								Wie Big Data die Musikindustrie transformiert							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/roboter-mit-ki-spielt-curling-gegen-menschen-a-967856/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/NFovFkZUPtgy-g_kMOI-aE6qp3w=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751600/1751666/original.jpg 288w, https://cdn1.vogel.de/tLUTXYvdPr4KbjpIkDtr7WH2p58=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751600/1751666/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/8Y4kgc-HvYa7t4B5WW1cdvbIlAo=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751600/1751666/original.jpg 288w, https://cdn1.vogel.de/e3GrEuDFRW7n18SMCna7GwTVrXk=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751600/1751666/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/8Y4kgc-HvYa7t4B5WW1cdvbIlAo=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751600/1751666/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Curly ist auf die Planung und Handlung in einem datenarmen Entscheidungsumfeld und unter Zeitdruck spezialisiert. " alt="Curly ist auf die Planung und Handlung in einem datenarmen Entscheidungsumfeld und unter Zeitdruck spezialisiert. ">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Künstliche Intelligenz							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/roboter-mit-ki-spielt-curling-gegen-menschen-a-967856/">
+								Roboter mit KI spielt Curling gegen Menschen							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/neue-erkenntnisse-ueber-organisch-anorganische-grenzflaechen-dank-machine-learning-a-967673/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/tvezottoWHDSWoqMBnHgILcOeh4=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751400/1751419/original.jpg 288w, https://cdn1.vogel.de/G110ObF85cMtWYFPJqTCRRWnZCc=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751400/1751419/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/gVap_arrLlY0gc0je9MuOWXLrSk=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751400/1751419/original.jpg 288w, https://cdn1.vogel.de/QaWJVy7Q_uuGHBC0lwbmNEHi7eQ=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751400/1751419/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/gVap_arrLlY0gc0je9MuOWXLrSk=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751400/1751419/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Durch die Kombination zweier neuartiger Machine-Learning Verfahren für die Grenzflächenstruktursuche kann Oliver Hofmann nun Probleme untersuchen, die sich der Wissenschaft früher komplett entzogen haben." alt="Durch die Kombination zweier neuartiger Machine-Learning Verfahren für die Grenzflächenstruktursuche kann Oliver Hofmann nun Probleme untersuchen, die sich der Wissenschaft früher komplett entzogen haben.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Maschinelles Lernen							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/neue-erkenntnisse-ueber-organisch-anorganische-grenzflaechen-dank-machine-learning-a-967673/">
+								Neue Erkenntnisse über organisch-anorganische Grenzflächen dank Machine Learning							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/anyline-trainiert-kis-auf-ibms-public-cloud-a-968023/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/dAbAwUBekK6Qy5NY_bqmf1DvSRo=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751900/1751933/original.jpg 288w, https://cdn1.vogel.de/ZwsHYlgOwuCHXW0R_CQTnMDUFtQ=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1751900/1751933/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/fnOpnbWq8WM5ipQVoaxvzhk8TP8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751900/1751933/original.jpg 288w, https://cdn1.vogel.de/NsXbUmE89iCqRijnqWCOjUwKeiA=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751900/1751933/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/fnOpnbWq8WM5ipQVoaxvzhk8TP8=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1751900/1751933/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="Für seine AI-Trainer-Plattform setzt Anyline auf die IBM Public Cloud." alt="Für seine AI-Trainer-Plattform setzt Anyline auf die IBM Public Cloud.">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Plattform vorgestellt							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/anyline-trainiert-kis-auf-ibms-public-cloud-a-968023/">
+								Anyline trainiert KIs auf IBMs Public Cloud							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout inf-mainnav__item--hidden" id="page_AD790388-3FA8-4747-94F066E2DFA02ACE" style="display: none;">
+				
+								<a id="menu-page_AD790388-3FA8-4747-94F066E2DFA02ACE" title="Big Data Definitionen" class="inf-mainnav__link" href="https://www.bigdata-insider.de/specials/definitionen/">Definitionen</a>				
+													
+										<div class="inf-subnav-flyout inf-flex inf-subnav-flyout--articles-only">
+						
+																		
+												<div class="inf-subnav-articles">
+	<p class="inf-section__title inf-subnav-articles__title">
+		Aktuelle Beiträge aus <span>"Definitionen"</span>
+	</p>
+	<div class="inf-flex" data-infinity-type="partial" data-infinity-id="layout/partials/menu/head/items">
+						<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/was-ist-sap-hana-studio-a-969037/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/qjhIpYg4gRVnOMP0O87v6TMKn5I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/6S8FNk78E1yl7DnZY53DSpRC_qM=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/BSqp64nOUvh-iF5FbNttVkw8SAs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="" alt="">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Definition							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/was-ist-sap-hana-studio-a-969037/">
+								Was ist SAP HANA Studio?							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/was-ist-aiops-a-961230/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/qjhIpYg4gRVnOMP0O87v6TMKn5I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/6S8FNk78E1yl7DnZY53DSpRC_qM=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/BSqp64nOUvh-iF5FbNttVkw8SAs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="" alt="">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Definition							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/was-ist-aiops-a-961230/">
+								Was ist AIOps?							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/was-ist-eine-sap-s4hana-migration-a-960954/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/qjhIpYg4gRVnOMP0O87v6TMKn5I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/6S8FNk78E1yl7DnZY53DSpRC_qM=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/BSqp64nOUvh-iF5FbNttVkw8SAs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="" alt="">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Definition							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/was-ist-eine-sap-s4hana-migration-a-960954/">
+								Was ist eine SAP-S/4HANA-Migration?							</a>
+						</p>
+					</header>
+				</article>
+								<article class="inf-teaser inf-teaser--vertical inf-teaser--subnav">
+											<figure class="inf-teaser__figure--vertical">
+							<a href="https://www.bigdata-insider.de/was-ist-kaggle-a-951812/">
+								<picture>
+
+									<source type="image/webp" srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/qjhIpYg4gRVnOMP0O87v6TMKn5I=/288x162/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/6S8FNk78E1yl7DnZY53DSpRC_qM=/576x324/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<source srcset="https://cdn1.vogel.de/0VjUeusBtkuCAtLQZ78GPli8Ebs=/288x162/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 288w, https://cdn1.vogel.de/BSqp64nOUvh-iF5FbNttVkw8SAs=/576x324/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 576w">
+									<img data-src="https://cdn1.vogel.de/FCb81itjmt7eCsQO1nbqw4Lc3CI=/288x162/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white.jpg" class="inf-teaser__image inf-teaser__image--vertical lazyload" title="" alt="">
+								</picture>
+							</a>
+						</figure>
+										<header>
+												
+												
+												
+												
+													<p class="inf-subhead inf-subhead--small inf-text--hyphens inf-subnav__subhead">
+								Definition							</p>
+						
+						<p class="inf-headline inf-headline--small inf-subnav__headline">
+							<a class="inf-headline__link" href="https://www.bigdata-insider.de/was-ist-kaggle-a-951812/">
+								Was ist Kaggle?							</a>
+						</p>
+					</header>
+				</article>
+					</div>
+</div>
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--with-flyout inf-mainnav__item--hidden" id="page_5e9616a300b24" style="display: none;">
+				
+								<a id="menu-page_5e9616a300b24" title="Mediathek" class="inf-mainnav__link" href="https://www.bigdata-insider.de/mediathek/">Mediathek</a>				
+													
+										<div class="inf-subnav-flyout inf-flex">
+						
+												<ul class="inf-subnav">
+	
+				<li class="inf-subnav__item" id="page_5e96197cb0de6">
+				
+								<a id="menu-page_5e96197cb0de6" title="Whitepaper" class="inf-subnav__link" href="https://www.bigdata-insider.de/whitepaper/">Whitepaper</a>				
+											</li>
+		
+					<li class="inf-subnav__item" id="page_5e9619c98ceda">
+				
+								<a id="menu-page_5e9619c98ceda" title="Webinare" class="inf-subnav__link" href="https://www.bigdata-insider.de/webinare/">Webinare</a>				
+											</li>
+		
+					<li class="inf-subnav__item" id="page_5e961a86959ea">
+				
+								<a id="menu-page_5e961a86959ea" title="Firmen" class="inf-subnav__link" href="https://www.bigdata-insider.de/firmen/">Firmen</a>				
+											</li>
+		
+					<li class="inf-subnav__item" id="page_5e961a1ceb79c">
+				
+								<a id="menu-page_5e961a1ceb79c" title="Bilder" class="inf-subnav__link" href="https://www.bigdata-insider.de/bilder/">Bilder</a>				
+											</li>
+		
+		
+</ul>						
+												
+					</div>
+				
+							</li>
+					<li class="inf-mainnav__item inf-mainnav__item--hidden" id="page_5ea6f7f5afa67" style="display: none;">
+				
+								<a id="menu-page_5ea6f7f5afa67" title="eBooks" class="inf-mainnav__link" href="https://www.bigdata-insider.de/ebooks/">eBooks</a>				
+											</li>
+					<li class="inf-mainnav__item inf-mainnav__item--hidden" id="page_5ea6f849e7e6b" style="display: none;">
+				
+								<a id="menu-page_5ea6f849e7e6b" title="CIO Briefing" class="inf-mainnav__link" href="https://www.bigdata-insider.de/cio/">CIO Briefing</a>				
+											</li>
+					<li class="inf-mainnav__item inf-mainnav__item--hidden" id="page_5e9d49e5f0413" style="display: none;">
+				
+								<a id="menu-page_5e9d49e5f0413" title="Forum | Bigdata Insider" class="inf-mainnav__link" href="https://www.bigdata-insider.de/community/">Forum</a>				
+											</li>
+					<li class="inf-mainnav__item inf-mainnav__item--hidden" id="page_5ea00c5a7a817" style="display: none;">
+				
+								<a id="menu-page_5ea00c5a7a817" class="inf-mainnav__link" href="https://www.akademie.vogel-it.de/" target="_blank">Akademie</a>				
+											</li>
+			<li class="inf-mainnav__item inf-mainnav__item--with-flyout inf-nav__item--more" style="">
+		<a class="inf-mainnav__link">mehr...</a>
+		<div class="inf-subnav-flyout">
+			<ul class="inf-subnav" data-id="mainnav-more">
+			<li class="inf-subnav__item"><a id="" title="Künstliche Intelligenz und Cognitive Computing | BigData-Insider.de" class="inf-subnav__link" href="https://www.bigdata-insider.de/ki/">Künstliche Intelligenz</a></li><li class="inf-subnav__item"><a id="" title="Big Data Definitionen" class="inf-subnav__link" href="https://www.bigdata-insider.de/specials/definitionen/">Definitionen</a></li><li class="inf-subnav__item"><a id="" title="Mediathek" class="inf-subnav__link" href="https://www.bigdata-insider.de/mediathek/">Mediathek</a><a class="inf-icon--subnav-item inf-toggle inf-icon--arrow-dropdown"></a><ul class="inf-subsubnav"><li class="inf-subsubnav__item"><a id="" title="Whitepaper" class="inf-subsubnav__link" href="https://www.bigdata-insider.de/whitepaper/">Whitepaper</a></li><li class="inf-subsubnav__item"><a id="" title="Webinare" class="inf-subsubnav__link" href="https://www.bigdata-insider.de/webinare/">Webinare</a></li><li class="inf-subsubnav__item"><a id="" title="Firmen" class="inf-subsubnav__link" href="https://www.bigdata-insider.de/firmen/">Firmen</a></li><li class="inf-subsubnav__item"><a id="" title="Bilder" class="inf-subsubnav__link" href="https://www.bigdata-insider.de/bilder/">Bilder</a></li></ul></li><li class="inf-subnav__item"><a id="" title="eBooks" class="inf-subnav__link" href="https://www.bigdata-insider.de/ebooks/">eBooks</a></li><li class="inf-subnav__item"><a id="" title="CIO Briefing" class="inf-subnav__link" href="https://www.bigdata-insider.de/cio/">CIO Briefing</a></li><li class="inf-subnav__item"><a id="" title="Forum | Bigdata Insider" class="inf-subnav__link" href="https://www.bigdata-insider.de/community/">Forum</a></li><li class="inf-subnav__item"><a id="" class="inf-subnav__link" href="https://www.akademie.vogel-it.de/" target="_blank">Akademie</a></li></ul>
+		</div>
+	</li>
+</ul>		<div class="inf-search-header">
+			<form action="https://www.bigdata-insider.de/suche/" method="get" class="inf-mainheader__form">
+				<img alt="Suchen" title="Suchen" class="inf-search-header__dropdown-arrow" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/arrow_dropdown.svg">
+				<label>
+					<input type="text" placeholder="Suchbegriff eingeben" class="inf-form__input-text inf-search-header__input-text" name="k" autofocus="autofocus"> </label>
+				<button type="submit" id="search_submit_header" class="inf-btn inf-btn--info inf-search-header__btn inf-focus-on">
+					Suchen				</button>
+			</form>
+			<div id="inf-searchinput" class="inf-icon inf-icon--search"></div>
+		</div>
+					<div class="inf-mainnav__item inf-mainnav__item--with-flyout inf-account-header">
+		<div id="inf-accountinput" class="inf-icon inf-icon--account" onclick="window.location=&#39;/login/&#39;"></div>
+		<div class="inf-subnav-flyout inf-subnav-flyout--accountheader" style="display: none;">
+			<ul class="inf-subnav inf-account-nav">
+				<li class="inf-subnav__item inf-account-nav__item">
+					<a class="inf-subnav__link" id="menu__login" href="https://www.bigdata-insider.de/login/">
+						Login					</a>
+				</li>
+				<li class="inf-subnav__item inf-account-nav__item">
+					<a class="inf-subnav__link" id="menu__registration" href="https://www.bigdata-insider.de/registrierung/">
+						Registrierung					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+					<div class="inf-newsletter-header">
+				<a class="inf-icon inf-icon--mail" id="menu__newsletter" aria-label="Newsletter Sign-Up" href="https://www.bigdata-insider.de/newsletter/anmeldungen/"></a>
+			</div>
+			</div>
+</section>
+
+		<div id="advertisement_04" class="inf-billboard gpt" data-ad-id="advertisement_04" data-infinity-type="ad" data-infinity-id="v1/advertisement_04">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_04);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_04");
+			} // end try
+
+		</script>
+
+	</div>
+				<main class="inf-detail-main">
+	
+	<nav class="inf-breadcrumb">
+	<ol class="inf-breadcrumb__list">
+		<li class="inf-breadcrumb__item">
+			<a class="inf-text--mini inf-breadcrumb__link" href="https://www.bigdata-insider.de/">
+				Startseite			</a>
+		</li>
+										<li class="inf-breadcrumb__item">
+						<a class="inf-text--mini inf-breadcrumb__link" href="https://www.bigdata-insider.de/infrastruktur/">
+							Infrastruktur						</a>
+					</li>
+								
+										<li class="inf-breadcrumb__item">
+					<h1 class="inf-breadcrumb__h1 inf-text--mini">Big Data, SQL und NoSQL – eine kurze Übersicht</h1>
+				</li>
+				</ol>
+</nav>	
+		<article data-infinity-type="row" data-infinity-id="content/detail/default/v1" id="article-detail" class="inf-article-detail">
+			<h2 class="inf-no-margin"><span class="inf-subhead inf-subhead--large inf-block">Kommentar von Alexander Lapp, Adacor Hosting </span><span class="inf-headline inf-headline--large--thin inf-block inf-no-margin">Big Data, SQL und NoSQL – eine kurze Übersicht </span></h2><div class="inf-date-author inf-margintop--big"><time datetime="2017-05-24T07:00:00+02:00">24.05.2017</time> |
+                    Autor /
+                    Redakteur:
+                     Alexander Lapp
+                    /  <a class="inf-text__link" href="https://www.bigdata-insider.de/autor/nico-litzel/27572/"> Nico Litzel</a></div><p class="inf-text--large">Die Begriffe Big Data, SQL und NoSQL, relationale oder objektorientierte Datenbanken werden häufig in einen Topf geworfen und in beliebigen Querverbindungen miteinander verglichen. Tatsächlich hat das eine mit dem anderen zwangsweise nichts zu tun. Woher kommt dann diese Denkweise und wie kann man die Themen korrekt einordnen?</p>	
+		<section class="inf-companies-rel" data-infinity-type="teaser" data-infinity-id="companies">
+	<p class="inf-headline--small">
+		Firmen zum Thema	</p>
+	<div class="inf-companies-rel__content">
+							<div class="inf-companies-rel__company inf-flex" data-infinity-type="partial" aria-label="Adacor Hosting GmbH">
+		<a class="inf-companies-rel__company-name inf-text--mini inf-text--hyphens" href="https://www.bigdata-insider.de/adacor-hosting-gmbh-c-272941/">
+			Adacor Hosting GmbH		</a>
+	</div>
+							<div class="inf-companies-rel__company inf-flex" data-infinity-type="partial" data-infinity-id="company/related" aria-label="Sinequa">
+		<a href="https://www.bigdata-insider.de/sinequa-c-279998/">
+			<picture>
+				<img class="inf-companies-rel__logo lazyloaded" alt="sinequa-240.png" title="sinequa-240.png" data-src="https://cdn1.vogel.de/vQ_gLkHBWencusXRuOV4xWaoIYY=/fit-in/88x88/filters:format(png):fill(fff,0)/images.vogel.de/vogelonline/companyimg/111800/111895/65.png" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/65.png">
+			</picture>
+			<span class="inf-companies-rel__company-name inf-companies-rel__company-name--tablet">
+				Sinequa			</span>
+		</a>
+	</div>
+							<div class="inf-companies-rel__company inf-flex" data-infinity-type="partial" data-infinity-id="company/related" aria-label="Confluent Germany GmbH">
+		<a href="https://www.bigdata-insider.de/confluent-germany-gmbh-c-283961/">
+			<picture>
+				<img class="inf-companies-rel__logo lazyloaded" alt="20200122-PNG-confluent_logo-denim.png" title="20200122-PNG-confluent_logo-denim.png" data-src="https://cdn1.vogel.de/zOY--QradsMn2-iCqoqIohOgSnc=/fit-in/88x88/filters:format(png):fill(fff,0)/images.vogel.de/vogelonline/companyimg/134700/134771/65.png" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/65(1).png">
+			</picture>
+			<span class="inf-companies-rel__company-name inf-companies-rel__company-name--tablet">
+				Confluent Germany GmbH			</span>
+		</a>
+	</div>
+					</div>
+	</section>	
+		<figure class="inf-inlineimage inf-inlineimage--w100"><a href="https://cdn1.vogel.de/unsafe/fit-in/1000x0/images.vogel.de/vogelonline/bdb/1219500/1219521/original.jpg" target="_blank" rel="noopener"><picture><img class="inf-inlineimage__img lazyautosizes lazyloaded" data-sizes="auto" data-src="https://cdn1.vogel.de/unsafe/800x0/smart/images.vogel.de/vogelonline/bdb/1219500/1219521/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/original.jpg" alt="Der Autor: Alexander Lapp ist Geschäftsführer und Chief Customer Officer der Adacor Hosting GmbH" sizes="800px"></picture></a><figcaption class="inf-figcaption">Der Autor: Alexander Lapp ist Geschäftsführer und Chief Customer Officer der Adacor Hosting GmbH<div class="inf-figcaption__pic-source">                                         (Bild: Adacor Hosting)                                     </div></figcaption></figure><!--head--> <p class="inf-text--medium-sec">Michael Kroker fasste es in einem seiner <a href="http://blog.wiwo.de/look-at-it/2015/02/23/big-data-datenvolumina-steigen-40-prozent-pro-jahr-und-insgesamt-um-faktor-50-bis-2020/" class="inf-text__link" target="_blank" rel="noopener">Wirtschaftswoche-Blogs</a> gut zusammen: Das Datenvolumen steigt um 40 Prozent pro Jahr – und insgesamt um den Faktor 50 bis 2020. Das heißt, in drei Jahren werden es weltweit 44 Zettabyte Datenvolumen sein, das entspricht 5.200 Gigabyte pro Erdenbürger. Verdeutlicht man sich diese Werte, so wird klar, dass zukünftig kein Unternehmen mehr um das Thema „<a href="https://www.bigdata-insider.de/was-ist-big-data-a-562440/" class="inf-text__link inf-text__keyword">Big Data</a>“ herumkommen wird. Besonders spannend ist in diesem Zusammenhang die Frage nach den Möglichkeiten der Verarbeitung solcher Massendaten.</p><p class="inf-text--medium-sec">So sollte beispielweise der Einsatz von Datenbanken niemals von der Vorliebe der Entwicklung abhängig sein, sondern sich immer am Anwendungszweck des jeweiligen IT-Projekts – bezogen auf die Gesamtinfrastruktur – orientieren. Der Einsatz einer relationalen Datenbank kann zum Beispiel durchaus sinnvoll sein, auch wenn das Modell selbst gerade nicht en vogue ist. Im Gegensatz dazu ist es vielleicht unvernünftig eine <a href="https://www.bigdata-insider.de/was-ist-nosql-a-615718/" class="inf-text__link inf-text__keyword">NoSQL</a>-Datenbank für einen überschaubaren und strukturierten Datenbestand einzusetzen, nur weil das Vorgehen gerade in aller Munde ist. Welches Datenbankmodell sich im Einzelnen am besten eignet, hängt vom Einsatzzweck ab.</p><!--xheading--> <h3 class="inf-xheading">Übersicht der gängigen Datenbankmodelle</h3><ul class="inf-list inf-list--ol"><li class="inf-list__item">1. Relationale Datenbanken</li></ul> <ul class="inf-list inf-list--ol"><li class="inf-list__item">2. Objektorientierte Datenbanken</li></ul> <ul class="inf-list inf-list--ol"><li class="inf-list__item">3. Dokumentenbasierte Datenbanken</li></ul> <!--newnumbering--> <p class="inf-text--medium-sec">(Hier nicht berücksichtigt: Netzwerkdatenbankmodell, Objektrelationale Datenbanken, Hierarchische und so weiter)</p>	<div id="advertisement_07" class="inf-ad--article-right gpt" data-ad-id="advertisement_07" data-infinity-type="ad" data-infinity-id="v1/advertisement_07">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_07);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_07");
+			} // end try
+
+		</script>
+
+	</div>
+	<!--xheading--> <h3 class="inf-xheading">1. Relationale Datenbanken</h3><p class="inf-text--medium-sec">Relationale Datenbanken können über SQL abgefragt werden. Sie zählen zu den am weitesten verbreiteten Datenbankmodellen. Der Grund dafür liegt darin, dass relationale Datenbanken einfach und flexibel zu erstellen und zu steuern sind. Am bekanntesten sind die Systeme von Oracle, <a href="https://www.bigdata-insider.de/was-ist-mysql-a-614184/" class="inf-text__link inf-text__keyword">MySQL</a> und MSSQL.</p><p class="inf-text--medium-sec">Bei dem relationalen Datenbankmodell findet die Datenspeicherung in strukturierten Tabellen statt. Diese stehen zueinander in einer Relation (Beziehung), die über einen Fremdschlüssel realisiert wird. Darüber hinaus können die Beziehungen mithilfe eines Primärschlüssels hergestellt werden. Das Ziel ist es dann, bestimmte Eigenschaften abzufragen, die den gleichen Primärschlüssel oder eine detaillierte Tabelle als Fremdschlüssel besitzen.</p><p class="inf-text--medium-sec">Jede Tabellenzeile (Tupel) steht dabei für einen Datensatz (Record). Darüber hinaus besteht jede Zeile aus einer Reihe von Attributen (Merkmalen). Diese stellen die Tabellenspalten dar. Über das Abfragen der in der Relation eingebundenen Tabellen werden die gewünschten Informationen errechnet und aufgelistet.</p>	<div id="advertisement_09" class="inf-ad--article-left gpt" data-ad-id="advertisement_09" data-infinity-type="ad" data-infinity-id="v1/advertisement_09">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_09);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_09");
+			} // end try
+
+		</script>
+
+	</div>
+	<p class="inf-text--medium-sec">Die Themen „Performance“ und „die fehlende Gewährleistung der Datenintegrität“ bringen bei komplexen Relationsmodellen und vielen Daten einige Nachteile mit. Die Performance-Probleme resultieren aus der Mengenlehre. So müssen die Tabellen zueinander geführt werden, um sie auszuwerten. Das passiert mit jeder Verknüpfung in einer Menge, die dann wieder mit der neuen Verknüpfung zusammengeführt wird. In der daraus entstehenden Endmenge werden die Ergebnisse gefiltert. Dieses Vorgehen führt bei vielen Tabellen zu hoher Komplexität und großen temporären Speicheraktionen. Die Rechenvorgänge dauern deshalb entsprechend lange und verbrauchen viel Speicher. Bei der Datenintegrität hingegen gibt es potenziell falsche Ergebnisse, wenn man die Integrität nicht „programmiert“ hat. Diese Nachteile können nur teilweise über das System und die genutzte Fremdschlüsselstruktur abgefangen werden und sitzen zum Teil in der Applikation.</p><!--xheading--> <h3 class="inf-xheading">2. Objektorientierte Datenbanken </h3><p class="inf-text--medium-sec">Objektorientierte Datenbanken basieren darauf, dass die Datenhaltung zusammen mit ihren Funktionen in einem Objekt erfolgt. Das Objekt, in dem die Daten abgelegt sind, übernimmt dann intern die Datenverwaltung. Dazu gibt es zum Datenbankmodell passende Objektsprachen. Mit deren Hilfe oder über die Objektfunktionen können die Daten ausgelesen werden. </p><p class="inf-text--medium-sec">Die Objektsprachen orientierten sich an dem Musterbild der objektorientierten Programmierung und der jeweiligen Programmiersprache wie zum Beispiel Java oder C++.</p><p class="inf-text--medium-sec">Objektorientierte Datenbanken sind in der Praxis wenig verbreitet. Dadurch gestaltet sich ihre Implementierung kompliziert, denn es fehlen einige Schnittstellen und Zwischen-Layer, um eine ähnlich flexible Entwicklungsmöglichkeiten zu erreichen wie bei relationalen Datenbanken. Weiterhin kann die Komplexität eines Objektes so stark steigen, dass die Geschwindigkeit des Objektdatenmanagementsystems (ODMS) massiv sinkt. Mit der zunehmenden Verbreitung objektorientierter Programmiersprachen dürfte das Modell in Zukunft jedoch an Bedeutung gewinnen. </p><!--xheading--> <h3 class="inf-xheading">3. Dokumentenorientierte Datenbanken</h3><p class="inf-text--medium-sec">Bei dem dokumentenorientierten Datenbankmodell werden die Daten in Dokumenten abgelegt. Ein Dokument steht in diesem Zusammenhang für einzelne, aber in sich unterschiedlich strukturierte Einheiten. Das können Dokumente im Standarddateiformat sein oder strukturierte Dateien mit einem festlegbaren Schema an Datenfeldern. Jedes dieser Dokumente besitzt einen eindeutigen Identifikator, mit dessen Hilfe das Dokument immer wieder gefunden werden kann. Die einzelnen Dokumente stehen nicht im Zusammenhang zueinander. Die Daten in einem Dokument werden in Form von Schlüssel-/Wertpaaren gesichert. Das heißt, das Dokument besteht aus einer Reihe mit Namen versehener Schlüsselfelder, denen jeweils ein bestimmter Wert zugeordnet ist. </p><p class="inf-text--medium-sec">Bei vielen dokumentenorientierten Datenbanken erfolgt die Abfrage mit einem nicht-relationalen Ansatz (NoSQL). Das heißt, es besteht keine SQL-ähnliche Syntax um Beziehungen zwischen den Tabellen und Spalten beziehungsweise in diesem Fall Dokumenten abzufragen.</p><p class="inf-text--medium-sec"></p><figure class="inf-inlineimage inf-inlineimage--w50 inf-left"><a href="https://cdn1.vogel.de/unsafe/fit-in/1000x0/images.vogel.de/vogelonline/bdb/1219500/1219540/original.jpg" target="_blank" rel="noopener"><picture><img data-src="https://cdn1.vogel.de/unsafe/540x0/smart/images.vogel.de/vogelonline/bdb/1219500/1219540/original.jpg" data-sizes="auto" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/12.jpg" title="Bekannte Beispieltechnologien" alt="Bekannte Beispieltechnologien" class="inf-inlineimage__img lazyload"></picture></a><figcaption class="inf-figcaption">Bekannte Beispieltechnologien <div class="inf-figcaption__pic-source">                             (Bild: Adacor Hosting)                         </div></figcaption></figure><p></p><!--xheading--> <h3 class="inf-xheading">So unterscheiden sich NoSQL und SQL von den Datenbankmodellen</h3><p class="inf-text--medium-sec">Aus den bisherigen Ausführungen ist zu erkennen, dass die Begriffe „NoSQL“ und „SQL“ nicht auf einer Ebene mit den Datenbankmodellen stehen. Vielmehr stellen sie die Datenbanksprachen dar, in einer Art und Weise, wie Daten innerhalb dieser Modelle gespeichert und wieder abgefragt werden. Das funktioniert bei relationalen Datenbanken, zum Beispiel mit SQL, und bei dokumentenorientierten Datenbanken mit dem Sammelbegriff NoSQL. Es gibt also diverse Unterschiede, aber es ist nirgendwo festgelegt, welche Differenzierungen tatsächlich maßgebend sind. Darüber hinaus gibt es weitere Datenbankmodelle, die außerhalb dieser drei Elemente anzusiedeln sind: zum Beispiel grafenorientierte Datenbanken.</p><!--xheading--> <h3 class="inf-xheading">Die vier Unterschiede zwischen NoSQL und SQL</h3><p class="inf-text--medium-sec">Im Wesentlichen gibt es vier Unterschiede zwischen NoSQL und SQL als Datenbanksprache und der Art und Weise, wie die Daten innerhalb des Datenbankmodells gespeichert werden:</p><ul class="inf-list inf-list--ol"><li class="inf-list__item">1. Tabellen gegenüber Sammlungen (Tables versus Collections)</li></ul> <ul class="inf-list inf-list--ol"><li class="inf-list__item">2. Unterschiedlicher Normalisierungsgrad bei den Datenbankinhalten</li></ul> <ul class="inf-list inf-list--ol"><li class="inf-list__item">3. Verschiedene Anforderungen an die Skalierung</li></ul> <ul class="inf-list inf-list--ol"><li class="inf-list__item">4. ACID versus BASE</li></ul> <!--newnumbering--> <!--xheading--> <h3 class="inf-xheading">1. Tabellen gegenüber Sammlungen (Tables versus Collections)</h3><p class="inf-text--medium-sec">SQL-basierte Datenbanken speichern Daten in Tabellenform. Die Tabellen werden dabei in Relation zueinander gesetzt. Das heißt, bereits ein Excel-Sheet stellt in Form und Aufbau eine Tabelle einer SQL-Datenbank dar.</p><p class="inf-text--medium-sec"></p><figure class="inf-inlineimage inf-inlineimage--w50 inf-left"><a href="https://cdn1.vogel.de/unsafe/fit-in/1000x0/images.vogel.de/vogelonline/bdb/1219500/1219541/original.jpg" target="_blank" rel="noopener"><picture><img data-src="https://cdn1.vogel.de/unsafe/540x0/smart/images.vogel.de/vogelonline/bdb/1219500/1219541/original.jpg" data-sizes="auto" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/12.jpg" title="Ein beliebtes Beispiel ist eine typische Adresskartei (Tabelle Adressen)." alt="Ein beliebtes Beispiel ist eine typische Adresskartei (Tabelle Adressen)." class="inf-inlineimage__img lazyload"></picture></a><figcaption class="inf-figcaption">Ein beliebtes Beispiel ist eine typische Adresskartei (Tabelle Adressen). <div class="inf-figcaption__pic-source">                             (Bild: Adacor Hosting)                         </div></figcaption></figure><p></p><p class="inf-text--medium-sec">Innerhalb des Datenbankmodells kann es weitere Tabellen geben, die auf die oben genannte Tabelle verweisen. Dazu wird der in der Tabelle „Adressen“ vorhandene #schluessel# verwendet und als Eintrag in weiteren Tabellen genutzt. So entsteht eine voneinander abhängige Datenstruktur, die in einer Tabellenform aufgebaut ist. Das heißt, eindeutige Schlüssel, Indexspalten zum schnelleren Auffinden von Werten in der Datenbank sowie Verknüpfungen zu anderen Datenbanktabellen (Relationen) sind obligatorisch.</p><p class="inf-text--medium-sec">NoSQL-basierte Datenbanksysteme speichern dagegen die Daten auf verschiedene Art und Weise, zum Beispiel indem die Datensätze als flexible Schlüssel-/Wertpaaren aufgebaut sind. Diese Schlüssel-/Wertpaare sind nicht statisch festgelegt und befinden sich innerhalb eines „Dokuments“ als Datensatz.</p><div class="inf-code"><code class="inf-text-code">{</code><code class="inf-text-code">	NAME: "Max Mustermann",</code><code class="inf-text-code">	Strasse: "Relationsgasse 5",</code><code class="inf-text-code">	PLZ: "12345",</code><code class="inf-text-code">	Ort: "Datenbergen"</code><code class="inf-text-code">}</code></div><p class="inf-text--medium-sec">Ohne die eigentliche Datenbankstruktur zu ändern, könnte innerhalb dieses Datensatzes ein neues Schlüssel-/Wertpaar eingesetzt werden:</p><div class="inf-code"><code class="inf-text-code">{</code><code class="inf-text-code">	NAME: "Max Mustermann",</code><code class="inf-text-code">	Strasse: "Relationsgasse 5",</code><code class="inf-text-code">	PLZ: "12345",</code><code class="inf-text-code">	Ort: "Datenbergen",</code><code class="inf-text-code">	Telefonnummer: "5552322"</code><code class="inf-text-code">}</code></div><!--xheading--> <h3 class="inf-xheading">2. Unterschiedlicher Normalisierungsgrad bei den Datenbankinhalten</h3><p class="inf-text--medium-sec">Wenn man die festgelegte Struktur der SQL-basierten Datenbank berücksichtigt und davon ausgeht, dass die dadurch implementierten Regeln strikt eingehalten werden (damit werden Fehler vermieden), ist ein hoher Normalisierungsgrad bei den Datenbankinhalten (Aufteilung in einzelne Werte) nötig, um dies ausreichend zu gewährleisten. Die <a href="https://www.bigdata-insider.de/was-ist-normalisierung-a-840412/" class="inf-text__link inf-text__keyword">Normalisierung</a> macht das Datenmodell statischer und sorgt gleichzeitig dafür, dass das Aufspannen der modellierten Struktur über verschiedene Tabellen potenziell mehr Last und Logik im Datenbanksystem erzeugt. So ist die Datenablage in NoSQL-Datenbanken durch zusammenhangslose Datensammlungen wesentlich einfacher. Das Lesen und Schreiben auf ein Element passiert schneller. Dieser Vorgang wird deutlich, wenn Daten aus einem SQL-System gelesen werden sollen und parallel ein Schreibvorgang einzelne Tabellen „sperrt“, um die Transaktion mit allen ihren Abhängigkeiten abzuschließen. SQL wartet mit dem Lesen bis der Schreibvorgang abgeschlossen wird. NoSQL liest das, was in diesem Moment an Daten vorhanden ist.</p><!--xheading--> <h3 class="inf-xheading">3. Verschiedene Anforderungen an die Skalierung</h3><p class="inf-text--medium-sec">Durch die Normalisierung und die Transaktionstreue ist die Skalierung eines SQL-basierten Systems in der Regel herausfordernder als bei NoSQL-basierten Systemen. Die Verteilung der Tabellen und Verknüpfungen auf unterschiedliche Systeme wird dadurch komplex, dass Transaktionen erst abgeschlossen werden müssen. Danach können sie auf andere Bereiche repliziert werden. Lesende Zugriffe müssen dabei nicht nur auf den Transaktionsabschluss warten, sondern auch auf die Replikation der Datensätze. </p><p class="inf-text--medium-sec">Die Skalierbarkeit von SQL-basierten Systemen erkauft man sich meist mit einer Hypothek auf die etwas länger dauernden Schreibvorgänge. NoSQL-Systeme erzeugen Kopien der Datensätze und verteilen diese über verschiedene Knoten. Sollte sich ein Datensatz ändern, werden die Sammlungen eine nach der anderen abgeändert. Gelesen werden kann immer. In diesem Fall kann es allerdings passieren, dass ein alter und noch nicht geänderter Datensatz gelesen wird, obwohl kurz vorher eine Änderung in das System eingespielt wurde.</p><!--xheading--> <h3 class="inf-xheading">4. ACID versus BASE</h3><p class="inf-text--medium-sec">SQL-basierte Datenbanken sind in allen ihren Strukturen und Transaktionen konsistent. Dadurch, dass die lesenden Abfragen auf die schreibenden Vorgänge warten, ist davon auszugehen, dass die Daten nachvollziehbar (bei jeder Abfrage des Systems) und gleich sind. NoSQL-basierte Systeme können, sollte noch eine Synchronisation stattfinden müssen, unterschiedliche Ergebnisse liefern. Ein gutes Beispiel dafür ist ein dreifacher Reload eines Twitter-Feeds im Webbrowser, der zwei unterschiedliche Ergebnisse liefern kann, je nachdem wo die Abfrage landet.</p><p class="inf-text--medium-sec"></p><figure class="inf-inlineimage inf-inlineimage--w50 inf-left"><a href="https://cdn1.vogel.de/unsafe/fit-in/1000x0/images.vogel.de/vogelonline/bdb/1219500/1219539/original.jpg" target="_blank" rel="noopener"><picture><img data-src="https://cdn1.vogel.de/unsafe/540x0/smart/images.vogel.de/vogelonline/bdb/1219500/1219539/original.jpg" data-sizes="auto" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/12.jpg" title="ACID und BASE im Vergleich" alt="ACID und BASE im Vergleich" class="inf-inlineimage__img lazyload"></picture></a><figcaption class="inf-figcaption">ACID und BASE im Vergleich <div class="inf-figcaption__pic-source">                             (Bild: Adacor Hosting)                         </div></figcaption></figure><p></p><!--xheading--> <h3 class="inf-xheading">Welche Datenbank ist nun die richtige?</h3><p class="inf-text--medium-sec">Aus den bisherigen Betrachtungen lässt sich folgende wichtige Erkenntnis ableiten: </p><p class="inf-text--medium-sec">Der Einsatz von Datenbanksystemen in einem Unternehmen sollte nicht davon abhängen, ob dies „strategisch“ so vorgesehen ist, die Entwickler eine bestimmte Vorliebe haben oder das besagte Modell gerade gehypt wird.</p><p class="inf-text--medium-sec">Vielmehr sollte die Implementierungsform immer auf den spezifischen Anwendungszweck angepasst werden. Dabei sind die Vor- und Nachteile zu beachten, die entstehen, wenn man die Acid-/Base-Situation genau beleuchtet und auf die jeweilige Datenstruktur und Anwendung projiziert. In vielen Projekten werden einige der genannten Systeme parallel zueinander betrieben. Damit wird das Ziel verfolgt, die Vorteile zu nutzen und die Nachteile auszublenden. Genau das ist die richtige Vorgehensweise. So würde ich ein System zur Nutzer-Authentifizierung und -verwaltung eher einem SQL-basierten System zuschreiben und eine Datensatzsammlung, bei der es unerheblich ist, ob sie um zehn Uhr oder zwei Sekunden später über die Applikation ausgeliefert wird, eher dem NoSQL-basierten System.</p><!--xheading--> <h3 class="inf-xheading">Was heißt das für Big Data?</h3><p class="inf-text--medium-sec">Um diese Frage zu beantworten, lohnt es sich eine weitere Frage zu stellen: Ist es sinnvoll ein massive Anzahl einzelner Datensätze in eine SQL-Datenbank zu schreiben und jedes Mal auf den Abschluss der Transaktion zu warten? Die Antwort lautet: nein. Nun wissen Sie, warum Big Data, was eigentlich ein Begriff für massive Datenhaltung ist, häufig als Synonym für NoSQL-Datenbanken genutzt wird.</p>						<p class="inf-text--small">(ID:44653614)</p>
+	
+</article>		
+<section id="articlecomments" class="inf-section inf-col-12"><div><p class="inf-section__title">Kommentare</p> <div class="inf-teaserbox-var-1 inf-teaserbox-var-1--no-border inf-marginbottom--large"><p class="inf-text--medium inf-text-center inf-marginbottom--small">Sie sind nicht angemeldet</p> <div class="inf-text-center"><a href="https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/topic/" class="inf-btn inf-btn--primary">Anmelden und mitdiskutieren</a></div></div> <!----> <!----> <div class="inf-marginbottom--big"><div class="inf-comment inf-flex inf-flex--start"><div class="inf-comment__img-wrapper"><div title="SQl (nicht registrierter User)" alt="SQl (nicht registrierter User)" class="inf-comment__profile-img" style="background-color: rgb(170, 170, 170);">?</div></div> <div class="inf-comment__text"><div class="inf-text--medium inf-text--font-w-bold inf-marginbottom--mini"><span>SQl (nicht registrierter User)</span> <span class="inf-text--small-regular inf-comment__date">03.09.2019, 16:17</span></div> <p class="inf-text--medium-light inf-no-margin"><p dir="auto">guter Artikell</p>
+</p></div></div><div class="inf-comment inf-flex inf-flex--start"><div class="inf-comment__img-wrapper"><div title="nicht registrierter Nutzer (nicht registrierter User)" alt="nicht registrierter Nutzer (nicht registrierter User)" class="inf-comment__profile-img" style="background-color: rgb(170, 170, 170);">?</div></div> <div class="inf-comment__text"><div class="inf-text--medium inf-text--font-w-bold inf-marginbottom--mini"><span>nicht registrierter Nutzer (nicht registrierter User)</span> <span class="inf-text--small-regular inf-comment__date">23.02.2019, 18:34</span></div> <p class="inf-text--medium-light inf-no-margin"><p dir="auto">Guter Artikel, sehr verständlich erklärt, hat mir sehr weiter geholfen.<br>
+Vielen Dank <img src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/1f642.png" class="not-responsive emoji emoji-android emoji--slightly_smiling_face" title=":)" alt="🙂"></p>
+</p></div></div><div class="inf-comment inf-flex inf-flex--start"><div class="inf-comment__img-wrapper"><div title="Räuber Hozenplotz (nicht registrierter User)" alt="Räuber Hozenplotz (nicht registrierter User)" class="inf-comment__profile-img" style="background-color: rgb(170, 170, 170);">?</div></div> <div class="inf-comment__text"><div class="inf-text--medium inf-text--font-w-bold inf-marginbottom--mini"><span>Räuber Hozenplotz (nicht registrierter User)</span> <span class="inf-text--small-regular inf-comment__date">19.02.2019, 16:13</span></div> <p class="inf-text--medium-light inf-no-margin"><p dir="auto">Sehr guter Artikel, danke dafür.<br>
+Kleine Anmerkung zu BASE:</p>
+<p dir="auto">Eventual = letztendlich, nicht wie vom Autor übersetzt "mögliche"</p>
+</p></div></div></div></div></section>
+
+<script type="text/x-template" id="comment-template">
+    <div>
+		<p class="inf-section__title">Kommentare</p>
+		<div v-if="!authenticated" class="inf-teaserbox-var-1 inf-teaserbox-var-1--no-border inf-marginbottom--large">
+			<p class="inf-text--medium inf-text-center inf-marginbottom--small">Sie sind nicht angemeldet</p>
+			<div class='inf-text-center'>
+				<a class="inf-btn inf-btn--primary" href="/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/topic/">Anmelden und mitdiskutieren</a>
+			</div>
+		</div>
+		<div v-if="authenticated && tid" class="inf-teaserbox-var-1 inf-teaserbox-var-1--no-border inf-marginbottom--large">
+			<div class='inf-text-center'>
+				<a class="inf-btn inf-btn--primary" v-bind:href="nodeBBURL + '/topic/'+ tid" target="_blank">Mitdiskutieren</a>
+			</div>
+		</div>
+		<div v-if="authenticated && !tid" class="inf-teaserbox-var-1 inf-teaserbox-var-1--no-border inf-marginbottom--large">
+			<div class='inf-text-center'>
+
+				<a class="inf-btn inf-btn--primary" href="/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/topic/">Mitdiskutieren</a>
+
+			</div>
+		</div>
+		<div class="inf-marginbottom--big" v-if="tid">
+			<comment-item v-for="(comment,index) in posts" v-bind:key="index" :comment="comment"></comment-item>
+		</div>
+	</div>
+</script>
+
+<script type="text/x-template" id="comment-item-template">
+	<div class="inf-comment inf-flex inf-flex--start">
+		<div class="inf-comment__img-wrapper">
+			<img class="inf-comment__profile-img" v-if="picture" v-bind:src="picture" v-bind:alt="comment.user.username" v-bind:title="comment.user.username">
+			<div class="inf-comment__profile-img" v-else v-bind:style="{ 'background-color': comment.user['icon:bgColor']}" v-bind:title="comment.user.username" v-bind:alt="comment.user.username">{{comment.user["icon:text"]}}</div>
+		</div>
+		<div class="inf-comment__text">
+			<div class="inf-text--medium inf-text--font-w-bold inf-marginbottom--mini">
+				<a v-if="comment.user.uid > 0" v-bind:href="nodeBBURL+'/user/'+comment.user.userslug">{{ comment.user.username }}</a>
+				<span v-else-if="comment.user.username == '[[global:guest]]'">Gast</span>
+                <span v-else>{{ comment.user.username }}</span>
+                <span class="inf-text--small-regular inf-comment__date">{{date }}</span>
+            </div>
+            <p class="inf-text--medium-light inf-no-margin" v-html="htmlcontent">
+            </p>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/javascript">
+
+    	$(document).ready(function ()
+	{
+		var config = {"aid":44653614,"authenticated":false,"nodeBBURL":"\/community\/"};
+		var app = InfinityComments.init(config);
+	});
+</script>
+<noscript>Please enable JavaScript to view comments</noscript>		<nav class="inf-toolbar " data-infinity-type="teaser" data-infinity-id="toolbar">
+
+		<a class="inf-icon inf-icon--facebook inf-toolbar__icon" href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F" target="_blank" rel="noopener" aria-label="facebook">&nbsp;</a>
+
+		<a class="inf-icon inf-icon--whatsapp inf-toolbar__icon" href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F" target="_blank" rel="noopener" aria-label="whatsapp" style="display: none;"> </a>
+
+		<a class="inf-icon inf-icon--twitter inf-toolbar__icon" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F&amp;text=Big+Data%2C+SQL+und+NoSQL+%E2%80%93+eine+kurze+%C3%9Cbersicht" target="_blank" rel="noopener" aria-label="twitter">&nbsp;</a>
+
+		<a class="inf-icon inf-toolbar__icon inf-icon--xing-outline" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url=https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F" target="_blank" rel="noopener" aria-label="xing">&nbsp;</a>
+
+		<a class="inf-icon inf-toolbar__icon inf-icon--linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F&amp;title=Big+Data%2C+SQL+und+NoSQL+%E2%80%93+eine+kurze+%C3%9Cbersicht&amp;summary=&amp;source=" target="_blank" rel="noopener" aria-label="linkedin">&nbsp;</a>
+
+		<a class="inf-icon inf-icon--mail inf-toolbar__icon" href="mailto:?subject=BigData-Insider%20-%20Big%20Data%2C%20SQL%20und%20NoSQL%20%E2%80%93%20eine%20kurze%20%C3%9Cbersicht&amp;body=Big%20Data%2C%20SQL%20und%20NoSQL%20%E2%80%93%20eine%20kurze%20%C3%9Cbersicht%0ADie%20Begriffe%20Big%20Data%2C%20SQL%20und%20NoSQL%2C%20relationale%20oder%20objektorientierte%20Datenbanken%20werden%20h%C3%A4ufig%20in%20einen%20Topf%20geworfen%20und%20in%20beliebigen%20Querverbindungen%20miteinander%20verglichen.%20Tats%C3%A4chlich%20hat%20das%20eine%20mit%20dem%20anderen%20zwangsweise%20nichts%20zu%20tun.%20Woher%20kommt%20dann%20diese%20Denkweise%20und%20wie%20kann%20man%20die%20Themen%20korrekt%20einordnen%3F%0A%0A-------------------------------------------------------------------------------------------%0ADen%20vollst%C3%A4ndigen%20Inhalt%20lesen%20Sie%20hier%3A%20https%3A%2F%2Fwww.bigdata-insider.de%2Fbig-data-sql-und-nosql-eine-kurze-uebersicht-a-602249%2F" rel="noopener" aria-label="mail">&nbsp;</a>
+		
+					<span class="inf-icon inf-icon--print inf-toolbar__icon" onclick="window.print()" rel="noopener" aria-label="print"> </span>
+				
+					<a href="https://www.bigdata-insider.de/big-data-sql-und-nosql-eine-kurze-uebersicht-a-602249/pdf/" class="inf-icon inf-icon--download inf-toolbar__icon" rel="noopener" aria-label="download"> </a>
+		
+	</nav>
+
+	<script>
+		$(document).ready(function ()
+		{
+
+			// Nur mobile Endgeraete
+			if (!(navigator.userAgent.match(/Android|iPhone/i) && !navigator.userAgent.match(/iPod|iPad/i)))
+			{
+				$(".inf-icon--whatsapp").hide();
+			} // end if
+
+		});
+	</script>
+	<div class="inf-flex inf-marginbottom--medium" data-infinity-type="row" data-infinity-id="v1">
+	<section data-section-id="section_5f7c2678923365.02489799" class="inf-section inf-col-6 inf-phone-col-12 inf-section--content-ad" data-infinity-type="section" data-infinity-id="v19">
+		<!-- data-infinity-type="section" data-infinity-id="inner/v1" -->
+	<div id="advertisement_10" class="inf-ad__listing gpt" data-ad-id="advertisement_10" data-infinity-type="ad" data-infinity-id="v1/advertisement_10">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_10);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_10");
+			} // end try
+
+		</script>
+
+	</div>
+	
+</section><section data-section-id="section_5f7c2678923469.33744768" class="inf-section inf-col-6 inf-phone-col-12 inf-section--content-ad" data-infinity-type="section" data-infinity-id="v19">
+		<!-- data-infinity-type="section" data-infinity-id="inner/v1" -->
+	<div id="advertisement_13" class="inf-ad__listing gpt" data-ad-id="advertisement_13" data-infinity-type="ad" data-infinity-id="v1/advertisement_13">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_13);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_13");
+			} // end try
+
+		</script>
+
+	</div>
+	
+</section></div>
+		<section class="inf-section inf-col-12 inf-related-teaser" data-infinity-type="teaser" data-infinity-id="related-content-inline">
+	<p class="inf-section__title">Weiterführende Inhalte</p>
+	<div class="inf-section__wrapper inf-flex">
+					<article class="inf-teaser inf-teaser--with-overlay" data-infinity-type="partial" data-infinity-id="content/teaser/v4">
+	<a href="https://www.bigdata-insider.de/was-ist-couchbase-a-934651/" class="inf-block">
+					<figure class="inf-teaser__figure--with-overlay">
+				<picture>
+					<source media="(max-width: 654px)" type="image/webp" srcset="https://cdn1.vogel.de/Ww04RNeK3zw6bEjHldauTbjaXhw=/273x152/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/bjwK8dxCd5Ark2IXANjKFbgbUMo=/273x152/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg, https://cdn1.vogel.de/uWwZG3NZSSmtZDahd7O48-M7jQ4=/546x304/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 2x" data-src="https://cdn1.vogel.de/bjwK8dxCd5Ark2IXANjKFbgbUMo=/273x152/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg">
+					<source media="(max-width: 654px)" type="image/jpg" srcset="https://cdn1.vogel.de/Ww04RNeK3zw6bEjHldauTbjaXhw=/273x152/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/NM9p4Q_pYTBKzsmTE52xyNZKbak=/273x152/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg, https://cdn1.vogel.de/WyYfuXRK-j93dxTJo0xk-i6IN0I=/546x304/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 2x" data-src="https://cdn1.vogel.de/NM9p4Q_pYTBKzsmTE52xyNZKbak=/273x152/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg">
+					<source type="image/webp" srcset="https://cdn1.vogel.de/sEqGrbJEgzMhoORFrDRgXHk8XVU=/392x392/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/oEHljdYObFJ2i5rvJ65-DfLOHgE=/392x392/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg, https://cdn1.vogel.de/2LedkrT1cNvZJJZfO1AVs6R777g=/784x784/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg 2x" data-src="https://cdn1.vogel.de/oEHljdYObFJ2i5rvJ65-DfLOHgE=/392x392/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg">
+					<img class="inf-teaser__image inf-teaser__image--square lazyload" alt="" title="" data-src="https://cdn1.vogel.de/6P2lY0782y6ANOfYqrLjAqq6GGE=/392x392/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1109300/1109307/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white(1).jpg">
+				</picture>
+			</figure>
+				<div class="inf-teaser__mask inf-teaser__mask--half"></div>
+		<header class="inf-teaser__header--overlay">
+			
+						
+						
+						
+						
+							<p class="inf-subhead inf-subhead--medium inf-text--white inf-text--shadow">
+					<span class="inf-teaser__span">Definition</span>
+				</p>
+				
+			<p class="inf-headline inf-headline--medium--thin inf-text--white inf-text--shadow inf-no-margin">
+				<span class="inf-teaser__span">Was ist Couchbase?</span></p>
+		</header>
+	</a>
+</article>
+
+					<article class="inf-teaser inf-teaser--with-overlay" data-infinity-type="partial" data-infinity-id="content/teaser/v4">
+	<a href="https://www.bigdata-insider.de/bei-big-data-haben-nosql-datenbanken-ihren-grossen-auftritt-a-936774/" class="inf-block">
+					<figure class="inf-teaser__figure--with-overlay">
+				<picture>
+					<source media="(max-width: 654px)" type="image/webp" srcset="https://cdn1.vogel.de/Ww04RNeK3zw6bEjHldauTbjaXhw=/273x152/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/6mt1gXCLtIdNlBOTBgPJBjWejOc=/273x152/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg, https://cdn1.vogel.de/WtoVrNP6ZI1mCVYneOZtvEZgePI=/546x304/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg 2x" data-src="https://cdn1.vogel.de/6mt1gXCLtIdNlBOTBgPJBjWejOc=/273x152/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg">
+					<source media="(max-width: 654px)" type="image/jpg" srcset="https://cdn1.vogel.de/Ww04RNeK3zw6bEjHldauTbjaXhw=/273x152/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/5gf91AnOyN1U0O8WyceDLOnUwl0=/273x152/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg, https://cdn1.vogel.de/e1yJ2CPwowcBTNaYdwU5TALm8zA=/546x304/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg 2x" data-src="https://cdn1.vogel.de/5gf91AnOyN1U0O8WyceDLOnUwl0=/273x152/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg">
+					<source type="image/webp" srcset="https://cdn1.vogel.de/sEqGrbJEgzMhoORFrDRgXHk8XVU=/392x392/filters:quality(1)/cdn4.vogel.de/infinity/white.jpg" data-srcset="https://cdn1.vogel.de/Y_9gDNeY9LXhYdoPg9N_D_JogUU=/392x392/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg, https://cdn1.vogel.de/hcHWiC6ku3DcfxFTzY8ZSX5Cpdg=/784x784/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg 2x" data-src="https://cdn1.vogel.de/Y_9gDNeY9LXhYdoPg9N_D_JogUU=/392x392/smart/filters:format(webp):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg">
+					<img class="inf-teaser__image inf-teaser__image--square lazyload" alt="Der Autor: Paul Salazar ist Senior Director Central Europe bei Couchbase" title="Der Autor: Paul Salazar ist Senior Director Central Europe bei Couchbase" data-src="https://cdn1.vogel.de/OuJb_-7eC_C5k6nnMTJtSG27FL0=/392x392/smart/filters:format(jpg):quality(80)/images.vogel.de/vogelonline/bdb/1710900/1710964/original.jpg" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/white(1).jpg">
+				</picture>
+			</figure>
+				<div class="inf-teaser__mask inf-teaser__mask--half"></div>
+		<header class="inf-teaser__header--overlay">
+			
+						
+						
+						
+						
+							<p class="inf-subhead inf-subhead--medium inf-text--white inf-text--shadow">
+					<span class="inf-teaser__span">Kommentar von Paul Salazar, Couchbase</span>
+				</p>
+				
+			<p class="inf-headline inf-headline--medium--thin inf-text--white inf-text--shadow inf-no-margin">
+				<span class="inf-teaser__span">Bei Big Data haben NoSQL-Datenbanken ihren großen Auftritt</span></p>
+		</header>
+	</a>
+</article>
+
+			</div>
+</section>	<div class="inf-flex inf-row--articlebillboard" data-infinity-type="row" data-infinity-id="v1">
+	<section data-section-id="section_5f7c2678923747.02700574" class="inf-section inf-full-width inf-tab-ls-col-6 inf-phone-col-12 inf-section--content-ad" data-infinity-type="section" data-infinity-id="v13">
+		<!-- data-infinity-type="section" data-infinity-id="inner/v1" -->
+	<div id="advertisement_05" class="inf-ad__listing gpt" data-ad-id="advertisement_05" data-infinity-type="ad" data-infinity-id="v1/advertisement_05">
+
+		<script>
+
+			try
+			{
+
+				googletag.cmd.push(function ()
+				{
+					// Banner anzeigen
+					googletag.display(advertisement_05);
+				});
+
+			}
+			catch (OBJ_err)
+			{
+				// Nix
+				console.warn("Ad Slot Error - display advertisement_05");
+			} // end try
+
+		</script>
+
+	</div>
+	
+</section></div>
+</main>
+
+			<footer class="inf-footer" data-infinity-id="v1" data-infinity-type="foot">
+					<div class="inf-footer__sm inf-text-center">
+				<span>Folgen Sie uns auf:</span>
+									<a href="https://www.facebook.com/bigdatainsiderde" target="_blank" rel="noopener" class="inf-footer__icon inf-icon inf-icon--facebook" aria-label="facebook"></a>
+													<a href="https://twitter.com/bigdata_insider" target="_blank" rel="noopener" class="inf-footer__icon inf-icon inf-icon--twitter" aria-label="twitter"></a>
+																	<a href="https://www.xing.com/communities/groups/bigdata-insider-1009523" target="_blank" rel="noopener" class="inf-footer__icon inf-icon inf-icon--xing-outline" aria-label="xing"></a>
+													<a href="https://www.linkedin.com/showcase/bigdata-insider/" target="_blank" rel="noopener" class="inf-footer__icon inf-icon inf-icon--linkedin" aria-label="linkedin"></a>
+															</div>
+					<div class="inf-text-center">
+			<p class="inf-text--mini">
+						<a href="https://www.bigdata-insider.de/impressum/" class="inf-footer__link" id="page_5e9611fa0a95e">
+			Impressum &amp; Kontakt		</a>
+			<a href="https://www.bigdata-insider.de/datenschutz/" class="inf-footer__link" id="page_5e96130083087">
+			Datenschutz		</a>
+			<a href="https://www.bigdata-insider.de/einwilligungserklaerung/" class="inf-footer__link" id="page_5e96133a74e86">
+			EWE		</a>
+			<a href="https://www.bigdata-insider.de/agb/" class="inf-footer__link" id="page_5e96136ba9946">
+			ANB		</a>
+			<a href="https://support.vogel.de/de/bdi/be89b0b3224980224188a890a4f553869d98366371271cf43441f56375621c36" target="_blank" rel="noopener" class="inf-footer__link" id="page_5e961394d694a">
+			Hilfe		</a>
+			<a href="https://p7f.vogel.de/wcms/5e/9d/5e9d99b81dff8/mediadaten-2020-it-entscheider-dach-vogel-it.pdf" target="_blank" rel="noopener" class="inf-footer__link" id="page_5e9d9a56258cf">
+			Mediadaten		</a>
+			<a href="https://customer.vogel.de/" target="_blank" rel="noopener" class="inf-footer__link" id="page_5e9613e896ba4">
+			Kundencenter		</a>
+				</p>
+		</div>
+		<div class="inf-footer__copy inf-text-center inf-text--mini">
+			<a href="http://www.vogel.de/" target="_blank" rel="noopener"> <img src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/vogel_logo.svg" rel="noopener" alt="Vogel Logo" class="inf-img--120"> </a>
+			<p>Copyright © 2020 Vogel Communications Group</p>
+			<p>Diese Webseite ist eine Marke von Vogel Communications Group. Eine Übersicht von allen Produkten und Leistungen finden Sie unter				<a href="http://www.vogel.de/" class="inf-text__link" rel="noopener" target="_blank"> www.vogel.de				</a>
+			</p>
+		</div>
+		<div class="inf-text-center">
+			<p class="inf-text--micro inf-footer__picsource">© aga7ta - stock.adobe.com; Couchbase; Adacor Hosting; Vogel IT-Medien; Vogel IT-Medien / PROFI Engineering Systems AG / Schonschek; blende11_Fotografen; Imec; BARC; Confluent; © – MH – stock.adobe.com; Splunk; BASF; Alteryx; Neo4j; Vogel IT-Medien / Pure Storage / Vertica / Schonschek; gemeinfrei; Center Smart Services / FIR; msg; TU Berlin; Birgit Baustädter, TU Graz; Roger YI</p>
+		</div>
+	</footer>
+		<script src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/cookieconsent.min.js" async="async"></script>
+	<script>
+		window.addEventListener("load", function ()
+		{
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#efefef",
+						"text": "#333333"
+					},
+					"button": {
+						"background": "#27af61",
+						"text": "#ffffff"
+					}
+				},
+				"theme": "classic",
+				"position": "bottom-right",
+				"content": {
+					"message": "Cookies erleichtern die Bereitstellung unserer Dienste. Mit der Nutzung unserer Dienste erklären Sie sich damit einverstanden, dass wir Cookies verwenden.",
+					"dismiss": "OK",
+					"link": "Weitere Informationen",
+					"href": "/datenschutz/"
+				}
+			})
+		});
+	</script>
+		</div>
+</div>
+
+	<!-- IVW Code -->
+	<script>
+		function startIOM()
+		{
+			var iam_data = {
+				"st": "bigdata",
+				"cp": "infrastruktur",
+				"co": "page_silver_49_page_0",
+				"sv": "ke",
+				"sc": "yes"
+			};
+			if (typeof iom != "undefined")
+			{
+				iom.c(iam_data, 1);
+			}
+		}
+
+		if (typeof __cmp != "undefined")
+		{
+			function startIOM_cmp(e,o)
+			{
+				var x = __cmp('getCMPData');
+				if('vendorConsents' in x && 's37' in x.vendorConsents && x.vendorConsents.s37)
+				{
+					startIOM();
+				}
+			}
+			__cmp("addEventListener",["consent",startIOM_cmp,false],null);
+		}
+		else
+		{
+			startIOM();
+		}
+		
+	</script>
+	<!-- VGWort Code -->
+	<img alt="" height="1" src="./Big Data, SQL und NoSQL – eine kurze Übersicht_files/a7a6646c75ab49039e22e8cdbd9edc1c" width="1" hidden="" style="display: none !important;">
+
+
+</body></html>

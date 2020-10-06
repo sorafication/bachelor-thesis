@@ -23,7 +23,7 @@ Laut Anforderungen soll sich REST an das Client-Server Modell halten und unabhä
 Der Client hat jederzeit die Möglichkeit Daten vom Server anzufordern.
 Dabei muss jede Anfrage des Clients alle benötigten Informationen beinhalten um die Anfrage bearbeiten zu können.
 Die gewünschten Daten sind immer über eine spezifische URI identifizierbar.
-Jede Ressource besitzt eine eigene URI.\cite[]{REST}
+Jede Ressource besitzt eine eigene URI.\cite{REST}
 
 Beispiel für Abfragen könnten folgendermaßen aussehen:
 
@@ -55,11 +55,11 @@ Ein gesetzter Header mit dem Wert \verb+Cache-Control: max-age=3600+ teilt dem C
 Wächst eine Applikation immer weiter entstehen auch meist neue API Endpunkte.
 Besteht die Anforderung alle Daten abzufragen, wären mehrere separate Anfragen notwendig.
 Es ist zudem nicht möglich die angeforderten Daten genauer zu spezifizieren.
-Mittels \verb+GET+ Abfrage erhält man immer alle Daten die die API zurückgibt, egal wie viel man tatsächlich davon benötigt.
+Mittels \verb+GET+ Abfrage erhält man immer alle Daten, die die API zurückgibt, egal wie viel man tatsächlich davon benötigt.
 Dieses Phänomen nennt sich Over-fetching bzw. Under-fetching.
-Beim Over-fetching werden mehr Daten bezogen als die Anwendung eigentlich benötigt und beim Under-fetching müssen mehrere Anfragen an den Server gesendet werden um die benötigte Menge an Daten zu erhalten.\cite[]{API}
+Beim Over-fetching werden mehr Daten bezogen als die Anwendung eigentlich benötigt und beim Under-fetching müssen mehrere Anfragen an den Server gesendet werden um die benötigte Menge an Daten zu erhalten.\cite{API}
 
-AWS API Gateway ist ein vollständig verwalteter Service um solche API Endpunkte zu erzeugen.
+AWS API Gateway ist ein vollständig verwalteter Service, der solche API-Endpunkte erzeugt.
 Dabei steht er als zentrale Schnittstelle zwischen Endgeräten und Backend-Diensten.
 Zu den Endgeräten zählen Webanwendungen, Mobilgeräte oder auch
 IoT\footnote{IoT steht für Internet of Things (deutsch: Internet der Dinge) und bezeichnet ein System von vernetzten Geräten, welche
@@ -75,7 +75,7 @@ mit anderen Diensten wie EC2, S3 oder auch DynamoDB (siehe \textit{\ref{DynamoDB
 Zusätzlich bietet der Dienst viele weitere Funktionalitäten. Dazu gehören CORS-Support\footnote{CORS steht für Cross-Origin Resource Sharing und
 beschreibt einen Mechanismus der mittels zusätzlicher HTTP Header Berechtigungen für Ressourcen vergibt, falls sich diese Ressourcen auf einer anderen
 Domain befinden als auf der eigenen.}, eine Zugriffskontrolle und Einschränkung, oder auch die Verwaltung unterschiedlicher
-API-Versionen. Es ist auch möglich mit On Premises Servern zu kommunizieren und Anfragen weiterzuleiten.\cite[]{APIGateway}
+API-Versionen. Es ist auch möglich mit On Premises Servern zu kommunizieren und Anfragen weiterzuleiten.\cite{APIGateway}
 
 Die Abrechnung erfolgt anhand von API-Aufrufen und Datenübertragungen die in Richtung Internet verlaufen. Eine Pauschale gibt es bei den Aufrufen nicht.
 Für die ersten 333 Millionen Anfragen pro Monat kosten in der Region Frankfurt eine Millionen API-Aufrufe 3,70 USD.
@@ -83,7 +83,7 @@ Wird diese Grenze überschritten sinkt der Preis in weiteren Etappen. Bei über 
 Darüber hinaus entstehen pauschale Kosten, falls man Caching nutzen möchte und eine bessere Leistung für seine API benötigt.
 Selbst wenn es keine Anfragen an die API gibt, würden durch das Caching dauerhaft Kosten verursacht werden, welches eine Diskrepanz zu dem Serverless Ansatz aufweist.
 Hier kosten 0,5 GB an Zwischenspeicher 0,02 USD pro Stunde. Je höher der Speicher, desto höher auch der Stundensatz.
-\cite[]{APIGWPrice}
+\cite{APIGWPrice}
 
 \subsubsection{GraphQL API: AWS Appsync}
 \label{GraphQL}
@@ -98,7 +98,7 @@ Um unabhängig von Programmiersprachen zu sein, wird das Schema in der eigenen G
 Das Schema legt die Regeln fest, wie der Client auf Daten zugreifen kann.
 Neben den bereits erwähnten Objekttypen sind zwei weitere Typenarten besonders wichtig, der Query- und Mutations-Typ.
 Diese zwei Typen definieren den Einstiegspunkt jeder GraphQL Anfrage.
-Die HTTP-Methode \verb+GET+ ähnelt dabei Queries und \verb+POST+ Mutationen. \cite[]{GraphQL1}
+Die HTTP-Methode \verb+GET+ ähnelt dabei Queries und \verb+POST+ Mutationen. \cite{GraphQL1}
 
 Eine Query ist eine einfache Abfrage der Daten, eine Mutation ermöglicht eine Veränderung der Daten.
 Die Mutation vereint das Ändern, Hinzufügen oder Löschen von Datensätzen.
@@ -149,11 +149,9 @@ query MyQuery {
 \end{lstlisting}
 
 Hierbei ist es unwichtig, ob alle oder nur ein Feld mit angegeben wird.
-Wird zum Beispiel die Email nicht benötigt, lässt man das Feld weg und die Information wird nicht mehr an den Client übertragen.\cite[]{GraphQL1}
+Wird zum Beispiel die Email nicht benötigt, lässt man das Feld weg und die Information wird nicht mehr an den Client übertragen.\cite{GraphQL1}
 Eine HTTP-Abfrage könnte folgenermaßen aussehen.
-Die Query mit dem Namen \glqq queryname \grqq{} gibt das Feld \glqq fieldname \grqq{} zurück.
-
-\cite[]{GraphQLHTTP}
+Die Query mit dem Namen \glqq queryname \grqq{} gibt das Feld \glqq fieldname \grqq{} zurück. \cite{GraphQLHTTP}
 
 \begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 GET http://meineapi.com/graphql?query={queryname{fieldname}}
@@ -196,20 +194,20 @@ mutation {
 \end{lstlisting}
 
 Es ist außerdem möglich in einer Mutation auch direkt Daten abzufragen. Beim Erstellen eines neuen Accounts kann man gleichzeitig die
-vom Server angelegte ID abfragen und überprüfen.\cite[]{GraphQL1}
+vom Server angelegte ID abfragen und überprüfen.\cite{GraphQL1}
 
 Neben den bisher genannten Funktion bietet GraphQL noch Subscriptions an.
 Diese ermöglichen dem Client Echtzeitbenachrichtigungen zu erhalten, sobald dem Backend neue Daten hinzugefügt worden sind.
 Subscriptions werden durch Mutationen ausgelöst, wobei das AWS AppSync SDK diese verwaltet.
-Realisiert wird die Echtzeitverarbeitung mithilfe von Websockets\footnote{Unter WebSockets versteht man ein Protokoll, dass eine bidirektionale Kommunikation zwischen Client und Server ermöglicht. Nachdem ein Client eine initiale Anfrage gesendet hat, kann die Verbindung offen bleiben und so der Server selbstständig Informationen verschicken. \cite[]{Websockets}}
-oder dem MQTT-Protokoll\footnote{MQTT steht für Message Queue Telemetry Transport und dient zum zuverlässigen Nachrichtenaustausch. Abgebrochene Verbindungen können wieder aufgebaut werden und verlorene Nachrichten erneut ausgeliefert. \cite[]{MQTT} } in Kombination mit WebSockets. \cite[]{GraphQLSubs}
+Realisiert wird die Echtzeitverarbeitung mithilfe von Websockets\footnote{Unter WebSockets versteht man ein Protokoll, dass eine bidirektionale Kommunikation zwischen Client und Server ermöglicht. Nachdem ein Client eine initiale Anfrage gesendet hat, kann die Verbindung offen bleiben und so der Server selbstständig Informationen verschicken. \cite{Websockets}}
+oder dem MQTT-Protokoll\footnote{MQTT steht für Message Queue Telemetry Transport und dient zum zuverlässigen Nachrichtenaustausch. Abgebrochene Verbindungen können wieder aufgebaut werden und verlorene Nachrichten erneut ausgeliefert. \cite{MQTT} } in Kombination mit WebSockets. \cite{GraphQLSubs}
 Dadurch dass GraphQL, anders als REST, nur einen einzelnen Endpunkt anbietet, ist eine Cache Implementierung problematischer.
 Bei GraphQL muss zusätzlicher Code im Client implementiert werden oder das Schema angepasst werden.
 Der Dienst Apollo Server\footnote{Apollo Server ist ein weit verbreiteter Open Source GraphQL Server, der mit jedem GraphQL Client kompatibel ist.} ermöglicht es
 eine GraphQL API bereitzustellen, die bereits Cache Header unterstützt.
 Dafür muss die Option \verb+cacheControl+ in das Schema eingebaut werden.
-Es ist möglich die Option für jedes individuelle Feld oder den gesamten Typen zu setzen. \cite[]{Apollo}
-\cite[]{GraphQL} \cite[]{GraphQL1}
+Es ist möglich die Option für jedes individuelle Feld oder den gesamten Typen zu setzen. \cite{Apollo}
+\cite{GraphQL} \cite{GraphQL1}
 
 
 Mithilfe von AWS Appsync ist es möglich APIs bereitzustellen die auf einem GraphQL Server basieren.
@@ -218,7 +216,7 @@ Das folgende Schaubild von Amazon zeigt die Funktionsweise des Dienstes genauer.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{40-AWS/Appsync.png}
-    \caption{Funktionsweise von AppSync \cite[]{AppSync}  }
+    \caption{Funktionsweise von AppSync \cite{AppSync}}
     \label{fig:meine-grafik}
 \end{figure}
 
@@ -246,7 +244,7 @@ da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermög
     Die Tokens zur Authentifizierung (JWT Tokens) der Identität werden verschlüsselt im JSON Format versendet und ermöglichen einen standardisierten Weg zum Anmelden.
 
           } oder einem AWS
-Cognito User Pool (siehe \textit{\ref{Cognito} \nameref{Cognito}}) möglich. \cite[]{AppSyncAuth}
+Cognito User Pool (siehe \textit{\ref{Cognito} \nameref{Cognito}}) möglich. \cite{AppSyncAuth}
 
 Sämtliche Protokolldaten sowie Metriken können in dem Dienst AWS CloudWatch Logs\footnote{ Amazon CloudWatch Logs ist ein Überwachungs- und Management-Service, in dem Logs von sämtlichen AWS-Diensten gespeichert und ausgewertet werden können. } gespeichert und ausgewertet werden.
 Ähnlich wie AWS API Gateway unterstützt AppSync mehrere unterschiedliche Endgeräte.
@@ -258,16 +256,16 @@ Um Caching nutzen zu können, ist es notwendig einen Instanztypen mit bestimmter
 Ähnlich wie bei der Preisgestaltung von AWS API Gateway, muss der Cache zeitbasiert bezahlt werden.
 Der kleinste auswählbare Instanztyp \verb+cache.small+ mit einer vCPU und 1,55 GB Arbeitsspeicher kostet zum Beispiel 0,044 USD pro Stunde.
 Eine Millionen API-Aufrufe kosten 4,00 USD, eine Vergünstigung bei mehr Abrufen gibt es im Vergleich zu API Gateway nicht.
-\cite[]{AppSync} \cite[]{AppSyncPreise}
+\cite{AppSync} \cite{AppSyncPreise}
 
 
 
 \subsubsection{Entscheidung}
-Für das, in dieser Arbeit, gewünschte Projekt wäre eine Implementierung sowohl mit einer REST API als auch mit GraphQL möglich.
+Für das, in dieser Arbeit gewünschte Projekt, wäre eine Implementierung sowohl mit einer REST API als auch mit GraphQL möglich.
 Beide Dienste für die API sind zudem direkt in Amplify (siehe \textit{\ref{Amplify} \nameref{Amplify}}) integriert und benötigen keine separate Konfiguration.
 
 Mit AWS APIGateway müsste man mehrere unterschiedliche Endpunkte konfigurieren und im Frontend einbauen.
-Im ersten Schritt würde eine \verb+GET+ Abfrage auf alle Accounts inklusive aller zusätzlichen Daten ausreichen.
+Im ersten Schritt würde eine \verb+GET+ Abfrage auf allen Accounts inklusive aller zusätzlichen Daten ausreichen.
 Die benötigte Datenbank und alle damit verbundenen Autorisierungen müssten manuell eingerichtet werden.
 
 GraphQL bietet sich an, wenn man mehrere Microservices nutzt und alle in einem Schema konsolidieren möchte.
@@ -288,7 +286,7 @@ Diese Operationen können dann im Anschluss direkt im Frontend verwendet werden.
 
 Aufgrund der überzeugenderen Integration und höheren Flexibilität wird die Anwendung mit AWS AppSync realisiert, da viele Einstiegshürden von AWS übernommen werden.
 Es ist davon auszugehen, dass es keine gravierenden Unterschiede bei den Kosten geben wird.
-Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden keine Millionen von Anfragen erwartet.
+Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden nicht übermäßig viele Anfragen erwartet.
 
 
 
@@ -296,7 +294,7 @@ Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden ke
 
 \subsection{Datenbanksystem}
 Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationale und nicht-relationale Datenbanken.
-Sie variieren in vielen Aspekten und haben andere Anwendungsfälle.
+Sie variieren in vielen Aspekten und haben abweichende Anwendungsfälle.
 Amazon bietet für beide Technologien eigene Dienste an, die im Folgenden genauer betrachtet und verglichen werden.
 
 \subsubsection{Relationale Datenbanken: AWS RDS}
@@ -308,7 +306,7 @@ Um Beziehungen zu anderen Tabellen zu erzeugen, wird ein Fremdschlüssel benöti
 Damit Redundanzen innerhalb einer Datenbank vermieden werden, kann die Datenbank gemäß den Normalisierungsregeln bearbeitet werden.
 So wird gewährleistet, dass Daten nicht mehrfach existieren und bei Veränderung dieser Daten keine Anomalien\footnote{Unter Anomalien versteht man ein Fehlverhalten innerhalb von relationalen Datenbanken. Tabellen
 mit Spalten gleicher Bedeutung haben einen unterschiedlichen Inhalt. Eine Normalisierung verhindert Anomalien. } auftreten.
-Die Datenstrukturen sind voneinander abhängig. Eine Auswertung oder Veränderung der Daten ist in der Regel mit der Datenbanksprache SQL möglich. \cite[]{Datenbankvergleich}
+Die Datenstrukturen sind voneinander abhängig. Eine Auswertung oder Veränderung der Daten ist in der Regel mit der Datenbanksprache SQL möglich. \cite{Datenbankvergleich}
 
 Der zugehörige Dienst von Amazon heißt RDS (Relational Database Service) und unterstützt sechs Datenbank-Engines. Dazu gehören
 PostgreSQL, MySQL, MariaDB, Oracle Database, Microsoft SQL-Server und Amazons eigener Dienst Aurora.
@@ -317,20 +315,20 @@ Je höher die geforderte Kapazität, desto höher auch der Preis.
 Der Instanztyp lässt sich jederzeit anpassen.
 Während des Erstellens müssen Zugangsdaten für den Zugriff angegeben werden.
 Man erhält keinen direkten Zugang auf die zugrundeliegende Hardware, sondern einen User für den jeweils ausgewählten SQL Service.
-Im Falle von MySQL würde man etwa nach Erstellen einen Endpunkt erhalten, auf den man sich per
+Im Falle von MySQL würde nach Erstellen der Instanz ein Endpunkt zur Verfügung stehen, auf den eine Anmeldung per
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
   mysql -h <Endpunkt> -u <User> -p <Passwort>
-    \end{lstlisting} Befehl anmelden kann. SSH-Zugang oder Ähnliches ist bei RDS nicht vorgesehen.
+    \end{lstlisting} Befehl möglich ist. SSH-Zugang oder Ähnliches ist bei RDS nicht vorgesehen.
     Das angegebene Beispiel ist typisch für einen Plattform as a Service Dienst.
 
 Eine Hochverfügbarkeit ist möglich, indem man die Option Multi-Availability Zone auswählt und so eine Standby-Instanz in einer anderen Availability Zone bereitsteht.
 Hierdurch steigt jedoch auch der Preis. Software-Patches können von dem Dienst automatisch eingespielt werden.
-Anders als bei DynamoDB gibt es keine direkte Integration von RDS Datenbanken mit Serverless Anwendungen bei AWS.
+Abweichend als bei DynamoDB gibt es keine direkte Integration von RDS Datenbanken mit Serverless Anwendungen bei AWS.
 AWS stellt keine direkte Verknüpfung zwischen GraphQL API und RDS zur Verfügung. Eine Implementierung mittels REST bzw. API Gateway würde eine zusätzliche Lambda-Funktion voraussetzen, welche
 die Abfrage gegen eine nicht öffentliche RDS Datenbank ausführt. Wäre die Datenbank im Internet erreichbar müsste das Frontend Credentials besitzen um auf die Datenbank zugreifen zu können.
 RDS eignet sich vor allem bei klassischen SQL-basierten Datenbanksystemen. Gibt es Einschränkungen eine bestimmte Datenbank-Engine zu nutzen, bietet sich der Dienst ebenfalls an.
 Der Dienstleister Airbnb nutzt RDS zum Beispiel für automatisierte Replikationen und Leistungstests.
-Die günstigste RDS Instanz \glqq db.t3.micro\grqq{} mit 1 Kern, 1 GB Arbeitsspeicher und der Open Source Engine MariaDB kostet in Frankfurt mit einer ausgewählten Hochverfügbarkeit 0,04 USD pro Stunde. \cite[]{RDS}
+Die günstigste RDS Instanz \glqq db.t3.micro\grqq{} mit 1 Kern, 1 GB Arbeitsspeicher und der Open Source Engine MariaDB kostet in Frankfurt mit einer ausgewählten Hochverfügbarkeit 0,04 USD pro Stunde. \cite{RDS}
 
 
 \subsubsection{Nicht-relationale Datenbanken: AWS DynamoDB}
@@ -346,13 +344,13 @@ Die Keys müssen eindeutig sein und sind mit den Primärschlüssel der relationa
 Um eine Skalierung und Hochverfügbarkeit zu ermöglichen, werden die Daten auf alle vorhandenen Systeme kopiert und verteilt. Daher ist es auch problemlos möglich weitere
 Server zu verwenden, um eine größere Menge an Daten zu verarbeiten. Dies wird als horizontales Skalieren bezeichnet.
 Relationale Datenbanken bieten meist nur eine vertikale Skalierung an, d.h. um die Performance zu erhöhen, muss in der Regel ein leistungsstärkerer Server genutzt werden.
-Zur Erhöhung des Lesedurchsatzes besteht jedoch die Option ein, oder mehrere, Read-Replica zu nutzen, die einen parallelen Lesezugriff ermöglichen.
+Zur Erhöhung des Lesedurchsatzes besteht jedoch die Option, ein oder mehrere, Read-Replica zu nutzen, die einen parallelen Lesezugriff ermöglichen.
 
 NoSQL Datenbanken unterstützen in der Regel keine ACID-Eigenschaften\footnote{ACID steht für Atomicity, Consistency, Isolation, Durability und bedeutet im Kern, dass
 alle Transaktionen konsistent sind.} sondern nutzen das BASE-Modell\footnote{Base steht für Basically Available, Soft State, Eventually Consistent und
 stellt die Verfügbarkeit von Daten an eine höhere Stelle als die Konsistenz.}.
 Da bei SQL-basierten Datenbanken lesende Abfragen so lange warten bis schreibende Vorgänge beendet sind, bleibt die Konsistenz der Daten erhalten.
-NoSQL Datenbanken könnten im Zweifel unterschiedliche Daten zurückgeben, falls noch nicht alles ausgetauscht wurde. \cite[]{Datenbankvergleich}
+NoSQL Datenbanken könnten im Zweifel unterschiedliche Daten zurückgeben, falls noch nicht alles ausgetauscht wurde. \cite{Datenbankvergleich}
 
 Anders als AWS RDS gibt es bei DynamoDB gar keine Möglichkeiten mehr sich bei der Datenbank-Engine anzumelden. Der Dienst wird als Serverless angeboten.
 Es müssen keine Kapazitäten im Voraus berechnet werden, da der Dienst automatisch skaliert.
@@ -360,7 +358,7 @@ Anwender haben die Option direkt Tabellen anzulegen.
 Zudem entfällt es auch sich um Software-Patches oder der Sicherstellung der Hochverfügbarkeit zu kümmern, da Tabellen immer global bereitgestellt werden.
 Im Gegensatz zu den meisten NoSQL Datenbanken unterstützt DynamoDB ACID-Transaktionen. Amazon bietet dafür eine eigene API an, die in der Applikation zusätzlich
 implementiert werden muss. Insgesamt ist es sehr schnell möglich eine Tabelle mit dem Dienst bereitzustellen. Zudem existiert so gut wie kein Wartungsaufwand,
-da Amazon die Verantwortung für die wichtigsten Aspekte übernimmt.\cite[]{DynamoDB}
+da Amazon die Verantwortung für die wichtigsten Aspekte übernimmt.\cite{DynamoDB}
 
 Das Preiskonzept für DynamoDB ist sehr granular aufgebaut und bietet zwei unterschiedliche Kapazitätsmodi an. Der Modus \glqq Bereitgestellt\grqq{} bietet sich an,
 wenn es bereits möglich ist Anforderungen an die Kapazität zu bestimmen und der Datenverkehr berechenbar ist. Der Preis wird pro Stunde und benötigte Kapazität errechnet.
@@ -372,7 +370,7 @@ Nachteil von Strongly Consistent ist die höhere Latenz und ein höherer Verbrau
 \glqq Eventually Consistent Reads\grqq , wobei ein Aufruf bis zu 8 KB eine Einheit erfordert.
 Eine Million dieser Schreibanforderungen kosten in Frankfurt 1,525 USD und eine Million Leseanforderungen 0,305 USD.
 Zudem entstehen Kosten für den Datenspeicher, die Sicherung, Datenübertragung und ein paar weitere speziellere Funktionen.
-Beim Datenspeicher sind die ersten 25 GB pro Monat kostenlos und kosten danach pro GB-Monat 0,306 USD. \cite[]{DynamoDBPreise}
+Beim Datenspeicher sind die ersten 25 GB pro Monat kostenlos und kosten danach pro GB-Monat 0,306 USD. \cite{DynamoDBPreise}
 
 \subsubsection{Entscheidung}
 Eine NoSQL-Datenbank, und damit AWS DynamoDB, sind für diese Projektumsetzung besser geeignet.
@@ -422,7 +420,7 @@ Das Framework stellt SDKs für alle gängigen mobilen Plattformen sowie JavaScri
 Ein Vergleich der Javascript-Frameworks befindet sich im Abschnitt \textit{\ref{FrontendFramework} \nameref{FrontendFramework}}.
 Es soll möglich sein, mit wenig Code die eigene Anwendung mit Cognito zu verknüpfen, und bei Bedarf die Oberfläche anzupassen.
 Der Dienst ist vollständig Serverless aufgebaut und bietet die Option \glqq Hunderte von Millionen Benutzern\grqq{} zu verwalten,
-\glqq ohne dass Server-Infrastruktur aufgestellt werden muss.\grqq \cite[]{CognitoUebersicht} \cite[]{Cognito2}
+\glqq ohne dass Server-Infrastruktur aufgestellt werden muss.\grqq \cite{CognitoUebersicht} \cite{Cognito2}
 
 Cognito besteht aus den Komponenten Benutzerpools und Identitäten-Pools.
 Ein Benutzerpool ist ein Verzeichnis durch den Benutzer angelegt und verwaltet werden können.
@@ -436,9 +434,9 @@ Dazu gehört das Registrieren, Anmelden und die Passwortwiederherstellung.
 Es ist möglich mehrere App-Clients zu nutzen, beispielsweise jeweils einen für einen Android, iOS und Webclient.
 
 Der Identitäten-Pool erlaubt es Nutzern Zugriff auf andere Dienste zu erteilen. Es werden eindeutige Identitäten erstellt und diese mit anderen Diensten verbunden.
-Dabei unterstützt Cognito soziale Identitätsanbieter wie Google, Facebook oder Apple aber auch Unternehmens-Identitätsanbieter wie Microsoft Active Directory.
+Dabei unterstützt Cognito soziale Identitätsanbieter wie Google, Facebook oder Apple, aber auch Unternehmens-Identitätsanbieter wie Microsoft Active Directory.
 Hierfür werden gängige Standards zur Verwaltung von Identitäten wie OpenID, OAuth 2.0 und SAML 2.0\footnote{SAML steht für Security Assertion Markup Language und ist ein XML-Framework zur  Authentifizierung und Autorisierung.
-Anders als bei OpenID Connect, benötigt SAML eine konfigurierte Vertrauensbeziehung. Häufig kommt SAML bei Single Sign-On Verfahren zum Einsatz. } genutzt. \cite[]{Cognito1}
+Anders als bei OpenID Connect, benötigt SAML eine konfigurierte Vertrauensbeziehung. Häufig kommt SAML bei Single Sign-On Verfahren zum Einsatz. } genutzt. \cite{Cognito1}
 
 Ähnlich zu den meisten anderen Serverless Diensten von AWS, fallen auch bei Cognito keine pauschalen Kosten an.
 Nur die tatsächliche Nutzung wird in Rechnung gestellt.
@@ -447,7 +445,7 @@ Dieses gilt jedoch nur für Benutzer die direkt über den Cognito User Pool oder
 Bei Anmeldungen mit einem Unternehmens-Identitätsanbieter liegt das kostenlose Kontingent bei 50 Nutzern.
 Darüber hinaus kostet jeder weitere Nutzer 0.0055 USD pro Monat.
 Ab einer Anzahl von 100.000 wird der Preis niedriger gestaffelt.
-Außerdem können Kosten für die SMS-Nachrichten bei der MFA Authentifizierung anfallen.  \cite[]{CognitoPreise}
+Außerdem können Kosten für die SMS-Nachrichten bei der MFA Authentifizierung anfallen.\cite{CognitoPreise}
 
 
 \subsubsection{Alternative und Entscheidung}
@@ -459,7 +457,7 @@ Theoretisch ist es nicht einmal notwendig eine eigene Oberfläche zur Anmeldung 
 Die einzige alternative Möglichkeit besteht darin, die gesamte Authentifizierung selbstständig zu schreiben.
 JavaScript-Frameworks wie React oder Vue können den Prozess etwas erleichtern, nichtsdestotrotz ist der Aufwand deutlich höher als die Verwendung von Cognito.
 Der Vorteil einer eigenen Implementierung ist eine höhere Flexibilität und ein größerer Lernprozess, da sich mit allen einzelnen Schritten intensiver befasst werden muss.
-Wird gewünscht zusätzlich noch MFA oder eine sichere Passwortwiederherstellung einzubauen, muss noch mehr Zeit einkalkuliert werden.
+Wird gewünscht zusätzlich MFA oder eine sichere Passwortwiederherstellung einzubauen, muss noch mehr Zeit einkalkuliert werden.
 
 Angesichts der enormen Einfachheit und ausreichenden Flexibilität ist die Verwendung von Cognito die sinnvollere Wahl.
 Auf Wunsch kann Cognito mit einer Vielzahl von Anbietern und Diensten verknüpft werden, sowie direkt in Amplify integriert werden.
@@ -485,17 +483,17 @@ Möchte man Code mit einem Minimum an Administrationsaufwand in der Cloud ausfü
 \subsubsection{AWS Lambda}
 \label{Lambda}
 Im November 2014 wurde der Serverlose Datenverarbeitungsservice AWS Lambda veröffentlicht, mit dem Anwender ihren Code jederzeit ausführen können.
-Amazon kümmert sich um die \glqq gesamte Administration der Datenverarbeitungsressourcen, einschließlich der Server- und Betriebssystemwartung, Kapazitätsbereitstellung, automatischen Skalierung sowie der Code-Überwachung und -Protokollierung.\grqq{} \cite[]{LambdaZitat}
+Amazon kümmert sich um die \glqq gesamte Administration der Datenverarbeitungsressourcen, einschließlich der Server- und Betriebssystemwartung, Kapazitätsbereitstellung, automatischen Skalierung sowie der Code-Überwachung und -Protokollierung.\grqq{} \cite{LambdaZitat}
 Da auch die Laufzeitumgebung von AWS verantwortet wird, ist die Auswahl der Programmiersprachen vorgegeben.
 Zur Auswahl stehen NodeJS, Python, Ruby, Java, Go, C\# und Powershell.
 Mit etwas mehr Aufwand ist es zudem auch möglich eine Benutzerdefinierte Laufzeit zu implementieren, sodass weitere Sprachen möglich sind.
 NodeJS und Python Code können direkt in der Webkonsole geschrieben und getestet werden.
-Weiterhin besteht die Möglichkeit den Code mithilfe einer ZIP-Datei oder über die lokale Entwicklungsumgebungen hochzuladen.\cite[]{LambdaFAQ}
+Weiterhin besteht die Möglichkeit den Code mithilfe einer ZIP-Datei oder über die lokale Entwicklungsumgebungen hochzuladen.\cite{LambdaFAQ}
 
 Wie bereits im Abschnitt \textit{\ref{FaaS} \nameref{FaaS}} erwähnt arbeitet Lambda eventbasiert und kann sowohl von anderen AWS-Diensten, als auch durch einen manuellen Aufruf ausgelöst werden.
 Zum einem kann Lambda direkt Daten aus Services lesen, welche einen Datenstrom oder eine Warteschlange erzeugen.
 So ist es möglich jedes Mal eine Lambda-Funktion auszulösen, sobald eine DynamoDB-Tabelle aktualisiert wird.
-Hierbei liest Lambda die Datensätze selbst und benötigt dementsprechend auch Berechtigungen auf die DynamoDB-Tabelle.\cite[]{LambdaDynamo}
+Hierbei liest Lambda die Datensätze selbst und benötigt dementsprechend auch Berechtigungen auf die DynamoDB-Tabelle.\cite{LambdaDynamo}
 Eine zweite Variante ermöglicht es bestimmten AWS Diensten eine Lambda-Funktion aufzurufen.
 Dienste wie Cognito oder API Gateway können bei Ereignissen die Lambda-Funktion auslösen und warten bis sie eine Antwort erhalten.
 Hier findet ein synchroner Aufruf statt.
@@ -503,7 +501,7 @@ Anders als bei den Diensten Amazon S3 oder Amazon SES\footnote{SES steht für Si
 Sie erfahren nur, dass Lambda das Ereignis in eine Warteschlange übergeben hat.
 Falls bei der Übergabe Fehler auftreten, kann die Funktion erneut ausgeführt werden.
 Alle Informationen zur Lambda-Funktion, auch potenzielle Fehler im Code, werden automatisch protokolliert und in Amazon CloudWatch Logs gespeichert.
-\cite[]{LambdaDienste}
+\cite{LambdaDienste}
 
 Sobald eine Lambda-Funktion ausgelöst wird, startet die Codeausführung am sog. Handler.
 Der Handler ist eine spezielle Methode innerhalb des Lambda-Codes der Ereignisse verarbeitet.
@@ -528,12 +526,12 @@ Die Größe des Arbeitsspeichers muss selbst ausgewählt werden.
 Bezahlt wird bei Lambda die Dauer der Ausführung sowie die Anzahl der Anforderungen.
 Die Dauer wird in 100-Millisekunden-Schritten berechnet und der Preis ist je nach Größe des Arbeitsspeichers abhängig.
 512 MB Arbeitsspeicher kosten etwa 0,0000008333 USD pro 100ms.
-Anforderungen, zu denen jeder Aufruf oder jede Ereignisbenachrichtigung zählen, kosten 0,20 USD pro 1 Mio. Anforderungen.\cite[]{LambdaPreise}
+Anforderungen, zu denen jeder Aufruf oder jede Ereignisbenachrichtigung zählen, kosten 0,20 USD pro 1 Mio. Anforderungen.\cite{LambdaPreise}
 
 \subsubsection{Entscheidung}
 \label{LambdaEntscheidung}
 AWS Lambda eignet sich optimal zur Realisierung der Webanwendung.
-Direkt nach Erstellung der Lambda-Funktion und setzen der passenden Berechtigungen kann am Code geschrieben werden.
+Direkt nach Erstellung der Lambda-Funktion und setzen der passenden Berechtigungen, kann am Code geschrieben werden.
 Dementsprechend muss keine Zeit für Themen wie Netzwerk, Virtualisierung oder die Laufzeitumgebung vergeudet werden.
 
 Für die Webanwendung wird eine Lambda-Funktion benötigt, die über den Dienst AWS Organizations alle zurzeit verfügbaren Accounts abrufen kann.
@@ -548,7 +546,7 @@ Da das Frontend mit einem JavaScript-Framework erzeugt wird, bietet es sich an f
 So wird vermieden zwei unterschiedliche Syntaxstrukturen und Funktionsweisen lernen zu müssen.
 AWS bietet für NodeJS eine AWS Organizations API an, um exakt diesen Aufruf tätigen zu können.
 Der Zugriff auf AWS Organizations sowie die Accountstruktur der Mediengruppe RTL werden im Abschnitt \textit{\ref{Accountstruktur} \nameref{Accountstruktur}} genauer erläutert.
-\cite[]{SDKListAccounts}
+\cite{SDKListAccounts}
 
 \subsection{Frontend Framework}
 \label{FrontendFramework}
@@ -596,7 +594,7 @@ const divelement = React.createElement('div', {}, 'TEXT');
 
 ReactDOM.render(divelement, document.getElementById('root'));
 \end{lstlisting}
-\cite[]{JSX}
+\cite{JSX}
 
 Da im Studium bereits Erfahrung mit HTML und JavaScript gemacht wurde, ist der Einstieg in JSX und React der komfortabelste.
 Auch scheint es die meisten Forenbeiträge und Anleitungen im Internet zu React im Zusammenspiel mit AWS zu geben, sodass im Problemfall am meisten Lösungsvorschläge zu finden sind.
@@ -608,7 +606,7 @@ Aus diesen Gründen wird die Implementierung in React erfolgen.
 
 Amplify ist ein zentraler Dienst rund um das Thema Serverless Webanwendungen, die Veröffentlichung war im November 2017.
 Amazon bezeichnet Amplify selbst als {}\glqq ein Set aus Tools und Services, das Entwicklern erlaubt, skalierbare vollständige
-mobile und Front-End-Anwendungen zu entwickeln, powered by AWS.\grqq{}\cite[]{AWSAmplify}
+mobile und Front-End-Anwendungen zu entwickeln, powered by AWS.\grqq{}\cite{AWSAmplify}
 
 Amplify kann als übergeordnete Einheit angesehen werden, welche alle zuvor erläuterten Dienste an einem Ort zusammenfasst und verwaltet.
 Dank Amplify soll es nicht mehr notwendig sein, Dienste einzeln zu erstellen und manuell miteinander zu verknüpfen.
@@ -619,7 +617,7 @@ Dafür wird eine eigene \spverb+amplifyapp.com+-Subdomäne bereitgestellt.
 Diese lässt sich auch auf eine Wunsch-Domain anpassen.
 Außerdem besteht die Möglichkeit Amplify mit GitHub zu verknüpfen und somit einen automatisierten CI/CD Workflow aufzubauen.
 Sobald ein Code in einem bestimmten Repository aktualisiert wurde, kann Amplify die Anwendung automatisch aktualisieren und veröffentlichen.
- \cite[]{AmplifyHosting}
+ \cite{AmplifyHosting}
 
 Amplify lässt sich sowohl über die Amazon Web Console, als auch über eine eigene Amplify CLI konfigurieren.
 Alle verfügbaren Dienste sind in der Amplify Bibliothek vereint und können in das Frontend eingebaut werden.
@@ -633,7 +631,7 @@ Darüber hinaus existieren auch Module für Chatbots, Push Benachrichtungen, AR/
 Auch die UI-Komponenten sind Open Source und sollen eine einfache Verzahnung zwischen dem User Interface und den Workflows der Dienste anbieten.
 So gibt es zum Beispiel fertige Interface Elemente für das Hochladen von Bildern und Dateien in S3.
 
-Die Amplify CLI Toolchain dient dazu, ein Serverless Backend zu erstellen und verwalten.
+Die Amplify CLI Toolchain dient dazu, ein Serverless Backend zu erstellen und zu verwalten.
 Dazu gehört die Erstellung aller zuvor genannten Dienste und Funktionen.
 Zudem ist es möglich ein statisches Hosting einzurichten.
 Dabei werden die benötigten Daten über ein S3 Bucket bereitgestellt.
@@ -643,7 +641,7 @@ erstellen und betreuen kann. Er ist allein Verantwortlich für das Frontend, Bac
 Aus demselben Grund ist die Erstellung eines Prototypen ebenfalls schneller realisierbar.
 Neben dem statischen Hosting bietet Amplify vor allem den großen Mehrwert alle benötigten Dienste zentral verwalten zu können.
 Dies führt zu einer besseren Übersicht und einem einfacheren Einstieg in die Realisierung.
- \cite[]{AWSAmplifyKomponenten}
+ \cite{AWSAmplifyKomponenten}
 
 
  Nachdem nun alle Dienste vorgestellt wurden und das Design entschieden wurde, wird im kommenden Kapitel die Implementierung durchgeführt.
