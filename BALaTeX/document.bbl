@@ -244,6 +244,11 @@
   \url{https://developer.mozilla.org/de/docs/WebSockets}, 2020, [Abgerufen am
   06.10.2020].
 
+\bibitem[{Pau}20]{AzureADProbleme}
+{Paul Dunlop}, \emph{Aws cognito + azure ad + react + amplify},
+  \url{https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/}, 2020,
+  [Abgerufen am 06.10.2020].
+
 \bibitem[{Red}20]{Zustandslos}
 {Red Hat, Inc.}, \emph{Zustandsbehaftet oder zustandslos?},
   \url{https://www.redhat.com/de/topics/cloud-native-apps/stateful-vs-stateless},

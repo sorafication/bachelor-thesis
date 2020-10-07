@@ -5,7 +5,7 @@ Da die Authentifizierung mit Cognito erst zu einem späteren Zeitpunkt hinzugef�
 Die Änderung der Authentifizierung erfolgt im Abschnitt \textit{\ref{ImpAuth} \nameref{ImpAuth}}.
 Nach Bestätigung des letzten Schrittes öffnet sich die Datei \verb+schema.graphql+, die das Schema der API darstellt.
 In dieser Datei werden alle benötigten Objekttypen erstellt.
-\clearpage
+\\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 Please select from one of the below mentioned services:(*@ \textrm{GraphQL} @*)
 Provide API name:(*@ \textrm{amplify-kumo-api} @*)
@@ -41,7 +41,7 @@ Mit dem Befehl \verb+amplify push+ wird die API in der Cloud bereitgestellt.
 Im folgenden Dialog besteht die Möglichkeit alle möglichen Mutationen und Queries generieren zu lassen.
 Wie bereits im Abschnitt \textit{\ref{GraphQL} \nameref{GraphQL}} erwähnt, wäre es bei GraphQL normalerweise üblich die Query-Typen etc. manuell zu erzeugen.
 AppSync übernimmt hier also wie versprochen einen großen Teil der Arbeit.
-\\
+\clearpage
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 
 # You will be walked through the following questions for GraphQL code generation
@@ -58,7 +58,7 @@ queries, mutations and subscriptions? (*@ \textrm{Y} @*)
 Sobald der Prozess fertig gestellt ist, sind die Dienste AWS AppSync und DynamoDB konfiguriert.
 Dank DynamoDB-Resolver wurde eine entsprechende DynamoDB-Tabelle angelegt und konfiguriert.
 In der Webkonsole von AWS kann überprüft werden, ob der Vorgang erfolgreich war.
-Die Ansicht von AppSync zeigt im Menüpunkt \grqq Data Sources\grqq{}, dass eine DynamoDB-Tabelle passend zum GraphQL Objekttyp erstellt wurde.
+Die Ansicht von AppSync zeigt im Menüpunkt \glqq Data Sources\grqq{}, dass eine DynamoDB-Tabelle passend zum GraphQL Objekttyp erstellt wurde.
 Der Name der Tabelle wurde nach dem GraphQL Objekttyp gewählt.
 Nun ist es möglich per API auf die Datenbank zuzugreifen und Daten abzufragen.
 Die jeweilige Abfrage findet im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}} statt.
@@ -67,14 +67,14 @@ Bevor das Frontend jedoch Anfragen an die Datenbank ausführen kann, muss Lambda
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/AppSync-DynamoDB.png}
-    \caption{Erfolg der GraphQL API Erstellung überprüfen}
+    \caption{Erfolg der GraphQL API Erstellung. Die angelegte DynamoDB-Tabelle \glqq AccountTable\grqq{} wird mit der API verknüpft. In der Spalte \grqq Resource\grqq{} befindet sich ein direkter Verweis auf die Ressource. }
     \label{fig:meine-grafik}
 \end{figure}
 
 
 
 
-
+\clearpage
 \subsection{Implementierung Backend-Logik}
 \label{ImpLambda}
 Die gesamte Backend-Logik wird durch Lambda realisiert.
@@ -102,25 +102,26 @@ Select the start time (use arrow keys):(*@ \textrm{06:35 PM} @*)
 Successfully added resource getallaccounts locally.
 \end{lstlisting}
 
-\clearpage
 Nachdem Amplify die Lambda-Funktion erstellt hat, kann diese direkt bearbeitet werden.
 Der vollständige Code befindet sich im Anhang (Siehe Anhang \textit{\nameref{lst:LambdaCode}}).
 Im Kern besteht die Lambda-Funktion aus vier Funktionen.
 \\
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
-getCallerIdentity()
-getCrossAccountCredentials()
-listAllAccounts()
-writeAllDynamoDBItems()
-\end{lstlisting}
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true]
 
+  - getCallerIdentity()
+  - getCrossAccountCredentials()
+  - listAllAccounts()
+  - writeAllDynamoDBItems()
+\end{lstlisting}
 
 Die Funktionen \spverb+getCallerIdentity()+ und \spverb+getCrossAccountCredentials()+ haben den Zweck temporären Zugriff auf den Account \spverb+Cbc-Master+ zu ermöglichen. \cite[Letzter Absatz]{Stackoverflow}
 \spverb+listAllAccounts()+ liest anschließend alle Daten und \spverb+writeAllDynamoDBItems()+ schreibt diese in die DynamoDB-Tabelle.
-Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen, eine weitere die korrekte Abarbeitung der Funktion sicherzustellen.
-In den folgenden Abschnitten werden diese beiden Hürden genauer erläutert.
 
+Zwei wesentliche Funktionalitäten erwiesen sich als besonders aufwendig.
+Eine Schwierigkeit war es, eine Identität im \verb+Cbc-Master+ anzunehmen, eine weitere die korrekte Abarbeitung der Funktion sicherzustellen.
+In den folgenden beiden Abschnitten werden diese Hürden genauer erläutert.
+\clearpage
 \subsubsection{Accountübergreifender Zugriff}
 \label{AccountübergreifenderZugriff}
 Die Lambda-Funktion befindet sich im AWS Account \verb+Cbc-Clouds-Sandbox+ und muss auf den Account \verb+Cbc-Master+ zugreifen.
@@ -139,7 +140,6 @@ Im unteren Linken Bereich bei \glqq Trusted Identities\grqq{} ist die Identität
 Die IAM-Rolle hat den Namen \grqq amplify-kumo-access-role\grqq{} und besitzt einen eindeutigen Ressourcennamen (ARN).
 Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß die Funktion welche Identität sie übernehmen soll.
 
-\clearpage
 
 \begin{figure}[htbp]
     \centering
@@ -148,7 +148,7 @@ Dieser ARN muss in der Lambda-Funktion angegeben werden. Nur so weiß die Funkti
     \label{fig:meine-grafik}
 \end{figure}
 
-
+\clearpage
 Um diesen Zugriff zu programmieren, dienen die Funktionen \verb+getCallerIdentity()+ und \verb+getCrossAccountCredentials()+.
 \verb+getCallerIdentity()+ ist eine Hilfsfunktion und gibt die aktuelle Identität zurück.
 So ist es leichter zu überprüfen, ob die Rolle \grqq amplify-kumo-access-role\grqq{} im \verb+Cbc-Master+ Account erfolgreich angenommen wurde.
@@ -191,9 +191,8 @@ Dafür muss das neu erstellte ServiceObjekt übergeben werden.
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
 listAllAccounts(cbc_master_orgs)
 \end{lstlisting}
-
+\clearpage
 \subsubsection{Asynchrone Verarbeitung mit NodeJS}
-
 Alle vier Funktionen werden im Handler der Funktion nacheinander ausgeführt.
 Neben den unterschiedlichen Identitäten war die Sicherstellung der asynchronen Abarbeitung ein wichtiger Aspekt bei der Programmierung.
 Alle Funktionen durften nicht gleichzeitig ausgeführt werden, da sie voneinander abhängig waren.
@@ -230,7 +229,7 @@ Der Event Handler wird als Asynchron deklariert und innerhalb des Handlers werde
       await writeAllDynamoDBItems([..])
     }
     \end{lstlisting}
-
+\clearpage
 \subsubsection{Verifizierung Lambda-Funktion}
 
 Nach erfolgreicher Ausführung der Lambda-Funktion sollten sich Einträge in der DynamoDB-Tabelle befinden.
@@ -264,8 +263,8 @@ Diese muss um die Hauptkomponente umhüllt werden.
 Dafür wird beim Exportieren der Hauptkomponente \verb+withAuthenticator+ mitangegeben. \cite{ImpAuth}
 Die React-Komponente \verb+AWSAccountListsMaterial+ beinhaltet den Code zum Abfragen der Daten aus der DynamoDB-Tabelle und zum Rendern der Übersicht.
 
-Mehr Details zu der Komponente befinden sich im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}}.
-\\
+Mehr Details zu der Komponente \verb+AWSAccountListsMaterial+ befinden sich im Abschnitt \textit{\ref{ReactFrontend} \nameref{ReactFrontend}}.
+\clearpage
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite},caption={Auszug aus React-Frontend (Datei: \textit{\nameref{lst:React AccountList}} )} ]
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
@@ -274,7 +273,6 @@ class AWSAccountListsMaterial extends React.Component {
 }
 export default withAuthenticator(AWSAccountListsMaterial, true)
     \end{lstlisting}
-
 
 
 Startet man den lokalen Webserver im Anschluss und ruft die Anwendung auf, erscheint eine voll funktionsfähige Login-Maske.
@@ -296,7 +294,7 @@ Da Cognito erfolgreich implementiert wurde, kann die Authentifizierung in der AP
 Mit dem Befehl \spverb+amplify update api+ kann jetzt der Cognito Benutzerpool ausgewählt werden.
 Im Anschluss kann die Änderung mit \spverb+amplify publish+ veröffentlicht werden.
 
-
+\clearpage
 \subsubsection{Anmeldung über AzureAD}
 
 Wie im Abschnitt \textit{\ref{Authentifizierung} \nameref{Authentifizierung}} bereits erwähnt, wäre es wünschenswert die Anmeldung mit Unternehmensidentitäten zu ermöglichen.
@@ -306,19 +304,20 @@ Die Anmeldung zu allen drei Cloud Providern erfolgt etwa über die gemeinsame Id
 
 Cognito bietet eine Unterstützung mit Unternehmens-Identitätsanbietern über SAML an.
 Dafür müssen Konfigurationen in AzureAD und AWS Cognito getätigt werden.
-Während des Vorgangs ist schließlich die Entscheidung gefallen, dass es keine geeignete Implementierung in Zusammenspiel mit Amplify gibt.
-Im Internet existieren mehrere Anleitungen zur Verbindung von AzureAD mit Cognito, jedoch ohne Amplify.
 Der Cognito Dienst wurde dabei mit einer \glqq Azure Enterprise Application\grqq{} verknüpft.
 Bei \glqq Azure Enterprise Application\grqq{} handelt es sich um einen Dienst, der zur Verwaltung von Identitäten genutzt wird.
-Nach der Einrichtung sind leider Fehlermeldungen aufgetreten.
-Das Ergebnis einer Recherche zeigte, dass Amplify für diese spezielle Anbindung nicht optimiert ist.
-Der SSO Authentifizierungsweg muss in das Frontend eingebaut werden.
-Für diesen Prozess existieren im Internet mehrere Dokumentationen für Android oder iOS Apps.
+Während des Vorgangs wurde eine Vertrauensstellung zwischen Cognito und AzureAD erfolgreich erstellt.
+Eine korrekte Implementierung mit dem Frontend und Amplify war leider nicht möglich.
+Die Einbindung eines Unternehmens-Identitätsanbieters wird von Amplify nicht hinreichend unterstützt und erfordert große Anpassungen.
+Das Ergebnis einer Recherche unterstützt diese Annahme ebenfalls.
+
+Der SSO Authentifizierungsweg muss in das Frontend selbst eingebaut werden, da keine passenden Module zur Verfügung gestellt werden.
+Für diesen Prozess existieren lediglich Beispiele für Android oder iOS Apps.
 Für React oder ein anderes JavaScript-Framework scheint die Integration komplexer zu sein.
-Auf der Website \textit{\href{https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/}{dunlop.geek.nz}} wird ein Lösungsvorschlag angeboten, der jedoch im Rahmen dieser Bachelorarbeit nicht umgesetzt wird.
-Laut der Anleitung ist es notwendig mehrere Stellen im Frontend stark zu bearbeiten und einen großen Teil der Authentifizierung manuell zu erstellen.
-Zudem ist es laut Autor notwendig die Datei \verb+aws-exports.js+ zu bearbeiten.
-In der Datei selbst wird davor explizit gewarnt.
+Der Entwickler Paul Dunlop beschreibt einen potenziellen Lösungsvorschlag, der jedoch im Rahmen dieser Bachelorarbeit nicht umgesetzt wird.
+Laut ihm ist es notwendig mehrere Stellen im Frontend stark zu bearbeiten sowie einen großen Teil der Authentifizierung manuell zu erstellen.
+Zudem soll die Datei \verb+aws-exports.js+ bearbeitet werden.
+In der Datei selbst wird davor jedoch explizit gewarnt.\cite{AzureADProbleme}
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite}, caption={Auszug aws-exports.js} ]
 // WARNING: DO NOT EDIT. This file is automatically generated by AWS Amplify. It will be overwritten.
@@ -342,7 +341,7 @@ Um erste Erfahrungen mit React zu sammeln, wurde eine Komponente zur Begrüßung
 Die React-Komponente \verb+<Greeting>+ gibt zwei simple HTML Elemente mit einem definierten Text zurück.
 Als Nächstes wurde die React-Komponente \verb+<AWSAccountListsMaterial>+ erzeugt, die für die restliche Logik zuständig ist.
 
-Zuallererst wird eine Query benötigt, die alle Daten der Tabelle abfragt und in der Komponente genutzt werden kann.
+Hier wird zuallererst eine Query benötigt, die alle Daten der Tabelle abfragt und in der Komponente genutzt werden kann.
 In der Query werden alle Felder ausgewählt, die im Schema angegeben wurden, da alle auch benötigt werden.
 Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Felder abzufragen und so ein Over-fetching zu vermeiden.
 
@@ -364,7 +363,7 @@ Wie zuvor erwähnt wurde, ist es ebenfalls möglich auch nur einen Teil der Feld
 
 
 Auch hier muss eine asynchrone Abarbeitung sichergestellt werden.
-Die Daten müssen zur Verfügung stehen, bevor sie gerendert werden können.
+Sobald die Daten zur Verfügung stehen, können sie gerendert werden.
 React bietet dazu die Funktion \verb+componentDidMount()+ an, die exakt für diesen Anwendungsfall existiert. \cite{ReactComp}
 Innerhalb der Funktion \verb+componentDidMount()+ wird eine weitere Funktion \verb+queryAccounts()+ gestartet.
 Diese Funktion führt mithilfe von AppSync die Query aus und speichert sie in die State Variable.\cite{AmplifyAPI}
@@ -377,15 +376,20 @@ queryAccounts = async() => {
       const result = await API.graphql(graphqlOperation(listAllAccounts))
       const result_json = Object.values(result)
       const result_optimized = result_json[0].listAccounts.items
+
       // this will re render the view with new data
       this.setState({
+
         AccountList:result_optimized,})
+
     } catch (err) {
+
       console.log(err);
-    }}
+    }
+  }
 \end{lstlisting}
 
-
+\clearpage
 Im letzten Schritt müssen die Information aus der State Variable im Frontend angezeigt werden.
 Hierfür eignet sich eine tabellarische Ansicht am meisten.
 Zuerst wurde mit JSX ein HTML \verb+<table>+ Element erstellt und die einzelnen Daten korrekt hinzugefügt.
@@ -394,10 +398,11 @@ Diese Komponente ermöglicht das Erstellen einer übersichtlichen Tabelle mit de
 Zudem ist nahezu jeder Aspekt frei konfigurierbar, etwa die Anzahl an Elementen pro Seite.\cite{MaterialTable}
 Innerhalb der \verb+<AWSAccountListsMaterial>+ wird also die externe Komponente \verb+<MaterialTable>+ eingebeut.
 Hier werden die Spalten konfiguriert, sowie dem Feld \glqq data\grqq{} die Daten aus der State Variable übergeben.
-
+\\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 <MaterialTable
 [...]
+
 columns={[
   { title: 'Nummer', field: 'num', defaultSort: "asc", width: '6%' },
   { title: 'Name', field: 'name', width: '30%' },
@@ -405,20 +410,27 @@ columns={[
   { title: 'Email', field: 'email', width: '50%', align: "center" },
   { title: 'Status', field: 'status', sorting:false, width: '6%'}
  ]}
-          data={this.state.AccountList}
+
+  data={this.state.AccountList}
+
+[...]
+
 />
     \end{lstlisting}
 
 
+
+
  Das folgende Bild zeigt das Ergebnis nach der Implementierung des Codes.
  Sollte aus irgendwelchen Gründen der Abruf der Daten fehlschlagen, zeigt React nur eine leere Tabelle an.
+
  Zum gegebenen Zeitpunkt existierten 162 Einträge, wovon jeweils 30 pro Seite angezeigt wurden.
  Die Implementierung aller Dienste wurde erfolgreich durchgeführt.
-
+\clearpage
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/Webanwendung.png}
-    \caption{Fertiggestellte Website mit Daten}
+    \caption{Fertiggestellte Website mit Daten. Eine Suche lässt sich oben rechts über das Suchfeld starten. Sobald eine Spaltenüberschrift angeklickt wird, werden alle Elemente dementsprechend sortiert. Ein weiterer Klick ändert die Reihenfolge der Sortierung.  }
     \label{fig:FertigSeite}
 \end{figure}
 
@@ -446,11 +458,11 @@ FrontEnd Env       Domain
 dev                https://dev.drjgagjbys8gs.amplifyapp.com
 
     \end{lstlisting}
-
+\clearpage
 Auf Wunsch kann eine eigene Domäne hinzugefügt werden, sodass die \spverb+.amplifyapp.com+ Domäne nicht zwingend genutzt werden muss.
 In dem Account \spverb+Cbc-Clouds-Sandbox+ ist bereits die Domäne \spverb+sandboxzone.aws-cbc.cloud+ registriert.
 Somit kann direkt über dem Menüpunkt \glqq Domain Management\grqq{} eine Subdomäne für die Webanwendung konfiguriert werden.
-Falls die Domain über AWS registirert wurde, kümmert sich Amplify automatisch um das Erstellen des SSL-Zertifikates\footnote{SSL steht für Secure Sockets Layer und ist ein Protokoll zum eindeutigen Identitätsnachweis. Heutzutage werden SSL-Zertifikate mit TLS(Transport Layer Security) verschlüsselt. Ein Zertifikat enthählt viele Informationen, etwa den Namen des Ausstellers, und wird von einer Zertifizierungsstelle ausgestellt.} und Setzen des CNAMEs.
+Falls die Domain über AWS registirert wurde, kümmert sich Amplify automatisch um das Erstellen des SSL-Zertifikates\footnote{SSL steht für Secure Sockets Layer und ist ein Protokoll zum eindeutigen Identitätsnachweis. Heutzutage werden SSL-Zertifikate mit TLS(Transport Layer Security) verschlüsselt. Ein Zertifikat enthählt viele Informationen, etwa den Namen des Ausstellers, und wird von einer Zertifizierungsstelle ausgestellt.} und Setzen des CNAMEs.\\
 
 
 \begin{figure}[htbp]

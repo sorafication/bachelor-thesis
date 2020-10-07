@@ -6,7 +6,7 @@ Das folgende Diagramm soll die Verbindung zwischen allen Diensten aufzeigen:
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1.0\textwidth]{50-Implementierung/Architektur.png}
+    \includegraphics[width=1.0\textwidth]{50-Implementierung/Architektur.pdf}
     \caption{Übersicht der Architektur}
     \label{fig:meine-grafik}
 \end{figure}
@@ -17,7 +17,7 @@ Das Frontend greift mithilfe von AppSync wiederrum auf die DynamoDB-Tabelle zu, 
 Die Lambda-Funktion sorgt im Hintergrund dafür, dass die Daten in der Tabelle stets aktuell sind.
 Dafür wird ein Zugriff auf einen anderen AWS Account benötigt.
 GitHub wird für eine CI/CD Pipeline genutzt und kann über Amplify konfiguriert werden.
-
+\clearpage
 Die Umsetzung der Anwendung erfolgt in fünf einzelnen Schritten.
 Erzeugt werden alle Dienste über die Amplify CLI.
 Zuerst müssen alle Voraussetzungen erfüllt werden.
@@ -59,15 +59,15 @@ Jeder der Accounts ist grundsätzlich unabhängig und weißt nur über die gemei
 Zusätzlich gibt es für N-TV noch weitere Accounts für andere Projektbereiche.
 Die Accounts \verb+Ntv-Web-Dev+ und \verb+Ntv-Web-Prod+ werden von anderen Personen betreut werden.
 Daneben ist es möglich, dass noch weitere Accounts oder Entwicklungsumgebungen benötigt werden, etwa eine \verb+PreProd+ Umgebung.
-
-Wie bereits im Abschnitt \textit{\ref{LambdaEntscheidung} \nameref{LambdaEntscheidung}} erwähnt, werden alle Accounts zentral über den Dienst AWS Organizations erstellt.
+\clearpage
+Im Abschnitt \textit{\ref{LambdaEntscheidung} \nameref{LambdaEntscheidung}} wurde erwähnt,dass alle Accounts zentral über den Dienst AWS Organizations erstellt werden.
 Es wird Zugriff auf den Master-Account benötigt um Informationen zu allen Accounts zu erhalten.
 Details zur Umsetzung befinden sich im Abschnitt \textit{\ref{AccountübergreifenderZugriff} \nameref{AccountübergreifenderZugriff}}.
 
 Für die Abteilung Datacenter and Clouds wurden speziell Accounts zum Testen erstellt.
 Der Account \verb+Cbc-Clouds-Sandbox+ eignet sich für eine erste Testumgebung daher optimal.
 Wird die Anwendung in Zukunft produktiv genutzt, kann sie ohne viel Aufwand in einen anderen Account migriert werden.
-
+\newline
 
 \subsection{Amplify Voraussetzungen}
 
@@ -85,10 +85,12 @@ Es wird nach der gewünschten Region sowie Benutzernamen gefragt.
 Anschließend öffnet sich ein neues Browserfenster und der Vorgang kann fortgesetzt werden.
 In Browser wird das Erstellen des Benutzers mit passenden Berechtigungen bestätigt.
 Die im Browser angezeigten IAM Zugangsschlüssel werden im Terminal eingegeben und der Vorgang ist abgeschlossen.\cite{ImpVoraus}
+\newline
+
 
 Hinweis: Der interne Name des Projektes lautet Amplify-Kumo.
 Kumo ist die japanische Bezeichnung für \glqq Cloud\grqq.
-\\
+\clearpage
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 # amplify configure
@@ -114,7 +116,7 @@ Enter the access key of the newly created user:
 Successfully set up the new user.
 \end{lstlisting}
 
-\clearpage
+
 \subsubsection{Einrichtung React Projekt}
 
 Eine weitere Voraussetzung für Amplify ist die Erstellung eines neuen React-Projektes.
@@ -140,7 +142,7 @@ Als Erstes werden allgemeine Informationen benötigt, wie der Projektname oder d
 Die darauffolgenden Pfade und Befehle sind nicht geändert worden.
 Des Weiteren wird der, in \textit{\ref{EinrichtungAmplify} \nameref{EinrichtungAmplify}} erstellte, IAM-User angegeben.
 Nach kurzer Zeit ist das Amplify Projekt bereits in der Cloud erstellt worden und verfügbar.
-
+\clearpage
 Wie im Code ersichtlich, benutzt Amplify den Dienst AWS CloudFormation, sodass die gesamte Konfiguration in einem Template festgehalten wird.
 Mit AWS CloudFormation ist es möglich Templates zur Modellierung und Bereitstellung von AWS-Ressourcen zu erstellen.
 Die Templates unterstützen die Auszeichnungssprachen JSON und YAML.
@@ -154,8 +156,6 @@ Auch für die Lambda-Funktion sind IAM-Rollen von großer Bedeutung.
 Im Abschnitt \textit{\ref{AccountübergreifenderZugriff} \nameref{AccountübergreifenderZugriff}} wird das Thema IAM-Rollen im Detail erklärt.
 
 Es wurden alle Voraussetzungen erfüllt und die einzelnen Dienste können dem Projekt hinzugefügt werden.
-
-\clearpage
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 [143302S0:amplify-kumo] master # amplify init

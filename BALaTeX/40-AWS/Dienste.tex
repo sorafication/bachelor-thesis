@@ -12,7 +12,7 @@ Beide Dienste basieren auf unterschiedlichen Prinzipien mit eigenen Vor- und Nac
 Diese Aspekte werden im folgenden Schritt gegenüber gestellt.
 Anschließend folgt anhand der gewonnenen Erkenntnisse eine begründete Entscheidung, welcher Dienst geeigneter ist.
 
-
+\clearpage
 \subsubsection{REST API: AWS API Gateway}
 Das Grundprinzip der REST-API (REpresentational State Transfer) Architektur ist es eine strukturierte Kombination aus Ressourcen und Methoden zu erhalten.
 Jede Information, die sich benennen lässt kann eine Ressource sein.
@@ -51,7 +51,7 @@ Fehlen die Daten im Cache werden sie von dem Server abgefragt und anschließend 
 Der Client stellt seine Anfrage dabei normal an den Zielserver, für ihn ist der Cache nicht direkt sichtbar.
 Beim HTTP-Caching entscheidet der \verb+Cache-Control+ Header\footnote{Ein HTTP-Header ist eine Zusatzinformation die zwischen Client und Server ausgetauscht werden kann.} ob und wie lange ein Datensatz als gültig gilt.
 Ein gesetzter Header mit dem Wert \verb+Cache-Control: max-age=3600+ teilt dem Client etwa mit, dass die Datei eine Stunde gültig ist, und in diesem Zeitraum nicht erneut abgerufen werden muss. \cite[Seite 21]{Cache}
-
+\clearpage
 Wächst eine Applikation immer weiter entstehen auch meist neue API Endpunkte.
 Besteht die Anforderung alle Daten abzufragen, wären mehrere separate Anfragen notwendig.
 Es ist zudem nicht möglich die angeforderten Daten genauer zu spezifizieren.
@@ -216,10 +216,10 @@ Das folgende Schaubild von Amazon zeigt die Funktionsweise des Dienstes genauer.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{40-AWS/Appsync.png}
-    \caption{Funktionsweise von AppSync \cite{AppSync}}
+    \caption{Funktionsweise von AppSync. Links befinden sich alle Geräte und Möglichkeiten, um mit AppSync kommunizieren zu können. Die Rechte Seite illustriert alle Dienste und Protokolle mit denen AppSync kommunizieren kann. AppSync dient als zentrale Verbindung zwischen beiden Seiten. \cite{AppSync}}
     \label{fig:meine-grafik}
 \end{figure}
-
+\clearpage
 \label{GraphQLResolver}
 AppSync besteht aus den Hauptkomponenten GraphQL Schema und Resolver.
 Damit GraphQL weiß welche Operationen es bei Anfragen durchführen soll, werden Resolver benötigt.
@@ -247,7 +247,6 @@ da er leicht kompromittierbar ist und keine Aufteilung von Berechtigungen ermög
 Cognito User Pool (siehe \textit{\ref{Cognito} \nameref{Cognito}}) möglich. \cite{AppSyncAuth}
 
 Sämtliche Protokolldaten sowie Metriken können in dem Dienst AWS CloudWatch Logs\footnote{ Amazon CloudWatch Logs ist ein Überwachungs- und Management-Service, in dem Logs von sämtlichen AWS-Diensten gespeichert und ausgewertet werden können. } gespeichert und ausgewertet werden.
-Ähnlich wie AWS API Gateway unterstützt AppSync mehrere unterschiedliche Endgeräte.
 
 Auch Echtzeitanwendungen können mit AppSync und GraphQL Subscriptions realisiert werden.
 Zusätzlich bietet Amazon ein serverseitiges Caching von Daten an, um direkten Zugriff zu reduzieren und die Geschwindigkeit zu erhöhen.
@@ -259,7 +258,7 @@ Eine Millionen API-Aufrufe kosten 4,00 USD, eine Vergünstigung bei mehr Abrufen
 \cite{AppSync} \cite{AppSyncPreise}
 
 
-
+\clearpage
 \subsubsection{Entscheidung}
 Für das, in dieser Arbeit gewünschte Projekt, wäre eine Implementierung sowohl mit einer REST API als auch mit GraphQL möglich.
 Beide Dienste für die API sind zudem direkt in Amplify (siehe \textit{\ref{Amplify} \nameref{Amplify}}) integriert und benötigen keine separate Konfiguration.
@@ -296,6 +295,7 @@ Zum einen sind die Kosten in einem ähnlichem Verhältnis, zum anderen werden ni
 Es gibt zwei unterschiedliche Technologien für die Nutzung von Datenbanken, relationale und nicht-relationale Datenbanken.
 Sie variieren in vielen Aspekten und haben abweichende Anwendungsfälle.
 Amazon bietet für beide Technologien eigene Dienste an, die im Folgenden genauer betrachtet und verglichen werden.
+
 
 \subsubsection{Relationale Datenbanken: AWS RDS}
 
@@ -371,7 +371,7 @@ Nachteil von Strongly Consistent ist die höhere Latenz und ein höherer Verbrau
 Eine Million dieser Schreibanforderungen kosten in Frankfurt 1,525 USD und eine Million Leseanforderungen 0,305 USD.
 Zudem entstehen Kosten für den Datenspeicher, die Sicherung, Datenübertragung und ein paar weitere speziellere Funktionen.
 Beim Datenspeicher sind die ersten 25 GB pro Monat kostenlos und kosten danach pro GB-Monat 0,306 USD. \cite{DynamoDBPreise}
-
+\clearpage
 \subsubsection{Entscheidung}
 Eine NoSQL-Datenbank, und damit AWS DynamoDB, sind für diese Projektumsetzung besser geeignet.
 Zum einen ist der von Amazon zur Verfügung gestellte Dienst besser mit den restlichen Komponenten integriert, zum anderen ist der NoSQL Ansatz
@@ -484,6 +484,7 @@ Möchte man Code mit einem Minimum an Administrationsaufwand in der Cloud ausfü
 \label{Lambda}
 Im November 2014 wurde der Serverlose Datenverarbeitungsservice AWS Lambda veröffentlicht, mit dem Anwender ihren Code jederzeit ausführen können.
 Amazon kümmert sich um die \glqq gesamte Administration der Datenverarbeitungsressourcen, einschließlich der Server- und Betriebssystemwartung, Kapazitätsbereitstellung, automatischen Skalierung sowie der Code-Überwachung und -Protokollierung.\grqq{} \cite{LambdaZitat}
+\clearpage
 Da auch die Laufzeitumgebung von AWS verantwortet wird, ist die Auswahl der Programmiersprachen vorgegeben.
 Zur Auswahl stehen NodeJS, Python, Ruby, Java, Go, C\# und Powershell.
 Mit etwas mehr Aufwand ist es zudem auch möglich eine Benutzerdefinierte Laufzeit zu implementieren, sodass weitere Sprachen möglich sind.
@@ -505,10 +506,10 @@ Alle Informationen zur Lambda-Funktion, auch potenzielle Fehler im Code, werden 
 
 Sobald eine Lambda-Funktion ausgelöst wird, startet die Codeausführung am sog. Handler.
 Der Handler ist eine spezielle Methode innerhalb des Lambda-Codes der Ereignisse verarbeitet.
-Je nach Programmiersprache existieren unterschiedliche Voraussetzungen für den Handler.
-Innerhalb des Handlers können weitere Funktionen und Methoden aufgerufen werden die zur Bearbeitung notwendig sind.
+Je nach Programmiersprache existieren unterschiedliche Voraussetzungen.
+In dem Handlers können weitere Funktionen und Methoden aufgerufen werden die zur Bearbeitung notwendig sind.
 Wenn der Handler mit der Ausführung des Codes fertig ist, steht er für weitere Events zur Verfügung.
-Werden mehrere Events ausgelöst starten auch gleichzeitig mehrere Kopien der Funktion.
+Werden mehrere Events ausgelöst, starten auch gleichzeitig mehrere Kopien der Funktion.
 Nach dem Fertigstellen skaliert Lambda automatisch bis keine Ressourcen im Leerlauf übrig bleiben.
 Um eine fehlerfreie Ausführung von beliebig vielen Funktionen sicherzustellen, ist die Zustandslosigkeit somit essentiell.
 Dies bedingt ebenfalls, dass der Speicherplatz nicht persistent ist und auf 500 MB eingeschränkt ist.\cite[Seite 5f]{AWSWhitepaper}
@@ -522,7 +523,7 @@ Damit ein Fehler im Code eine Lambda-Funktion nicht theoretisch unendlich lang l
 Außerdem ist es nicht möglich einer Funktion beliebig viele Ressourcen zuzuteilen.
 Amazon erlaubt aktuell maximal 3 GB an Arbeitsspeicher und minimal 128 MB.
 Die Größe des Arbeitsspeichers muss selbst ausgewählt werden.
-
+\clearpage
 Bezahlt wird bei Lambda die Dauer der Ausführung sowie die Anzahl der Anforderungen.
 Die Dauer wird in 100-Millisekunden-Schritten berechnet und der Preis ist je nach Größe des Arbeitsspeichers abhängig.
 512 MB Arbeitsspeicher kosten etwa 0,0000008333 USD pro 100ms.
@@ -545,6 +546,8 @@ Alle Komponenten dieses Projektes werden in einem separaten Account erzeugt, der
 Da das Frontend mit einem JavaScript-Framework erzeugt wird, bietet es sich an für Lambda NodeJS als Programmiersprache zu verwenden.
 So wird vermieden zwei unterschiedliche Syntaxstrukturen und Funktionsweisen lernen zu müssen.
 AWS bietet für NodeJS eine AWS Organizations API an, um exakt diesen Aufruf tätigen zu können.
+Der Abschnitt \textit{\ref{ImpLambda} \nameref{ImpLambda}} beschreibt die exakte Implementierung mit NodeJS und dessen Herausforderungen.
+
 Der Zugriff auf AWS Organizations sowie die Accountstruktur der Mediengruppe RTL werden im Abschnitt \textit{\ref{Accountstruktur} \nameref{Accountstruktur}} genauer erläutert.
 \cite{SDKListAccounts}
 
@@ -556,7 +559,7 @@ Zur Auswahl für das Web-Frontend wurden React, React Native, Vue und Angular be
 React Native eignet sich nicht zur Umsetzung, da es hauptsächlich für die native Entwicklung von iOS und Android Apps genutzt wird.
 Mit allen drei restlichen Frameworks lässt sich das Frontend mit einem ähnlichen Aufwand aufbauen.
 Die Entscheidung erfolgt anhand von Aspekten wie Syntax, Popularität und Performance.
-
+\clearpage
 Angular wurde 2010 von Google entwickelt und ist das älteste der drei JavaScript-Frameworks.
 Für die Syntax verwendet Angular TypeScript
 \footnote{TypeScript ist eine von Microsoft entwickelte Erweiterung oder auch Überkategorie von JavaScript.
@@ -567,15 +570,15 @@ Mit TypeScript generierter Code lässt sich in JavaScript kompilieren. Im Gegens
  Dementsprechend ist die Entscheidung nicht auf Angular gefallen.
 
 Vue ist mit Veröffentlichung im Jahr 2014 das jüngste Framework und wird von keinem großen Unternehmen, sondern durch die Community weiterentwickelt.
-In den letzten Jahren ist Vue zunehmend populärer geworden und mittlerweile existieren auch vermehrt Anleitungen zum Erstellen von Webanwendung.
+In den letzten Jahren ist Vue zunehmend populärer geworden und mittlerweile existieren auch vermehrt Standardbeispiele zum Erstellen von Webanwendung.
 Besonders in China ist Vue sehr verbreitet.\cite[Abschnitt: Comparing Adoption \& Popularity]{JavascriptFrameworks}
 Code wird mithilfe von JavaScript und HTML geschrieben und dabei strikt voneinander getrennt.
 Der HTML Code befindet sich im \verb+<template>+ Bereich und JavaScript Code ist im \verb+<script>+ Bereich erlaubt.
-Hinsichtlich der geringeren Verbreitung im englischsprachigen Raum und dem geringeren Reifegrad der AWS-Integration im Internet, wird Vue nicht für die Realisierung verwendet.
+Hinsichtlich der geringeren Verbreitung im englischsprachigen Raum und dem geringeren Reifegrad der AWS-Integration, wird Vue nicht für die Realisierung verwendet.
 
 React wurde 2013 von Facebook veröffentlicht und wird zusammen mit der Community weiterentwickelt.
-Anders als bei Vue, wird in React kein Code getrennt.
-React arbeitet, wie die meisten JavaScript-Frameworks, komponentenbasiert und versucht die Komponenten separat zu strukturieren.
+Anders als bei Vue, findet keine solche Trennung statt.
+React arbeitet, wie die meisten JavaScript-Frameworks, komponentenbasiert und versucht die Komponenten modular zu strukturieren.
 Zum Rendern von HTML Elementen nutzt React die JavaScript-Erweiterung JSX, welche JavaScript und HTML Syntax kombiniert.
 Der JSX Code wird vor dem Start der Anwendung in normalen Javascript-Code übersetzt.
 Innerhalb von geschweiften Klammern wird alles als Javascript Code behandelt.
@@ -588,16 +591,16 @@ const divelement = <div>Ich bin ein DIV-Element</div>;
 ReactDOM.render(divelement, document.getElementById('root'));
 \end{lstlisting}
 
-Ohne JSX wäre folgender Code notwendig:
+Ohne JSX wäre folgender Code notwendig.\cite{JSX}
 \begin{lstlisting}[basicstyle=\ttfamily, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 const divelement = React.createElement('div', {}, 'TEXT');
 
 ReactDOM.render(divelement, document.getElementById('root'));
 \end{lstlisting}
-\cite{JSX}
+
 
 Da im Studium bereits Erfahrung mit HTML und JavaScript gemacht wurde, ist der Einstieg in JSX und React der komfortabelste.
-Auch scheint es die meisten Forenbeiträge und Anleitungen im Internet zu React im Zusammenspiel mit AWS zu geben, sodass im Problemfall am meisten Lösungsvorschläge zu finden sind.
+Auch existieren am meisten Referenzen zu React im Zusammenspiel mit AWS, sodass im Problemfall eine Lösungssuche am aussichtsreichsten ist.
 Aus diesen Gründen wird die Implementierung in React erfolgen.
 
 

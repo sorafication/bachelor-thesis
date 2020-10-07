@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+
+        <title>AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ</title>
+<link rel="dns-prefetch" href="https://secure.gravatar.com/">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="dns-prefetch" href="https://v0.wordpress.com/">
+<link rel="alternate" type="application/rss+xml" title="DUNLOP.GEEK.NZ » Feed" href="https://dunlop.geek.nz/feed/">
+<link rel="alternate" type="application/rss+xml" title="DUNLOP.GEEK.NZ » Comments Feed" href="https://dunlop.geek.nz/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="DUNLOP.GEEK.NZ » AWS Cognito + Azure AD + React + Amplify Comments Feed" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/dunlop.geek.nz\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.1"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="ultimate-tables-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/ultimate-tables.css" type="text/css" media="all">
+<link rel="stylesheet" id="ultimate-datatables-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.dataTables.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpi-default-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/wpi-default-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="amazonpolly-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/amazonpolly-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="cptch_stylesheet-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/front_end_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cptch_desktop_style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/desktop_style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="thumbs_rating_styles-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="tp-twitch-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/styles.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="swiper-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/swiper.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sidr-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.sidr.dark.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/magnific-popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="newsphere-google-fonts-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="newsphere-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="ubermenu-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/ubermenu.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ubermenu-black-white-2-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/blackwhite2.css" type="text/css" media="all">
+<link rel="stylesheet" id="ubermenu-font-awesome-all-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/all.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript">(function(a,d){if(a._nsl===d){a._nsl=[];var c=function(){if(a.jQuery===d)setTimeout(c,33);else{for(var b=0;b<a._nsl.length;b++)a._nsl[b].call(a,a.jQuery);a._nsl={push:function(b){b.call(a,a.jQuery)}}}};c()}})(window);</script><script type="text/javascript" id="wpc-localization-js-extra">
+/* <![CDATA[ */
+var wpc_l10n = {"actions":"Actions","user_activity_history":"User Activity History","primary_information":"Primary Information","special_actions":"Special Actions","filter_show":"Show","filter_hide":"Hide","something_wrong":"Something wrong, try again."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/l10n.js" id="wpc-localization-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/amazonpolly-public.js" id="amazonpolly-js"></script>
+<script type="text/javascript" id="thumbs_rating_scripts-js-extra">
+/* <![CDATA[ */
+var thumbs_rating_ajax = {"ajax_url":"https:\/\/dunlop.geek.nz\/wp-admin\/admin-ajax.php","nonce":"fa1d3af988"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/general.js" id="thumbs_rating_scripts-js"></script>
+<link rel="https://api.w.org/" href="https://dunlop.geek.nz/wp-json/"><link rel="alternate" type="application/json" href="https://dunlop.geek.nz/wp-json/wp/v2/posts/625"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dunlop.geek.nz/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://dunlop.geek.nz/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="cfn-lint, cloudformation template validation at time of commit" href="https://dunlop.geek.nz/cfn-lint-cloudformation-template-validation-at-time-of-commit/">
+<link rel="next" title="AWS Config Pay Per Use Pricing!" href="https://dunlop.geek.nz/aws-config-pay-per-use-pricing/">
+<meta name="generator" content="WordPress 5.5.1">
+<link rel="canonical" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/">
+<link rel="shortlink" href="https://wp.me/p4g63f-a5">
+<link rel="alternate" type="application/json+oembed" href="https://dunlop.geek.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdunlop.geek.nz%2Faws-cognito-azure-ad-react-amplify%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://dunlop.geek.nz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdunlop.geek.nz%2Faws-cognito-azure-ad-react-amplify%2F&amp;format=xml">
+<style id="ubermenu-custom-generated-css">
+/** Font Awesome 4 Compatibility **/
+.fa{font-style:normal;font-variant:normal;font-weight:normal;font-family:FontAwesome;}
+
+/* Status: Loaded from Transient */
+
+</style>        <style type="text/css">
+                        body .site-title a,
+            .site-header .site-branding .site-title a:visited,
+            .site-header .site-branding .site-title a:hover,
+            .site-description {
+                color: #00cdf2;
+            }
+
+            .header-layout-3 .site-header .site-branding .site-title,
+            .site-branding .site-title {
+                font-size: 42px;
+            }
+
+            @media only screen and (max-width: 640px) {
+                .site-branding .site-title {
+                    font-size: 40px;
+
+                }
+            }
+
+            @media only screen and (max-width: 375px) {
+                .site-branding .site-title {
+                    font-size: 32px;
+
+                }
+            }
+
+            
+            
+
+        </style>
+        <link rel="icon" href="https://dunlop.geek.nz/wp-content/uploads/2015/09/stovoco_circle.png" sizes="32x32">
+<link rel="icon" href="https://dunlop.geek.nz/wp-content/uploads/2015/09/stovoco_circle.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://dunlop.geek.nz/wp-content/uploads/2015/09/stovoco_circle.png">
+<meta name="msapplication-TileImage" content="https://dunlop.geek.nz/wp-content/uploads/2015/09/stovoco_circle.png">
+    <script async="" type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/count.js"></script><script type="text/javascript" async="" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/embed.js"></script><style id="theia-sticky-sidebar-stylesheet-TSS">.theiaStickySidebar:after {content: ""; display: table; clear: both;}</style><style></style><style></style><style></style><style></style><style></style><style></style><style></style></head>
+
+<body class="post-template-default single single-post postid-625 single-format-standard wp-embed-responsive aft-default-mode aft-hide-comment-count-in-list aft-hide-minutes-read-in-list aft-hide-date-author-in-list default-content-layout single-content-mode-default align-content-left">
+    
+    <div id="af-preloader" style="display: none;">
+        <div class="af-preloader-wrap">
+            <div class="af-sp af-sp-wave">
+            </div>
+        </div>
+    </div>
+
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#content">Skip to content</a>
+
+
+        <header id="masthead" class="header-style1 header-layout-1">
+
+            <div class="main-header data-bg" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/05/images.jpg" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/05/images.jpg&quot;);">
+    <div class="container-wrapper">
+        <div class="af-container-row af-flex-container">
+            <div class="col-3 float-l pad">
+                <div class="logo-brand">
+                    <div class="site-branding">
+                                                    <p class="site-title font-family-1">
+                                <a href="https://dunlop.geek.nz/" rel="home">DUNLOP.GEEK.NZ</a>
+                            </p>
+                        
+                                            </div>
+                </div>
+            </div>
+            <div class="col-66 float-l pad">
+                            </div>
+        </div>
+    </div>
+
+</div>
+
+            <div class="header-menu-part" style="height: 50px;">
+                <div id="main-navigation-bar" class="bottom-bar">
+                    <div class="navigation-section-wrapper">
+                        <div class="container-wrapper">
+                            <div class="header-middle-part">
+                                <div class="navigation-container">
+                                    <nav class="main-navigation clearfix">
+                                                                                <span class="aft-home-icon">
+                                                                                    <a href="https://dunlop.geek.nz/">
+                                            <i class="fa fa-home" aria-hidden="true"></i>
+                                        </a>
+                                    </span>
+                                                                                <div class="aft-dynamic-navigation-elements">
+                                            <button class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
+                                            <span class="screen-reader-text">
+                                                Primary Menu                                            </span>
+                                                <i class="ham"></i>
+                                            </button>
+
+
+                                            
+<!-- UberMenu [Configuration:main] [Theme Loc:aft-primary-nav] [Integration:auto] -->
+<a class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-black-white-2 ubermenu-loc-aft-primary-nav ubermenu-responsive-toggle-content-align-left ubermenu-responsive-toggle-align-full " tabindex="0" data-ubermenu-target="ubermenu-main-2-aft-primary-nav-2"><i class="fas fa-bars"></i>Menu</a><nav id="ubermenu-main-2-aft-primary-nav-2" class="ubermenu ubermenu-main ubermenu-menu-2 ubermenu-loc-aft-primary-nav ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-none ubermenu-trigger-click ubermenu-skin-black-white-2 ubermenu-has-border ubermenu-bar-align-left ubermenu-items-align-auto ubermenu-bound ubermenu-disable-submenu-scroll ubermenu-sub-indicators ubermenu-retractors-responsive ubermenu-submenu-indicator-closes ubermenu-notouch ubermenu-no-transitions ubermenu-desktop-view"><ul id="ubermenu-nav-main-2-aft-primary-nav" class="ubermenu-nav" data-title="Main Menu"><li id="menu-item-59" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-59 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/about-this-site/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">About</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-59 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-894" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-894 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/me/"><span class="ubermenu-target-title ubermenu-target-text">Me</span></a></li><li id="menu-item-50" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-50 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/about-this-site/privacy-cookies/"><span class="ubermenu-target-title ubermenu-target-text">Privacy &amp; Cookies</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-749" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-current-menu-parent ubermenu-current-post-parent ubermenu-item-has-children ubermenu-item-749 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Blog Categories</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-749 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-887" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-current-menu-parent ubermenu-current-post-parent ubermenu-item-has-children ubermenu-item-887 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/"><span class="ubermenu-target-title ubermenu-target-text">AWS</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-887 ubermenu-submenu-type-auto ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-750" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-750 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/analytics/"><span class="ubermenu-target-title ubermenu-target-text">Analytics</span></a></li><li id="menu-item-751" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-751 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/application-integration/"><span class="ubermenu-target-title ubermenu-target-text">Application Integration</span></a></li><li id="menu-item-752" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-752 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/ar-vr/"><span class="ubermenu-target-title ubermenu-target-text">AR &amp; VR</span></a></li><li id="menu-item-753" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-753 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/aws-cost-management/"><span class="ubermenu-target-title ubermenu-target-text">AWS Cost Management</span></a></li><li id="menu-item-754" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-754 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/blockchain/"><span class="ubermenu-target-title ubermenu-target-text">Blockchain</span></a></li><li id="menu-item-755" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-755 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/business-applications/"><span class="ubermenu-target-title ubermenu-target-text">Business Applications</span></a></li><li id="menu-item-756" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-756 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/compute/"><span class="ubermenu-target-title ubermenu-target-text">Compute</span></a></li><li id="menu-item-757" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-757 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/customer-engagement/"><span class="ubermenu-target-title ubermenu-target-text">Customer Engagement</span></a></li><li id="menu-item-758" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-758 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/database/"><span class="ubermenu-target-title ubermenu-target-text">Database</span></a></li><li id="menu-item-759" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-item-759 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/developer-tools/"><span class="ubermenu-target-title ubermenu-target-text">Developer Tools</span></a></li><li id="menu-item-760" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-760 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/end-user-computing/"><span class="ubermenu-target-title ubermenu-target-text">End User Computing</span></a></li><li id="menu-item-761" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-761 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/game-development/"><span class="ubermenu-target-title ubermenu-target-text">Game Development</span></a></li><li id="menu-item-762" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-762 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/internet-of-things/"><span class="ubermenu-target-title ubermenu-target-text">Internet Of Things</span></a></li><li id="menu-item-763" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-763 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/machine-learning/"><span class="ubermenu-target-title ubermenu-target-text">Machine Learning</span></a></li><li id="menu-item-764" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-764 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/management-governance/"><span class="ubermenu-target-title ubermenu-target-text">Management &amp; Governance</span></a></li><li id="menu-item-765" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-765 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/media-services/"><span class="ubermenu-target-title ubermenu-target-text">Media Services</span></a></li><li id="menu-item-766" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-766 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/migration-transfer/"><span class="ubermenu-target-title ubermenu-target-text">Migration &amp; Transfer</span></a></li><li id="menu-item-767" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-767 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/mobile/"><span class="ubermenu-target-title ubermenu-target-text">Mobile</span></a></li><li id="menu-item-768" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-768 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/"><span class="ubermenu-target-title ubermenu-target-text">Networking &amp; Content Delivery</span></a></li><li id="menu-item-769" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-769 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/robotics/"><span class="ubermenu-target-title ubermenu-target-text">Robotics</span></a></li><li id="menu-item-770" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-770 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/satellite/"><span class="ubermenu-target-title ubermenu-target-text">Satellite</span></a></li><li id="menu-item-771" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-item-771 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/"><span class="ubermenu-target-title ubermenu-target-text">Security, Identity, &amp; Compliance</span></a></li><li id="menu-item-772" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-772 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/aws/storage/"><span class="ubermenu-target-title ubermenu-target-text">Storage</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-888" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-item-has-children ubermenu-item-888 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/azure/"><span class="ubermenu-target-title ubermenu-target-text">Azure</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-888 ubermenu-submenu-type-auto ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-906" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-current-post-ancestor ubermenu-current-menu-parent ubermenu-current-post-parent ubermenu-item-906 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/azure/azuread/"><span class="ubermenu-target-title ubermenu-target-text">AzureAD</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-889" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-has-children ubermenu-item-889 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/"><span class="ubermenu-target-title ubermenu-target-text">GCP</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-889 ubermenu-submenu-type-auto ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-901" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-901 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/artificial-intelligence/"><span class="ubermenu-target-title ubermenu-target-text">Artificial Intelligence</span></a></li><li id="menu-item-902" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-902 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/big-data/"><span class="ubermenu-target-title ubermenu-target-text">Big Data</span></a></li><li id="menu-item-898" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-898 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/compute-google-cloud/"><span class="ubermenu-target-title ubermenu-target-text">Compute</span></a></li><li id="menu-item-899" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-899 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/iam-admin/"><span class="ubermenu-target-title ubermenu-target-text">IAM &amp; admin</span></a></li><li id="menu-item-900" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-900 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/networking/"><span class="ubermenu-target-title ubermenu-target-text">Networking</span></a></li><li id="menu-item-903" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-903 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/stackdriver/"><span class="ubermenu-target-title ubermenu-target-text">StackDriver</span></a></li><li id="menu-item-904" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-904 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/storage-google-cloud/"><span class="ubermenu-target-title ubermenu-target-text">Storage</span></a></li><li id="menu-item-905" class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-905 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/category/google-cloud/tools/"><span class="ubermenu-target-title ubermenu-target-text">Tools</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-907" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-907 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Cloud Training</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-907 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-530" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-530 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">AWS Training</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-530 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-937" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-937 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.aws.training/LearningLibrary"><span class="ubermenu-target-title ubermenu-target-text">AWS Learning Library</span></a></li><li id="menu-item-924" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-924 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://aws.amazon.com/about-aws/events/monthlywebinarseries/on-demand"><span class="ubermenu-target-title ubermenu-target-text">On Demand Webinars</span></a></li><li id="menu-item-703" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-703 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://aws.amazon.com/certification/certification-prep/"><span class="ubermenu-target-title ubermenu-target-text">AWS Cert Prep</span></a></li><li id="menu-item-533" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-533 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="http://jayendrapatil.com/"><span class="ubermenu-target-title ubermenu-target-text">jayendrapatil.com Study Guide</span></a></li><li id="menu-item-532" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-532 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://github.com/open-guides/og-aws"><span class="ubermenu-target-title ubermenu-target-text">AWS Open Guide</span></a></li><li id="menu-item-1148" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-1148 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://aws.dendron.so/"><span class="ubermenu-target-title ubermenu-target-text">The Open AWS Catalogue</span></a></li><li id="menu-item-531" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://qwiklabs.com/catalog?keywords=&amp;cloud%5B%5D=any&amp;format%5B%5D=any&amp;level%5B%5D=any&amp;duration%5B%5D=any&amp;price%5B%5D=free&amp;modality%5B%5D=any&amp;language%5B%5D=any"><span class="ubermenu-target-title ubermenu-target-text">Free AWS QWIKLabs To Do</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-1114" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-1114 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">Azure Training</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-1114 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-1115" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-1115 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://docs.microsoft.com/en-us/learn/paths/azure-fundamentals/"><span class="ubermenu-target-title ubermenu-target-text">Azure Fundamentals</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-908" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-908 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">GCP Training</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-908 ubermenu-submenu-type-auto ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-910" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-910 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://cloud.google.com/docs/compare/aws/"><span class="ubermenu-target-title ubermenu-target-text">Google Cloud Platform for AWS Professionals</span></a></li><li id="menu-item-909" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-909 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://cloud.google.com/docs/"><span class="ubermenu-target-title ubermenu-target-text">Google Cloud Docs</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-1111" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-1111 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Useful Links</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-1111 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-1112" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-1112 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">Azure Links</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-1112 ubermenu-submenu-type-auto ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-1113" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-1113 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/"><span class="ubermenu-target-title ubermenu-target-text">Azure Cloud Adoption Readiness</span></a></li><li id="menu-item-1116" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-1116 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/first-landing-zone"><span class="ubermenu-target-title ubermenu-target-text">Azure Landing Zones</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-534" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-534 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">AWS Links</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-534 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-704" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-704 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://aws.amazon.com/whitepapers/"><span class="ubermenu-target-title ubermenu-target-text">AWS Whitepapers</span></a></li><li id="menu-item-702" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-702 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://aws.amazon.com/webinars/anz-webinar-series/"><span class="ubermenu-target-title ubermenu-target-text">AWS Webinars</span></a></li><li id="menu-item-535" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-535 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://aws.amazon.com/partners/apn-portal/"><span class="ubermenu-target-title ubermenu-target-text">AWS Partner Central</span></a></li><li id="menu-item-536" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-536 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://aws.amazon.com/professional-services/CAF/"><span class="ubermenu-target-title ubermenu-target-text">AWS CAF</span></a></li><li id="menu-item-706" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-706 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">Tools</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-706 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-842" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-842 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.ec2instances.info/"><span class="ubermenu-target-title ubermenu-target-text">E2 Info</span></a></li><li id="menu-item-841" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-841 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://calculator.aws/"><span class="ubermenu-target-title ubermenu-target-text">calculator.aws</span></a></li><li id="menu-item-707" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-707 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://awstcocalculator.com/"><span class="ubermenu-target-title ubermenu-target-text">AWS TCO Calculator</span></a></li><li id="menu-item-537" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-537 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://calculator.s3.amazonaws.com/index.html"><span class="ubermenu-target-title ubermenu-target-text">Simple Monthly Calc</span></a></li><li id="menu-item-840" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-840 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://s3.amazonaws.com/lambda-tools/pricing-calculator.html"><span class="ubermenu-target-title ubermenu-target-text">Lambda Pricing Calc</span></a></li><li id="menu-item-705" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-705 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://docs.aws.amazon.com/cli/latest/reference/"><span class="ubermenu-target-title ubermenu-target-text">AWS CLI Reference</span></a></li><li id="menu-item-921" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-921 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://awsclibuilder.com/"><span class="ubermenu-target-title ubermenu-target-text">AWS CLi Builder</span></a></li><li id="menu-item-949" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-949 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://cfnflip.com/"><span class="ubermenu-target-title ubermenu-target-text">cfnflip.com</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-624" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-624 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://dgunawan.github.io/product-delivery-ingredients/"><span class="ubermenu-target-title ubermenu-target-text">Dans PDI</span></a></li><li id="menu-item-914" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-914 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1 ubermenu-has-submenu-drop ubermenu-has-submenu-flyout"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#"><span class="ubermenu-target-title ubermenu-target-text">GCP Links</span><i class="ubermenu-sub-indicator fas fa-angle-down"></i><span class="ubermenu-sub-indicator-close"><i class="fas fa-times"></i></span></a><ul class="ubermenu-submenu ubermenu-submenu-id-914 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"><li id="menu-item-913" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-913 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-2"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://cloud.google.com/products/calculator/"><span class="ubermenu-target-title ubermenu-target-text">Google Cloud Calc</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i> Close</li></ul></li><li id="menu-item-657" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-657 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" target="_blank" href="https://dunlop.geek.nz/wellington-aws-meetup/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">AWS NZ User Group</span></a></li><li id="menu-item-654" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-654 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/whats-new-aws-rss/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">AWS RSS</span></a></li><li id="menu-item-52" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-52 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/wp-login.php" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Log In</span></a></li><li id="menu-item-53" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-53 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://dunlop.geek.nz/wp-login.php?action=register" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Register</span></a></li></ul></nav>
+<!-- End UberMenu -->
+                                        </div>
+
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="header-right-part">
+
+                                                                <div class="af-search-wrap">
+                                    <div class="search-overlay">
+                                        <a href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/#" title="Search" class="search-icon">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <div class="af-search-form">
+                                            <form role="search" method="get" class="search-form" action="https://dunlop.geek.nz/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form>                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- end slider-section -->
+        
+
+    <div id="content" class="container-wrapper">
+
+
+        <div class="af-breadcrumbs font-family-1 color-pad">
+            <div role="navigation" aria-label="Breadcrumbs" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb"><ul class="trail-items" itemscope="" itemtype="http://schema.org/BreadcrumbList"><meta name="numberOfItems" content="3"><meta name="itemListOrder" content="Ascending"><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-begin"><a href="https://dunlop.geek.nz/" rel="home" itemprop="item"><span itemprop="name">Home</span></a><meta itemprop="position" content="1"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item"><a href="https://dunlop.geek.nz/category/aws/" itemprop="item"><span itemprop="name">AWS</span></a><meta itemprop="position" content="2"></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="trail-item trail-end"><a href="https://dunlop.geek.nz/aws-cognito-azure-ad-react-amplify/" itemprop="item"><span itemprop="name">AWS Cognito + Azure AD + React + Amplify</span></a><meta itemprop="position" content="3"></li></ul></div>        </div>
+
+
+            <div id="primary" class="content-area">
+            <main id="main" class="site-main">
+                                    <article id="post-625" class="af-single-article post-625 post type-post status-publish format-standard has-post-thumbnail hentry category-amplify category-aws category-azuread category-cognito category-iam category-react">
+                        <div class="entry-content-wrap read-single">
+                                    <header class="entry-header pos-rel aft-no-featured-image">
+            <div class="read-details marg-btm-lr">
+                <div class="entry-header-details">
+                                            <div class="figure-categories figure-categories-bg">
+                            <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/developer-tools/amplify/" alt="View all posts in Amplify"> 
+                                 Amplify
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/azure/azuread/" alt="View all posts in AzureAD"> 
+                                 AzureAD
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/cognito/" alt="View all posts in Cognito"> 
+                                 Cognito
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/iam/" alt="View all posts in IAM"> 
+                                 IAM
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/blog/react/" alt="View all posts in React"> 
+                                 React
+                             </a>
+                        </li></ul>                        </div>
+                    
+
+                    <h1 class="entry-title">AWS Cognito + Azure AD + React + Amplify</h1>
+                                            <span class="min-read-post-format">
+                                                        <span class="min-read">7 min read</span>                        </span>
+                        <div class="entry-meta">
+                            
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    1 year ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                </div>
+
+
+                                                            </div>
+            </div>
+
+                    </header><!-- .entry-header -->
+
+        <!-- end slider-section -->
+                                    
+
+    <div class="color-pad">
+        <div class="entry-content read-details color-tp-pad no-color-pad">
+            
+<h3>Introduction</h3>
+
+
+
+<p>Recently I’ve had to uplift a solution to integrate its authentication into Azure AD.</p>
+
+
+
+<p>While there have been several great blog posts on how to configure AWS Cognito to use Azure AD as a SAML Provider what happens after that has been sparse pickings.</p>
+
+
+
+<p>Here are the good blogs that cover off configuring Cognito with Azure AD as this blog post will not re-invent this wheel: </p>
+
+
+
+<ul><li><a href="https://medium.com/@zippicoder/setup-aws-cognito-user-pool-with-an-azure-ad-identity-provider-to-perform-single-sign-on-sso-7ff5aa36fc2a">https://medium.com/@zippicoder/setup-aws-cognito-user-pool-with-an-azure-ad-identity-provider-to-perform-single-sign-on-sso-7ff5aa36fc2a</a></li><li><a href="https://www.idea11.com.au/how-to-set-up-aws-cognito-federation-office365/">https://www.idea11.com.au/how-to-set-up-aws-cognito-federation-office365/</a></li><li><a href="https://aws-amplify.github.io/docs/js/authentication">https://aws-amplify.github.io/docs/js/authentication</a></li></ul>
+
+
+
+<h3>High Level Steps to Configure Azure AD as your SSO Provider of choice with an AWS Amplify React App using Cognito</h3>
+
+
+
+<p>The following are the end to end high level tasks you’ll need to undertake to get this working:</p>
+
+
+
+<ol><li>Create your amplify / react application locally using the command lines / standard processes</li><li>Use amplify to create a cognito user pool</li><li>Setup your Enterprise Application in Azure AD</li><li>Setup your Cognito User pool to use the Azure AD as its provider</li><li>Setup your applications amplify authentication const correctly</li><li>Setup Cognito to use the right Signin URL for SSO with Azure AD</li><li>Setup a Button for Sign In if you haven’t come from Azure Portal.</li></ol>
+
+
+
+<p>Once you have done this then there will be two ways you can access your application.</p>
+
+
+
+<ol><li>Via https://portal.microsoft.com as a tile provisioned by the Azure AD Enterprise Application</li><li>Directly by hitting the applications URL</li></ol>
+
+
+
+<p>What happens differs between them both.  I’m going to go over the reactions of the access models first. This should aid in your understanding later in this blog.</p>
+
+
+
+<h3>Via Microsoft Portal</h3>
+
+
+
+<p>The process to use Microsoft Portal to get to the application is as follows:</p>
+
+
+
+<ol><li>Login to https://portal.microsoft.com with your Companys identity / login id.</li><li>Find the Apps / All Apps section</li><li>Locate the Application Tile</li><li>Click it</li></ol>
+
+
+
+<p>What happens next is that Azure AD will use the settings in the Enterprise Application SAML SSO settings to work out what URLs are needed to be used to redirect you (the client) to the application.</p>
+
+
+
+<p>Azure AD will do some verification around your capability to use the application in question (i.e. are you allowed to use it) and then create a SAML Token / Session that is then passed down to the WebApp.</p>
+
+
+
+<p>The WebApp is redirected too with the SAML payload. The WebApp invokes Amplify and its sub method for checking Authentication. You will be seen as authenticated and the app will use the configuration in the aws-exports.js to know what URLs it should use for redirection.</p>
+
+
+
+<h3>Directly by hitting the applications URL</h3>
+
+
+
+<p>The process to use WebApps URL directly to get to the application is as follows: </p>
+
+
+
+<ol><li>Open a browser</li><li>Type the URL of the WebApp into the location bar</li><li>Hit enter</li></ol>
+
+
+
+<p>What happens next is based on the following lines of code ( in the case of my baseline example code):</p>
+
+
+
+<pre class="wp-block-code"><code>  render() {
+    const { authState } = this.state;
+ 
+    // main return routine
+    return (
+      &lt;div className="App"&gt;
+        {
+          // if authState is null display loading message.
+          authState === null &amp;&amp; (&lt;div&gt;loading...&lt;/div&gt;)
+        }
+        {
+          // if authState is set to signIn then show the login page with the single button for O365 javascript redirect
+          authState === 'signIn' &amp;&amp; &lt;OAuthButton/&gt;
+        }
+        {
+          // if authState is signedIn then we've got a logged in user - lets start our app up!
+          // or rather lets just show a sign out button for now.. sigh.
+          authState === 'signedIn' ? 
+          (
+            &lt;div class='signout'&gt;
+              &lt;button onClick={this.signOut}&gt;Sign out of application {user_givenname} {user_email}&lt;/button&gt;
+            &lt;/div&gt;
+          ) : null
+        }
+      &lt;/div&gt;
+    );
+  }</code></pre>
+
+
+
+<p>A constant is being set called authState from this.state:</p>
+
+
+
+<p>const { authState } = this.state;</p>
+
+
+
+<p>This has been created by the other methods in the class. If the authState is null show Loading..  If the authState is SignIn then you need to login so we display a login button. If the authState is SignedIn then you are logged on so we show the app, or in our case a sign out button with some extra info in it as a test.</p>
+
+
+
+<p>Ok so how did authState get set?</p>
+
+
+
+<p>Yes you are correct in thinking its the typical Amplify mechanisms in play as defined here:  <a href="https://aws-amplify.github.io/docs/js/authentication">https://aws-amplify.github.io/docs/js/authentication</a> </p>
+
+
+
+<p>However the missing piece to the puzzle lies in three places:</p>
+
+
+
+<ol><li>The “oauth”: key in the awsmobile constant in the aws-exports.js needs a jiggle</li><li>The sign in URL in the Azure AD SSO settings need a tweak</li><li>Login button uses a “Javascript redirect” to Azure, not the withOAuth() method that normally redirects to a Cognito Hosted UI. We’re avoiding the withOAuth() to get seamless sign on if you’re authenticated already.</li></ol>
+
+
+
+<h4> awsmobile oauth changes required</h4>
+
+
+
+<p>Even though this says not to manually edit this file; you need too. As you are unlikely to modify the amplify add auth you did once it has been set up this addition should stay there and be somewhat safe.</p>
+
+
+
+<p>One needs to add the client_id into the oauth declaration and the responseType must be Token. As follows:</p>
+
+
+
+<pre class="wp-block-preformatted">//file: aws-exports.js
+
+// WARNING: DO NOT EDIT. This file is automatically generated by AWS Amplify. It will be overwritten.
+
+const awsmobile = {
+    "aws_project_region": "ap-southeast-2",
+    "aws_cognito_identity_pool_id": "ap-southeast-2:d177381b-d5b4-46b6-ae0b-12345678",
+    "aws_cognito_region": "ap-southeast-2",
+    "aws_user_pools_id": "ap-southeast-2_weoweo",
+    "aws_user_pools_web_client_id": "iamaclientidnot",
+    "oauth": {
+        "domain": "mydomain-dev.auth.ap-southeast-2.amazoncognito.com",
+        "scope": [
+            "phone",
+            "email",
+            "openid",
+            "profile",
+            "aws.cognito.signin.user.admin"
+        ],
+        "redirectSignIn": "https://testapp.dunlop.geek.nz/",
+        "redirectSignOut": "https://testapp.dunlop.geek.nz/",
+<strong>        "responseType": "token",
+        "client_id": "thecognitoclientidgoeshere"</strong>
+    },
+    "federationTarget": "COGNITO_USER_POOLS",
+    "aws_content_delivery_bucket": "abucket-dev",
+    "aws_content_delivery_bucket_region": "ap-southeast-2",
+    "aws_content_delivery_url": "https://aurl.cloudfront.net"
+};
+
+
+export default awsmobile;</pre>
+
+
+
+<h4>Azure AD SSO SignIn URL Tweak</h4>
+
+
+
+<p>The Azure AD Enterprise Application Sign On URL needs to be set in the following format:</p>
+
+
+
+<p>https://<strong>COGNITOAUTHDOMAIN</strong>/oauth2/authorize?identity_provider=<strong>COGNITOSAMLIDENTITYPROVIDERNAME</strong>&amp;redirect_uri=<a href="https://cognitoauthdomain/oauth2/authorize?identity_provider=COGNITOSAMLIDENTITYPROVIDERNAME&amp;redirect_uri=https://testapp.dunlop.geek.nz/&amp;response_type=TOKEN&amp;client_id=COGNITOCLIENTID&amp;scope=aws.cognito.signin.user.admin%20%email%20%openid%20%phone%20%profile"></a><a href="https://cognitoauthdomain/oauth2/authorize?identity_provider=COGNITOSAMLIDENTITYPROVIDERNAME&amp;redirect_uri=https://testapp.dunlop.geek.nz/&amp;response_type=TOKEN&amp;client_id=COGNITOCLIENTID&amp;scope=aws.cognito.signin.user.admin%20%email%20%openid%20%phone%20%profile">https://testapp.dunlop.geek.nz</a><a href="https://cognitoauthdomain/oauth2/authorize?identity_provider=COGNITOSAMLIDENTITYPROVIDERNAME&amp;redirect_uri=https://testapp.dunlop.geek.nz/&amp;response_type=TOKEN&amp;client_id=COGNITOCLIENTID&amp;scope=aws.cognito.signin.user.admin%20%email%20%openid%20%phone%20%profile"></a><a href="https://cognitoauthdomain/oauth2/authorize?identity_provider=COGNITOSAMLIDENTITYPROVIDERNAME&amp;redirect_uri=https://testapp.dunlop.geek.nz/&amp;response_type=TOKEN&amp;client_id=COGNITOCLIENTID&amp;scope=aws.cognito.signin.user.admin%20%email%20%openid%20%phone%20%profile">/</a>&amp;response_type=<strong>TOKEN</strong>&amp;client_id=<strong>COGNITOCLIENTID</strong></p>
+
+
+
+<p><em>Please note:  &amp;scope=aws.cognito.signin.user.admin</em><strong><em>%20%email%20%openid%20%phone%20%profile</em></strong><em>  has been removed from the URL as it caused an Error Code 0 failure thanks to an Azure AD back end change by Microsoft on or around the 10th of June 2019.</em></p>
+
+
+
+<h4> Javascript redirect</h4>
+
+
+
+<p>The redirect on the button example looks like this in the oauthbutton.js file. Note: the  withOAuth() doesn’t really matter.</p>
+
+
+
+<pre class="wp-block-preformatted">// file: OAuthButton.js
+import { withOAuth } from 'aws-amplify-react';
+import { withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+
+class OAuthButton extends React.Component {
+  handleClick() {
+    // do something meaningful, Promises, if/else, whatever, and then
+    window.location.assign('https://weo-dev.auth.ap-southeast-2.amazoncognito.com/oauth2/authorize?identity_provider=AzureAD&amp;redirect_uri=https://testapp.dunlop.geek.nz/&amp;response_type=TOKEN&amp;client_id=IAMANID&amp;scope=aws.cognito.signin.user.admin email openid phone profile');
+  }
+
+  render() {
+    return (
+      &lt;div class='login'&gt;
+        &lt;button onClick={this.handleClick}&gt;Log back into application with O365&lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+
+//export default OAuthButton;
+export default withOAuth(OAuthButton);</pre>
+
+
+
+<h3>App.js example</h3>
+
+
+
+<pre class="wp-block-preformatted">/* ===================================================
+  App.js : Core App.JS with Azure AD integrated authentication
+  Author: Zenstorm
+  Date: 10/05/2019
+  Version: 1.00
+*/
+
+// ===================================================
+// Imports
+// from libraries:
+import React, { Component } from 'react';
+import Amplify, {Auth, Hub} from 'aws-amplify';
+import awsmobile from './aws-exports'; // Amplify configuration
+import { I18n, ConsoleLogger as Logger } from '@aws-amplify/core';
+// from files:
+import OAuthButton from './OAuthButton'; // Our login button "aka form" for now
+import './App.css'; // Custom Style Sheet
+
+// ===================================================
+// setup Amplify and its Auth model
+Amplify.configure(awsmobile);
+Auth.configure({ awsmobile });  // https://aws-amplify.github.io/amplify-js/api/classes/authclass.html
+
+// ===================================================
+// set up logging properly so we can use logger.debug logger.error logger.info etc
+const logger = new Logger('AppLog','INFO');
+
+// ===================================================
+// Main class for our Application that gets injected into the root in index.html via index.js
+class App extends Component {
+  // setup props
+  constructor(props) {
+    super(props);
+    this.signOut = this.signOut.bind(this);
+  }
+
+  // define vars in state (could be done in props constructor)
+  state = {
+    authState: 'signIn', // used to check login in render()
+    token: null, // used to check if we've got a valid login
+    user: null // used to store the user object returned from currentAuthenticatedUser()
+  }
+
+  // ====================================================
+  // getuserinfo(): custom function to get tokencode
+  // getuserinfo function to retrieve via amplify &amp; cognito the currentAuthenticatedUser
+  getuserinfo = async () =&gt; {
+    // call a promise to waith for currentAuthenticatedUser() to return
+    const user = await Auth.currentAuthenticatedUser();
+    
+    // do a debug log entry
+    logger.debug(user);
+
+    // setup some variables out of our current user object
+    const token = user.signInUserSession.idToken.jwtToken;
+    const user_givenname = user.attributes.name;
+    const user_email = user.attributes.email;
+
+    // set the variables into the classes state.
+    this.setState({ token: token });
+    this.setState({ user: user });
+    this.setState({ user_givenname: user_givenname });
+    this.setState({ user_email: user_email });
+  }
+
+  // ====================================================
+  // componentDidMount(): react core function
+  // is invoked immediately after a component is mounted
+  // https://reactjs.org/docs/react-component.html
+  componentDidMount() {
+    // Setup a hub listenr on the auth events
+    // https://aws-amplify.github.io/docs/js/hub
+    Hub.listen("auth", ({ payload: { event, data } }) =&gt; {
+      switch (event) {
+        case "signIn":
+          this.setState({ authState: 'signedIn'});
+          this.getuserinfo();
+          break;
+        case "signOut":
+          this.setState({ authState: 'signIn'});
+          this.setState({ user: null });
+          break;
+      }
+    });
+  }
+
+  // ====================================================
+  // signOut() : used to sign out user
+  // custom sign out function; has been bound in constructor(props) as well
+  signOut() {
+    Auth.signOut()
+      .then(() =&gt; {
+        this.setState({ authState: 'signIn'});
+        this.setState({ user: null });
+      })
+      .catch(err =&gt; {
+        logger.error(err);
+      });
+  }
+
+  // ====================================================
+  // render(): mandatory react render function
+  render() {
+    // vars for fun - should be buried in app
+    const { authState } = this.state;
+    const { token } = this.state;
+    const { user_givenname } = this.state;
+    const { user_email } = this.state;
+
+    // main return routine
+    return (
+      &lt;div className="App"&gt;
+        {
+          // if authState is null display loading message.
+          authState === null &amp;&amp; (&lt;div&gt;loading...&lt;/div&gt;)
+        }
+        {
+          // if authState is set to signIn then show the login page with the single button for O365 javascript redirect
+          authState === 'signIn' &amp;&amp; &lt;OAuthButton/&gt;
+        }
+        {
+          // if authState is signedIn then we've got a logged in user - lets start our app up!
+          // or rather lets just show a sign out button for now.. sigh.
+          authState === 'signedIn' ? 
+          (
+            &lt;div class='signout'&gt;
+              &lt;button onClick={this.signOut}&gt;Sign out of application {user_givenname} {user_email}&lt;/button&gt;
+            &lt;/div&gt;
+          ) : null
+        }
+      &lt;/div&gt;
+    );
+  }
+}
+
+// Export the App.  No Auth Wrapper required for AzureAD as this is undertaken in the OAuthButton.js
+export default App;</pre>
+                            <div class="post-item-metadata entry-meta">
+                                    </div>
+                        
+	<nav class="navigation post-navigation" role="navigation" aria-label="Continue Reading">
+		<h2 class="screen-reader-text">Continue Reading</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://dunlop.geek.nz/cfn-lint-cloudformation-template-validation-at-time-of-commit/" rel="prev"><span class="em-post-navigation">Previous</span> cfn-lint, cloudformation template validation at time of commit</a></div><div class="nav-next"><a href="https://dunlop.geek.nz/aws-config-pay-per-use-pricing/" rel="next"><span class="em-post-navigation">Next</span> AWS Config Pay Per Use Pricing!</a></div></div>
+	</nav>                    </div><!-- .entry-content -->
+    </div>
+                        </div>
+                    </article>
+                        
+<div class="promotionspace enable-promotionspace">
+
+        <div class="af-reated-posts  col-ten">
+                            <h4 class="widget-title header-after1">
+                            <span class="header-after">
+                                More Stories                            </span>
+                </h4>
+                        <div class="af-container-row clearfix">
+                                    <div class="col-3 float-l pad latest-posts-grid af-sec-post" data-mh="latest-posts-grid" style="height: 378px;">
+                        <div class="read-single color-pad">
+                            <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/06/Amazon-CloudFront.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/06/Amazon-CloudFront.png&quot;);">
+                                <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/Amazon-CloudFront.png">
+                                <span class="min-read-post-format">
+                                                                <span class="min-read">1 min read</span>
+                                </span>
+                                <a href="https://dunlop.geek.nz/auckland-cloudfront-arrives/"></a>
+                                                            </div>
+                            <div class="read-details color-tp-pad no-color-pad">
+                                <div class="read-categories">
+                                    <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/cloudfront/" alt="View all posts in CloudFront"> 
+                                 CloudFront
+                             </a>
+                        </li></ul>                                </div>
+                                <div class="read-title">
+                                    <h4>
+                                        <a href="https://dunlop.geek.nz/auckland-cloudfront-arrives/">Auckland CloudFront Arrives</a>
+                                    </h4>
+                                </div>
+                                <div class="entry-meta">
+                                    
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    15 hours ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-3 float-l pad latest-posts-grid af-sec-post" data-mh="latest-posts-grid" style="height: 378px;">
+                        <div class="read-single color-pad">
+                            <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png&quot;);">
+                                <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/dunlop.geek_.nz_.logo5_-1-1.png">
+                                <span class="min-read-post-format">
+                                                                <span class="min-read">3 min read</span>
+                                </span>
+                                <a href="https://dunlop.geek.nz/jan-missed-updates/"></a>
+                                                            </div>
+                            <div class="read-details color-tp-pad no-color-pad">
+                                <div class="read-categories">
+                                    <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/control-tower/" alt="View all posts in Control Tower"> 
+                                 Control Tower
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/" alt="View all posts in Management &amp; Governance"> 
+                                 Management &amp; Governance
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/" alt="View all posts in Networking &amp; Content Delivery"> 
+                                 Networking &amp; Content Delivery
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/vpc/" alt="View all posts in VPC"> 
+                                 VPC
+                             </a>
+                        </li></ul>                                </div>
+                                <div class="read-title">
+                                    <h4>
+                                        <a href="https://dunlop.geek.nz/jan-missed-updates/">Jan Missed Updates</a>
+                                    </h4>
+                                </div>
+                                <div class="entry-meta">
+                                    
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    3 months ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-3 float-l pad latest-posts-grid af-sec-post" data-mh="latest-posts-grid" style="height: 378px;">
+                        <div class="read-single color-pad">
+                            <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2020/03/AWS-Control-Tower@4x.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2020/03/AWS-Control-Tower@4x.png&quot;);">
+                                <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/AWS-Control-Tower@4x.png">
+                                <span class="min-read-post-format">
+                                                                <span class="min-read">1 min read</span>
+                                </span>
+                                <a href="https://dunlop.geek.nz/control-tower-account-enrollment-no-longer-touches-vpcs/"></a>
+                                                            </div>
+                            <div class="read-details color-tp-pad no-color-pad">
+                                <div class="read-categories">
+                                    <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/control-tower/" alt="View all posts in Control Tower"> 
+                                 Control Tower
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/" alt="View all posts in Management &amp; Governance"> 
+                                 Management &amp; Governance
+                             </a>
+                        </li></ul>                                </div>
+                                <div class="read-title">
+                                    <h4>
+                                        <a href="https://dunlop.geek.nz/control-tower-account-enrollment-no-longer-touches-vpcs/">Control Tower Account Enrollment no longer touches VPCs</a>
+                                    </h4>
+                                </div>
+                                <div class="entry-meta">
+                                    
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    4 months ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                        </div>
+
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+
+    </div>
+</div>
+
+
+                        
+<iframe style="background-color: rgb(255, 255, 255) !important; border: 1px solid rgb(236, 147, 41) !important; min-width: 220px !important; min-height: 210px !important; max-height: 600px !important; z-index: 2147483647 !important; width: 877px !important;" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/saved_resource.html"></iframe>
+
+                
+            </main><!-- #main -->
+        </div><!-- #primary -->
+                
+
+
+
+<div id="secondary" class="sidebar-area aft-sticky-sidebar">
+    <div class="theiaStickySidebar">
+        <aside class="widget-area color-pad">
+            <div id="search-2" class="widget newsphere-widget widget_search"><form role="search" method="get" class="search-form" action="https://dunlop.geek.nz/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Search">
+			</form></div><div id="text-2" class="widget newsphere-widget widget_text"><h2 class="widget-title widget-title-1"><span>About the Author</span></h2>			<div class="textwidget"><p>My name is Paul Dunlop and I am a Cloud Technical Architect Manager with Accenture and an AWS APN Ambassador. I have 25+ yrs experience in the IT Industry and 5+ in AWS. I am a committee member of the AWS User Group Aotearoa – Wellington Chapter. When I am not working I spend time with my family or doing pet projects.</p>
+<p>&nbsp;</p>
+</div>
+		</div><div id="accordion_categories_widget-4" class="widget newsphere-widget widget_accordion_categories_widget">
+<div class="accordion-menu-widget">
+<ul class="accordion-list accordion-list--level-0 is-root"><li id="category-id-31" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/" title="View all posts in AWS">AWS</a><div class="accordion-list-item__post-count">71</div></div><ul class="accordion-list accordion-list--level-1 "><li id="category-id-67" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/application-integration/" title="View all posts in Application Integration">Application Integration</a><div class="accordion-list-item__post-count">2</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-88" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/application-integration/step-functions/" title="View all posts in Step Functions">Step Functions</a><div class="accordion-list-item__post-count">2</div></div></li></ul></li><li id="category-id-113" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/aws-cli/" title="View all posts in AWS CLI">AWS CLI</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-51" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/" title="View all posts in Compute">Compute</a><div class="accordion-list-item__post-count">13</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-32" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/ami/" title="View all posts in AMI">AMI</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-49" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/ebs/" title="View all posts in EBS">EBS</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-48" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/ec2/" title="View all posts in EC2">EC2</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-107" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/elastic-beanstalk/" title="View all posts in Elastic Beanstalk">Elastic Beanstalk</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-82" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/elastic-load-balancer/" title="View all posts in Elastic Load Balancer">Elastic Load Balancer</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-74" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/compute/lambda/" title="View all posts in Lambda">Lambda</a><div class="accordion-list-item__post-count">7</div></div></li></ul></li><li id="category-id-69" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/customer-engagement/" title="View all posts in Customer Engagement">Customer Engagement</a><div class="accordion-list-item__post-count">4</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-84" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/customer-engagement/amazon-connect/" title="View all posts in Amazon Connect">Amazon Connect</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-106" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/customer-engagement/ses/" title="View all posts in SES">SES</a><div class="accordion-list-item__post-count">1</div></div></li></ul></li><li id="category-id-53" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/database/" title="View all posts in Database">Database</a><div class="accordion-list-item__post-count">2</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-41" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/database/dynamodb/" title="View all posts in DynamoDB">DynamoDB</a><div class="accordion-list-item__post-count">2</div></div></li></ul></li><li id="category-id-56" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/developer-tools/" title="View all posts in Developer Tools">Developer Tools</a><div class="accordion-list-item__post-count">3</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-39" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/developer-tools/amplify/" title="View all posts in Amplify">Amplify</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-109" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/developer-tools/cloud9/" title="View all posts in Cloud9">Cloud9</a><div class="accordion-list-item__post-count">1</div></div></li></ul></li><li id="category-id-71" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/end-user-computing/" title="View all posts in End User Computing">End User Computing</a><div class="accordion-list-item__post-count">2</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-79" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/end-user-computing/workspaces/" title="View all posts in WorkSpaces">WorkSpaces</a><div class="accordion-list-item__post-count">2</div></div></li></ul></li><li id="category-id-73" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/game-development/" title="View all posts in Game Development">Game Development</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-62" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/machine-learning/" title="View all posts in Machine Learning">Machine Learning</a><div class="accordion-list-item__post-count">4</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-108" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/machine-learning/amazon-lex/" title="View all posts in Amazon Lex">Amazon Lex</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-45" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/machine-learning/deepracer/" title="View all posts in DeepRacer">DeepRacer</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-101" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/machine-learning/polly/" title="View all posts in Polly">Polly</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-44" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/machine-learning/sagemaker/" title="View all posts in Sagemaker">Sagemaker</a><div class="accordion-list-item__post-count">1</div></div></li></ul></li><li id="category-id-60" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/" title="View all posts in Management &amp; Governance">Management &amp; Governance</a><div class="accordion-list-item__post-count">19</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-34" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/cloudformation/" title="View all posts in CloudFormation">CloudFormation</a><div class="accordion-list-item__post-count">8</div></div></li><li id="category-id-43" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/config/" title="View all posts in Config">Config</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-115" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/control-tower/" title="View all posts in Control Tower">Control Tower</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-102" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/organizations/" title="View all posts in Organizations">Organizations</a><div class="accordion-list-item__post-count">4</div></div></li><li id="category-id-85" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/management-governance/systems-manager/" title="View all posts in Systems Manager">Systems Manager</a><div class="accordion-list-item__post-count">4</div></div></li></ul></li><li id="category-id-55" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/" title="View all posts in Networking &amp; Content Delivery">Networking &amp; Content Delivery</a><div class="accordion-list-item__post-count">14</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-77" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/api-gateway/" title="View all posts in API Gateway">API Gateway</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-83" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/aws-app-mesh/" title="View all posts in AWS App Mesh">AWS App Mesh</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-75" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/cloudfront/" title="View all posts in CloudFront">CloudFront</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-104" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/direct-connect/" title="View all posts in Direct Connect">Direct Connect</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-80" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/eni/" title="View all posts in ENI">ENI</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-42" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/load-balancing/" title="View all posts in Load Balancing">Load Balancing</a><div class="accordion-list-item__post-count">4</div></div></li><li id="category-id-81" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/vpc/" title="View all posts in VPC">VPC</a><div class="accordion-list-item__post-count">3</div></div></li></ul></li><li id="category-id-105" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/reinvent/" title="View all posts in Re:Invent">Re:Invent</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-63" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/" title="View all posts in Security, Identity, &amp; Compliance">Security, Identity, &amp; Compliance</a><div class="accordion-list-item__post-count">12</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-112" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/aws-single-sign-on/" title="View all posts in AWS Single Sign-On">AWS Single Sign-On</a><div class="accordion-list-item__post-count">2</div></div></li><li id="category-id-38" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/cognito/" title="View all posts in Cognito">Cognito</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-114" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/directory-service/" title="View all posts in Directory Service">Directory Service</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-36" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/security-identity-compliance/iam/" title="View all posts in IAM">IAM</a><div class="accordion-list-item__post-count">5</div></div></li></ul></li><li id="category-id-52" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/storage/" title="View all posts in Storage">Storage</a><div class="accordion-list-item__post-count">2</div></div><ul class="accordion-list accordion-list--level-2 "><li id="category-id-33" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/storage/s3/" title="View all posts in S3">S3</a><div class="accordion-list-item__post-count">2</div></div></li></ul></li><li id="category-id-86" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/aws/wellarchitected/" title="View all posts in Well Architected">Well Architected</a><div class="accordion-list-item__post-count">3</div></div></li></ul></li><li id="category-id-90" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/azure/" title="View all posts in Azure">Azure</a><div class="accordion-list-item__post-count">6</div></div><ul class="accordion-list accordion-list--level-1 "><li id="category-id-37" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/azure/azuread/" title="View all posts in AzureAD">AzureAD</a><div class="accordion-list-item__post-count">4</div></div></li></ul></li><li id="category-id-13" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/methods/" title="View all posts in Frameworks">Frameworks</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-1" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/" title="View all posts in General IT Topics">General IT Topics</a><div class="accordion-list-item__post-count">17</div></div><ul class="accordion-list accordion-list--level-1 "><li id="category-id-100" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/cloud-routing/" title="View all posts in Cloud Routing">Cloud Routing</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-87" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/microservices/" title="View all posts in Microservices">Microservices</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-40" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/react/" title="View all posts in React">React</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-50" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/security/" title="View all posts in Security">Security</a><div class="accordion-list-item__post-count">4</div></div></li><li id="category-id-76" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/serverless/" title="View all posts in Serverless">Serverless</a><div class="accordion-list-item__post-count">3</div></div></li><li id="category-id-78" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/servicenow/" title="View all posts in ServiceNow">ServiceNow</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-91" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/blog/squid-proxy/" title="View all posts in Squid Proxy">Squid Proxy</a><div class="accordion-list-item__post-count">1</div></div></li></ul></li><li id="category-id-89" class="accordion-list-item has-children "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/google-cloud/" title="View all posts in Google Cloud">Google Cloud</a><div class="accordion-list-item__post-count">2</div></div><ul class="accordion-list accordion-list--level-1 "><li id="category-id-95" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/google-cloud/networking/" title="View all posts in Networking">Networking</a><div class="accordion-list-item__post-count">1</div></div></li></ul></li><li id="category-id-103" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/hashicorp/" title="View all posts in HashiCorp">HashiCorp</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-110" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/megaport/" title="View all posts in Megaport">Megaport</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-12" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/documents/" title="View all posts in My Documents">My Documents</a><div class="accordion-list-item__post-count">14</div></div></li><li id="category-id-111" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/oracle-cloud/" title="View all posts in Oracle Cloud">Oracle Cloud</a><div class="accordion-list-item__post-count">1</div></div></li><li id="category-id-15" class="accordion-list-item  "><div class="accordion-list-item__controls"><span class="accordion-list-item__toggle-icon"></span><span class="accordion-list-item__icon "></span><a class="accordion-list-item__link" href="https://dunlop.geek.nz/category/troubleshooting/" title="View all posts in Trouble Shooting">Trouble Shooting</a><div class="accordion-list-item__post-count">13</div></div></li></ul></div></div>
+
+		<div id="recent-posts-2" class="widget newsphere-widget widget_recent_entries">
+		<h2 class="widget-title widget-title-1"><span>Recent Posts</span></h2>
+		<ul>
+											<li>
+					<a href="https://dunlop.geek.nz/auckland-cloudfront-arrives/">Auckland CloudFront Arrives</a>
+											<span class="post-date">October 7, 2020</span>
+									</li>
+											<li>
+					<a href="https://dunlop.geek.nz/azure-via-apis-powershell-and-yaml-the-rhodes-way/">Azure via APIs, Powershell and YAML; The Rhodes Way</a>
+											<span class="post-date">August 21, 2020</span>
+									</li>
+											<li>
+					<a href="https://dunlop.geek.nz/aws-api-developer-portal-tips/">AWS API Developer Portal Tips</a>
+											<span class="post-date">August 21, 2020</span>
+									</li>
+											<li>
+					<a href="https://dunlop.geek.nz/jan-missed-updates/">Jan Missed Updates</a>
+											<span class="post-date">July 10, 2020</span>
+									</li>
+											<li>
+					<a href="https://dunlop.geek.nz/control-tower-account-enrollment-no-longer-touches-vpcs/">Control Tower Account Enrollment no longer touches VPCs</a>
+											<span class="post-date">June 5, 2020</span>
+									</li>
+					</ul>
+
+		</div><div id="archives-3" class="widget newsphere-widget widget_archive"><h2 class="widget-title widget-title-1"><span>Archives</span></h2>
+			<ul>
+					<li><a href="https://dunlop.geek.nz/2020/10/">October 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/08/">August 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/07/">July 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/06/">June 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/04/">April 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/03/">March 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/02/">February 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2020/01/">January 2020</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/12/">December 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/11/">November 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/10/">October 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/09/">September 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/08/">August 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/07/">July 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/06/">June 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2019/05/">May 2019</a></li>
+	<li><a href="https://dunlop.geek.nz/2016/09/">September 2016</a></li>
+	<li><a href="https://dunlop.geek.nz/2016/02/">February 2016</a></li>
+	<li><a href="https://dunlop.geek.nz/2016/01/">January 2016</a></li>
+	<li><a href="https://dunlop.geek.nz/2015/09/">September 2015</a></li>
+	<li><a href="https://dunlop.geek.nz/2015/07/">July 2015</a></li>
+	<li><a href="https://dunlop.geek.nz/2014/07/">July 2014</a></li>
+	<li><a href="https://dunlop.geek.nz/2014/06/">June 2014</a></li>
+	<li><a href="https://dunlop.geek.nz/2014/04/">April 2014</a></li>
+	<li><a href="https://dunlop.geek.nz/2014/03/">March 2014</a></li>
+	<li><a href="https://dunlop.geek.nz/2014/01/">January 2014</a></li>
+	<li><a href="https://dunlop.geek.nz/2013/12/">December 2013</a></li>
+			</ul>
+
+			</div><div id="text-4" class="widget newsphere-widget widget_text"><h2 class="widget-title widget-title-1"><span>StackOverFlow Info</span></h2>			<div class="textwidget"><a href="http://stackoverflow.com/users/5818515/paul-dunlop">
+<img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/5818515.png" width="208" height="58" alt="profile for Paul Dunlop at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Paul Dunlop at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+</a></div>
+		</div>        </aside>
+    </div>
+</div>
+
+</div>
+<div class="af-main-banner-latest-posts grid-layout">
+    <div class="container-wrapper">
+        <div class="widget-title-section">
+                            <h4 class="widget-title header-after1">
+                            <span class="header-after">
+                                You may have missed                            </span>
+                </h4>
+            
+        </div>
+        <div class="af-container-row clearfix">
+                        <div class="col-4 pad float-l" data-mh="you-may-have-missed" style="height: 363px;">
+                    <div class="read-single color-pad">
+                        <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/06/Amazon-CloudFront.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/06/Amazon-CloudFront.png&quot;);">
+                            <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/Amazon-CloudFront.png">
+                            <span class="min-read-post-format">
+    		  								                                            <span class="min-read">1 min read</span>
+                            </span>
+                            <a href="https://dunlop.geek.nz/auckland-cloudfront-arrives/"></a>
+                                                    </div>
+                        <div class="read-details color-tp-pad">
+                            <div class="read-categories">
+                                <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/cloudfront/" alt="View all posts in CloudFront"> 
+                                 CloudFront
+                             </a>
+                        </li></ul>                            </div>
+                            <div class="read-title">
+                                <h4>
+                                    <a href="https://dunlop.geek.nz/auckland-cloudfront-arrives/">Auckland CloudFront Arrives</a>
+                                </h4>
+                            </div>
+                            <div class="entry-meta">
+                                
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    15 hours ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-4 pad float-l" data-mh="you-may-have-missed" style="height: 363px;">
+                    <div class="read-single color-pad">
+                        <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png&quot;);">
+                            <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/dunlop.geek_.nz_.logo5_-1-1.png">
+                            <span class="min-read-post-format">
+    		  								                                            <span class="min-read">2 min read</span>
+                            </span>
+                            <a href="https://dunlop.geek.nz/azure-via-apis-powershell-and-yaml-the-rhodes-way/"></a>
+                                                    </div>
+                        <div class="read-details color-tp-pad">
+                            <div class="read-categories">
+                                <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/azure/" alt="View all posts in Azure"> 
+                                 Azure
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/methods/" alt="View all posts in Frameworks"> 
+                                 Frameworks
+                             </a>
+                        </li></ul>                            </div>
+                            <div class="read-title">
+                                <h4>
+                                    <a href="https://dunlop.geek.nz/azure-via-apis-powershell-and-yaml-the-rhodes-way/">Azure via APIs, Powershell and YAML; The Rhodes Way</a>
+                                </h4>
+                            </div>
+                            <div class="entry-meta">
+                                
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    2 months ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-4 pad float-l" data-mh="you-may-have-missed" style="height: 363px;">
+                    <div class="read-single color-pad">
+                        <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png&quot;);">
+                            <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/dunlop.geek_.nz_.logo5_-1-1.png">
+                            <span class="min-read-post-format">
+    		  								                                            <span class="min-read">8 min read</span>
+                            </span>
+                            <a href="https://dunlop.geek.nz/aws-api-developer-portal-tips/"></a>
+                                                    </div>
+                        <div class="read-details color-tp-pad">
+                            <div class="read-categories">
+                                <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/blog/" alt="View all posts in General IT Topics"> 
+                                 General IT Topics
+                             </a>
+                        </li></ul>                            </div>
+                            <div class="read-title">
+                                <h4>
+                                    <a href="https://dunlop.geek.nz/aws-api-developer-portal-tips/">AWS API Developer Portal Tips</a>
+                                </h4>
+                            </div>
+                            <div class="entry-meta">
+                                
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    2 months ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="col-4 pad float-l" data-mh="you-may-have-missed" style="height: 363px;">
+                    <div class="read-single color-pad">
+                        <div class="data-bg read-img pos-rel read-bg-img" data-background="https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png" style="background-image: url(&quot;https://dunlop.geek.nz/wp-content/uploads/2019/07/dunlop.geek_.nz_.logo5_-1-1.png&quot;);">
+                            <img src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/dunlop.geek_.nz_.logo5_-1-1.png">
+                            <span class="min-read-post-format">
+    		  								                                            <span class="min-read">3 min read</span>
+                            </span>
+                            <a href="https://dunlop.geek.nz/jan-missed-updates/"></a>
+                                                    </div>
+                        <div class="read-details color-tp-pad">
+                            <div class="read-categories">
+                                <ul class="cat-links"><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/" alt="View all posts in AWS"> 
+                                 AWS
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/control-tower/" alt="View all posts in Control Tower"> 
+                                 Control Tower
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/management-governance/" alt="View all posts in Management &amp; Governance"> 
+                                 Management &amp; Governance
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/" alt="View all posts in Networking &amp; Content Delivery"> 
+                                 Networking &amp; Content Delivery
+                             </a>
+                        </li><li class="meta-category">
+                             <a class="newsphere-categories category-color-1" href="https://dunlop.geek.nz/category/aws/networking-content-delivery/vpc/" alt="View all posts in VPC"> 
+                                 VPC
+                             </a>
+                        </li></ul>                            </div>
+                            <div class="read-title">
+                                <h4>
+                                    <a href="https://dunlop.geek.nz/jan-missed-updates/">Jan Missed Updates</a>
+                                </h4>
+                            </div>
+                            <div class="entry-meta">
+                                
+            <span class="author-links">
+
+                            <span class="item-metadata posts-date">
+                <i class="fa fa-clock-o"></i>
+                    3 months ago            </span>
+                            
+                    <span class="item-metadata posts-author byline">
+                    <i class="fa fa-pencil-square-o"></i>
+            <a href="https://dunlop.geek.nz/author/paul/">
+                Paul Dunlop            </a>
+        </span>
+                
+        </span>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+                        </div>
+</div>
+
+<footer class="site-footer">
+            <div class="primary-footer">
+        <div class="container-wrapper">
+            <div class="af-container-row">
+                                    <div class="primary-footer-area footer-first-widgets-section col-md-4 col-sm-12">
+                        <section class="widget-area color-pad">
+                                <div id="meta-4" class="widget newsphere-widget widget_meta"><h2 class="widget-title widget-title-1"><span class="header-after">Meta</span></h2>
+		<ul>
+						<li><a href="https://dunlop.geek.nz/wp-login.php">Log in</a></li>
+			<li><a href="https://dunlop.geek.nz/feed/">Entries feed</a></li>
+			<li><a href="https://dunlop.geek.nz/comments/feed/">Comments feed</a></li>
+
+			<li><a href="https://wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</div>                        </section>
+                    </div>
+                
+                                    <div class="primary-footer-area footer-second-widgets-section col-md-4  col-sm-12">
+                        <section class="widget-area color-pad">
+                            <div id="text-6" class="widget newsphere-widget widget_text"><h2 class="widget-title widget-title-1"><span class="header-after">Thanks for visiting</span></h2>			<div class="textwidget"><p>Thanks for taking the time to view my blog. I know you are busy so I appreciate it.</p>
+</div>
+		</div>                        </section>
+                    </div>
+                
+                                    <div class="primary-footer-area footer-third-widgets-section col-md-4  col-sm-12">
+                        <section class="widget-area color-pad">
+                            <div id="media_image-3" class="widget newsphere-widget widget_media_image"><a href="https://aws.amazon.com/partners/ambassadors/ambassador-apac/"><img class="image " src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/APN_Ambassador-Program_logo.3f12a6819e1e7fd76a79877903b32a824f9c9f58.png" alt="" width="751" height="418"></a></div>                        </section>
+                    </div>
+                                            </div>
+        </div>
+    </div>
+    
+                <div class="site-info">
+        <div class="container-wrapper">
+            <div class="af-container-row">
+                <div class="col-1 color-pad">
+                                                                Copyright © All rights reserved.                                                                                    <span class="sep"> | </span>
+                        <a href="https://afthemes.com/products/newsphere">Newsphere</a> by AF themes.                                    </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+<a id="scroll-up" class="secondary-color">
+    <i class="fa fa-angle-up"></i>
+</a>
+<link rel="stylesheet" id="accordion-category-style-css" href="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/accordion-category-style.css" type="text/css" media="all">
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.dataTables.min.js" id="ultimatetables-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/dunlop.geek.nz\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/scripts.js" id="contact-form-7-js"></script>
+<script type="text/javascript" id="disqus_count-js-extra">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"dunlop-geek-nz"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/comment_count.js" id="disqus_count-js"></script>
+<script type="text/javascript" id="disqus_embed-js-extra">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.17"},"disqusIdentifier":"625 http:\/\/dunlop.geek.nz\/?p=625","disqusShortname":"dunlop-geek-nz","disqusTitle":"AWS Cognito + Azure AD + React + Amplify","disqusUrl":"https:\/\/dunlop.geek.nz\/aws-cognito-azure-ad-react-amplify\/","postId":"625"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/comment_embed.js" id="disqus_embed-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/scripts.min.js" id="tp-twitch-script-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/navigation.js" id="newsphere-navigation-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/skip-link-focus-fix.js" id="newsphere-skip-link-focus-fix-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/swiper.min.js" id="swiper-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/bootstrap.min.js" id="bootstrap-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.sidr.min.js" id="sidr-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.magnific-popup.min.js" id="magnific-popup-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.matchHeight.min.js" id="matchheight-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jquery.marquee.js" id="marquee-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/theia-sticky-sidebar.min.js" id="sticky-sidebar-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/script.js" id="newsphere-script-js"></script>
+<script type="text/javascript" id="newsphere-pagination-js-js-extra">
+/* <![CDATA[ */
+var AFurl = {"dir":"left"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/pagination-script.js" id="newsphere-pagination-js-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/comment-reply.min.js" id="comment-reply-js"></script>
+<script type="text/javascript" id="ubermenu-js-extra">
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","retractor_display_strategy":"responsive","touch_off_close":"on","submenu_indicator_close_mobile":"on","collapse_after_scroll":"on","v":"3.7.2","configurations":["main"],"ajax_url":"https:\/\/dunlop.geek.nz\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/dunlop.geek.nz\/wp-content\/plugins\/ubermenu\/","disable_mobile":"off","prefix_boost":"","use_core_svgs":"off","aria_role_navigation":"off","aria_nav_label":"off","aria_expanded":"off","aria_hidden":"off","aria_controls":"","aria_responsive_toggle":"off","icon_tag":"i","esc_close_mobile":"on","theme_locations":{"aft-primary-nav":"Primary Menu","aft-social-nav":"Social Menu","aft-footer-nav":"Footer Menu"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/ubermenu.min.js" id="ubermenu-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/wp-embed.min.js" id="wp-embed-js"></script>
+<script type="text/javascript" id="accordion-category-script-js-extra">
+/* <![CDATA[ */
+var accordionMenuParams = {"auto_generate_css":"1","auto_overflow_padding":"1","show_category_icon":"1","show_empty_categories":"","show_post_count":"1","nesting_type":"text-indent","title":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/accordion-categories.js" id="accordion-category-script-js"></script>
+<script type="text/javascript" id="jetpack-carousel-js-extra">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/dunlop.geek.nz\/wp-admin\/admin-ajax.php","nonce":"f746a8b70e","display_exif":"1","display_comments":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"1","require_name_email":"0","login_url":"https:\/\/dunlop.geek.nz\/wp-login.php?redirect_to=https%3A%2F%2Fdunlop.geek.nz%2Faws-api-developer-portal-tips%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<p id=\"jp-carousel-commenting-as\">You must be <a href=\"#\" class=\"jp-carousel-comment-login\">logged in<\/a> to post a comment.<\/p>"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/jetpack-carousel.min.js" id="jetpack-carousel-js"></script>
+<script type="text/javascript" src="./AWS Cognito + Azure AD + React + Amplify – DUNLOP.GEEK.NZ_files/e-202041.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:9.0.1',blog:'62941857',post:'625',tz:'12',srv:'dunlop.geek.nz'} ]);
+	_stq.push([ 'clickTrackerInit', '62941857', '625' ]);
+</script>
+
+
+
+</div><div id="sidr" class="sidr left" style="transition: left 0.2s ease 0s;"></div></body></html>
