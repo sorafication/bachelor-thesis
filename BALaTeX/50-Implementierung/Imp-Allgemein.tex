@@ -1,4 +1,4 @@
-\subsection{Architekturdiagramm }
+\subsection{Architekturdiagramm}
 
 Im dritten Kapitel wurden alle benötigten Dienste ausgewählt und ihre Notwendigkeit erläutert.
 Nun muss aus allen Komponenten eine zusammenhängende Architektur aufgebaut werden.
@@ -19,7 +19,7 @@ Dafür wird ein Zugriff auf einen anderen AWS Account benötigt.
 GitHub wird für eine CI/CD Pipeline genutzt und kann über Amplify konfiguriert werden.
 \clearpage
 Die Umsetzung der Anwendung erfolgt in fünf einzelnen Schritten.
-Erzeugt werden alle Dienste über die Amplify CLI.
+Erzeugt werden alle Dienste über die Amplify-CLI.
 Zuerst müssen alle Voraussetzungen erfüllt werden.
 Zu den Voraussetzungen zählt das Installieren aller benötigten Pakete und der Auswahl eines AWS Accounts.
 Außerdem wird ein neues React-Projekt erstellt und Amplify initialisiert.
@@ -38,7 +38,7 @@ Im letzten Schritt kann die lokale Anwendung, sofern sie ordnungsgemäß funktio
 In den folgenden Abschnitten werden alle einzelnen Schritte im Detail erläutert sowie auf potenzielle Probleme bei der Umsetzung hingewiesen.
 Die bisher erwähnten Kosten der einzelnen Dienste werden im Abschnitt \textit{\ref{Kosten} \nameref{Kosten}} zusammengefasst.
 
-\subsection{AWS Accountstruktur }
+\subsection{AWS Accountstruktur}
 \label{Accountstruktur}
 
 Zuerst ist es wichtig die Organisationsstruktur der AWS Accounts innerhalb der Mediengruppe RTL zu verstehen.
@@ -57,26 +57,24 @@ Eine Produktivumgebung sollte so wenig Zugriff wie möglich erlauben.
 Beispiele für solche Accounts sind etwa \verb+Ntv-Streaming-Dev+ und \verb+Ntv-Streaming-Prod+.
 Jeder der Accounts ist grundsätzlich unabhängig und weißt nur über die gemeinsame Organisation eine Verbindung auf.
 Zusätzlich gibt es für N-TV noch weitere Accounts für andere Projektbereiche.
-Die Accounts \verb+Ntv-Web-Dev+ und \verb+Ntv-Web-Prod+ werden von anderen Personen betreut werden.
+Die Accounts \verb+Ntv-Web-Dev+ und \verb+Ntv-Web-Prod+ werden von anderen Personen betreut.
 Daneben ist es möglich, dass noch weitere Accounts oder Entwicklungsumgebungen benötigt werden, etwa eine \verb+PreProd+ Umgebung.
 \clearpage
-Im Abschnitt \textit{\ref{LambdaEntscheidung} \nameref{LambdaEntscheidung}} wurde erwähnt,dass alle Accounts zentral über den Dienst AWS Organizations erstellt werden.
-Es wird Zugriff auf den Master-Account benötigt um Informationen zu allen Accounts zu erhalten.
+Im Abschnitt \textit{\ref{LambdaEntscheidung} \nameref{LambdaEntscheidung}} wurde erwähnt, dass alle Accounts zentral über den Dienst AWS Organizations erstellt werden.
+Es wird Zugriff auf den Master-Account benötigt, um Informationen zu allen Accounts zu erhalten.
 Details zur Umsetzung befinden sich im Abschnitt \textit{\ref{AccountübergreifenderZugriff} \nameref{AccountübergreifenderZugriff}}.
 
 Für die Abteilung Datacenter and Clouds wurden speziell Accounts zum Testen erstellt.
 Der Account \verb+Cbc-Clouds-Sandbox+ eignet sich für eine erste Testumgebung daher optimal.
 Wird die Anwendung in Zukunft produktiv genutzt, kann sie ohne viel Aufwand in einen anderen Account migriert werden.
-\newline
 
 \subsection{Amplify Voraussetzungen}
 
-\subsubsection{Einrichtung Amplify CLI}
+\subsubsection{Einrichtung Amplify}
 \label{EinrichtungAmplify}
-Bevor mit der Amplify CLI gearbeitet werden kann, muss sichergestellt sein, dass alle benötigten Pakete installiert sind und ein Zugang zu dem AWS Account \verb+Cbc-Clouds-Sandbox+ existiert.
+Bevor mit der Amplify-CLI gearbeitet werden kann, muss sichergestellt sein, dass alle benötigten Pakete installiert sind und ein Zugang zu dem AWS Account \verb+Cbc-Clouds-Sandbox+ existiert.
 Für die Verwendung von Amplify müssen die Pakete \verb+Node.js+ (Version \verb+>+ 10.x), \verb+npm+\footnote{Npm steht für Node Package Manager und ist ein Paketmanager für NodeJS. Mithilfe von npm können weitere Pakete installiert werden.} (Version \verb+>+ 5.x) und \verb+git+ (Version \verb+>+ 2.14.1) installiert werden.
-Mithilfe von \verb+npm+ kann im Anschluss mit folgendem Befehl \verb+npm install -g @aws-amplify/cli+ die Amplify-CLI installiert werden.
-\verb+npm+ gehört zu \verb+npm+ und ermöglicht einen leichteren Umgang mit zusätzlichen Paketen.
+Mithilfe von \verb+npm+ kann im Anschluss mit dem Befehl \verb+npm install -g @aws-amplify/cli+ die Amplify-CLI installiert werden.
 
 Um den Zugang auf den AWS Account \verb+Cbc-Clouds-Sandbox+ zu realisieren, muss ein AWS IAM-User mit Zugangsdaten angelegt werden.
 Diesen Prozess kann Amplify übernehmen.
@@ -117,10 +115,11 @@ Successfully set up the new user.
 \end{lstlisting}
 
 
-\subsubsection{Einrichtung React Projekt}
+\subsubsection{Einrichtung React-Projekt}
 
 Eine weitere Voraussetzung für Amplify ist die Erstellung eines neuen React-Projektes.
 Dafür bieten die Entwickler von React den Befehl \verb+npx create-react-app+ an, welcher eine fertige Entwicklungsumgebung aufsetzt.
+\verb+npx+ gehört zu \verb+npm+ und ermöglicht einen leichteren Umgang mit zusätzlichen Paketen.
 Dabei werden Aspekte wie die Ordnerstruktur, benötigte JavaScript-Pakete oder auch die Konfiguration eines Webservers übernommen.\cite{ReactNew}
 Nachdem das Projekt erstellt wurde, kann der Webserver unter der Adresse \verb+http://localhost:3000+ gestartet werden.
 Eine Testseite von React wird angezeigt.
@@ -158,7 +157,7 @@ Im Abschnitt \textit{\ref{AccountübergreifenderZugriff} \nameref{Accountübergr
 Es wurden alle Voraussetzungen erfüllt und die einzelnen Dienste können dem Projekt hinzugefügt werden.
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
-[143302S0:amplify-kumo] master # amplify init
+# amplify init
 
 Enter a name for the project:(*@ \textrm{amplifykumo} @*)
 Enter a name for the environment:(*@ \textrm{dev} @*)

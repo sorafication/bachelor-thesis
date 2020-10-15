@@ -67,7 +67,7 @@ Bevor das Frontend jedoch Anfragen an die Datenbank ausführen kann, muss Lambda
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/AppSync-DynamoDB.png}
-    \caption{Erfolg der GraphQL API Erstellung. Die angelegte DynamoDB-Tabelle \glqq AccountTable\grqq{} wird mit der API verknüpft. In der Spalte \grqq Resource\grqq{} befindet sich ein direkter Verweis auf die Ressource. }
+    \caption{Erfolg der GraphQL API Erstellung. Die angelegte DynamoDB-Tabelle \glqq AccountTable\grqq{} wird mit der API verknüpft. In der Spalte \glqq Resource\grqq{} befindet sich ein direkter Verweis auf die Ressource. }
     \label{fig:meine-grafik}
 \end{figure}
 
@@ -84,7 +84,7 @@ Weitere Auslöser können in Zukunft ergänzt werden.
 In der Regel werden neue AWS Accounts in Abständen von zwei bis drei Wochen erstellt.
 \\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
-[143302S0:amplify-kumo] master # amplify add function
+# amplify add function
 
 Using service: Lambda, provided by: awscloudformation
 Provide a friendly name for your resource to be used as
@@ -105,10 +105,8 @@ Successfully added resource getallaccounts locally.
 Nachdem Amplify die Lambda-Funktion erstellt hat, kann diese direkt bearbeitet werden.
 Der vollständige Code befindet sich im Anhang (Siehe Anhang \textit{\nameref{lst:LambdaCode}}).
 Im Kern besteht die Lambda-Funktion aus vier Funktionen.
-\\
 
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true]
-
   - getCallerIdentity()
   - getCrossAccountCredentials()
   - listAllAccounts()
@@ -175,7 +173,7 @@ AWS Organizations ist ein Dienst, der nur in der Region \verb+us-east-1+ betrieb
 Für diesen Vorgang wird die Funktion \verb+getCrossAccountCredentials()+ benötigt.
 Im ersten Schritt werden temporäre Anmeldeinformation abgerufen und anschließend dem Service-Objekt übergeben.
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Neues ServiceObject mit einer anderen Identität (Datei: \textit{\nameref{lst:LambdaCode}} )} ]
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite}, caption={Neues ServiceObject mit einer anderen Identität (Datei: \textit{\nameref{lst:LambdaCode}} )} ]
 var accessparams = await getCrossAccountCredentials();
 
 const cbc_master_orgs = new AWS.Organizations({
@@ -188,15 +186,15 @@ const cbc_master_orgs = new AWS.Organizations({
 Im Anschluss ist es möglich die Funktion \verb+listAllAccounts()+ mit einer anderen Identität auszuführen.
 Dafür muss das neu erstellte ServiceObjekt übergeben werden.
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray} ]
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
 listAllAccounts(cbc_master_orgs)
 \end{lstlisting}
 \clearpage
-\subsubsection{Asynchrone Verarbeitung mit NodeJS}
+\subsubsection{Asynchrone Verarbeitung}
 Alle vier Funktionen werden im Handler der Funktion nacheinander ausgeführt.
 Neben den unterschiedlichen Identitäten war die Sicherstellung der asynchronen Abarbeitung ein wichtiger Aspekt bei der Programmierung.
 Alle Funktionen durften nicht gleichzeitig ausgeführt werden, da sie voneinander abhängig waren.
-Damit die Funktion \verb+listAllAccounts()+ erfolgreich war, musste zuvor Identität des Master-Accounts angenommen werden.
+Damit die Funktion \verb+listAllAccounts()+ erfolgreich war, musste zuvor die Identität des Master-Accounts angenommen werden.
 Zudem muss die Funktion \verb+writeAllDynamoDBItems()+ auf die Fertigstellung von \verb+listAllAccounts()+ warten, da sie sonst keine Daten zum Speichern hat.
 
 Aufgrund der Abhängigkeit der Funktionen muss eine asynchrone Abarbeitung stattfinden.
@@ -219,7 +217,7 @@ Es ist auch möglich den Operator \verb+await+ in einer Funktion mehrmals zu ver
 Die Lambda-Funktion nutzt Promises und \verb+async/await+ zu einem großen Teil aus um die korrekte Abarbeitung gewährleisten zu können.
 Der Event Handler wird als Asynchron deklariert und innerhalb des Handlers werden alle oben genannten Funktion nacheinander aufgerufen.
 
-\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{lightgray}, caption={Beispiel zum asynchronen Funktionsaufruf (Datei: \textit{\nameref{lst:LambdaCode}})} ]
+\begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite}, caption={Beispiel zum asynchronen Funktionsaufruf (Datei: \textit{\nameref{lst:LambdaCode}})} ]
     exports.handler = async (event) => {
         [...]
       var accessparams = await getCrossAccountCredentials();
@@ -230,7 +228,7 @@ Der Event Handler wird als Asynchron deklariert und innerhalb des Handlers werde
     }
     \end{lstlisting}
 \clearpage
-\subsubsection{Verifizierung Lambda-Funktion}
+\subsubsection{Verifizierung}
 
 Nach erfolgreicher Ausführung der Lambda-Funktion sollten sich Einträge in der DynamoDB-Tabelle befinden.
 Zur einfachen Überprüfung kann der Dienst DynamoDB in der Webkonsole geöffnet werden.
@@ -295,7 +293,7 @@ Mit dem Befehl \spverb+amplify update api+ kann jetzt der Cognito Benutzerpool a
 Im Anschluss kann die Änderung mit \spverb+amplify publish+ veröffentlicht werden.
 
 \clearpage
-\subsubsection{Anmeldung über AzureAD}
+\subsubsection{AzureAD Integration}
 
 Wie im Abschnitt \textit{\ref{Authentifizierung} \nameref{Authentifizierung}} bereits erwähnt, wäre es wünschenswert die Anmeldung mit Unternehmensidentitäten zu ermöglichen.
 Die Mediengruppe RTL nutzt hierfür den Dienst Azure Active Directory.
@@ -330,7 +328,7 @@ Falls in Zukunft eine bessere Option zur Verfügung steht, kann sie jederzeit hi
 
 \subsection{Implementierung Frontend und Hosting}
 
-\subsubsection{Programmierung React-Frontend}
+\subsubsection{React-Frontend}
 \label{ReactFrontend}
 Im letzten Schritt der Implementierung muss das Frontend konfiguriert werden und die Anwendung veröffentlicht werden.
 Bisher verfügt das Frontend über Authentifizierung, und dank der Lambda-Funktion sind Informationen in der DynamoDB-Tabelle verfügbar.
@@ -427,13 +425,14 @@ columns={[
  Zum gegebenen Zeitpunkt existierten 162 Einträge, wovon jeweils 30 pro Seite angezeigt wurden.
  Die Implementierung aller Dienste wurde erfolgreich durchgeführt.
 \clearpage
+
  \begin{figure}[htbp]
     \centering
     \includegraphics[width=1.0\textwidth]{50-Implementierung/Webanwendung.png}
     \caption{Fertiggestellte Website mit Daten. Eine Suche lässt sich oben rechts über das Suchfeld starten. Sobald eine Spaltenüberschrift angeklickt wird, werden alle Elemente dementsprechend sortiert. Ein weiterer Klick ändert die Reihenfolge der Sortierung.  }
-    \label{fig:FertigSeite}
-\end{figure}
 
+\end{figure}
+\label{FertigSeite}
 \subsubsection{Hosting}
 
 Da alle Komponenten erfolgreich implementiert worden sind und die Webanwendung alle geforderten Aufgaben erfüllt, kann sie veröffentlicht werden.
@@ -445,7 +444,7 @@ Werden mehrere Branches mit unterschiedlichen Umgebungen genutzt, können diese 
 Nach Fertigstellung gibt Amplify eine URL zurück über die die Anwendung aufgerufen werden kann.
 \\
 \begin{lstlisting}[basicstyle=\ttfamily\small, breaklines=true , frame = single, backgroundcolor=\color{flashwhite} ]
-[143302S0:amplify-kumo] master # amplify add hosting
+# amplify add hosting
 Select the plugin module to execute Hosting with Amplify Console
 (*@ \textrm{Managed hosting with custom domains, Continuous deployment} @*)
 

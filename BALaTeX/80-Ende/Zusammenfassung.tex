@@ -1,7 +1,7 @@
 \subsection{Diskussion}
 
-Ziel dieser Bachelorarbeit war es, die Serverless Architektur zu betrachten, und nach einer umfangreichen Betrachtung aller Dienste, einen Prototyp beim Cloud Provider AWS zu entwickeln.
-Ein wichtiges Merkmal war zudem, dass die Möglichkeit vorgesehen ist, dass die Webanwendung in Zukunft ohne viel Aufwand um weitere Funktionalitäten ergänzt werden kann.
+Ziel dieser Bachelorarbeit war es, die Serverless-Architektur zu betrachten, und nach einer umfangreichen Betrachtung aller Dienste, einen Prototyp beim Cloud Provider AWS zu entwickeln.
+Ein wichtiges Merkmal war zudem, dass die Möglichkeit vorgesehen ist, die Webanwendung in Zukunft ohne viel Aufwand um weitere Funktionalitäten zu ergänzen.
 Die Wartung und Administration der Infrastruktur sollte dabei nach Möglichkeit so weit wie möglich vom Cloud Provider übernommen werden.
 
 Im Rahmen der Bachelorarbeit lag der Fokus insbesondere auf die Designentscheidungen der einzelnen Dienste sowie eine grundsätzliche Funktionalität der Anwendung.
@@ -9,17 +9,17 @@ Dazu gehören eine sichere Möglichkeit zur Authentifizierung sowie eine Backend
 Es ist sichergestellt, dass nur zugelassene Mitarbeiter die Anwendung nutzen können.
 Außerdem sollte das Web Frontend eine Übersicht über alle Daten darstellen können und bei Bedarf leicht angepasst werden.
 Neben dem Aspekt sich hauptsächlich um die Programmierung der Webanwendung zu kümmern, und nicht die zugrundeliegende Infrastruktur, sollten auch unnötige Kosten vermieden werden.
-Da die meisten Dienste nach benötigten Anforderungen abgerechnet werden, können die Kosten auf ein Minimum gehalten werden.
+Da die meisten Dienste nach benötigten Anforderungen abgerechnet werden, werden die Kosten auf ein Minimum begrenzt.
 Diese Ziele wurden erreicht. Die genaue Übersicht der Kosten folgt im nächsten Abschnitt.
 
 Eine Integration mit Unternehmensidentäten war zum Zeitpunkt leider nicht umsetzbar.
-Zum einem würde der Aufwand den gesetzten Rahmen für die Bachelorarbeit deutlich überschreiten, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Wünschen.
+Zum einem würde der Aufwand den gesetzten Rahmen für die Bachelorarbeit deutlich überschreiten, zum anderem entspricht der potenzielle Lösungsvorschlag nicht den Anforderungen an Wartbarkeit und Veränderbarkeit.
 
 Die gründliche Auseinandersetzung mit den einzelnen Diensten stellte sich als äußerst nützlich dar.
 Durch die Abstraktion von Amplify ist nicht jeder Prozess im Detail ersichtlich und es kann schwerfallen den genauen Zusammenhang zu verstehen.
 Dank der intensiven Prüfung im dritten Kapitel ist es leichter die Methodik der einzelnen Technologien zu begreifen.
 Zugleich ermöglichst es die Verwendung der Dienste ohne Amplify, da genügend Verständnis geschaffen wurde.
-Das erlangte Wissen über die Serverless Architektur kann als Vorlage für weitere Projekte genutzt werden.
+Das erlangte Wissen über die Serverless-Architektur kann als Vorlage für weitere Projekte genutzt werden.
 
 Der Einsatz von Amplify ermöglichte eine bequemere und übersichtlichere Realisierung.
 Viele Vorgänge wurden merklich beschleunigt.
@@ -28,7 +28,7 @@ Zudem war es so möglich innerhalb von kurzer Zeit eine vollständige serverlose
 
 \subsection{Kosten}
 \label{Kosten}
-Neben dem minimalen Aufwand zählen die Kosten ebenfalls zu den Vorteilen der Serverless Architektur.
+Neben dem minimalen Aufwand zählen die Kosten ebenfalls zu den Vorteilen der Serverless-Architektur.
 Während des gesamten dritten Kapitels wurden Informationen zur Abrechnung der einzelnen Dienste aufgestellt.
 Viele Dienste bieten kostenlose Kontingente an.
 Dies führt vor allem zu extrem geringen Kosten während der Entwicklungsphase.
@@ -40,8 +40,8 @@ Die Kosten für September belaufen sich auf 0.12 USD für AppSync und 0.02 USD f
 Im August sind die Kosten vergleichbar.
 Sobald die Anwendung produktiv genutzt wird, und die kostenlosen Kontingente aufgebraucht sind, steigen die Kosten.
 
-Zur Zeit kann der Eindruck bestätigt werden, dass die Kosten mit Serverless Diensten gering gehalten werden können.
-Eine vergleichbare Anwendung für ca. 0.15 USD pro Monat ist ohne den Einsatz der Serverless Architektur nur sehr schwer bis gar nicht realisierbar.
+Zur Zeit kann der Eindruck bestätigt werden, dass die Kosten mit Serverless-Diensten gering gehalten werden können.
+Eine vergleichbare Anwendung für ca. 0.15 USD pro Monat ist ohne den Einsatz der Serverless-Architektur nur sehr schwer bis gar nicht realisierbar.
 Wie sich die Kosten bei intensiver Nutzung verhalten muss zu einem späteren Zeitpunkt erneut evaluiert werden.
 Eine exakte Prognose ist schwierig.
 Bis auf einen Anstieg der Kosten bei AppSync reichen vermutlich die meisten kostenlosen Kontingente auch während der Anfangszeit aus.
@@ -59,12 +59,12 @@ Geht man von eine Millionen API-Aufrufen pro Monat aus, würden die Kosten für 
 \clearpage
 
 \subsection{Zusammenfassung}
-Im Rahmen dieser Bachelorarbeit wurde die Serverless Architektur analysiert und ein funktionsfähiger Prototyp entwickelt.
+Im Rahmen dieser Bachelorarbeit wurde die Serverless-Architektur analysiert und ein funktionsfähiger Prototyp entwickelt.
 Als Motivation gilt ein steigendes Interesse an Function as a Service Diensten sowie an einer schnelleren Bereitstellung von Diensten.
 Die Kostenübersicht aller Cloud-Provider der Mediengruppe RTL soll vereinfacht werden und zentral aufbereitet werden.
 Damit geht die Anforderung einher eine einfache und administrationsfreie Realisierung zu ermöglichen, die im besten Fall keine hohen Kosten verursacht.
-Um eine qualifizierte Aussage zu einer Implementierung mit Serverless Diensten geben zu können, wurden im Voraus die wichtigsten Cloud Computing-Modelle erläutert und den Zusammenhang zu Serverless erklärt.
-Im Anschluss wurde die Serverless Architektur auf ihre Eignung geprüft und bestätigt.
+Um eine qualifizierte Aussage zu einer Implementierung mit Serverless-Diensten geben zu können, wurden im Voraus die wichtigsten Cloud Computing-Modelle erläutert und den Zusammenhang zu Serverless erklärt.
+Im Anschluss wurde die Serverless-Architektur auf ihre Eignung geprüft und bestätigt.
 Die Umsetzung sollte möglichst von nur einer Person erfolgen, ohne Expertenwissen in jedem Fachgebiet zu erfordern.
 
 Da es mehrere mögliche Ansätze zur Umsetzung gibt, ist es besonders wichtig die einzelnen Möglichkeiten zu vergleichen.
@@ -74,22 +74,21 @@ Die einzelnen zu prüfenden Bereiche beschäftigten sich mit den Themen API, Dat
 In jedem Bereich wurde ein passender Dienst ausgewählt und im weiteren Verlauf auch implementiert.
 Als API wurde der AWS Dienst AppSync genutzt, der auf GraphQL basiert.
 Der Dienst AWS Cognito übernimmt die Authentifizierung und Absicherung der Anwendung.
-Als relationale Datenbank kommt der Dienst AWS DynamoDB zum Einsatz.
-Die Backend-Logik wird mit dem Function as a Service Dienst AWS-Lambda realisiert.
-Das Frontend wurde mit dem JavaScript-Framework React erstellt.
-AWS Amplify dient als zentraler Dienst, um alle zuvor genannten Komponenten an zentraler Stelle konfigurieren zu können.
+Als nicht-relationale Datenbank kommt der Dienst AWS DynamoDB zum Einsatz.
+Die Backend-Logik wurde mit dem \textsl{Function as a Service} Dienst AWS-Lambda realisiert und das Frontend mit dem JavaScript-Framework React erstellt.
+AWS Amplify dient als zentraler Dienst, um alle zuvor genannten Komponenten an einer gemeinsamen Stelle verwalten zu können.
 
 Das Ziel des Prototyps war es, eine funktionale Webanwendung zu erzeugen die eine Übersicht über alle aktiven AWS Accounts liefert.
 Dafür musste ein Accountübergreifender Zugriff eingerichtet werden, da sich die benötigten Daten in einem anderen Account befinden als die Anwendung selbst.
 Die gesammelten Daten speichert die Lambda-Funktion in eine DynamoDB-Tabelle ab.
 Auf diese Daten greift das Frontend über die API zu, und erstellt mithilfe von React eine übersichtliche Tabelle aller Daten.
 Da die gesamte Webanwendung im Internet erreichbar ist, wurde mit AWS Cognito eine Authentifizierung sichergestellt.
-Registrierte Nutzer können die Webanwendung nutzen und auf die Daten zugreifen.
+Nur registrierte Nutzer können die Webanwendung nutzen.
 
 Während der Entwicklung wurde darauf geachtet eine möglichst einheitliche Programmiersprache zu verwenden.
-Aufgrunddessen können andere Kollegen der Abteilung Datacenter and Clouds, ohne viel Einarbeitung, an dieser Webanwendung weiterentwickeln.
+Aufgrunddessen können andere Mitarbeiter der Abteilung Datacenter and Clouds, ohne viel Einarbeitung, an dieser Webanwendung weiterentwickeln.
 Zudem ist dank Anbindung an den Dienst GitHub eine gemeinsame Bearbeitung mühelos möglich.
-Die Versionsverwaltung ermöglicht es zudem leicht Änderungen nachzuvollziehen.
+Die Versionsverwaltung ermöglicht es zudem Änderungen leicht nachzuvollziehen.
 
 
 

@@ -18,11 +18,11 @@
 \BOOKMARK [3][-]{subsubsection.2.4.2}{Richtlinien f\374r Entwickler }{subsection.2.4}% 18
 \BOOKMARK [3][-]{subsubsection.2.4.3}{Vor- und Nachteile}{subsection.2.4}% 19
 \BOOKMARK [2][-]{subsection.2.5}{Eignung f\374r die Bachelorarbeit}{section.2}% 20
-\BOOKMARK [1][-]{section.3}{AWS Serverless Dienste und Designentscheidung}{}% 21
+\BOOKMARK [1][-]{section.3}{AWS Serverless-Dienste und Designentscheidung}{}% 21
 \BOOKMARK [2][-]{subsection.3.1}{Amazon Web Services Allgemein}{section.3}% 22
 \BOOKMARK [2][-]{subsection.3.2}{API}{section.3}% 23
 \BOOKMARK [3][-]{subsubsection.3.2.1}{REST API: AWS API Gateway}{subsection.3.2}% 24
-\BOOKMARK [3][-]{subsubsection.3.2.2}{GraphQL API: AWS Appsync}{subsection.3.2}% 25
+\BOOKMARK [3][-]{subsubsection.3.2.2}{GraphQL API: AWS AppSync}{subsection.3.2}% 25
 \BOOKMARK [3][-]{subsubsection.3.2.3}{Entscheidung}{subsection.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.3}{Datenbanksystem}{section.3}% 27
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Relationale Datenbanken: AWS RDS}{subsection.3.3}% 28
@@ -37,21 +37,21 @@
 \BOOKMARK [2][-]{subsection.3.6}{Frontend Framework}{section.3}% 37
 \BOOKMARK [2][-]{subsection.3.7}{AWS Amplify}{section.3}% 38
 \BOOKMARK [1][-]{section.4}{Implementierung aller Komponenten}{}% 39
-\BOOKMARK [2][-]{subsection.4.1}{Architekturdiagramm }{section.4}% 40
-\BOOKMARK [2][-]{subsection.4.2}{AWS Accountstruktur }{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.1}{Architekturdiagramm}{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.2}{AWS Accountstruktur}{section.4}% 41
 \BOOKMARK [2][-]{subsection.4.3}{Amplify Voraussetzungen}{section.4}% 42
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Einrichtung Amplify CLI}{subsection.4.3}% 43
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Einrichtung React Projekt}{subsection.4.3}% 44
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Einrichtung Amplify}{subsection.4.3}% 43
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Einrichtung React-Projekt}{subsection.4.3}% 44
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Konfiguration Amplify}{subsection.4.3}% 45
 \BOOKMARK [2][-]{subsection.4.4}{Implementierung API und Datenbank}{section.4}% 46
 \BOOKMARK [2][-]{subsection.4.5}{Implementierung Backend-Logik}{section.4}% 47
 \BOOKMARK [3][-]{subsubsection.4.5.1}{Account\374bergreifender Zugriff}{subsection.4.5}% 48
-\BOOKMARK [3][-]{subsubsection.4.5.2}{Asynchrone Verarbeitung mit NodeJS}{subsection.4.5}% 49
-\BOOKMARK [3][-]{subsubsection.4.5.3}{Verifizierung Lambda-Funktion}{subsection.4.5}% 50
+\BOOKMARK [3][-]{subsubsection.4.5.2}{Asynchrone Verarbeitung}{subsection.4.5}% 49
+\BOOKMARK [3][-]{subsubsection.4.5.3}{Verifizierung}{subsection.4.5}% 50
 \BOOKMARK [2][-]{subsection.4.6}{Implementierung Authentifizierung}{section.4}% 51
-\BOOKMARK [3][-]{subsubsection.4.6.1}{Anmeldung \374ber AzureAD}{subsection.4.6}% 52
+\BOOKMARK [3][-]{subsubsection.4.6.1}{AzureAD Integration}{subsection.4.6}% 52
 \BOOKMARK [2][-]{subsection.4.7}{Implementierung Frontend und Hosting}{section.4}% 53
-\BOOKMARK [3][-]{subsubsection.4.7.1}{Programmierung React-Frontend}{subsection.4.7}% 54
+\BOOKMARK [3][-]{subsubsection.4.7.1}{React-Frontend}{subsection.4.7}% 54
 \BOOKMARK [3][-]{subsubsection.4.7.2}{Hosting}{subsection.4.7}% 55
 \BOOKMARK [1][-]{section.5}{Fazit}{}% 56
 \BOOKMARK [2][-]{subsection.5.1}{Diskussion}{section.5}% 57

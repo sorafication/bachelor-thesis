@@ -2,12 +2,11 @@
 \label{Serverless}
 Nachdem die wichtigsten Servicemodelle vorgestellt wurden, ist es wichtig den Begriff Serverless zu präzisieren.
 
+Es ist zweifelsohne nicht möglich Cloud-Dienste zu verwenden, ohne irgendeine Art von Server zu beanspruchen.
+Der Cloud Provider abstrahiert diese jedoch so weit, dass sich Nutzer keine Gedanken mehr über diese Aspekte mehr machen müssen.
+Wie in Abbildung \textit{Abbildung \ref{fig:Servicemodelle}} ersichtlich, verlagert sich die betriebliche Verantwortung immer mehr zum Cloud Provider und der Anwender kann sich ganz auf seine Applikation konzentrieren.
 
-Es ist zweifelsohne nicht möglich Dienste in der Cloud zu verwenden, ohne irgendeine Art von Server zu beanspruchen.
-Der Cloud Provider abstrahiert diese jedoch so weit, dass sich Nutzer keine Gedanken über die Infrastruktur, das Betriebssystem oder selbst die Laufzeitumgebung mehr machen muss.
-Wie bereits im zuvor beschriebenen Bild verlagert sich die betriebliche Verantwortung immer mehr zum Cloud Provider und der Anwender kann sich ganz auf seine Applikation konzentrieren.
-
-Serverless ist eine Kombination aus den Ansätzen Function as a Service ergänzend mit Backend as a Service, welche bestimmte Regeln befolgen muss.
+Serverless ist eine Kombination aus den Ansätzen \textsl{Function as a Service} ergänzend mit \textsl{Backend as a Service}, welche bestimmte Regeln befolgen muss.
 Die Eventbasierten Funktionen stellen die Logik der Anwendung dar und können im Zusammenspiel mit
 Backend Diensten wie Datenbanken oder Authentifizierungsdiensten eine vollwertige Applikation erzeugen.
 
@@ -32,7 +31,7 @@ stellt hierzu folgende vier Aspekte auf die zutreffen sollten:
 4) \glqq No idle capacity – You don't have to pay for idle capacity.\grqq{} [...] \glqq There is no charge when your code isn’t running. \grqq
 \\ $\rightarrow$ Kosten dürfen nur bei Nutzung entstehen. Im Leerlauf kostet der Dienst nichts.
 
-
+\clearpage
 \subsubsection{Richtlinien für Entwickler }
 
 Auch Entwickler sollten sich an bestimmte Prinzipien und Leitlinien halten um bestmöglich von der Architektur profitieren zu können.
@@ -56,16 +55,16 @@ Wird die Zeit oder der Speicherverbrauch überschritten, terminiert die Ausführ
 
 
 \subsubsection{Vor- und Nachteile}
-Serverless Architektur ermöglicht Entwicklern eine schnellere und einfachere Bereitstellung von Diensten in der Cloud.
+Serverless-Architektur ermöglicht Entwicklern eine schnellere und einfachere Bereitstellung von Diensten in der Cloud.
 Viele Anforderungen werden bereits vom Cloud Provider übernommen und müssen nicht selbst umgesetzt werden.
-Dazu gehört das Verwalten und Administrieren von virtuellen Maschinen, Hochverfügbarkeit oder Fehlertoleranz.
-Zudem gibt es keine Investitionskosten(Capex), sondern nur operative Kosten(Opex).
+Dazu gehört das Verwalten und Administrieren von virtuellen Maschinen, oder Aspekte wie Hochverfügbarkeit und Fehlertoleranz.
+Zudem gibt es keine Investitionskosten (Capex), sondern nur operative Kosten (Opex).
 Die operativen Kosten lassen sich jedoch jederzeit steuern und auf Wunsch auch gänzlich beseitigen, zum Beispiel, falls das Projekt eingestellt wird.
 Im Vorhinein ist es nicht notwendig Kapazitäten zu berechnen oder große finanzielle Risiken einzugehen.
 
-Dadurch, dass bereits viele technische Voraussetzungen vom Cloud Provider übernommen werden, ist die Einstiegshürde bis zum Entwickeln geringer.
+Da bereits viele technische Voraussetzungen vom Cloud Provider übernommen werden, ist die Einstiegshürde zum Entwickeln geringer.
 Weiter gibt es weniger Abhängigkeiten zu anderen Abteilungen, da jeder einzelne die gesamte Anwendung selbst erstellen und verwalten kann.
-Die Realisierung mittels Serverless Diensten unterstützt dabei das DevOps-Konzept und sorgt für schnellere Reaktionen auf Änderungswünsche.
+Die Realisierung mittels Serverless-Diensten unterstützt dabei das DevOps-Konzept und sorgt für schnellere Reaktionen auf Änderungswünsche.
 Das gewünschte Betriebskonzept vieler Projekte der CBC ist am DevOps-Modell orientiert.
 DevOps setzt sich aus den Begriffen Development und Operations zusammen und hat mehrere Ansätze und Bedeutungen.
 Eine mögliche Variante steht für das Zu­sam­men­schmel­zen von Entwicklung, Betrieb und den operativen Aufgaben einer Anwendung.
@@ -76,50 +75,47 @@ Nachdem eine Version abgeschlossen wird, startet daraufhin direkt die nächste I
 Der Entwicklungsprozess ist kreisförmig anstatt linear.
 \cite{DevOps}
 
-Dadurch, dass das Backend nur für einzelne Anforderungen genutzt wird, beinhaltet das Frontend bei Serverless Applikationen in der Regel mehr Funktionen und Logik.
-Zum Beispiel kann direkt mit Drittanbieter-APIs kommuniziert werden ohne das Backend nutzen zu müssen.
-Das führt zu einem schnelleren Feedback für den Anwender und somit zu einer verbesserten Benutzererfahrung.
-
-Da die Serverless Architektur noch nicht so lange im Einsatz ist wie die bewährten Alternativen, gibt es zum Beispiel noch nicht viele Security Tools oder Frameworks die diese Architektur voll unterstützen.
+\clearpage
+Dadurch, dass das Backend nur für einzelne Anforderungen genutzt wird, beinhaltet das Frontend bei Serverless-Applikationen in der Regel mehr Funktionen und Logik.
+Zum Beispiel kann direkt mit Drittanbieter-APIs kommuniziert werden, ohne das Backend zu nutzen.
+Da die Serverless-Architektur noch nicht so lange im Einsatz ist wie die bewährten Alternativen, gibt es zum Beispiel noch nicht viele Security Tools oder Frameworks die diese Architektur voll unterstützen.
 Das auf Security spezialisierte Unternehmen Checkpoint hat erst im Jahr 2019, durch Zukauf des Firma Protego, ein Tool angeboten.
-Protego selbst wurde 2017 gegründet und spezialisiert sich auf Function as a Service Dienste wie AWS Lambda oder Azure Functions. \cite{Checkpoint}
+Protego selbst wurde 2017 gegründet und spezialisiert sich auf \textsl{Function as a Service} Dienste wie AWS Lambda oder Azure Functions. \cite{Checkpoint}
+Neben Protego gibt es zwar noch weitere Security Tools die mit Serverless-Diensten umgehen können, jedoch unterstützen sie entweder noch nicht alle Cloud Provider oder sind in den Funktionalitäten eingeschränkt. \cite{Security}
 
-Neben Protego gibt es zwar noch weitere Security Tools die mit Serverless Diensten umgehen können, jedoch unterstützen sie entweder noch nicht alle Cloud Provider oder sind in den Funktionalitäten eingeschränkt. \cite{Security}
-
-Weiterhin ist es oft mit großem Aufwand verbunden eine bereits bestehende Applikation zu einer Serverless Architekur zu migrieren.
+Weiterhin ist es oft mit großem Aufwand verbunden eine bereits bestehende Applikation zu einer Serverless-Architektur zu migrieren.
 Oft muss der gesamte Ansatz neu konzipiert und umgesetzt werden, da die meisten bestehenden Anwendungen weder eventbasiert noch zustandslos sind.
 
 Ein zusätzlicher Nachteil ist die fehlende Kontrolle über das unterliegende System.
 Zwar wird einem hierdurch viel Arbeit abgenommen, jedoch kann es immer wieder einen Anwendungsfall geben, in dem mehr Kontrolle über die Hard- und Software benötigt wird.
 Zum Beispiel ist man an bestimmte Versionen der Programmiersprachen gebunden, die der Cloud Provider vorgibt.
-Zudem ist es schwierig Serverless Funktionen von einem Cloud-Provider zum anderen zu migrieren, da jeder Cloud Provider eine unterschiedliche Implementierung besitzt und stark von weiteren Diensten abhängig ist.
+Zudem ist es schwierig Serverless-Funktionen von einem Cloud Provider zum anderen zu migrieren, da jeder Cloud Provider eine unterschiedliche Implementierung besitzt und stark von weiteren Diensten abhängig ist.
 Zum Beispiel ist AWS Lambda mit vielen weiteren Diensten integriert und verbunden.
 Diese Funktionalität lässt sich nicht unverändert übertragen.
 Hier findet ebenfalls ein Vendor Lock-In statt.
 
 
-Insgesamt können Serverless Anwendungen erhebliche Vorteile im Vergleich zu klassischen Anwendungen haben, jedoch ist es nicht immer möglich oder profitabel auf diese zu setzen.
+Insgesamt können Serverless-Anwendungen erhebliche Vorteile im Vergleich zu klassischen Anwendungen haben, jedoch ist es nicht immer möglich oder profitabel auf diese zu setzen.
 Vor allem bei größeren, bereits bestehenden Anwendung lohnt es sich nicht immer die Architektur zu wechseln, bei neuen und webbasierten Anwendungen kann die Architektur ihre Vorteile voll und ganz ausspielen.
-
+\clearpage
 \subsection{Eignung für die Bachelorarbeit}
 Wie bereits im Abschnitt \textit{\ref{Motivation} \nameref{Motivation}} erwähnt, beschäftigt sich die Abteilung Datacenter and Clouds seit längerem mit Cloud Computing und hat auch schon Projekte mit unterschiedlichen Servicemodellen realisiert.
-Function as a Service wurde ebenfalls verwendet, jedoch bisher nicht im Rahmen einer Webanwendung mit einem eigenen Frontend.
+\textsl{Function as a Service} wurde ebenfalls verwendet, jedoch bisher nicht im Rahmen einer Webanwendung mit einem eigenen Frontend.
 
 Es besteht der Wunsch nach einer Webanwendung, die bestimmte Daten der unterschiedlichen Cloud Provider sammelt und in einem übersichtlichen Frontend anzeigt.
 Dafür soll kein dedizierter Server benötigt werden oder hohe Kosten entstehen.
 
-Eine Serverless Architektur eignet sich für diese Anforderungen optimal.
+Eine Serverless-Architektur eignet sich für diese Anforderungen optimal.
 Es muss keine virtuelle Maschine, kein Betriebssystem und auch keine komplexe Konfigurationen erstellt werden.
 Die aufgestellten Anforderungen lassen sich ideal in isolierte Funktionen aufteilen.
 So könnte pro Cloud Provider eine oder mehrere Funktionen bereitstellt werden, welche komplett autark arbeiten.
 Der Umfang einer Funktion wäre etwa das Sammeln einer Kostenübersicht bei AWS.
 
 Die gesammelten Daten würden in einer Datenbank gespeichert werden und anschließend von einem Frontend dargestellt.
-Die Datenbank sollte im besten Falle, wie der Rest der Applikation, vom Cloud Provider verwaltet werden und erforderliche Kapazitäten selbst anpassen können.
-Da es keine Bestandsdaten gibt, kann die Anwendung auf die Serverless Architektur ohne Probleme optimiert werden.
+Die Datenbank sollte im besten Falle ebenfalls vom Cloud Provider verwaltet werden und erforderliche Kapazitäten selbst anpassen können.
+Da es keine Bestandsdaten gibt, kann die Anwendung auf die Serverless-Architektur ohne Probleme optimiert werden.
 Für das Frontend stehen viele moderne Frameworks zur Verfügung, die ohne langjährige Erfahrung genutzt werden können.
-Desweiteren ist es nicht notwendig die Authentifizierung komplett selbstständig zu schreiben, da bereits passende Dienste und Komponenten existieren.
-
+Desweiteren ist es nicht notwendig die Authentifizierung selbstständig zu schreiben, da bereits passende Dienste und Module existieren.
 Auch aus Kostensicht ist die Anwendung bestens geeignet für eine Architektur ohne Serververwaltung.
 Es gibt keine konstante Auslastung und bei Nichtnutzung fallen auch keine Kosten an.
 
